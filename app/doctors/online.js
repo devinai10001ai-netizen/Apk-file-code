@@ -13,6 +13,7 @@ import SearchBarAnimated from '../components/doctors/SearchBarAnimated';
 import SpecialityGrid from '../components/doctors/SpecialityGrid';
 import FloatingAskApollo from '../components/doctors/FloatingAskApollo';
 import GoToTopButton from '../components/doctors/GoToTopButton';
+import { DoctorsTheme, ONLINE_SPECIALITIES, ONLINE_SYMPTOMS } from '../components/doctors/DoctorsTheme';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
