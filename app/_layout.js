@@ -14,6 +14,11 @@ export default function RootLayout() {
       <Stack.Screen name="doctors/specialty/psychiatry" options={{ presentation: 'card', animation: 'slide_from_right' }} />
       <Stack.Screen name="doctors/specialty/orthopaedics" options={{ presentation: 'card', animation: 'slide_from_right' }} />
       <Stack.Screen name="pharmacy" />
+      <Stack.Screen name="pharmacy/details/MedicineDetail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
+      <Stack.Screen name="pharmacy/details/CategoryDetail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
+      <Stack.Screen name="pharmacy/details/ConcernDetail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
+      <Stack.Screen name="pharmacy/details/BrandDetail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
+      <Stack.Screen name="pharmacy/details/ServiceDetail" options={{ presentation: 'card', animation: 'slide_from_right' }} />
       <Stack.Screen name="labtests" />
       <Stack.Screen name="insurance" />
       <Stack.Screen name="myhealth" />
