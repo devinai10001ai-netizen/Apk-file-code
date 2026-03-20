@@ -500,7 +500,7 @@ const tipsStyles = StyleSheet.create({
 });
 
 // Why Choose S-Pharma
-const WhyChooseS-Pharma = memo(() => (
+const WhyChooseSPharma = memo(() => (
   <View style={whyStyles.container}>
     <View style={whyStyles.divider}>
       <View style={whyStyles.line} />
@@ -517,7 +517,7 @@ const WhyChooseS-Pharma = memo(() => (
     </View>
   </View>
 ));
-WhyChooseS-Pharma.displayName = 'WhyChooseS-Pharma';
+WhyChooseSPharma.displayName = 'WhyChooseSPharma';
 
 const whyStyles = StyleSheet.create({
   container: {
@@ -664,7 +664,7 @@ export default function Surgery() {
 
         <TipsBeforeSurgery />
 
-        <WhyChooseS-Pharma />
+        <WhyChooseSPharma />
 
         <UnsureCTA />
 

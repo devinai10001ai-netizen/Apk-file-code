@@ -1,6 +1,18 @@
+import React, { useState, useCallback } from 'react';
 import { Stack } from 'expo-router';
+import SplashScreen from './components/splash/SplashScreen';
 
 export default function RootLayout() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashFinish = useCallback(() => {
+    setShowSplash(false);
+  }, []);
+
+  if (showSplash) {
+    return <SplashScreen onFinish={handleSplashFinish} />;
+  }
+
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(mainTabs)" />

@@ -768,7 +768,7 @@ export const NetworkHospitalsSection = React.memo(() => {
           <Text style={networkStyles.statLabel}>Cities</Text>
         </View>
         <View style={networkStyles.statCard}>
-          <Text style={networkStyles.statValue}>{data.S-pharmaHospitals}</Text>
+          <Text style={networkStyles.statValue}>{data.sPharmaHospitals}</Text>
           <Text style={networkStyles.statLabel}>S-Pharma Hospitals</Text>
         </View>
       </View>
