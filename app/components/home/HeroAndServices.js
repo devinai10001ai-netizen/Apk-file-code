@@ -160,7 +160,7 @@ export const HeroSection = React.memo(({ isVisible = true }) => {
     opacity: interpolate(shimmerValue.value, [0, 0.5, 1], [0.3, 0.8, 0.3]),
   }));
 
-  const brands = useMemo(() => DATA.S-pharmaLegacyBrands, []);
+  const brands = useMemo(() => DATA.sPharmaLegacyBrands, []);
 
   return (
     <View style={styles.heroSectionContainer}>

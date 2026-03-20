@@ -77,7 +77,7 @@ const STORE_CATEGORIES = [
   { id: '3', name: 'Wellness Forever', subtitle: 'Your Health Partner', icon: 'heart-outline', color: '#FFF3E0', tagColor: '#EF6C00' },
   { id: '4', name: 'Pharmeasy Select', subtitle: 'Curated for You', icon: 'star-outline', color: '#F3E5F5', tagColor: '#7B1FA2' },
 ];
-const S-Pharma_BEST = [
+const SPHARMA_BEST = [
   { id: '1', name: 'My Medicines', subtitle: 'KNOW MORE', icon: 'medical-outline', color: '#0F847E' },
   { id: '2', name: 'My Membership', subtitle: 'BENEFITS', icon: 'diamond-outline', color: '#D4A843' },
   { id: '3', name: 'Ask S-Pharma', subtitle: 'ASSISTANT', icon: 'chatbubble-outline', color: '#3B82F6' },
@@ -118,7 +118,7 @@ const MEMBERSHIP_ITEMS = [
   { id: '2', name: 'Wiper Fluid', subtitle: 'Premium Quality', price: '199', icon: 'water-outline', color: '#E3F2FD' },
   { id: '3', name: 'AC Service', subtitle: 'Full Check', price: '1,499', icon: 'thermometer-outline', color: '#FFF3E0' },
 ];
-const S-Pharma_SERVICES = [
+const SPHARMA_SERVICES = [
   { id: '1', name: 'Premium Friday Doorstep Savings', subtitle: 'Starting at ₹15/week', icon: 'calendar-outline', color: '#0F847E' },
   { id: '2', name: 'Join Now - Exclusive Benefits', subtitle: 'S-Pharma Circle Membership', icon: 'diamond-outline', color: '#D4A843' },
 ];
@@ -338,13 +338,13 @@ const ExploreStoresSection = React.memo(() => (
 // ============================================================================
 // S-Pharma SECTION
 // ============================================================================
-const S-PharmaServiceCard = React.memo(({ item, index }) => {
+const SPharmaServiceCard = React.memo(({ item, index }) => {
   const sc = useSharedValue(0.9); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 100, withTiming(1, { duration: 500 })); sc.value = withDelay(index * 100, withSpring(1, { damping: 12, stiffness: 100 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (<Animated.View style={[styles.asCard, a]}><TouchableOpacity activeOpacity={0.7}><LinearGradient colors={[item.color, item.color === '#0F847E' ? '#0A6B66' : '#C4952E']} style={styles.asGrad}><Ionicons name={item.icon} size={28} color={COLORS.white} /><View style={styles.asTextWrap}><Text style={styles.asName}>{item.name}</Text><Text style={styles.asSub}>{item.subtitle}</Text></View><View style={styles.asArrow}><Ionicons name="chevron-forward" size={18} color={COLORS.white} /></View></LinearGradient></TouchableOpacity></Animated.View>);
 });
-const S-PharmaBestCard = React.memo(({ item, index }) => {
+const SPharmaBestCard = React.memo(({ item, index }) => {
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12, stiffness: 100 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -356,11 +356,11 @@ const MembershipCard = React.memo(({ item, index }) => {
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (<Animated.View style={[styles.memCard, a]}><View style={[styles.memInner, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={COLORS.primary} /><Text style={styles.memName}>{item.name}</Text><Text style={styles.memSub}>{item.subtitle}</Text><Text style={styles.memPrice}>&#8377;{item.price}</Text></View></Animated.View>);
 });
-const S-PharmaSection = React.memo(() => (
-  <View style={styles.S-pharmaWrap}>
-    <View style={styles.section}><FlatList data={S-Pharma_SERVICES} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <S-PharmaServiceCard item={item} index={index} />} contentContainerStyle={styles.asListC} ItemSeparatorComponent={() => <View style={{ width: 12 }} />} /></View>
+const SPharmaSection = React.memo(() => (
+  <View style={styles.sPharmaWrap}>
+    <View style={styles.section}><FlatList data={SPHARMA_SERVICES} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <SPharmaServiceCard item={item} index={index} />} contentContainerStyle={styles.asListC} ItemSeparatorComponent={() => <View style={{ width: 12 }} />} /></View>
     <View style={styles.section}><FlatList data={MEMBERSHIP_ITEMS} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <MembershipCard item={item} index={index} />} contentContainerStyle={styles.memListC} ItemSeparatorComponent={() => <View style={{ width: 10 }} />} /></View>
-    <View style={styles.section}><Text style={styles.sectionTitle}>Get the Best of S-Pharma</Text><View style={styles.abGrid}>{S-Pharma_BEST.map((item, i) => <S-PharmaBestCard key={item.id} item={item} index={i} />)}</View></View>
+    <View style={styles.section}><Text style={styles.sectionTitle}>Get the Best of S-Pharma</Text><View style={styles.abGrid}>{SPHARMA_BEST.map((item, i) => <SPharmaBestCard key={item.id} item={item} index={i} />)}</View></View>
   </View>
 ));
 
@@ -1158,7 +1158,7 @@ export default function PharmacyIndex() {
         <FlashDealsSection />
         <ConcernsSection />
         <ExploreStoresSection />
-        <S-PharmaSection />
+        <SPharmaSection />
         <LabTestsSection />
         <HolidayBanner />
         <BestSkincareSection />
@@ -1301,7 +1301,7 @@ const styles = StyleSheet.create({
   stSub: { fontSize: 10, color: COLORS.textTertiary, textAlign: 'center', marginBottom: SPACING.sm },
   stTag: { paddingHorizontal: SPACING.md, paddingVertical: SPACING.xs, borderRadius: RADIUS.full },
   stTagText: { color: COLORS.white, fontSize: 10, fontWeight: '700', letterSpacing: 0.5 },
-  S-pharmaWrap: { marginBottom: SPACING.md },
+  sPharmaWrap: { marginBottom: SPACING.md },
   asListC: { paddingVertical: SPACING.sm },
   asCard: { width: SCREEN_WIDTH - 80 },
   asGrad: { borderRadius: RADIUS.lg, padding: SPACING.xl, flexDirection: 'row', alignItems: 'center', minHeight: 80 },

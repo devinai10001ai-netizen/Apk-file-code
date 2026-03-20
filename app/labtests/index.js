@@ -383,7 +383,7 @@ const AskSPharmaCard = memo(() => (
 // ─── SECTION 15: TRUST STATS ───
 const TrustStats = memo(() => (
   <View style={styles.trustSection}>
-    <Text style={styles.trustS-Pharma}>S-Pharma</Text>
+    <Text style={styles.trustSPharma}>S-Pharma</Text>
     <Text style={styles.trustSubtitle}>Your Trusted Lab-Test Partner</Text>
     <View style={styles.trustGrid}>
       <View style={styles.trustItem}>
@@ -976,7 +976,7 @@ const styles = StyleSheet.create({
 
   // Trust Stats
   trustSection: { backgroundColor: '#E6F3FF', paddingHorizontal: 16, paddingVertical: 24, marginTop: 20, alignItems: 'center' },
-  trustS-Pharma: { fontSize: 24, fontWeight: '700', color: C.primaryTeal },
+  trustSPharma: { fontSize: 24, fontWeight: '700', color: C.primaryTeal },
   trustSubtitle: { fontSize: 14, color: C.textSecondary, marginTop: 4, marginBottom: 20 },
   trustGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 16, justifyContent: 'center' },
   trustItem: { width: (SCREEN_WIDTH - 64) / 2, alignItems: 'center', marginBottom: 8 },

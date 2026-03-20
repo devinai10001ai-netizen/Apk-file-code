@@ -426,7 +426,7 @@ export const INSURANCE_DATA = {
   networkHospitals: {
     total: '14,000+',
     cities: '1,000+',
-    S-pharmaHospitals: '71',
+    sPharmaHospitals: '71',
     multiSpecialty: '2,500+',
     topCities: [
       { name: 'Mumbai', count: 1200 },

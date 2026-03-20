@@ -97,7 +97,7 @@ const AnimatedScrollView = Animated.createAnimatedComponent(ScrollView);
 // ============================================================================
 // ANIMATED S-Pharma LOGO
 // ============================================================================
-const AnimatedS-PharmaLogo = React.memo(() => {
+const AnimatedSPharmaLogo = React.memo(() => {
   const rotation = useSharedValue(0);
   const glowOpacity = useSharedValue(0.3);
   const scale = useSharedValue(1);
@@ -130,9 +130,9 @@ const AnimatedS-PharmaLogo = React.memo(() => {
   }));
 
   return (
-    <View style={styles.S-pharmaLogoContainer}>
-      <Animated.View style={[styles.S-pharmaLogoGlow, glowStyle]} />
-      <Animated.View style={[styles.S-pharmaLogoInner, logoAnimatedStyle]}>
+    <View style={styles.sPharmaLogoContainer}>
+      <Animated.View style={[styles.sPharmaLogoGlow, glowStyle]} />
+      <Animated.View style={[styles.sPharmaLogoInner, logoAnimatedStyle]}>
         <Ionicons name="medical" size={18} color={COLORS.spharmaGreen} />
       </Animated.View>
     </View>
@@ -280,7 +280,7 @@ const StickyHeader = React.memo(({ scrollY, onProfilePress }) => {
 
         {/* Right side: Logo + Wallet + Profile */}
         <View style={styles.headerRight}>
-          <AnimatedS-PharmaLogo />
+          <AnimatedSPharmaLogo />
           <AnimatedWalletBadge />
           <AnimatedProfileAvatar onPress={onProfilePress} />
         </View>
@@ -804,21 +804,21 @@ const styles = StyleSheet.create({
   // ========================================================================
   // S-Pharma LOGO STYLES
   // ========================================================================
-  S-pharmaLogoContainer: {
+  sPharmaLogoContainer: {
     width: 36,
     height: 36,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
   },
-  S-pharmaLogoGlow: {
+  sPharmaLogoGlow: {
     position: 'absolute',
     width: 40,
     height: 40,
     borderRadius: 20,
     backgroundColor: COLORS.royalGoldGlow,
   },
-  S-pharmaLogoInner: {
+  sPharmaLogoInner: {
     width: 34,
     height: 34,
     borderRadius: 17,

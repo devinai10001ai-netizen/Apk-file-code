@@ -776,7 +776,7 @@ export const DATA = {
     { id: 3, title: 'My Health Records & Insights', subtitle: 'Track and manage your health journey', icon: 'folder-open', color: '#FF6B35', bgColor: '#FFF3E0' },
   ],
 
-  S-pharmaLegacyBrands: [
+  sPharmaLegacyBrands: [
     'S-Pharma Pharmacy',
     'S-Pharma Diagnostics',
     'S-Pharma 24/7',
