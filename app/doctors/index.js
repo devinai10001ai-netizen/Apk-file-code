@@ -2018,6 +2018,251 @@ const appDownloadStyles = StyleSheet.create({
   },
 });
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE 5 COMPONENTS: CONSULTATION PROCESS & MORE
+// ─────────────────────────────────────────────────────────────────────────────
+
+const CONSULTATION_STEPS = [
+  { step: 1, title: 'Choose Speciality', desc: 'Select the type of doctor you need', icon: 'search' },
+  { step: 2, title: 'Pick a Doctor', desc: 'View profiles, ratings & availability', icon: 'person' },
+  { step: 3, title: 'Book Appointment', desc: 'Choose date, time & mode of consult', icon: 'calendar' },
+  { step: 4, title: 'Consult & Follow-up', desc: 'Get prescription & follow-up reminders', icon: 'chatbubbles' },
+];
+
+const ConsultationProcessSection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>How to Consult a Doctor</Text>
+    <Text style={page5Styles.sectionSubtitle}>Simple 4-step process</Text>
+    {CONSULTATION_STEPS.map((item, i) => (
+      <View key={i} style={page5Styles.stepRow}>
+        <View style={page5Styles.stepCircle}>
+          <Text style={page5Styles.stepNum}>{item.step}</Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={page5Styles.stepTitle}>{item.title}</Text>
+          <Text style={page5Styles.stepDesc}>{item.desc}</Text>
+        </View>
+        <Ionicons name={item.icon} size={20} color={DoctorsTheme.colors.teal} />
+      </View>
+    ))}
+  </View>
+));
+ConsultationProcessSection.displayName = 'ConsultationProcessSection';
+
+const CONDITION_SPECIALISTS = [
+  { condition: 'Diabetes', specialist: 'Diabetologist', icon: 'fitness' },
+  { condition: 'Heart Disease', specialist: 'Cardiologist', icon: 'heart' },
+  { condition: 'Skin Issues', specialist: 'Dermatologist', icon: 'body' },
+  { condition: 'Joint Pain', specialist: 'Orthopaedist', icon: 'walk' },
+  { condition: 'Mental Health', specialist: 'Psychiatrist', icon: 'happy' },
+  { condition: 'Women\'s Health', specialist: 'Gynaecologist', icon: 'woman' },
+];
+
+const ConditionSpecialistsSection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>Find Specialist by Condition</Text>
+    <View style={page5Styles.grid}>
+      {CONDITION_SPECIALISTS.map((item, i) => (
+        <View key={i} style={page5Styles.conditionCard}>
+          <Ionicons name={item.icon} size={24} color={DoctorsTheme.colors.teal} />
+          <Text style={page5Styles.conditionName}>{item.condition}</Text>
+          <Text style={page5Styles.conditionSpec}>{item.specialist}</Text>
+        </View>
+      ))}
+    </View>
+  </View>
+));
+ConditionSpecialistsSection.displayName = 'ConditionSpecialistsSection';
+
+const AvailabilitySection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>Doctor Availability</Text>
+    <Text style={page5Styles.sectionSubtitle}>Consult anytime, anywhere</Text>
+    <View style={page5Styles.availRow}>
+      {[
+        { label: 'Today', count: '2000+', icon: 'today' },
+        { label: 'Tomorrow', count: '3500+', icon: 'calendar' },
+        { label: 'This Week', count: '5000+', icon: 'calendar-outline' },
+      ].map((item, i) => (
+        <View key={i} style={page5Styles.availCard}>
+          <Ionicons name={item.icon} size={22} color={DoctorsTheme.colors.teal} />
+          <Text style={page5Styles.availCount}>{item.count}</Text>
+          <Text style={page5Styles.availLabel}>{item.label}</Text>
+        </View>
+      ))}
+    </View>
+  </View>
+));
+AvailabilitySection.displayName = 'AvailabilitySection';
+
+const VideoFeaturesSection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>Video Consultation Features</Text>
+    <View style={page5Styles.featureList}>
+      {['HD Video & Audio', 'Screen Sharing for Reports', 'In-app Prescription', 'Chat Before & After Consult', 'Record & Revisit'].map((f, i) => (
+        <View key={i} style={page5Styles.featureItem}>
+          <Ionicons name="checkmark-circle" size={18} color="#2ECC71" />
+          <Text style={page5Styles.featureText}>{f}</Text>
+        </View>
+      ))}
+    </View>
+  </View>
+));
+VideoFeaturesSection.displayName = 'VideoFeaturesSection';
+
+const InsurancePartnersSection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>Insurance Partners</Text>
+    <Text style={page5Styles.sectionSubtitle}>Cashless consultations with top insurers</Text>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {['Star Health', 'HDFC Ergo', 'ICICI Lombard', 'Bajaj Allianz', 'New India'].map((ins, i) => (
+        <View key={i} style={page5Styles.insurerChip}>
+          <Ionicons name="shield-checkmark" size={16} color={DoctorsTheme.colors.teal} />
+          <Text style={page5Styles.insurerText}>{ins}</Text>
+        </View>
+      ))}
+    </ScrollView>
+  </View>
+));
+InsurancePartnersSection.displayName = 'InsurancePartnersSection';
+
+const CorporateSection = memo(() => (
+  <View style={page5Styles.section}>
+    <View style={[page5Styles.banner, { backgroundColor: '#EDE7F6' }]}>
+      <Ionicons name="business" size={32} color="#7C4DFF" />
+      <View style={{ flex: 1, marginLeft: 12 }}>
+        <Text style={[page5Styles.bannerTitle, { color: '#7C4DFF' }]}>Corporate Health Plans</Text>
+        <Text style={page5Styles.bannerDesc}>Customized health solutions for your organization</Text>
+      </View>
+    </View>
+  </View>
+));
+CorporateSection.displayName = 'CorporateSection';
+
+const EmergencySection = memo(() => (
+  <View style={page5Styles.section}>
+    <View style={[page5Styles.banner, { backgroundColor: '#FFEBEE' }]}>
+      <Ionicons name="alert-circle" size={32} color="#F44336" />
+      <View style={{ flex: 1, marginLeft: 12 }}>
+        <Text style={[page5Styles.bannerTitle, { color: '#F44336' }]}>Emergency Consultation</Text>
+        <Text style={page5Styles.bannerDesc}>Connect with a doctor in under 2 minutes for emergencies</Text>
+      </View>
+    </View>
+  </View>
+));
+EmergencySection.displayName = 'EmergencySection';
+
+const HEALTH_TIPS_DATA = [
+  { title: 'Stay Hydrated', desc: 'Drink 8 glasses of water daily', icon: 'water' },
+  { title: 'Regular Exercise', desc: '30 minutes of activity daily', icon: 'bicycle' },
+  { title: 'Balanced Diet', desc: 'Include fruits & vegetables', icon: 'nutrition' },
+  { title: 'Quality Sleep', desc: '7-8 hours of sleep every night', icon: 'moon' },
+];
+
+const HealthTipsSection = memo(() => (
+  <View style={page5Styles.section}>
+    <Text style={page5Styles.sectionTitle}>Daily Health Tips</Text>
+    {HEALTH_TIPS_DATA.map((tip, i) => (
+      <View key={i} style={page5Styles.tipRow}>
+        <View style={page5Styles.tipIcon}>
+          <Ionicons name={tip.icon} size={20} color={DoctorsTheme.colors.teal} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={page5Styles.tipTitle}>{tip.title}</Text>
+          <Text style={page5Styles.tipDesc}>{tip.desc}</Text>
+        </View>
+      </View>
+    ))}
+  </View>
+));
+HealthTipsSection.displayName = 'HealthTipsSection';
+
+const EXTRA_FAQ_DATA = [
+  { q: 'Is online consultation safe?', a: 'Yes, all consultations are private and encrypted end-to-end.' },
+  { q: 'Can I get a prescription online?', a: 'Yes, doctors can provide e-prescriptions after consultation.' },
+  { q: 'What if I need a follow-up?', a: 'Follow-up consultations within 7 days are free of charge.' },
+];
+
+const ExtraFAQSection = memo(() => {
+  const [expanded, setExpanded] = useState({});
+  const toggleExpand = (i) => setExpanded(prev => ({ ...prev, [i]: !prev[i] }));
+
+  return (
+    <View style={page5Styles.section}>
+      <Text style={page5Styles.sectionTitle}>More Questions</Text>
+      {EXTRA_FAQ_DATA.map((faq, i) => (
+        <TouchableOpacity key={i} style={page5Styles.faqItem} onPress={() => toggleExpand(i)}>
+          <View style={page5Styles.faqHeader}>
+            <Text style={page5Styles.faqQuestion}>{faq.q}</Text>
+            <Ionicons name={expanded[i] ? 'chevron-up' : 'chevron-down'} size={18} color="#666" />
+          </View>
+          {expanded[i] && <Text style={page5Styles.faqAnswer}>{faq.a}</Text>}
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+});
+ExtraFAQSection.displayName = 'ExtraFAQSection';
+
+const TrustBadgesSection = memo(() => (
+  <View style={page5Styles.section}>
+    <View style={page5Styles.trustRow}>
+      {[
+        { icon: 'shield-checkmark', label: 'Verified Doctors', value: '10000+' },
+        { icon: 'people', label: 'Happy Patients', value: '5M+' },
+        { icon: 'star', label: 'Avg Rating', value: '4.8' },
+        { icon: 'time', label: 'Avg Wait', value: '<5 min' },
+      ].map((badge, i) => (
+        <View key={i} style={page5Styles.trustBadge}>
+          <Ionicons name={badge.icon} size={22} color={DoctorsTheme.colors.teal} />
+          <Text style={page5Styles.trustValue}>{badge.value}</Text>
+          <Text style={page5Styles.trustLabel}>{badge.label}</Text>
+        </View>
+      ))}
+    </View>
+  </View>
+));
+TrustBadgesSection.displayName = 'TrustBadgesSection';
+
+const page5Styles = StyleSheet.create({
+  section: { marginHorizontal: 16, marginVertical: 12 },
+  sectionTitle: { fontSize: 20, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, marginBottom: 4 },
+  sectionSubtitle: { fontSize: 13, color: DoctorsTheme.colors.textSecondary, marginBottom: 12 },
+  stepRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
+  stepCircle: { width: 36, height: 36, borderRadius: 18, backgroundColor: DoctorsTheme.colors.teal, justifyContent: 'center', alignItems: 'center', marginRight: 12 },
+  stepNum: { fontSize: 16, fontWeight: '700', color: '#fff' },
+  stepTitle: { fontSize: 15, fontWeight: '600', color: DoctorsTheme.colors.textPrimary },
+  stepDesc: { fontSize: 12, color: DoctorsTheme.colors.textSecondary, marginTop: 2 },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 10 },
+  conditionCard: { width: '30%', backgroundColor: '#F8F9FA', borderRadius: 12, padding: 12, alignItems: 'center' },
+  conditionName: { fontSize: 12, fontWeight: '600', color: DoctorsTheme.colors.textPrimary, marginTop: 6, textAlign: 'center' },
+  conditionSpec: { fontSize: 10, color: DoctorsTheme.colors.textSecondary, marginTop: 2, textAlign: 'center' },
+  availRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
+  availCard: { flex: 1, backgroundColor: '#E8F5E9', borderRadius: 12, padding: 14, alignItems: 'center' },
+  availCount: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.teal, marginTop: 6 },
+  availLabel: { fontSize: 12, color: DoctorsTheme.colors.textSecondary, marginTop: 2 },
+  featureList: { marginTop: 10, gap: 8 },
+  featureItem: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  featureText: { fontSize: 14, color: DoctorsTheme.colors.textPrimary },
+  insurerChip: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#E0F2F1', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, marginRight: 8, gap: 6 },
+  insurerText: { fontSize: 13, fontWeight: '500', color: DoctorsTheme.colors.textPrimary },
+  banner: { flexDirection: 'row', alignItems: 'center', borderRadius: 14, padding: 16 },
+  bannerTitle: { fontSize: 16, fontWeight: '700', marginBottom: 4 },
+  bannerDesc: { fontSize: 12, color: '#666' },
+  tipRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#F5F5F5' },
+  tipIcon: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#E0F2F1', justifyContent: 'center', alignItems: 'center', marginRight: 12 },
+  tipTitle: { fontSize: 14, fontWeight: '600', color: DoctorsTheme.colors.textPrimary },
+  tipDesc: { fontSize: 12, color: DoctorsTheme.colors.textSecondary, marginTop: 2 },
+  faqItem: { borderBottomWidth: 1, borderBottomColor: '#F0F0F0', paddingVertical: 12 },
+  faqHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  faqQuestion: { fontSize: 14, fontWeight: '600', color: DoctorsTheme.colors.textPrimary, flex: 1, marginRight: 8 },
+  faqAnswer: { fontSize: 13, color: DoctorsTheme.colors.textSecondary, marginTop: 8, lineHeight: 20 },
+  trustRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8 },
+  trustBadge: { flex: 1, alignItems: 'center', backgroundColor: '#F8F9FA', borderRadius: 12, padding: 12 },
+  trustValue: { fontSize: 16, fontWeight: '700', color: DoctorsTheme.colors.teal, marginTop: 6 },
+  trustLabel: { fontSize: 10, color: DoctorsTheme.colors.textSecondary, marginTop: 2, textAlign: 'center' },
+});
+
 // Main Doctors Index Screen
 export default function DoctorsIndex() {
   const router = useRouter();
