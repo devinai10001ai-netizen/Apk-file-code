@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useInsuranceStore, INSURANCE_PLANS, INSURANCE_CATEGORIES, SPECIAL_OFFERS, EXPERTS, REVIEWS } from '../components/insurance/store';
 import SectionHeader from '../components/insurance/shared/SectionHeader';
@@ -27,6 +28,7 @@ const StarRating = ({ rating, size = 14, color = '#FFB800' }) => (
 export default function Explore() {
   const store = useInsuranceStore();
   const { isDarkMode, colors } = useTheme();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -62,7 +64,7 @@ export default function Explore() {
             value={searchQuery}
             onChangeText={setSearchQuery}
           />
-          <TouchableOpacity style={s.voiceBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.voiceBtn}>
             <Ionicons name="mic" size={18} color="#3498DB" />
           </TouchableOpacity>
         </View>
@@ -135,7 +137,7 @@ export default function Explore() {
               <Text style={s.newCover}>{item.cover} Cover</Text>
               <Text style={s.newPremium}>{item.premium}</Text>
             </View>
-            <TouchableOpacity style={[s.newBtn, { backgroundColor: item.color }]}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={[s.newBtn, { backgroundColor: item.color }]}>
               <Text style={s.newBtnText}>Explore</Text>
             </TouchableOpacity>
           </AnimatedCard>
@@ -260,7 +262,7 @@ export default function Explore() {
               <Ionicons name="star" size={12} color="#FFB800" />
               <Text style={s.expertPickText}>Top Pick: {INSURANCE_PLANS[i % INSURANCE_PLANS.length]?.name?.split(' ')[0] || 'Care'} Plan</Text>
             </View>
-            <TouchableOpacity style={s.expertBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.expertBtn}>
               <Text style={s.expertBtnText}>View Picks</Text>
             </TouchableOpacity>
           </AnimatedCard>
@@ -285,7 +287,7 @@ export default function Explore() {
               <View style={s.seasonalCode}>
                 <Text style={s.seasonalCodeText}>{offer.code}</Text>
               </View>
-              <TouchableOpacity style={[s.seasonalApply, { backgroundColor: offer.color }]}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={[s.seasonalApply, { backgroundColor: offer.color }]}>
                 <Text style={s.seasonalApplyText}>Apply</Text>
               </TouchableOpacity>
             </View>
@@ -319,7 +321,7 @@ export default function Explore() {
           </View>
           <View style={s.comboFooter}>
             <Text style={s.comboSavings}>{combo.savings}</Text>
-            <TouchableOpacity style={[s.comboBtn, { borderColor: combo.color }]}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={[s.comboBtn, { borderColor: combo.color }]}>
               <Text style={[s.comboBtnText, { color: combo.color }]}>View Bundle</Text>
             </TouchableOpacity>
           </View>
@@ -367,7 +369,7 @@ export default function Explore() {
             <Text style={s.recentViewedName} numberOfLines={1}>{plan.name}</Text>
             <Text style={s.recentViewedInsurer}>{plan.insurer}</Text>
             <Text style={s.recentViewedPremium}>{plan.premium}</Text>
-            <TouchableOpacity style={s.recentViewedBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.recentViewedBtn}>
               <Text style={s.recentViewedBtnText}>Continue</Text>
               <Ionicons name="arrow-forward" size={12} color="#FF6B35" />
             </TouchableOpacity>
@@ -433,7 +435,7 @@ export default function Explore() {
       <LinearGradient colors={['#3498DB', '#1A5276']} style={s.footerGradient}>
         <Text style={s.footerTitle}>Can't decide?</Text>
         <Text style={s.footerSubtitle}>Talk to our insurance expert for free</Text>
-        <TouchableOpacity style={s.footerBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.footerBtn}>
           <Ionicons name="call" size={16} color="#3498DB" />
           <Text style={s.footerBtnText}>Get Expert Advice</Text>
         </TouchableOpacity>

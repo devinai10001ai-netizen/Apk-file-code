@@ -7,6 +7,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensi
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, withSpring, withDelay, withSequence, withRepeat, interpolate, Easing } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const COLORS = {
@@ -104,6 +105,7 @@ const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // COMPONENTS
 // ============================================================================
 const BrandsHeader = React.memo(() => {
+  const router = useRouter();
   const op = useSharedValue(0); const sc = useSharedValue(0.95);
   const shimmer = useSharedValue(-1);
   useEffect(() => {
@@ -121,8 +123,8 @@ const BrandsHeader = React.memo(() => {
         <View style={styles.headerTop}>
           <View><Text style={styles.headerTitle}>Brand Store</Text><Text style={styles.headerSub}>Where Trusted Meets Wellness</Text></View>
           <View style={styles.headerActions}>
-            <TouchableOpacity style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
-            <TouchableOpacity style={styles.headerBtn}><Ionicons name="heart-outline" size={22} color={COLORS.white} /></TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.headerBtn}><Ionicons name="heart-outline" size={22} color={COLORS.white} /></TouchableOpacity>
           </View>
         </View>
         <View style={styles.bStats}>
@@ -142,6 +144,7 @@ const BrandsHeader = React.memo(() => {
 });
 
 const BrandCategoryChip = React.memo(({ item, active, onPress, index }) => {
+  const router = useRouter();
   const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 50, withTiming(1, { duration: 300 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value }));
@@ -153,11 +156,12 @@ const BrandCategoryChip = React.memo(({ item, active, onPress, index }) => {
 });
 
 const FeaturedBrandCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 100, withTiming(1, { duration: 500 })); sc.value = withDelay(index * 100, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.fbCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.fbInner}>
+    <Animated.View style={[styles.fbCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/ConcernDetail')} style={styles.fbInner}>
       <LinearGradient colors={item.gradColors} style={styles.fbGrad}>
         {item.exclusive && <View style={styles.fbExBadge}><Ionicons name="diamond" size={10} color="#FFD700" /><Text style={styles.fbExText}>EXCLUSIVE</Text></View>}
         <View style={styles.fbIconWrap}><Ionicons name={item.icon} size={32} color={COLORS.white} /></View>
@@ -167,18 +171,19 @@ const FeaturedBrandCard = React.memo(({ item, index }) => {
           <View style={styles.fbStat}><Text style={styles.fbStatNum}>{item.products}</Text><Text style={styles.fbStatLabel}>Products</Text></View>
           <View style={styles.fbRating}><Ionicons name="star" size={12} color="#FFD700" /><Text style={styles.fbRatingText}>{item.rating}</Text></View>
         </View>
-        <TouchableOpacity style={styles.fbExploreBtn}><Text style={styles.fbExploreText}>EXPLORE</Text><Ionicons name="arrow-forward" size={14} color={COLORS.white} /></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/pharmacy/details/ConcernDetail')} style={styles.fbExploreBtn}><Text style={styles.fbExploreText}>EXPLORE</Text><Ionicons name="arrow-forward" size={14} color={COLORS.white} /></TouchableOpacity>
       </LinearGradient>
     </TouchableOpacity></Animated.View>
   );
 });
 
 const BrandDealCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 100, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 100, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.bdCard, a]}><TouchableOpacity activeOpacity={0.7}>
+    <Animated.View style={[styles.bdCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/BrandDetail')}>
       <LinearGradient colors={item.gradColors} style={styles.bdGrad}>
         <Ionicons name={item.icon} size={28} color={COLORS.white} />
         <View style={styles.bdText}><Text style={styles.bdBrand}>{item.brand}</Text><Text style={styles.bdTitle}>{item.title}</Text><Text style={styles.bdSub}>{item.subtitle}</Text></View>
@@ -189,6 +194,7 @@ const BrandDealCard = React.memo(({ item, index }) => {
 });
 
 const ExclusiveProductCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -201,17 +207,18 @@ const ExclusiveProductCard = React.memo(({ item, index }) => {
       <Text style={styles.epBrand}>{item.brand}</Text>
       <View style={styles.epPriceRow}><Text style={styles.epPrice}>&#8377;{item.price}</Text><Text style={styles.epMrp}>&#8377;{item.mrp}</Text></View>
       <View style={styles.epDiscBadge}><LinearGradient colors={['#FF6B35', '#FF8F5E']} style={styles.epDiscGrad}><Text style={styles.epDiscText}>{disc}% OFF</Text></LinearGradient></View>
-      <TouchableOpacity style={styles.epAddBtn}><LinearGradient colors={[COLORS.primary, COLORS.primaryDark]} style={styles.epAddGrad}><Text style={styles.epAddText}>ADD</Text></LinearGradient></TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/pharmacy/details/ServiceDetail')} style={styles.epAddBtn}><LinearGradient colors={[COLORS.primary, COLORS.primaryDark]} style={styles.epAddGrad}><Text style={styles.epAddText}>ADD</Text></LinearGradient></TouchableOpacity>
     </View></Animated.View>
   );
 });
 
 const TrendingBrandCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.tbCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.tbInner}>
+    <Animated.View style={[styles.tbCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.tbInner}>
       <View style={[styles.tbIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={22} color={COLORS.primary} /></View>
       <Text style={styles.tbName}>{item.name}</Text>
       <View style={styles.tbGrowth}><Ionicons name="trending-up" size={12} color={COLORS.success} /><Text style={styles.tbGrowthText}>{item.growth}</Text></View>
@@ -221,11 +228,12 @@ const TrendingBrandCard = React.memo(({ item, index }) => {
 });
 
 const BrandListCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.9); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 30, withTiming(1, { duration: 300 })); sc.value = withDelay(index * 30, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.blCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.blInner}>
+    <Animated.View style={[styles.blCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/CategoryDetail')} style={styles.blInner}>
       <View style={[styles.blIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={20} color={COLORS.primary} /></View>
       <View style={styles.blContent}>
         <Text style={styles.blName}>{item.name}</Text>

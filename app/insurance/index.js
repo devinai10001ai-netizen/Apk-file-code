@@ -124,11 +124,11 @@ const FAQItem = ({ item }) => {
       <Animated.View style={{ maxHeight: maxH, overflow: 'hidden' }}>
         <Text style={faqStyles.answer}>{item.answer}</Text>
         <View style={faqStyles.helpfulRow}>
-          <TouchableOpacity style={faqStyles.helpBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={faqStyles.helpBtn}>
             <Ionicons name="thumbs-up-outline" size={14} color="#2ECC71" />
             <Text style={faqStyles.helpText}>Helpful ({item.helpful})</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={faqStyles.helpBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={faqStyles.helpBtn}>
             <Ionicons name="thumbs-down-outline" size={14} color="#E74C3C" />
             <Text style={faqStyles.helpText}>Not helpful ({item.unhelpful})</Text>
           </TouchableOpacity>
@@ -186,13 +186,13 @@ export default function InsuranceIndex() {
                 <Ionicons name="location" size={14} color="#FFE0B2" />
                 <Text style={styles.locationText}>Showing Premium For</Text>
               </View>
-              <TouchableOpacity style={styles.cityRow}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.cityRow}>
                 <Text style={styles.cityText}>{store.user.city} 110001</Text>
                 <Ionicons name="chevron-down" size={14} color="#fff" />
               </TouchableOpacity>
             </View>
             <View style={styles.headerRight}>
-              <TouchableOpacity style={styles.headerIconBtn}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.headerIconBtn}>
                 <Ionicons name="notifications-outline" size={22} color="#fff" />
                 {store.unreadCount > 0 && (
                   <View style={styles.badge}>
@@ -200,7 +200,7 @@ export default function InsuranceIndex() {
                   </View>
                 )}
               </TouchableOpacity>
-              <TouchableOpacity style={styles.headerIconBtn}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.headerIconBtn}>
                 <Ionicons name="cart-outline" size={22} color="#fff" />
               </TouchableOpacity>
             </View>
@@ -270,7 +270,7 @@ export default function InsuranceIndex() {
         <Text style={styles.fieldLabel}>Select your gender</Text>
         <View style={styles.genderRow}>
           {['Male', 'Female'].map(g => (
-            <TouchableOpacity
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')}
               key={g}
               style={[styles.genderBtn, store.selectedGender === g && styles.genderBtnActive]}
               onPress={() => store.setSelectedGender(g)}
@@ -283,7 +283,7 @@ export default function InsuranceIndex() {
         {/* Members Selection */}
         <View style={styles.membersHeader}>
           <Text style={styles.fieldLabel}>Select members</Text>
-          <TouchableOpacity><Text style={styles.moreMembers}>+ More members</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')}><Text style={styles.moreMembers}>+ More members</Text></TouchableOpacity>
         </View>
         <View style={styles.membersGrid}>
           {[
@@ -292,7 +292,7 @@ export default function InsuranceIndex() {
             { name: 'Mother', icon: 'woman' },
             { name: 'Father', icon: 'man' },
           ].map(member => (
-            <TouchableOpacity
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')}
               key={member.name}
               style={[styles.memberChip, store.selectedMembers.includes(member.name) && styles.memberChipActive]}
               onPress={() => store.toggleMember(member.name)}
@@ -315,7 +315,7 @@ export default function InsuranceIndex() {
         {/* Children */}
         <View style={styles.childrenRow}>
           <Text style={styles.fieldLabel}>Select children (max 4)</Text>
-          <TouchableOpacity><Text style={styles.moreMembers}>+ Son</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')}><Text style={styles.moreMembers}>+ Son</Text></TouchableOpacity>
         </View>
 
         {/* View Plans Button */}
@@ -333,7 +333,7 @@ export default function InsuranceIndex() {
   const renderTopUpCTA = () => (
     <View style={styles.topupSection}>
       <Text style={styles.topupTitle}>Upgrade Your Cover to 1 Cr @ Rs 1 per day</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/insurance/detail')}>
         <Text style={styles.topupLink}>Get Top Up Health Insurance</Text>
       </TouchableOpacity>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.topupCards}>
@@ -433,7 +433,7 @@ export default function InsuranceIndex() {
         <Text style={styles.hospitalSubtitle}>in India</Text>
       </Text>
       <Text style={styles.hospitalDesc}>Check partner hospital{'\n'}near you</Text>
-      <TouchableOpacity style={styles.knowMoreBtn}>
+      <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.knowMoreBtn}>
         <Text style={styles.knowMoreText}>Know More</Text>
       </TouchableOpacity>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.hospitalScroll}>
@@ -479,7 +479,7 @@ export default function InsuranceIndex() {
         <View style={styles.advisorContent}>
           <Text style={styles.advisorTitle}>Unsure about what{'\n'}plan to buy?</Text>
           <Text style={styles.advisorSubtitle}>Our Insurance{'\n'}advisor is just a click{'\n'}away</Text>
-          <TouchableOpacity style={styles.callbackBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.callbackBtn}>
             <Ionicons name="call" size={16} color="#FF6B35" />
             <Text style={styles.callbackText}>Request a call back</Text>
           </TouchableOpacity>
@@ -527,7 +527,7 @@ export default function InsuranceIndex() {
               <View style={styles.offerCode}>
                 <Text style={styles.offerCodeText}>{offer.code}</Text>
               </View>
-              <TouchableOpacity style={[styles.offerApplyBtn, { backgroundColor: offer.color }]}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={[styles.offerApplyBtn, { backgroundColor: offer.color }]}>
                 <Text style={styles.offerApplyText}>Apply</Text>
               </TouchableOpacity>
             </View>
@@ -560,7 +560,7 @@ export default function InsuranceIndex() {
           <Text style={styles.calcLabel}>Coverage</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {[500000, 1000000, 2500000, 5000000, 10000000].map(amt => (
-              <TouchableOpacity
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')}
                 key={amt}
                 style={[styles.calcChip, store.calculatorCoverage === amt && styles.calcChipActive]}
                 onPress={() => store.setCalculatorCoverage(amt)}
@@ -590,7 +590,7 @@ export default function InsuranceIndex() {
           <Text style={styles.calcResultLabel}>Estimated Premium</Text>
           <Text style={styles.calcResultValue}>Rs {store.getEstimatedPremium().toLocaleString('en-IN')}/year</Text>
         </View>
-        <TouchableOpacity style={styles.calcViewBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.calcViewBtn}>
           <LinearGradient colors={['#FF6B35', '#FF8F00']} style={styles.calcViewGradient}>
             <Text style={styles.calcViewText}>View Matching Plans</Text>
           </LinearGradient>
@@ -617,7 +617,7 @@ export default function InsuranceIndex() {
               <Text style={styles.expertRatingText}>{expert.rating}</Text>
             </View>
             <Text style={styles.expertReviews}>{expert.reviews} reviews</Text>
-            <TouchableOpacity style={styles.expertBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.expertBtn}>
               <Ionicons name="videocam" size={14} color="#fff" />
               <Text style={styles.expertBtnText}>Consult</Text>
             </TouchableOpacity>
@@ -654,7 +654,7 @@ export default function InsuranceIndex() {
           <Text style={styles.reviewPlan}>{review.plan}</Text>
           <Text style={styles.reviewComment}>{review.comment}</Text>
           <View style={styles.reviewActions}>
-            <TouchableOpacity style={styles.reviewHelpful}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.reviewHelpful}>
               <Ionicons name="thumbs-up-outline" size={14} color="#666" />
               <Text style={styles.reviewHelpfulText}>Helpful ({review.helpful})</Text>
             </TouchableOpacity>
@@ -701,7 +701,7 @@ export default function InsuranceIndex() {
       {INSURANCE_FAQS.slice(0, 5).map(faq => (
         <FAQItem key={faq.id} item={faq} />
       ))}
-      <TouchableOpacity style={styles.viewAllFaq}>
+      <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.viewAllFaq}>
         <Text style={styles.viewAllFaqText}>View All FAQs</Text>
         <Ionicons name="arrow-forward" size={16} color="#FF6B35" />
       </TouchableOpacity>
@@ -711,7 +711,7 @@ export default function InsuranceIndex() {
   // ============== RENDER TERMS ==============
   const renderTerms = () => (
     <View style={styles.termsSection}>
-      <TouchableOpacity style={styles.termsHeader}>
+      <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.termsHeader}>
         <Text style={styles.termsTitle}>Terms and Conditions</Text>
         <Ionicons name="chevron-down" size={20} color="#666" />
       </TouchableOpacity>
@@ -774,7 +774,7 @@ export default function InsuranceIndex() {
             </View>
           </View>
         ))}
-        <TouchableOpacity style={styles.fileClaimBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={styles.fileClaimBtn}>
           <Ionicons name="add-circle" size={18} color="#FF6B35" />
           <Text style={styles.fileClaimText}>File New Claim</Text>
         </TouchableOpacity>

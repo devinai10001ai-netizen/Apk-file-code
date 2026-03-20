@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -51,11 +52,12 @@ const COLORS = {
 
 /* ==================== HEADER ==================== */
 const MedsHeader = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.header}>
       <SafeAreaView>
         <View style={styles.headerContent}>
-          <TouchableOpacity style={styles.headerBackButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.headerBackButton}>
             <Ionicons name="arrow-back" size={24} color={COLORS.textPrimary} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Your Medications</Text>
@@ -68,6 +70,7 @@ const MedsHeader = React.memo(() => {
 
 /* ==================== USER PROFILE BAR ==================== */
 const UserProfileBar = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.userProfileBar}>
       <View style={styles.userProfileLeft}>
@@ -79,7 +82,7 @@ const UserProfileBar = React.memo(() => {
           <Text style={styles.userProfileName}>Ganpati Raj</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.changeUserButton}>
+      <TouchableOpacity onPress={() => router.push('/myhealth/assistant')} style={styles.changeUserButton}>
         <Text style={styles.changeUserText}>CHANGE USER</Text>
         <Ionicons name="chevron-down" size={16} color={COLORS.primary} />
       </TouchableOpacity>
@@ -89,6 +92,7 @@ const UserProfileBar = React.memo(() => {
 
 /* ==================== SURVEY SECTION ==================== */
 const SurveySection = React.memo(() => {
+  const router = useRouter();
   const [selectedOption, setSelectedOption] = useState(null);
   return (
     <View style={styles.surveySection}>
@@ -111,7 +115,7 @@ const SurveySection = React.memo(() => {
         <Text style={[styles.surveyOptionText, selectedOption === 'no' && styles.surveyOptionTextSelected]}>No, I wouldn't need it</Text>
         <View style={[styles.surveyRadio, selectedOption === 'no' && styles.surveyRadioSelected]} />
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.submitButton, !selectedOption && styles.submitButtonDisabled]} disabled={!selectedOption}>
+      <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')} style={[styles.submitButton, !selectedOption && styles.submitButtonDisabled]} disabled={!selectedOption}>
         <Text style={[styles.submitButtonText, !selectedOption && styles.submitButtonTextDisabled]}>Submit</Text>
       </TouchableOpacity>
     </View>
@@ -120,6 +124,7 @@ const SurveySection = React.memo(() => {
 
 /* ==================== ADD MEDICINES BANNER ==================== */
 const AddMedicinesBanner = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.addMedsBannerContainer}>
       <View style={styles.addMedsBanner}>
@@ -128,7 +133,7 @@ const AddMedicinesBanner = React.memo(() => {
         </View>
         <Text style={styles.addMedsBannerTitle}>Add your medicines to get insights</Text>
         <Text style={styles.addMedsBannerDesc}>Add medicines to view insights, side effects, interactions, and expert recommendations.</Text>
-        <TouchableOpacity style={styles.addMedsButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/family-profiles')} style={styles.addMedsButton}>
           <Ionicons name="add" size={22} color={COLORS.white} />
           <Text style={styles.addMedsButtonText}>Add Medicines</Text>
         </TouchableOpacity>
@@ -139,6 +144,7 @@ const AddMedicinesBanner = React.memo(() => {
 
 /* ==================== CURRENT MEDICATIONS ==================== */
 const CurrentMedications = React.memo(() => {
+  const router = useRouter();
   const medications = useMemo(() => [
     { id: '1', name: 'Amlodipine 5mg', type: 'Tablet', frequency: 'Once daily', time: 'Morning', doctor: 'Dr. Priya Sharma', color: '#E74C3C', status: 'Active', remaining: 12, refillDate: 'Mar 20', category: 'Blood Pressure' },
     { id: '2', name: 'Metformin 500mg', type: 'Tablet', frequency: 'Twice daily', time: 'Morning & Evening', doctor: 'Dr. Rahul Verma', color: '#2980B9', status: 'Active', remaining: 8, refillDate: 'Mar 15', category: 'Diabetes' },
@@ -151,7 +157,7 @@ const CurrentMedications = React.memo(() => {
     <View style={styles.currentMedsSection}>
       <View style={styles.currentMedsSectionHeader}>
         <Text style={styles.sectionTitle}>Current Medications</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/my-appointments')}><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
       </View>
       {medications.map((med) => (
         <TouchableOpacity key={med.id} style={styles.medCard} activeOpacity={0.7}>
@@ -184,7 +190,7 @@ const CurrentMedications = React.memo(() => {
               <Text style={styles.medRefillDate}>Refill by {med.refillDate}</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.medMoreButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/medicine-reminders')} style={styles.medMoreButton}>
             <Ionicons name="ellipsis-vertical" size={18} color={COLORS.textTertiary} />
           </TouchableOpacity>
         </TouchableOpacity>
@@ -195,6 +201,7 @@ const CurrentMedications = React.memo(() => {
 
 /* ==================== MEDICATION REMINDERS ==================== */
 const MedicationReminders = React.memo(() => {
+  const router = useRouter();
   const reminders = useMemo(() => [
     { id: '1', time: '8:00 AM', label: 'Morning Dose', meds: ['Amlodipine 5mg', 'Metformin 500mg', 'Omeprazole 20mg'], status: 'completed', icon: 'sunny' },
     { id: '2', time: '1:00 PM', label: 'Afternoon Dose', meds: ['Vitamin B12'], status: 'upcoming', icon: 'partly-sunny' },
@@ -206,7 +213,7 @@ const MedicationReminders = React.memo(() => {
     <View style={styles.remindersSection}>
       <View style={styles.remindersSectionHeader}>
         <Text style={styles.sectionTitle}>Today's Schedule</Text>
-        <TouchableOpacity style={styles.reminderSettingsButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/vitals-tracker')} style={styles.reminderSettingsButton}>
           <Ionicons name="settings" size={20} color={COLORS.primary} />
         </TouchableOpacity>
       </View>
@@ -226,7 +233,7 @@ const MedicationReminders = React.memo(() => {
             ))}
           </View>
           {reminder.status === 'upcoming' && (
-            <TouchableOpacity style={styles.reminderTakeButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')} style={styles.reminderTakeButton}>
               <Text style={styles.reminderTakeText}>Take</Text>
             </TouchableOpacity>
           )}
@@ -243,6 +250,7 @@ const MedicationReminders = React.memo(() => {
 
 /* ==================== DRUG INTERACTIONS CHECKER ==================== */
 const DrugInteractions = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.interactionsSection}>
       <View style={styles.interactionsCard}>
@@ -274,7 +282,7 @@ const DrugInteractions = React.memo(() => {
               </View>
             ))}
           </View>
-          <TouchableOpacity style={styles.checkInteractionsButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/organ-health')} style={styles.checkInteractionsButton}>
             <Ionicons name="search" size={18} color="#E65100" />
             <Text style={styles.checkInteractionsText}>Check All Interactions</Text>
           </TouchableOpacity>
@@ -286,6 +294,7 @@ const DrugInteractions = React.memo(() => {
 
 /* ==================== REFILL TRACKER ==================== */
 const RefillTracker = React.memo(() => {
+  const router = useRouter();
   const refills = useMemo(() => [
     { id: '1', name: 'Metformin 500mg', daysLeft: 4, urgency: 'urgent', pharmacy: 'Apollo Pharmacy, Sector 18', price: 125 },
     { id: '2', name: 'Amlodipine 5mg', daysLeft: 11, urgency: 'soon', pharmacy: 'Apollo Pharmacy, Sector 18', price: 85 },
@@ -303,7 +312,7 @@ const RefillTracker = React.memo(() => {
     <View style={styles.refillSection}>
       <View style={styles.refillSectionHeader}>
         <Text style={styles.sectionTitle}>Refill Tracker</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>Order All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/wellness-programs')}><Text style={styles.sectionViewAll}>Order All</Text></TouchableOpacity>
       </View>
       {refills.map((refill) => (
         <View key={refill.id} style={styles.refillCard}>
@@ -316,7 +325,7 @@ const RefillTracker = React.memo(() => {
             <Text style={styles.refillPharmacy}>{refill.pharmacy}</Text>
             <View style={styles.refillCardBottom}>
               <Text style={styles.refillPrice}>&#8377;{refill.price}</Text>
-              <TouchableOpacity style={[styles.refillOrderButton, { backgroundColor: getUrgencyColor(refill.urgency) }]}>
+              <TouchableOpacity onPress={() => router.push('/myhealth/health-encyclopedia')} style={[styles.refillOrderButton, { backgroundColor: getUrgencyColor(refill.urgency) }]}>
                 <Text style={styles.refillOrderText}>Reorder</Text>
               </TouchableOpacity>
             </View>
@@ -329,6 +338,7 @@ const RefillTracker = React.memo(() => {
 
 /* ==================== PILL IDENTIFIER ==================== */
 const PillIdentifier = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.pillIdSection}>
       <View style={styles.pillIdCard}>
@@ -347,7 +357,7 @@ const PillIdentifier = React.memo(() => {
                 </View>
               ))}
             </View>
-            <TouchableOpacity style={styles.pillIdButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/heart-health-insights')} style={styles.pillIdButton}>
               <Ionicons name="scan" size={20} color="#1A237E" />
               <Text style={styles.pillIdButtonText}>Scan Medicine</Text>
             </TouchableOpacity>
@@ -412,6 +422,7 @@ const MedicationAdherence = React.memo(() => {
 
 /* ==================== PHARMACY FINDER ==================== */
 const PharmacyFinder = React.memo(() => {
+  const router = useRouter();
   const pharmacies = useMemo(() => [
     { id: '1', name: 'Apollo Pharmacy', address: 'Sector 18, Noida', distance: '0.8 km', rating: 4.5, timing: '24/7', delivery: true, color: '#E74C3C' },
     { id: '2', name: 'MedPlus', address: 'Sector 22, Noida', distance: '1.2 km', rating: 4.3, timing: '8 AM - 11 PM', delivery: true, color: '#2196F3' },
@@ -422,7 +433,7 @@ const PharmacyFinder = React.memo(() => {
     <View style={styles.pharmacySection}>
       <View style={styles.pharmacySectionHeader}>
         <Text style={styles.sectionTitle}>Nearby Pharmacies</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>View Map</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/sleep-insights')}><Text style={styles.sectionViewAll}>View Map</Text></TouchableOpacity>
       </View>
       {pharmacies.map((pharmacy) => (
         <TouchableOpacity key={pharmacy.id} style={styles.pharmacyCard} activeOpacity={0.7}>
@@ -452,6 +463,7 @@ const PharmacyFinder = React.memo(() => {
 
 /* ==================== SIDE EFFECTS TRACKER ==================== */
 const SideEffectsTracker = React.memo(() => {
+  const router = useRouter();
   const sideEffects = useMemo(() => [
     { id: '1', symptom: 'Mild Dizziness', medicine: 'Amlodipine 5mg', severity: 'Mild', date: 'Mar 7', icon: 'flash', color: '#FF9800' },
     { id: '2', symptom: 'Stomach Upset', medicine: 'Metformin 500mg', severity: 'Moderate', date: 'Mar 5', icon: 'alert-circle', color: '#F44336' },
@@ -462,7 +474,7 @@ const SideEffectsTracker = React.memo(() => {
     <View style={styles.sideEffectsSection}>
       <View style={styles.sideEffectsSectionHeader}>
         <Text style={styles.sectionTitle}>Side Effects Log</Text>
-        <TouchableOpacity style={styles.logSideEffectButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.logSideEffectButton}>
           <Ionicons name="add-circle" size={22} color={COLORS.primary} />
           <Text style={styles.logSideEffectText}>Log New</Text>
         </TouchableOpacity>
@@ -488,6 +500,7 @@ const SideEffectsTracker = React.memo(() => {
 
 /* ==================== MEDICINE COST SAVINGS ==================== */
 const CostSavings = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.savingsSection}>
       <Text style={styles.sectionTitle}>Cost Savings</Text>
@@ -515,7 +528,7 @@ const CostSavings = React.memo(() => {
               </View>
             ))}
           </View>
-          <TouchableOpacity style={styles.savingsExploreButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/prescriptions')} style={styles.savingsExploreButton}>
             <Text style={styles.savingsExploreText}>Find More Savings</Text>
             <Ionicons name="arrow-forward" size={16} color="#1B5E20" />
           </TouchableOpacity>

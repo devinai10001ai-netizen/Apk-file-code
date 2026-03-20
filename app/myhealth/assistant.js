@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -53,6 +54,7 @@ const COLORS = {
 
 /* ==================== HEADER ==================== */
 const AssistantHeader = React.memo(() => {
+  const router = useRouter();
   return (
     <LinearGradient colors={['#0D47A1', '#1565C0', '#1976D2']} style={styles.header}>
       <SafeAreaView>
@@ -73,10 +75,10 @@ const AssistantHeader = React.memo(() => {
             </View>
           </View>
           <View style={styles.headerActions}>
-            <TouchableOpacity style={styles.headerActionButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.headerActionButton}>
               <Ionicons name="call" size={20} color={COLORS.white} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.headerActionButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.headerActionButton}>
               <Ionicons name="ellipsis-vertical" size={20} color={COLORS.white} />
             </TouchableOpacity>
           </View>
@@ -88,6 +90,7 @@ const AssistantHeader = React.memo(() => {
 
 /* ==================== WELCOME BANNER ==================== */
 const WelcomeBanner = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.welcomeBanner}>
       <View style={styles.welcomeCard}>
@@ -113,6 +116,7 @@ const WelcomeBanner = React.memo(() => {
 
 /* ==================== QUICK ACTIONS ==================== */
 const QuickActions = React.memo(() => {
+  const router = useRouter();
   const actions = useMemo(() => [
     { id: '1', label: 'Symptom\nChecker', icon: 'body', color: '#E74C3C', bgColor: '#FFEBEE' },
     { id: '2', label: 'Medicine\nInfo', icon: 'medical', color: '#2196F3', bgColor: '#E3F2FD' },
@@ -143,6 +147,7 @@ const QuickActions = React.memo(() => {
 
 /* ==================== CHAT MESSAGES ==================== */
 const ChatMessages = React.memo(() => {
+  const router = useRouter();
   const messages = useMemo(() => [
     { id: '1', type: 'ai', text: 'Good morning, Ganpati! Based on your recent health data, I have a few observations to share with you.', time: '9:00 AM', avatar: 'sparkles' },
     { id: '2', type: 'ai', text: 'Your blood pressure has been stable this week at 120/80 mmHg. Great job maintaining it! Keep up with your current medication schedule.', time: '9:00 AM', avatar: 'sparkles' },
@@ -156,7 +161,7 @@ const ChatMessages = React.memo(() => {
     <View style={styles.chatSection}>
       <View style={styles.chatSectionHeader}>
         <Text style={styles.sectionTitle}>Recent Conversation</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>View All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')}><Text style={styles.sectionViewAll}>View All</Text></TouchableOpacity>
       </View>
       <View style={styles.chatContainer}>
         {messages.map((msg) => (
@@ -179,6 +184,7 @@ const ChatMessages = React.memo(() => {
 
 /* ==================== SYMPTOM CHECKER ==================== */
 const SymptomChecker = React.memo(() => {
+  const router = useRouter();
   const commonSymptoms = useMemo(() => [
     { id: '1', name: 'Headache', icon: 'head-outline', color: '#E74C3C' },
     { id: '2', name: 'Fever', icon: 'thermometer', color: '#FF9800' },
@@ -206,7 +212,7 @@ const SymptomChecker = React.memo(() => {
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.symptomAnalyzeButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/insurance-documents')} style={styles.symptomAnalyzeButton}>
           <Ionicons name="search" size={18} color={COLORS.white} />
           <Text style={styles.symptomAnalyzeText}>Analyze Symptoms</Text>
         </TouchableOpacity>
@@ -217,6 +223,7 @@ const SymptomChecker = React.memo(() => {
 
 /* ==================== HEALTH Q&A ==================== */
 const HealthQA = React.memo(() => {
+  const router = useRouter();
   const faqs = useMemo(() => [
     { id: '1', question: 'What foods help lower blood pressure?', answer: 'Foods rich in potassium (bananas, spinach), low-sodium foods, whole grains, berries, and fish with omega-3 fatty acids can help manage blood pressure naturally.', category: 'Diet' },
     { id: '2', question: 'How does Metformin work for diabetes?', answer: 'Metformin reduces glucose production in the liver and improves insulin sensitivity. It is the most commonly prescribed first-line medication for type 2 diabetes.', category: 'Medicine' },
@@ -231,7 +238,7 @@ const HealthQA = React.memo(() => {
     <View style={styles.qaSection}>
       <View style={styles.qaSectionHeader}>
         <Text style={styles.sectionTitle}>Health Q&A</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>Ask More</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/medicine-details')}><Text style={styles.sectionViewAll}>Ask More</Text></TouchableOpacity>
       </View>
       {faqs.map((faq) => (
         <TouchableOpacity key={faq.id} style={styles.qaCard} onPress={() => setExpandedId(expandedId === faq.id ? null : faq.id)} activeOpacity={0.7}>
@@ -264,6 +271,7 @@ const HealthQA = React.memo(() => {
 
 /* ==================== SUGGESTED QUESTIONS ==================== */
 const SuggestedQuestions = React.memo(() => {
+  const router = useRouter();
   const suggestions = useMemo(() => [
     { id: '1', text: 'What are the side effects of Atorvastatin?', icon: 'medical', color: '#E74C3C' },
     { id: '2', text: 'Can I exercise with high blood pressure?', icon: 'fitness', color: '#2196F3' },
@@ -293,6 +301,7 @@ const SuggestedQuestions = React.memo(() => {
 
 /* ==================== MEDICAL ENCYCLOPEDIA ==================== */
 const MedicalEncyclopedia = React.memo(() => {
+  const router = useRouter();
   const topics = useMemo(() => [
     { id: '1', title: 'Hypertension', subtitle: 'Understanding blood pressure', icon: 'heart', color: '#E74C3C', articles: 24 },
     { id: '2', title: 'Type 2 Diabetes', subtitle: 'Management & lifestyle', icon: 'water', color: '#2196F3', articles: 32 },
@@ -306,7 +315,7 @@ const MedicalEncyclopedia = React.memo(() => {
     <View style={styles.encyclopediaSection}>
       <View style={styles.encyclopediaSectionHeader}>
         <Text style={styles.sectionTitle}>Medical Encyclopedia</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>Browse All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')}><Text style={styles.sectionViewAll}>Browse All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.encyclopediaScrollContent}>
         {topics.map((topic) => (
@@ -329,6 +338,7 @@ const MedicalEncyclopedia = React.memo(() => {
 
 /* ==================== WELLNESS COACH ==================== */
 const WellnessCoach = React.memo(() => {
+  const router = useRouter();
   const dailyTips = useMemo(() => [
     { id: '1', title: 'Morning Routine', tip: 'Start your day with a glass of warm water with lemon. It aids digestion and boosts metabolism.', icon: 'sunny', color: '#FF9800', time: 'Morning' },
     { id: '2', title: 'Midday Movement', tip: 'Take a 10-minute walk after lunch to improve digestion and maintain energy levels through the afternoon.', icon: 'walk', color: '#4CAF50', time: 'Afternoon' },
@@ -355,6 +365,7 @@ const WellnessCoach = React.memo(() => {
 
 /* ==================== EMERGENCY SECTION ==================== */
 const EmergencySection = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.emergencySection}>
       <View style={styles.emergencyCard}>
@@ -369,11 +380,11 @@ const EmergencySection = React.memo(() => {
             </View>
           </View>
           <View style={styles.emergencyButtons}>
-            <TouchableOpacity style={styles.emergencyCallButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/wellness-programs')} style={styles.emergencyCallButton}>
               <Ionicons name="call" size={20} color="#D32F2F" />
               <Text style={styles.emergencyCallText}>Call 108</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.emergencyFirstAidButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-encyclopedia')} style={styles.emergencyFirstAidButton}>
               <Ionicons name="medkit" size={20} color={COLORS.white} />
               <Text style={styles.emergencyFirstAidText}>First Aid Guide</Text>
             </TouchableOpacity>
@@ -386,6 +397,7 @@ const EmergencySection = React.memo(() => {
 
 /* ==================== AI CAPABILITIES ==================== */
 const AICapabilities = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.capabilitiesSection}>
       <Text style={styles.sectionTitle}>What I Can Help With</Text>
@@ -418,12 +430,13 @@ const AICapabilities = React.memo(() => {
 
 /* ==================== CHAT INPUT BAR ==================== */
 const ChatInputBar = React.memo(() => {
+  const router = useRouter();
   const [message, setMessage] = useState('');
 
   return (
     <View style={styles.chatInputContainer}>
       <View style={styles.chatInputBar}>
-        <TouchableOpacity style={styles.chatAttachButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/fitness-insights')} style={styles.chatAttachButton}>
           <Ionicons name="attach" size={22} color={COLORS.textTertiary} />
         </TouchableOpacity>
         <TextInput
@@ -435,10 +448,10 @@ const ChatInputBar = React.memo(() => {
           multiline
           maxLength={500}
         />
-        <TouchableOpacity style={styles.chatVoiceButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/sleep-insights')} style={styles.chatVoiceButton}>
           <Ionicons name="mic" size={22} color={COLORS.primary} />
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.chatSendButton, message.trim() && styles.chatSendButtonActive]}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/records')} style={[styles.chatSendButton, message.trim() && styles.chatSendButtonActive]}>
           <Ionicons name="send" size={18} color={message.trim() ? COLORS.white : COLORS.textMuted} />
         </TouchableOpacity>
       </View>

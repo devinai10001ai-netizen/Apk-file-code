@@ -26,6 +26,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -54,6 +55,7 @@ const COLORS = {
 
 /* ==================== USER PROFILE HEADER ==================== */
 const UserProfileHeader = React.memo(() => {
+  const router = useRouter();
   return (
     <LinearGradient colors={['#6B4C9A', '#8B6CBF']} style={styles.profileHeader}>
       <SafeAreaView>
@@ -69,10 +71,10 @@ const UserProfileHeader = React.memo(() => {
             </View>
           </View>
           <View style={styles.profileHeaderRight}>
-            <TouchableOpacity style={styles.profileHeaderIcon}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.profileHeaderIcon}>
               <Ionicons name="help-circle-outline" size={26} color={COLORS.white} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.profileHeaderIcon}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.profileHeaderIcon}>
               <Ionicons name="person-circle-outline" size={26} color={COLORS.white} />
             </TouchableOpacity>
           </View>
@@ -84,6 +86,7 @@ const UserProfileHeader = React.memo(() => {
 
 /* ==================== SEARCH BAR ==================== */
 const SearchBar = React.memo(() => {
+  const router = useRouter();
   const [searchText, setSearchText] = useState('');
   return (
     <View style={styles.searchContainer}>
@@ -108,6 +111,7 @@ const SearchBar = React.memo(() => {
 
 /* ==================== HEALTH INSIGHTS BANNER ==================== */
 const HealthInsightsBanner = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.insightsBanner}>
       <LinearGradient
@@ -125,7 +129,7 @@ const HealthInsightsBanner = React.memo(() => {
           <Text style={styles.insightsBannerIntro}>INTRODUCING</Text>
           <Text style={styles.insightsBannerTitle}>HEALTH INSIGHTS</Text>
           <Text style={styles.insightsBannerSubtitle}>Your Health Data Simplified</Text>
-          <TouchableOpacity style={styles.insightsBannerButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')} style={styles.insightsBannerButton}>
             <Text style={styles.insightsBannerButtonText}>Unlock Insights</Text>
             <Ionicons name="arrow-forward-circle" size={18} color={COLORS.primary} />
           </TouchableOpacity>
@@ -148,6 +152,7 @@ const HealthInsightsBanner = React.memo(() => {
 
 /* ==================== QUICK ACCESS CATEGORIES ==================== */
 const QuickAccessCategories = React.memo(() => {
+  const router = useRouter();
   const categories = useMemo(() => [
     { id: 'prescriptions', icon: 'document-text', label: 'My\nPrescriptions', color: COLORS.primary, bgColor: '#F0E6FF' },
     { id: 'reports', icon: 'flask', label: 'Test\nReports', color: COLORS.blue, bgColor: '#E6F3FF' },
@@ -163,7 +168,7 @@ const QuickAccessCategories = React.memo(() => {
     <View style={styles.categoriesSection}>
       <View style={styles.categoriesSectionHeader}>
         <Text style={styles.categoriesSectionTitle}>Your Health at Your Fingertips</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')}>
           <Text style={styles.categoriesViewAll}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -221,6 +226,7 @@ const HealthScoreCard = React.memo(() => {
 
 /* ==================== RECOMMENDED TESTS ==================== */
 const RecommendedTests = React.memo(() => {
+  const router = useRouter();
   const tests = useMemo(() => [
     { id: '1', name: 'Lipid Profile Test', includes: 'LDL CHOLESTEROL, VLDL CHOLESTEROL', moreCount: 6, description: 'A lipid profile measures cholesterol and triglycerides, spotting imbalances before they harm your heart. For men in their 20s, it\'s an early step to protect long-term cardiovascular...', price: 499, originalPrice: 899, discount: '44% OFF', icon: 'water', color: COLORS.blue },
     { id: '2', name: 'Complete Blood Count', includes: 'RBC, WBC, PLATELETS', moreCount: 12, description: 'A CBC provides a comprehensive look at your blood cells, helping detect infections, anemia, and other conditions early for proactive health management...', price: 399, originalPrice: 699, discount: '43% OFF', icon: 'water', color: COLORS.red },
@@ -259,13 +265,13 @@ const RecommendedTests = React.memo(() => {
               </View>
               <Text style={styles.testRecommendedName}>Ganpati</Text>
             </View>
-            <TouchableOpacity style={styles.testBookButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/insurance-documents')} style={styles.testBookButton}>
               <Text style={styles.testBookButtonText}>Book Now</Text>
             </TouchableOpacity>
           </View>
         ))}
       </ScrollView>
-      <TouchableOpacity style={styles.viewAllTestsButton}>
+      <TouchableOpacity onPress={() => router.push('/myhealth/my-appointments')} style={styles.viewAllTestsButton}>
         <Text style={styles.viewAllTestsText}>View all tests</Text>
         <Ionicons name="chevron-forward" size={16} color={COLORS.primary} />
       </TouchableOpacity>
@@ -275,6 +281,7 @@ const RecommendedTests = React.memo(() => {
 
 /* ==================== VITALS TRACKER ==================== */
 const VitalsTracker = React.memo(() => {
+  const router = useRouter();
   const vitals = useMemo(() => [
     { id: 'bp', label: 'Blood Pressure', value: '120/80', unit: 'mmHg', icon: 'heart', color: '#E74C3C', trend: 'stable', lastUpdated: '2 days ago', normal: '90/60 - 120/80' },
     { id: 'sugar', label: 'Blood Sugar', value: '95', unit: 'mg/dL', icon: 'water', color: '#3498DB', trend: 'down', lastUpdated: '1 day ago', normal: '70 - 100' },
@@ -299,7 +306,7 @@ const VitalsTracker = React.memo(() => {
     <View style={styles.vitalsSection}>
       <View style={styles.vitalsSectionHeader}>
         <Text style={styles.sectionTitle}>Vitals Dashboard</Text>
-        <TouchableOpacity style={styles.vitalsAddButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/medicine-reminders')} style={styles.vitalsAddButton}>
           <Ionicons name="add-circle" size={24} color={COLORS.primary} />
           <Text style={styles.vitalsAddText}>Log Vitals</Text>
         </TouchableOpacity>
@@ -386,6 +393,7 @@ const BMISection = React.memo(() => {
 
 /* ==================== WHATSAPP UPLOAD ==================== */
 const WhatsAppUpload = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.whatsappSection}>
       <View style={styles.whatsappCard}>
@@ -396,7 +404,7 @@ const WhatsAppUpload = React.memo(() => {
             </View>
             <Text style={styles.whatsappTitle}>Easily Upload Records via Whatsapp</Text>
             <Text style={styles.whatsappDesc}>Never lose a record again! Just take a picture and upload it via Whatsapp</Text>
-            <TouchableOpacity style={styles.whatsappButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')} style={styles.whatsappButton}>
               <Text style={styles.whatsappButtonText}>Try Now</Text>
             </TouchableOpacity>
           </View>
@@ -408,6 +416,7 @@ const WhatsAppUpload = React.memo(() => {
 
 /* ==================== UPCOMING APPOINTMENTS ==================== */
 const UpcomingAppointments = React.memo(() => {
+  const router = useRouter();
   const appointments = useMemo(() => [
     { id: '1', doctor: 'Dr. Priya Sharma', specialty: 'Cardiologist', date: 'Mar 15, 2026', time: '10:30 AM', type: 'In-Person', status: 'Confirmed', icon: 'heart', color: '#E74C3C' },
     { id: '2', doctor: 'Dr. Rahul Verma', specialty: 'Dermatologist', date: 'Mar 18, 2026', time: '2:00 PM', type: 'Video Call', status: 'Pending', icon: 'videocam', color: '#3498DB' },
@@ -418,7 +427,7 @@ const UpcomingAppointments = React.memo(() => {
     <View style={styles.appointmentsSection}>
       <View style={styles.appointmentsSectionHeader}>
         <Text style={styles.sectionTitle}>Upcoming Appointments</Text>
-        <TouchableOpacity><Text style={styles.appointmentsViewAll}>See All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/organ-health')}><Text style={styles.appointmentsViewAll}>See All</Text></TouchableOpacity>
       </View>
       {appointments.map((apt) => (
         <TouchableOpacity key={apt.id} style={styles.appointmentCard} activeOpacity={0.7}>
@@ -452,6 +461,7 @@ const UpcomingAppointments = React.memo(() => {
 
 /* ==================== FAMILY PROFILES ==================== */
 const FamilyProfiles = React.memo(() => {
+  const router = useRouter();
   const familyMembers = useMemo(() => [
     { id: '1', name: 'Ganpati', relation: 'Self', healthScore: 78, avatar: 'person', color: '#6B4C9A', records: 12 },
     { id: '2', name: 'Priya', relation: 'Spouse', healthScore: 85, avatar: 'person', color: '#E91E63', records: 8 },
@@ -463,7 +473,7 @@ const FamilyProfiles = React.memo(() => {
     <View style={styles.familySection}>
       <View style={styles.familySectionHeader}>
         <Text style={styles.sectionTitle}>Family Health Profiles</Text>
-        <TouchableOpacity style={styles.addFamilyButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/health-encyclopedia')} style={styles.addFamilyButton}>
           <Ionicons name="add-circle" size={24} color={COLORS.primary} />
           <Text style={styles.addFamilyText}>Add Member</Text>
         </TouchableOpacity>
@@ -490,7 +500,7 @@ const FamilyProfiles = React.memo(() => {
                 <Text style={styles.familyStatLabel}>Records</Text>
               </View>
             </View>
-            <TouchableOpacity style={[styles.familyViewButton, { borderColor: member.color }]}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/heart-health-insights')} style={[styles.familyViewButton, { borderColor: member.color }]}>
               <Text style={[styles.familyViewText, { color: member.color }]}>View Profile</Text>
             </TouchableOpacity>
           </TouchableOpacity>
@@ -502,6 +512,7 @@ const FamilyProfiles = React.memo(() => {
 
 /* ==================== HEALTH GOALS ==================== */
 const HealthGoals = React.memo(() => {
+  const router = useRouter();
   const goals = useMemo(() => [
     { id: '1', title: 'Walk 10,000 Steps Daily', progress: 0.72, current: '7,200', target: '10,000', unit: 'steps', icon: 'walk', color: '#4CAF50', streak: 5 },
     { id: '2', title: 'Drink 8 Glasses of Water', progress: 0.625, current: '5', target: '8', unit: 'glasses', icon: 'water', color: '#2196F3', streak: 12 },
@@ -514,7 +525,7 @@ const HealthGoals = React.memo(() => {
     <View style={styles.goalsSection}>
       <View style={styles.goalsSectionHeader}>
         <Text style={styles.sectionTitle}>Health Goals</Text>
-        <TouchableOpacity><Text style={styles.goalsEditText}>Edit Goals</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/sleep-insights')}><Text style={styles.goalsEditText}>Edit Goals</Text></TouchableOpacity>
       </View>
       {goals.map((goal) => (
         <View key={goal.id} style={styles.goalCard}>
@@ -545,6 +556,7 @@ const HealthGoals = React.memo(() => {
 
 /* ==================== HEALTH TIPS ==================== */
 const HealthTips = React.memo(() => {
+  const router = useRouter();
   const tips = useMemo(() => [
     { id: '1', title: 'Morning Hydration Ritual', description: 'Start your day with warm lemon water to boost metabolism, aid digestion, and kickstart your immune system. Add a pinch of turmeric for anti-inflammatory benefits.', icon: 'water', color: '#2196F3', category: 'Wellness', readTime: '3 min read' },
     { id: '2', title: 'The 20-20-20 Eye Rule', description: 'Every 20 minutes, look at something 20 feet away for 20 seconds. This simple practice prevents digital eye strain and maintains healthy vision.', icon: 'eye', color: '#4CAF50', category: 'Eye Care', readTime: '2 min read' },
@@ -558,7 +570,7 @@ const HealthTips = React.memo(() => {
     <View style={styles.tipsSection}>
       <View style={styles.tipsSectionHeader}>
         <Text style={styles.sectionTitle}>Health Tips & Articles</Text>
-        <TouchableOpacity><Text style={styles.tipsViewAll}>View All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')}><Text style={styles.tipsViewAll}>View All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tipsScrollContent}>
         {tips.map((tip) => (
@@ -572,7 +584,7 @@ const HealthTips = React.memo(() => {
             </View>
             <Text style={styles.tipTitle}>{tip.title}</Text>
             <Text style={styles.tipDescription} numberOfLines={3}>{tip.description}</Text>
-            <TouchableOpacity style={styles.tipReadMore}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/assistant')} style={styles.tipReadMore}>
               <Text style={[styles.tipReadMoreText, { color: tip.color }]}>Read More</Text>
               <Ionicons name="arrow-forward" size={14} color={tip.color} />
             </TouchableOpacity>
@@ -585,6 +597,7 @@ const HealthTips = React.memo(() => {
 
 /* ==================== WELLNESS PROGRAMS ==================== */
 const WellnessPrograms = React.memo(() => {
+  const router = useRouter();
   const programs = useMemo(() => [
     { id: '1', title: 'Weight Management Pro', duration: '12 Weeks', sessions: 36, price: 2999, rating: 4.8, enrolled: '2.5K+', icon: 'fitness', color: '#4CAF50', description: 'Personalized diet plans, workout routines, and weekly consultations with certified nutritionists.' },
     { id: '2', title: 'Stress-Free Living', duration: '8 Weeks', sessions: 24, price: 1999, rating: 4.9, enrolled: '3.1K+', icon: 'leaf', color: '#9C27B0', description: 'Guided meditation, yoga sessions, breathing exercises, and CBT techniques for stress management.' },
@@ -596,7 +609,7 @@ const WellnessPrograms = React.memo(() => {
     <View style={styles.wellnessSection}>
       <View style={styles.wellnessSectionHeader}>
         <Text style={styles.sectionTitle}>Wellness Programs</Text>
-        <TouchableOpacity><Text style={styles.wellnessViewAll}>Explore All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')}><Text style={styles.wellnessViewAll}>Explore All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.wellnessScrollContent}>
         {programs.map((program) => (
@@ -622,7 +635,7 @@ const WellnessPrograms = React.memo(() => {
                   <Text style={styles.wellnessPrice}>&#8377;{program.price}</Text>
                   <Text style={styles.wellnessEnrolled}>{program.enrolled} enrolled</Text>
                 </View>
-                <TouchableOpacity style={[styles.wellnessJoinButton, { backgroundColor: program.color }]}>
+                <TouchableOpacity onPress={() => router.push('/myhealth/vaccination-records')} style={[styles.wellnessJoinButton, { backgroundColor: program.color }]}>
                   <Text style={styles.wellnessJoinText}>Join Now</Text>
                 </TouchableOpacity>
               </View>
@@ -636,6 +649,7 @@ const WellnessPrograms = React.memo(() => {
 
 /* ==================== EMERGENCY CONTACTS ==================== */
 const EmergencyContacts = React.memo(() => {
+  const router = useRouter();
   const contacts = useMemo(() => [
     { id: '1', name: 'Emergency Ambulance', number: '108', icon: 'car', color: '#E74C3C', type: 'Emergency' },
     { id: '2', name: 'Apollo 24|7 Helpline', number: '1860-500-1066', icon: 'call', color: '#6B4C9A', type: 'Helpline' },
@@ -666,6 +680,7 @@ const EmergencyContacts = React.memo(() => {
 
 /* ==================== HELP & SUPPORT ==================== */
 const HelpSupport = React.memo(() => {
+  const router = useRouter();
   const helpItems = useMemo(() => [
     { id: '1', title: 'Raise an issue', icon: 'help-circle', color: COLORS.primary },
     { id: '2', title: 'FAQs', icon: 'chatbubble-ellipses', color: COLORS.blue },

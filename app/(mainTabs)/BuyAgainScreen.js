@@ -57,10 +57,10 @@ export default function BuyAgainScreen() {
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Buy Again</Text>
         <View style={styles.headerRight}>
-          <TouchableOpacity style={styles.headerIcon}>
+          <TouchableOpacity onPress={() => router.push('/pharmacy/details/CategoryDetail')} style={styles.headerIcon}>
             <Ionicons name="search" size={20} color="#333" />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.headerIcon}>
+          <TouchableOpacity onPress={() => router.push('/pharmacy/details/ConcernDetail')} style={styles.headerIcon}>
             <Ionicons name="cart-outline" size={20} color="#00A651" />
             {cartCount > 0 && (
               <View style={styles.cartBadge}>

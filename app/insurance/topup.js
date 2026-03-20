@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useInsuranceStore, TOPUP_PLANS, HOSPITALS, INSURANCE_FAQS, REVIEWS, EXPERTS } from '../components/insurance/store';
 import SectionHeader from '../components/insurance/shared/SectionHeader';
@@ -43,6 +44,7 @@ const StarRating = ({ rating, size = 14, color = '#FFB800' }) => (
 export default function Topup() {
   const store = useInsuranceStore();
   const { isDarkMode, colors } = useTheme();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -89,17 +91,17 @@ export default function Topup() {
           <View style={s.premiumField}>
             <Text style={s.premiumFieldLabel}>Adult (max 2)</Text>
             <View style={s.premiumFieldValue}>
-              <TouchableOpacity style={s.adjBtn}><Ionicons name="remove" size={16} color="#666" /></TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.adjBtn}><Ionicons name="remove" size={16} color="#666" /></TouchableOpacity>
               <Text style={s.adjValue}>1</Text>
-              <TouchableOpacity style={s.adjBtn}><Ionicons name="add" size={16} color="#666" /></TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.adjBtn}><Ionicons name="add" size={16} color="#666" /></TouchableOpacity>
             </View>
           </View>
           <View style={s.premiumField}>
             <Text style={s.premiumFieldLabel}>Child (max 2)</Text>
             <View style={s.premiumFieldValue}>
-              <TouchableOpacity style={s.adjBtn}><Ionicons name="remove" size={16} color="#666" /></TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.adjBtn}><Ionicons name="remove" size={16} color="#666" /></TouchableOpacity>
               <Text style={s.adjValue}>1</Text>
-              <TouchableOpacity style={s.adjBtn}><Ionicons name="add" size={16} color="#666" /></TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.adjBtn}><Ionicons name="add" size={16} color="#666" /></TouchableOpacity>
             </View>
           </View>
         </View>
@@ -112,20 +114,20 @@ export default function Topup() {
         <View style={s.premiumRow}>
           <View style={s.premiumField}>
             <Text style={s.premiumFieldLabel}>Coverage</Text>
-            <TouchableOpacity style={s.selectBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.selectBtn}>
               <Text style={s.selectBtnText}>1 Crore</Text>
               <Ionicons name="chevron-down" size={14} color="#666" />
             </TouchableOpacity>
           </View>
           <View style={s.premiumField}>
             <Text style={s.premiumFieldLabel}>Deductible</Text>
-            <TouchableOpacity style={s.selectBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.selectBtn}>
               <Text style={s.selectBtnText}>15 Lakh</Text>
               <Ionicons name="chevron-down" size={14} color="#666" />
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={s.checkPremiumBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.checkPremiumBtn}>
           <LinearGradient colors={['#4CAF50', '#2E7D32']} style={s.checkPremiumGradient}>
             <Text style={s.checkPremiumText}>Check Premium</Text>
           </LinearGradient>
@@ -380,7 +382,7 @@ export default function Topup() {
           <Text style={s.deductResultLabel}>Estimated Premium</Text>
           <Text style={s.deductResultValue}>Rs {store.getTopupPremium().toLocaleString('en-IN')}/year</Text>
         </View>
-        <TouchableOpacity style={s.deductBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.deductBtn}>
           <LinearGradient colors={['#4CAF50', '#2E7D32']} style={s.deductBtnGradient}>
             <Text style={s.deductBtnText}>Get Detailed Quote</Text>
           </LinearGradient>
@@ -471,7 +473,7 @@ export default function Topup() {
             </View>
           ))}
         </View>
-        <TouchableOpacity style={s.ncbToggle}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.ncbToggle}>
           <Text style={s.ncbToggleText}>Enable NCB Protection</Text>
           <View style={s.ncbSwitch}><View style={s.ncbSwitchDot} /></View>
         </TouchableOpacity>
@@ -644,7 +646,7 @@ export default function Topup() {
             </View>
             <Text style={s.expertName}>{expert.name}</Text>
             <Text style={s.expertSpecialty}>{expert.specialty}</Text>
-            <TouchableOpacity style={s.expertBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.expertBtn}>
               <Ionicons name="videocam" size={14} color="#fff" />
               <Text style={s.expertBtnText}>Watch</Text>
             </TouchableOpacity>
@@ -680,7 +682,7 @@ export default function Topup() {
             <Text style={s.brochureSubtitle}>Everything You Need{'\n'}to Know</Text>
           </View>
         </View>
-        <TouchableOpacity style={s.downloadBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.downloadBtn}>
           <Ionicons name="download" size={16} color="#fff" />
           <Text style={s.downloadText}>Download</Text>
         </TouchableOpacity>

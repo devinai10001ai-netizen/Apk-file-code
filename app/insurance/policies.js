@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useInsuranceStore } from '../components/insurance/store';
 import SectionHeader from '../components/insurance/shared/SectionHeader';
@@ -31,6 +32,7 @@ const ProgressBar = ({ progress, color = '#FF6B35', height = 6 }) => {
 export default function Policies() {
   const store = useInsuranceStore();
   const { isDarkMode, colors } = useTheme();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState('active');
@@ -122,15 +124,15 @@ export default function Policies() {
             <Text style={s.renewalText}>Renewal: {policy.renewalDate}</Text>
           </View>
           <View style={s.policyActions}>
-            <TouchableOpacity style={s.policyActionBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.policyActionBtn}>
               <Ionicons name="document-text" size={14} color="#3498DB" />
               <Text style={[s.policyActionText, { color: '#3498DB' }]}>View</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={s.policyActionBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.policyActionBtn}>
               <Ionicons name="download" size={14} color="#9B59B6" />
               <Text style={[s.policyActionText, { color: '#9B59B6' }]}>Download</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[s.policyActionBtn, s.renewBtn]}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={[s.policyActionBtn, s.renewBtn]}>
               <Ionicons name="refresh" size={14} color="#fff" />
               <Text style={[s.policyActionText, { color: '#fff' }]}>Renew</Text>
             </TouchableOpacity>
@@ -165,7 +167,7 @@ export default function Policies() {
                 <Text style={[s.statusText, { color: '#E74C3C' }]}>Expired</Text>
               </View>
             </View>
-            <TouchableOpacity style={s.reactivateBtn}>
+            <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.reactivateBtn}>
               <Text style={s.reactivateText}>Reactivate Policy</Text>
             </TouchableOpacity>
           </AnimatedCard>
@@ -218,7 +220,7 @@ export default function Policies() {
             <Text style={s.paymentUpcomingAmount}>Rs 14,757</Text>
             <Text style={s.paymentUpcomingDate}>Due: 15 Apr 2026</Text>
           </View>
-          <TouchableOpacity style={s.payNowBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.payNowBtn}>
             <Text style={s.payNowText}>Pay Now</Text>
           </TouchableOpacity>
         </View>
@@ -244,7 +246,7 @@ export default function Policies() {
         <View style={s.autoPayRow}>
           <Ionicons name="repeat" size={16} color="#3498DB" />
           <Text style={s.autoPayText}>Auto-pay enabled</Text>
-          <TouchableOpacity style={s.autoPayToggle}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.autoPayToggle}>
             <View style={[s.toggleTrack, { backgroundColor: '#3498DB' }]}>
               <View style={[s.toggleDot, { alignSelf: 'flex-end' }]} />
             </View>
@@ -272,13 +274,13 @@ export default function Policies() {
             <Text style={s.docTitle}>{doc.title}</Text>
             <Text style={s.docMeta}>{doc.type} • {doc.size}</Text>
             <View style={s.docActions}>
-              <TouchableOpacity style={s.docActionBtn}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.docActionBtn}>
                 <Ionicons name="eye" size={14} color="#3498DB" />
               </TouchableOpacity>
-              <TouchableOpacity style={s.docActionBtn}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.docActionBtn}>
                 <Ionicons name="download" size={14} color="#FF6B35" />
               </TouchableOpacity>
-              <TouchableOpacity style={s.docActionBtn}>
+              <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.docActionBtn}>
                 <Ionicons name="share-social" size={14} color="#9B59B6" />
               </TouchableOpacity>
             </View>
@@ -341,7 +343,7 @@ export default function Policies() {
             </View>
           ))}
         </View>
-        <TouchableOpacity style={s.enhanceBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.enhanceBtn}>
           <Ionicons name="arrow-up-circle" size={16} color="#FF6B35" />
           <Text style={s.enhanceBtnText}>Enhance Coverage</Text>
         </TouchableOpacity>
@@ -399,7 +401,7 @@ export default function Policies() {
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={s.compBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.compBtn}>
           <Text style={s.compBtnText}>Compare Now</Text>
         </TouchableOpacity>
       </View>

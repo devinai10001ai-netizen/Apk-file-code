@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useInsuranceStore, INSURANCE_FAQS } from '../components/insurance/store';
 import SectionHeader from '../components/insurance/shared/SectionHeader';
@@ -57,6 +58,7 @@ const faqS = StyleSheet.create({
 export default function Help() {
   const store = useInsuranceStore();
   const { isDarkMode, colors } = useTheme();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -265,11 +267,11 @@ export default function Help() {
           ))}
         </View>
         <View style={s.feedbackButtons}>
-          <TouchableOpacity style={s.feedbackBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.feedbackBtn}>
             <Ionicons name="bulb" size={16} color="#FF6B35" />
             <Text style={s.feedbackBtnText}>Feature Request</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={s.feedbackBtn}>
+          <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.feedbackBtn}>
             <Ionicons name="bug" size={16} color="#E74C3C" />
             <Text style={s.feedbackBtnText}>Report Bug</Text>
           </TouchableOpacity>
@@ -303,7 +305,7 @@ export default function Help() {
           </View>
         </AnimatedCard>
       ))}
-      <TouchableOpacity style={s.viewAllBtn}>
+      <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.viewAllBtn}>
         <Text style={s.viewAllText}>View All Discussions</Text>
         <Ionicons name="arrow-forward" size={14} color="#3498DB" />
       </TouchableOpacity>
@@ -442,7 +444,7 @@ export default function Help() {
           <Text style={s.sysReqInfoTitle}>Current Version</Text>
           <Text style={s.sysReqInfoValue}>v2.5.1 (Build 128)</Text>
         </View>
-        <TouchableOpacity style={s.updateBtn}>
+        <TouchableOpacity onPress={() => router.push('/insurance/detail')} style={s.updateBtn}>
           <Ionicons name="download" size={16} color="#3498DB" />
           <Text style={s.updateBtnText}>Check for Updates</Text>
         </TouchableOpacity>

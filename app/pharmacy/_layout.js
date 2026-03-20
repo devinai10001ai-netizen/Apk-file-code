@@ -78,6 +78,12 @@ export default function PharmacyLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="details"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

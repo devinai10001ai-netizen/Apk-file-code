@@ -20,7 +20,9 @@ import GoToTopButton from '../components/doctors/GoToTopButton';
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // Hero Banner Section
-const HeroBanner = memo(() => (
+const HeroBanner = memo(() => {
+  const router = useRouter();
+  return (
   <View style={heroBannerStyles.container}>
     <View style={heroBannerStyles.badge}>
       <Text style={heroBannerStyles.badgeText}>4.9+ TOP-RATED APOLLO DOCTORS</Text>
@@ -30,12 +32,14 @@ const HeroBanner = memo(() => (
       style={heroBannerStyles.ctaButton}
       accessibilityRole="button"
       accessibilityLabel="Book your appointment"
+      onPress={() => router.push('/doctors/specialty/generalpractitioner')}
     >
       <Text style={heroBannerStyles.ctaText}>Book Your Appointment</Text>
     </TouchableOpacity>
     <Text style={heroBannerStyles.illustration}>👨‍⚕️</Text>
   </View>
-));
+  );
+});
 HeroBanner.displayName = 'HeroBanner';
 
 const heroBannerStyles = StyleSheet.create({
@@ -90,7 +94,9 @@ const heroBannerStyles = StyleSheet.create({
 });
 
 // Ask Apollo Widget
-const AskApolloWidget = memo(() => (
+const AskApolloWidget = memo(() => {
+  const router = useRouter();
+  return (
   <View style={askApolloStyles.container}>
     <View style={askApolloStyles.header}>
       <Text style={askApolloStyles.headerTitle}>Need expert guidance on{'\n'}Doctors & Specialities?</Text>
@@ -98,7 +104,7 @@ const AskApolloWidget = memo(() => (
         <Text style={askApolloStyles.aiBadgeText}>ASK APOLLO ABOUT...</Text>
       </View>
     </View>
-    <TouchableOpacity style={askApolloStyles.chip} accessibilityRole="button">
+    <TouchableOpacity style={askApolloStyles.chip} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/cardiology')}>
       <Text style={askApolloStyles.chipText}>✦ What conditions are treated by a Urologist?</Text>
       <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.textSecondary} />
     </TouchableOpacity>
@@ -111,7 +117,8 @@ const AskApolloWidget = memo(() => (
       />
     </View>
   </View>
-));
+  );
+});
 AskApolloWidget.displayName = 'AskApolloWidget';
 
 const askApolloStyles = StyleSheet.create({
@@ -175,8 +182,10 @@ const askApolloStyles = StyleSheet.create({
 });
 
 // Physio Banner
-const PhysioBanner = memo(() => (
-  <TouchableOpacity style={physioStyles.container} accessibilityRole="button" accessibilityLabel="Apollo Physio at Home">
+const PhysioBanner = memo(() => {
+  const router = useRouter();
+  return (
+  <TouchableOpacity style={physioStyles.container} accessibilityRole="button" accessibilityLabel="Apollo Physio at Home" onPress={() => router.push('/doctors/specialty/orthopaedics')}>
     <View style={physioStyles.content}>
       <Text style={physioStyles.icon}>🏋️</Text>
       <View style={{ flex: 1 }}>
@@ -186,7 +195,8 @@ const PhysioBanner = memo(() => (
       <Ionicons name="chevron-forward" size={20} color={DoctorsTheme.colors.textSecondary} />
     </View>
   </TouchableOpacity>
-));
+  );
+});
 PhysioBanner.displayName = 'PhysioBanner';
 
 const physioStyles = StyleSheet.create({
@@ -224,7 +234,9 @@ const physioStyles = StyleSheet.create({
 // Search Doctors By Section with Tabs
 const SearchDoctorsBy = memo(() => {
   const [activeTab, setActiveTab] = useState('Symptoms');
+  const router = useRouter();
   const tabs = ['Symptoms', 'Offerings', 'Lifestyle Conditions'];
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/womenshealth', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics'];
 
   const symptomsForDisplay = SYMPTOMS.slice(0, 8);
   const rows = [];
@@ -250,8 +262,8 @@ const SearchDoctorsBy = memo(() => {
       </View>
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={searchByStyles.row}>
-          {row.map((item) => (
-            <TouchableOpacity key={item.id} style={searchByStyles.item} accessibilityRole="button">
+          {row.map((item, idx) => (
+            <TouchableOpacity key={item.id} style={searchByStyles.item} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[(rowIndex * 4 + idx) % specialtyRoutes.length])}>
               <View style={[searchByStyles.iconContainer, { backgroundColor: item.color }]}>
                 <Text style={searchByStyles.icon}>{item.icon}</Text>
               </View>
@@ -330,7 +342,9 @@ const searchByStyles = StyleSheet.create({
 });
 
 // Tests Carousel
-const TestsCarousel = memo(() => (
+const TestsCarousel = memo(() => {
+  const router = useRouter();
+  return (
   <View style={testsStyles.container}>
     <Text style={testsStyles.sectionTitle}>Tests you might need today</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
@@ -346,14 +360,15 @@ const TestsCarousel = memo(() => (
           <View style={testsStyles.bottomTag}>
             <Text style={testsStyles.bottomTagText}>TOP BOOKED TESTS</Text>
           </View>
-          <TouchableOpacity style={testsStyles.viewButton} accessibilityRole="button">
+          <TouchableOpacity style={testsStyles.viewButton} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
             <Text style={testsStyles.viewButtonText}>View all tests ▸</Text>
           </TouchableOpacity>
         </View>
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 TestsCarousel.displayName = 'TestsCarousel';
 
 const testsStyles = StyleSheet.create({
@@ -443,16 +458,19 @@ const testsStyles = StyleSheet.create({
 });
 
 // Insurance Promo Banner
-const InsurancePromoBanner = memo(() => (
-  <View style={insuranceStyles.container}>
+const InsurancePromoBanner = memo(() => {
+  const router = useRouter();
+  return (
+  <TouchableOpacity style={insuranceStyles.container} onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
     <Text style={insuranceStyles.icon}>🛡️</Text>
     <View style={{ flex: 1 }}>
       <Text style={insuranceStyles.title}>Stay Insured & Get Free Family Doctor!</Text>
       <Text style={insuranceStyles.subtitle}>Plan With 24×7 Consultations</Text>
     </View>
     <Ionicons name="chevron-forward" size={20} color={DoctorsTheme.colors.white} />
-  </View>
-));
+  </TouchableOpacity>
+  );
+});
 InsurancePromoBanner.displayName = 'InsurancePromoBanner';
 
 const insuranceStyles = StyleSheet.create({
@@ -482,12 +500,15 @@ const insuranceStyles = StyleSheet.create({
 });
 
 // Explore Other Offerings
-const ExploreOfferings = memo(() => (
+const ExploreOfferings = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/womenshealth', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics'];
+  return (
   <View style={exploreStyles.container}>
     <Text style={exploreStyles.sectionTitle}>Explore Other Offerings</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {EXPLORE_OFFERINGS.map((item) => (
-        <TouchableOpacity key={item.id} style={exploreStyles.card} accessibilityRole="button">
+      {EXPLORE_OFFERINGS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={exploreStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[exploreStyles.iconContainer, { backgroundColor: item.color }]}>
             <Text style={exploreStyles.icon}>{item.icon}</Text>
           </View>
@@ -496,7 +517,8 @@ const ExploreOfferings = memo(() => (
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 ExploreOfferings.displayName = 'ExploreOfferings';
 
 const exploreStyles = StyleSheet.create({
@@ -541,12 +563,15 @@ const exploreStyles = StyleSheet.create({
 });
 
 // Lifestyle Conditions Grid
-const LifestyleGrid = memo(() => (
+const LifestyleGrid = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/psychiatry'];
+  return (
   <View style={lifestyleStyles.container}>
     <Text style={lifestyleStyles.sectionTitle}>Consult For Lifestyle Related Conditions</Text>
     <View style={lifestyleStyles.row}>
-      {LIFESTYLE_CONDITIONS.map((item) => (
-        <TouchableOpacity key={item.id} style={lifestyleStyles.item} accessibilityRole="button">
+      {LIFESTYLE_CONDITIONS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={lifestyleStyles.item} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[lifestyleStyles.iconContainer, { backgroundColor: item.color }]}>
             <Text style={lifestyleStyles.icon}>{item.icon}</Text>
           </View>
@@ -555,7 +580,8 @@ const LifestyleGrid = memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 LifestyleGrid.displayName = 'LifestyleGrid';
 
 const lifestyleStyles = StyleSheet.create({
@@ -598,8 +624,10 @@ const lifestyleStyles = StyleSheet.create({
 });
 
 // On-Time Guarantee Banner
-const OnTimeGuaranteeBanner = memo(() => (
-  <TouchableOpacity style={ontimeBannerStyles.container} accessibilityRole="button">
+const OnTimeGuaranteeBanner = memo(() => {
+  const router = useRouter();
+  return (
+  <TouchableOpacity style={ontimeBannerStyles.container} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
     <View style={ontimeBannerStyles.left}>
       <Text style={ontimeBannerStyles.title}>On-Time Guarantee</Text>
       <Text style={ontimeBannerStyles.subtitle}>Get 100% Refund & a Free Consult if Doctor{'\n'}doesn't join on time for Online Consult</Text>
@@ -615,7 +643,8 @@ const OnTimeGuaranteeBanner = memo(() => (
       </View>
     </View>
   </TouchableOpacity>
-));
+  );
+});
 OnTimeGuaranteeBanner.displayName = 'OnTimeGuaranteeBanner';
 
 const ontimeBannerStyles = StyleSheet.create({
@@ -685,6 +714,8 @@ const ontimeBannerStyles = StyleSheet.create({
 
 // Services Row
 const ServicesRow = memo(() => {
+  const router = useRouter();
+  const serviceRoutes = { 'online': '/doctors/specialty/generalpractitioner', 'hospital': '/doctors/specialty/cardiology', 'surgical': '/doctors/specialty/orthopaedics' };
   const services = [
     { id: 'online', name: 'Online\nConsult', icon: '💻', color: '#E1F5FE' },
     { id: 'hospital', name: 'Hospital\nVisit', icon: '🏥', color: '#F3E5F5' },
@@ -694,7 +725,7 @@ const ServicesRow = memo(() => {
   return (
     <View style={servicesStyles.container}>
       {services.map((item) => (
-        <TouchableOpacity key={item.id} style={servicesStyles.item} accessibilityRole="button">
+        <TouchableOpacity key={item.id} style={servicesStyles.item} accessibilityRole="button" onPress={() => router.push(serviceRoutes[item.id])}>
           <View style={[servicesStyles.iconContainer, { backgroundColor: item.color }]}>
             <Text style={servicesStyles.icon}>{item.icon}</Text>
           </View>
@@ -738,8 +769,10 @@ const servicesStyles = StyleSheet.create({
 });
 
 // Family Care Plan
-const FamilyCareBanner = memo(() => (
-  <TouchableOpacity style={familyStyles.container} accessibilityRole="button">
+const FamilyCareBanner = memo(() => {
+  const router = useRouter();
+  return (
+  <TouchableOpacity style={familyStyles.container} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
     <View style={{ flex: 1 }}>
       <Text style={familyStyles.title}>One Plan. Complete{'\n'}Family Care.</Text>
       <Text style={familyStyles.subtitle}>Get unlimited doctor{'\n'}consults for your family</Text>
@@ -751,7 +784,8 @@ const FamilyCareBanner = memo(() => (
       <Text style={familyStyles.badgeText}>Family{'\n'}Care Plan</Text>
     </View>
   </TouchableOpacity>
-));
+  );
+});
 FamilyCareBanner.displayName = 'FamilyCareBanner';
 
 const familyStyles = StyleSheet.create({
@@ -806,8 +840,10 @@ const familyStyles = StyleSheet.create({
 });
 
 // Instant Doctor Consult
-const InstantDoctorBanner = memo(() => (
-  <TouchableOpacity style={instantStyles.container} accessibilityRole="button">
+const InstantDoctorBanner = memo(() => {
+  const router = useRouter();
+  return (
+  <TouchableOpacity style={instantStyles.container} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
     <View style={instantStyles.iconWrap}>
       <Text style={instantStyles.icon}>🩺</Text>
     </View>
@@ -817,7 +853,8 @@ const InstantDoctorBanner = memo(() => (
     </View>
     <Ionicons name="chevron-forward" size={20} color={DoctorsTheme.colors.textSecondary} />
   </TouchableOpacity>
-));
+  );
+});
 InstantDoctorBanner.displayName = 'InstantDoctorBanner';
 
 const instantStyles = StyleSheet.create({
@@ -927,18 +964,21 @@ const EXTENDED_SPECIALTIES = [
   { id: 'onco', name: 'Oncology', icon: '🎗️', color: '#F3E5F5', doctors: 180, experience: '1-30+ yrs', desc: 'Cancer treatment' },
 ];
 
-const ExtendedSpecialtiesGrid = memo(() => (
+const ExtendedSpecialtiesGrid = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics', '/doctors/specialty/dermatology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/womenshealth'];
+  return (
   <View style={extendedSpecialtiesStyles.container}>
     <View style={extendedSpecialtiesStyles.headerRow}>
       <Text style={extendedSpecialtiesStyles.sectionTitle}>All Doctor Specialties</Text>
-      <TouchableOpacity style={extendedSpecialtiesStyles.viewAllBtn}>
+      <TouchableOpacity style={extendedSpecialtiesStyles.viewAllBtn} onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
         <Text style={extendedSpecialtiesStyles.viewAllText}>View All</Text>
         <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.teal} />
       </TouchableOpacity>
     </View>
     <View style={extendedSpecialtiesStyles.grid}>
-      {EXTENDED_SPECIALTIES.map((item) => (
-        <TouchableOpacity key={item.id} style={extendedSpecialtiesStyles.card} accessibilityRole="button">
+      {EXTENDED_SPECIALTIES.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={extendedSpecialtiesStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[extendedSpecialtiesStyles.iconContainer, { backgroundColor: item.color }]}>
             <Text style={extendedSpecialtiesStyles.icon}>{item.icon}</Text>
           </View>
@@ -949,7 +989,8 @@ const ExtendedSpecialtiesGrid = memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 ExtendedSpecialtiesGrid.displayName = 'ExtendedSpecialtiesGrid';
 
 const extendedSpecialtiesStyles = StyleSheet.create({
@@ -1035,12 +1076,15 @@ const TOP_CITIES = [
   { id: 'ahmedabad', name: 'Ahmedabad', icon: '🕉️', doctors: 2000, hospitals: 90 },
 ];
 
-const CitiesSection = memo(() => (
+const CitiesSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/womenshealth', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics'];
+  return (
   <View style={citiesStyles.container}>
     <Text style={citiesStyles.sectionTitle}>Consult Top Doctors in Major Cities</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {TOP_CITIES.map((city) => (
-        <TouchableOpacity key={city.id} style={citiesStyles.card} accessibilityRole="button">
+      {TOP_CITIES.map((city, idx) => (
+        <TouchableOpacity key={city.id} style={citiesStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <Text style={citiesStyles.icon}>{city.icon}</Text>
           <Text style={citiesStyles.name}>{city.name}</Text>
           <Text style={citiesStyles.doctors}>{city.doctors}+ Doctors</Text>
@@ -1049,7 +1093,8 @@ const CitiesSection = memo(() => (
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 CitiesSection.displayName = 'CitiesSection';
 
 const citiesStyles = StyleSheet.create({
@@ -1103,11 +1148,14 @@ const HOSPITAL_NETWORKS = [
   { id: 'narayana', name: 'Narayana Health', icon: '❤️', color: '#7B1FA2', hospitals: 30, cities: 10 },
 ];
 
-const HospitalNetworks = memo(() => (
+const HospitalNetworks = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/dermatology', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
+  return (
   <View style={hospitalStyles.container}>
     <Text style={hospitalStyles.sectionTitle}>Book Appointments at Top Hospitals</Text>
-    {HOSPITAL_NETWORKS.map((network) => (
-      <TouchableOpacity key={network.id} style={hospitalStyles.row} accessibilityRole="button">
+    {HOSPITAL_NETWORKS.map((network, idx) => (
+      <TouchableOpacity key={network.id} style={hospitalStyles.row} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
         <View style={[hospitalStyles.iconContainer, { backgroundColor: network.color + '20' }]}>
           <Text style={hospitalStyles.icon}>{network.icon}</Text>
         </View>
@@ -1119,7 +1167,8 @@ const HospitalNetworks = memo(() => (
       </TouchableOpacity>
     ))}
   </View>
-));
+  );
+});
 HospitalNetworks.displayName = 'HospitalNetworks';
 
 const hospitalStyles = StyleSheet.create({
@@ -1189,17 +1238,20 @@ const COMMON_SYMPTOMS = [
   { id: 'dizziness', name: 'Dizziness', icon: '😵', color: '#E8EAF6', category: 'Neurological', severity: 'Mild to Moderate' },
 ];
 
-const SymptomsSection = memo(() => (
+const SymptomsSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/psychiatry', '/doctors/specialty/dermatology', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
+  return (
   <View style={symptomsStyles.container}>
     <View style={symptomsStyles.headerRow}>
       <Text style={symptomsStyles.sectionTitle}>Search by Symptoms</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
         <Text style={symptomsStyles.viewAll}>Symptom Checker →</Text>
       </TouchableOpacity>
     </View>
     <View style={symptomsStyles.grid}>
-      {COMMON_SYMPTOMS.map((symptom) => (
-        <TouchableOpacity key={symptom.id} style={symptomsStyles.card} accessibilityRole="button">
+      {COMMON_SYMPTOMS.map((symptom, idx) => (
+        <TouchableOpacity key={symptom.id} style={symptomsStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[symptomsStyles.iconContainer, { backgroundColor: symptom.color }]}>
             <Text style={symptomsStyles.icon}>{symptom.icon}</Text>
           </View>
@@ -1209,7 +1261,8 @@ const SymptomsSection = memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 SymptomsSection.displayName = 'SymptomsSection';
 
 const symptomsStyles = StyleSheet.create({
@@ -1286,26 +1339,30 @@ const HEALTH_CONDITIONS = [
   { id: 'kidney', name: 'Kidney Disease', icon: '🫘', color: '#EFEBE9', patients: '10M+', desc: 'Nephrology care' },
 ];
 
-const HealthConditionsSection = memo(() => (
+const HealthConditionsSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/womenshealth', '/doctors/specialty/cardiology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/orthopaedics', '/doctors/specialty/dermatology', '/doctors/specialty/generalpractitioner'];
+  return (
   <View style={conditionsStyles.container}>
     <Text style={conditionsStyles.sectionTitle}>Manage Chronic Conditions</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {HEALTH_CONDITIONS.map((condition) => (
-        <TouchableOpacity key={condition.id} style={conditionsStyles.card} accessibilityRole="button">
+      {HEALTH_CONDITIONS.map((condition, idx) => (
+        <TouchableOpacity key={condition.id} style={conditionsStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[conditionsStyles.iconContainer, { backgroundColor: condition.color }]}>
             <Text style={conditionsStyles.icon}>{condition.icon}</Text>
           </View>
           <Text style={conditionsStyles.name}>{condition.name}</Text>
           <Text style={conditionsStyles.patients}>{condition.patients} Patients</Text>
           <Text style={conditionsStyles.desc}>{condition.desc}</Text>
-          <TouchableOpacity style={conditionsStyles.consultBtn}>
+          <TouchableOpacity style={conditionsStyles.consultBtn} onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
             <Text style={conditionsStyles.consultText}>Consult Now</Text>
           </TouchableOpacity>
         </TouchableOpacity>
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 HealthConditionsSection.displayName = 'HealthConditionsSection';
 
 const conditionsStyles = StyleSheet.create({
@@ -1381,11 +1438,14 @@ const ONLINE_SERVICES = [
   { id: 'prescription', name: 'E-Prescriptions', icon: '📝', color: '#F3E5F5', doctors: 5500, avgTime: 'Instant', desc: 'Digital prescriptions sent instantly' },
 ];
 
-const OnlineServicesSection = memo(() => (
+const OnlineServicesSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/psychiatry'];
+  return (
   <View style={onlineServicesStyles.container}>
     <Text style={onlineServicesStyles.sectionTitle}>Online Consultation Services</Text>
-    {ONLINE_SERVICES.map((service) => (
-      <TouchableOpacity key={service.id} style={onlineServicesStyles.row} accessibilityRole="button">
+    {ONLINE_SERVICES.map((service, idx) => (
+      <TouchableOpacity key={service.id} style={onlineServicesStyles.row} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
         <View style={[onlineServicesStyles.iconContainer, { backgroundColor: service.color }]}>
           <Text style={onlineServicesStyles.icon}>{service.icon}</Text>
         </View>
@@ -1402,7 +1462,8 @@ const OnlineServicesSection = memo(() => (
       </TouchableOpacity>
     ))}
   </View>
-));
+  );
+});
 OnlineServicesSection.displayName = 'OnlineServicesSection';
 
 const onlineServicesStyles = StyleSheet.create({
@@ -1475,17 +1536,20 @@ const HEALTH_PACKAGES = [
   { id: 'women', name: "Women's Wellness", icon: '🌸', price: 1999, mrp: 4999, tests: 40, includes: 'Pap Smear, Breast Exam, Thyroid, Vitamin' },
 ];
 
-const HealthPackagesSection = memo(() => (
+const HealthPackagesSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
+  return (
   <View style={packagesStyles.container}>
     <View style={packagesStyles.headerRow}>
       <Text style={packagesStyles.sectionTitle}>Health Packages</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
         <Text style={packagesStyles.viewAll}>View All Packages →</Text>
       </TouchableOpacity>
     </View>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {HEALTH_PACKAGES.map((pkg) => (
-        <TouchableOpacity key={pkg.id} style={packagesStyles.card} accessibilityRole="button">
+      {HEALTH_PACKAGES.map((pkg, idx) => (
+        <TouchableOpacity key={pkg.id} style={packagesStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={packagesStyles.cardHeader}>
             <Text style={packagesStyles.icon}>{pkg.icon}</Text>
             <View style={packagesStyles.discountBadge}>
@@ -1501,14 +1565,15 @@ const HealthPackagesSection = memo(() => (
             <Text style={packagesStyles.price}>₹{pkg.price}</Text>
             <Text style={packagesStyles.mrp}>₹{pkg.mrp}</Text>
           </View>
-          <TouchableOpacity style={packagesStyles.bookBtn}>
+          <TouchableOpacity style={packagesStyles.bookBtn} onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
             <Text style={packagesStyles.bookText}>Book Now</Text>
           </TouchableOpacity>
         </TouchableOpacity>
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 HealthPackagesSection.displayName = 'HealthPackagesSection';
 
 const packagesStyles = StyleSheet.create({
@@ -1623,12 +1688,15 @@ const ADDITIONAL_SERVICES = [
   { id: 'careplan', name: 'Personalized Care Plan', icon: '📱', color: '#E0F7FA', desc: 'Custom health roadmap' },
 ];
 
-const AdditionalServicesSection = memo(() => (
+const AdditionalServicesSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
+  return (
   <View style={additionalStyles.container}>
     <Text style={additionalStyles.sectionTitle}>More Healthcare Services</Text>
     <View style={additionalStyles.grid}>
-      {ADDITIONAL_SERVICES.map((service) => (
-        <TouchableOpacity key={service.id} style={additionalStyles.card} accessibilityRole="button">
+      {ADDITIONAL_SERVICES.map((service, idx) => (
+        <TouchableOpacity key={service.id} style={additionalStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
           <View style={[additionalStyles.iconContainer, { backgroundColor: service.color }]}>
             <Text style={additionalStyles.icon}>{service.icon}</Text>
           </View>
@@ -1638,7 +1706,8 @@ const AdditionalServicesSection = memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 AdditionalServicesSection.displayName = 'AdditionalServicesSection';
 
 const additionalStyles = StyleSheet.create({
@@ -1698,10 +1767,13 @@ const DOCTOR_REVIEWS = [
   { id: '3', doctorName: 'Dr. Vikram Mehta', specialty: 'Orthopedist', hospital: 'Max Healthcare', rating: 4.9, reviews: 3200, experience: '20 years', patient: 'Mr. Rajesh Kumar', comment: 'Best doctor for joint problems. The surgery was successful and recovery was smooth.' },
 ];
 
-const DoctorReviewsSection = memo(() => (
+const DoctorReviewsSection = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/orthopaedics'];
+  return (
   <View style={reviewsStyles.container}>
     <Text style={reviewsStyles.sectionTitle}>Patient Reviews & Testimonials</Text>
-    {DOCTOR_REVIEWS.map((review) => (
+    {DOCTOR_REVIEWS.map((review, idx) => (
       <View key={review.id} style={reviewsStyles.card}>
         <View style={reviewsStyles.header}>
           <View style={reviewsStyles.avatar}>
@@ -1723,17 +1795,18 @@ const DoctorReviewsSection = memo(() => (
         </View>
         <Text style={reviewsStyles.comment}>"{review.comment}"</Text>
         <View style={reviewsStyles.footer}>
-          <TouchableOpacity style={reviewsStyles.consultBtn}>
+          <TouchableOpacity style={reviewsStyles.consultBtn} onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
             <Text style={reviewsStyles.consultText}>Consult Now</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={reviewsStyles.profileBtn}>
+          <TouchableOpacity style={reviewsStyles.profileBtn} onPress={() => router.push(specialtyRoutes[idx % specialtyRoutes.length])}>
             <Text style={reviewsStyles.profileText}>View Profile</Text>
           </TouchableOpacity>
         </View>
       </View>
     ))}
   </View>
-));
+  );
+});
 DoctorReviewsSection.displayName = 'DoctorReviewsSection';
 
 const reviewsStyles = StyleSheet.create({
