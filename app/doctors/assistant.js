@@ -52,15 +52,18 @@ const headerStyles = StyleSheet.create({
 });
 
 // Discovery Banner
-const DiscoveryBanner = memo(() => (
+const DiscoveryBanner = memo(() => {
+  const router = useRouter();
+  return (
   <View style={discoveryStyles.container}>
     <Text style={discoveryStyles.text}>Discover Ask Apollo</Text>
-    <TouchableOpacity style={discoveryStyles.tourButton} accessibilityRole="button">
+    <TouchableOpacity style={discoveryStyles.tourButton} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
       <Text style={discoveryStyles.tourText}>Take a tour</Text>
       <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.apolloOrange} />
     </TouchableOpacity>
   </View>
-));
+  );
+});
 DiscoveryBanner.displayName = 'DiscoveryBanner';
 
 const discoveryStyles = StyleSheet.create({
@@ -119,26 +122,33 @@ const greetingStyles = StyleSheet.create({
 
 // Suggestion Chips
 const SuggestionChips = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics'];
   const chipsPerRow = [
     ASSISTANT_CHIPS.slice(0, 2),
     ASSISTANT_CHIPS.slice(2, 4),
     ASSISTANT_CHIPS.slice(4, 5),
   ];
+  let chipIdx = 0;
 
   return (
     <View style={chipStyles.container}>
       {chipsPerRow.map((row, rowIndex) => (
         <View key={rowIndex} style={chipStyles.row}>
-          {row.map((chip) => (
+          {row.map((chip) => {
+            const currentIdx = chipIdx++;
+            return (
             <TouchableOpacity
               key={chip}
               style={chipStyles.chip}
               accessibilityRole="button"
               accessibilityLabel={chip}
+              onPress={() => router.push(specialtyRoutes[currentIdx % specialtyRoutes.length])}
             >
               <Text style={chipStyles.chipText}>{chip}</Text>
             </TouchableOpacity>
-          ))}
+            );
+          })}
         </View>
       ))}
     </View>

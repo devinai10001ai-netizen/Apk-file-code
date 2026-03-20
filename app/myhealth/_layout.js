@@ -78,6 +78,29 @@ export default function MyHealthLayout() {
           ),
         }}
       />
+      <Tabs.Screen name="dental-records" options={{ href: null }} />
+      <Tabs.Screen name="diabetes-insights" options={{ href: null }} />
+      <Tabs.Screen name="family-profiles" options={{ href: null }} />
+      <Tabs.Screen name="fitness-insights" options={{ href: null }} />
+      <Tabs.Screen name="health-encyclopedia" options={{ href: null }} />
+      <Tabs.Screen name="health-goals" options={{ href: null }} />
+      <Tabs.Screen name="health-score-detail" options={{ href: null }} />
+      <Tabs.Screen name="heart-health-insights" options={{ href: null }} />
+      <Tabs.Screen name="insurance-documents" options={{ href: null }} />
+      <Tabs.Screen name="medicine-details" options={{ href: null }} />
+      <Tabs.Screen name="medicine-reminders" options={{ href: null }} />
+      <Tabs.Screen name="my-appointments" options={{ href: null }} />
+      <Tabs.Screen name="nearby-pharmacies" options={{ href: null }} />
+      <Tabs.Screen name="organ-health" options={{ href: null }} />
+      <Tabs.Screen name="prescriptions" options={{ href: null }} />
+      <Tabs.Screen name="sleep-insights" options={{ href: null }} />
+      <Tabs.Screen name="symptom-checker" options={{ href: null }} />
+      <Tabs.Screen name="test-reports" options={{ href: null }} />
+      <Tabs.Screen name="vaccination-records" options={{ href: null }} />
+      <Tabs.Screen name="vitals-tracker" options={{ href: null }} />
+      <Tabs.Screen name="wellness-programs" options={{ href: null }} />
+      <Tabs.Screen name="xrays-scans" options={{ href: null }} />
+      <Tabs.Screen name="screens" options={{ href: null }} />
     </Tabs>
   );
 }

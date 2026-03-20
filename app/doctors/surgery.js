@@ -9,6 +9,7 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import {
   DoctorsTheme,
   SURGERY_HEART_PROCEDURES,
@@ -101,6 +102,7 @@ const heroStyles = StyleSheet.create({
 // Procedure Tabs and Cards
 const ProceduresBySpeciality = memo(() => {
   const [activeTab, setActiveTab] = useState('heart');
+  const router = useRouter();
 
   const getProcedures = () => {
     switch (activeTab) {
@@ -121,7 +123,7 @@ const ProceduresBySpeciality = memo(() => {
     <View style={procStyles.container}>
       <View style={procStyles.header}>
         <Text style={procStyles.sectionTitle}>Find Procedure by Specialities</Text>
-        <TouchableOpacity accessibilityRole="button">
+        <TouchableOpacity accessibilityRole="button" onPress={() => router.push('/doctors/specialty/cardiology')}>
           <Text style={procStyles.viewAll}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -143,7 +145,7 @@ const ProceduresBySpeciality = memo(() => {
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={procStyles.row}>
           {row.map((item) => (
-            <TouchableOpacity key={item.id} style={procStyles.card} accessibilityRole="button">
+            <TouchableOpacity key={item.id} style={procStyles.card} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/cardiology')}>
               <Text style={procStyles.cardIcon}>{item.icon}</Text>
               <Text style={procStyles.cardName} numberOfLines={2}>{item.name}</Text>
             </TouchableOpacity>
@@ -229,6 +231,8 @@ const procStyles = StyleSheet.create({
 
 // Consult Surgeon by Conditions
 const SurgeonConditions = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/womenshealth', '/doctors/specialty/generalpractitioner', '/doctors/specialty/orthopaedics'];
   const rows = [];
   for (let i = 0; i < SURGERY_CONDITIONS.length; i += 2) {
     rows.push(SURGERY_CONDITIONS.slice(i, i + 2));
@@ -240,7 +244,7 @@ const SurgeonConditions = memo(() => {
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={condStyles.row}>
           {row.map((item) => (
-            <TouchableOpacity key={item.id} style={condStyles.card} accessibilityRole="button">
+            <TouchableOpacity key={item.id} style={condStyles.card} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[(rowIndex * 2 + (SURGERY_CONDITIONS.indexOf(item))) % specialtyRoutes.length])}>
               <Text style={condStyles.cardIcon}>{item.icon}</Text>
               <Text style={condStyles.cardName} numberOfLines={2}>{item.name}</Text>
             </TouchableOpacity>
@@ -292,6 +296,8 @@ const condStyles = StyleSheet.create({
 
 // Common Procedures Grid
 const CommonProcedures = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
   const rows = [];
   for (let i = 0; i < COMMON_PROCEDURES.length; i += 4) {
     rows.push(COMMON_PROCEDURES.slice(i, i + 4));
@@ -303,7 +309,7 @@ const CommonProcedures = memo(() => {
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={commonStyles.row}>
           {row.map((item) => (
-            <TouchableOpacity key={item.id} style={commonStyles.item} accessibilityRole="button">
+            <TouchableOpacity key={item.id} style={commonStyles.item} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[(rowIndex * 4 + row.indexOf(item)) % specialtyRoutes.length])}>
               <View style={commonStyles.iconContainer}>
                 <Text style={commonStyles.icon}>{item.icon}</Text>
               </View>
@@ -361,6 +367,8 @@ const commonStyles = StyleSheet.create({
 
 // Our Specialities
 const OurSpecialities = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/cardiology', '/doctors/specialty/generalpractitioner', '/doctors/specialty/dermatology', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth', '/doctors/specialty/psychiatry'];
   const rows = [];
   for (let i = 0; i < OUR_SPECIALITIES.length; i += 3) {
     rows.push(OUR_SPECIALITIES.slice(i, i + 3));
@@ -370,14 +378,14 @@ const OurSpecialities = memo(() => {
     <View style={specStyles.container}>
       <View style={specStyles.header}>
         <Text style={specStyles.sectionTitle}>Our Specialities</Text>
-        <TouchableOpacity accessibilityRole="button">
+        <TouchableOpacity accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
           <Text style={specStyles.viewAll}>View All</Text>
         </TouchableOpacity>
       </View>
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={specStyles.row}>
           {row.map((item) => (
-            <TouchableOpacity key={item.id} style={specStyles.item} accessibilityRole="button">
+            <TouchableOpacity key={item.id} style={specStyles.item} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[(rowIndex * 3 + row.indexOf(item)) % specialtyRoutes.length])}>
               <Text style={specStyles.label}>{item.name}</Text>
               <View style={[specStyles.iconContainer, { backgroundColor: item.color }]}>
                 <Text style={specStyles.icon}>{item.icon}</Text>
@@ -556,19 +564,22 @@ const whyStyles = StyleSheet.create({
 });
 
 // Unsure CTA
-const UnsureCTA = memo(() => (
+const UnsureCTA = memo(() => {
+  const router = useRouter();
+  return (
   <View style={unsureStyles.container}>
     <View style={{ flex: 1 }}>
       <Text style={unsureStyles.title}>Unsure What to do?</Text>
       <Text style={unsureStyles.subtitle}>Our surgery advisor is{'\n'}just a click away</Text>
-      <TouchableOpacity style={unsureStyles.button} accessibilityRole="button">
+      <TouchableOpacity style={unsureStyles.button} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
         <Ionicons name="call" size={16} color={DoctorsTheme.colors.white} />
         <Text style={unsureStyles.buttonText}>Request a call back</Text>
       </TouchableOpacity>
     </View>
     <Text style={unsureStyles.illustration}>👩‍💻</Text>
   </View>
-));
+  );
+});
 UnsureCTA.displayName = 'UnsureCTA';
 
 const unsureStyles = StyleSheet.create({

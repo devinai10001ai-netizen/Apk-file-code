@@ -89,6 +89,8 @@ const headerStyles = StyleSheet.create({
 
 // Symptoms Grid for Online
 const OnlineSymptomsGrid = memo(() => {
+  const router = useRouter();
+  const specialtyRoutes = ['/doctors/specialty/generalpractitioner', '/doctors/specialty/cardiology', '/doctors/specialty/dermatology', '/doctors/specialty/psychiatry', '/doctors/specialty/orthopaedics', '/doctors/specialty/womenshealth'];
   const rows = [];
   for (let i = 0; i < ONLINE_SYMPTOMS.length; i += 4) {
     rows.push(ONLINE_SYMPTOMS.slice(i, i + 4));
@@ -98,14 +100,14 @@ const OnlineSymptomsGrid = memo(() => {
     <View style={symptomsStyles.container}>
       <View style={symptomsStyles.header}>
         <Text style={symptomsStyles.title}>Find Doctor by Symptoms</Text>
-        <TouchableOpacity accessibilityRole="button" accessibilityLabel="View all symptoms">
-          <Text style={symptomsStyles.viewAll}>View All</Text>
-        </TouchableOpacity>
+          <TouchableOpacity accessibilityRole="button" accessibilityLabel="View all symptoms" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
+            <Text style={symptomsStyles.viewAll}>View All</Text>
+          </TouchableOpacity>
       </View>
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={symptomsStyles.row}>
           {row.map((item) => (
-            <TouchableOpacity key={item.id} style={symptomsStyles.item} accessibilityRole="button">
+            <TouchableOpacity key={item.id} style={symptomsStyles.item} accessibilityRole="button" onPress={() => router.push(specialtyRoutes[(rowIndex * 4 + row.indexOf(item)) % specialtyRoutes.length])}>
               <View style={[symptomsStyles.iconContainer, { backgroundColor: item.color }]}>
                 <Text style={symptomsStyles.icon}>{item.icon}</Text>
               </View>
@@ -173,14 +175,16 @@ const symptomsStyles = StyleSheet.create({
 });
 
 // Ask Apollo Promo Card (large orange)
-const AskApolloPromoCard = memo(() => (
+const AskApolloPromoCard = memo(() => {
+  const router = useRouter();
+  return (
   <View style={promoStyles.container}>
     <Text style={promoStyles.sectionTitle}>Ask Apollo</Text>
     <View style={promoStyles.card}>
       <View style={promoStyles.cardContent}>
         <Text style={promoStyles.cardTitle}>Ask anything about your{'\n'}health.</Text>
         <Text style={promoStyles.cardSubtitle}>Get trusted answers{'\n'}directly from Apollo</Text>
-        <TouchableOpacity style={promoStyles.askButton} accessibilityRole="button">
+        <TouchableOpacity style={promoStyles.askButton} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
           <Text style={promoStyles.askButtonText}>✦ Ask Apollo</Text>
           <View style={promoStyles.betaBadge}>
             <Text style={promoStyles.betaText}>beta</Text>
@@ -195,7 +199,8 @@ const AskApolloPromoCard = memo(() => (
       </View>
     </View>
   </View>
-));
+  );
+});
 AskApolloPromoCard.displayName = 'AskApolloPromoCard';
 
 const promoStyles = StyleSheet.create({

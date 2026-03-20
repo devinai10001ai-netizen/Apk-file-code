@@ -137,6 +137,12 @@ export default function InsuranceLayout() {
           href: null,
         }}
       />
+      <Tabs.Screen
+        name="detail"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

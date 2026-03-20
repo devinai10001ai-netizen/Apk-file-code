@@ -6,6 +6,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensi
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, withSpring, withDelay, withSequence, withRepeat, interpolate, Easing } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const COLORS = {
@@ -79,6 +80,7 @@ const QUICK_CONSULT = [
 // COMPONENTS
 // ============================================================================
 const ConcernsHeader = React.memo(() => {
+  const router = useRouter();
   const op = useSharedValue(0); const sc = useSharedValue(0.95);
   useEffect(() => { op.value = withTiming(1, { duration: 600 }); sc.value = withSpring(1, { damping: 15 }); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -87,7 +89,7 @@ const ConcernsHeader = React.memo(() => {
       <LinearGradient colors={['#0F847E', '#0A6B66']} style={styles.headerGrad}>
         <View style={styles.headerTop}>
           <View><Text style={styles.headerTitle}>Health Concerns</Text><Text style={styles.headerSub}>Find solutions for your health needs</Text></View>
-          <TouchableOpacity style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
         </View>
         <View style={styles.hStats}>
           <View style={styles.hStat}><Ionicons name="medical-outline" size={18} color="#FFD700" /><Text style={styles.hStatNum}>12+</Text><Text style={styles.hStatLabel}>Concerns</Text></View>
@@ -102,6 +104,7 @@ const ConcernsHeader = React.memo(() => {
 });
 
 const ConcernTabChip = React.memo(({ item, active, onPress, index }) => {
+  const router = useRouter();
   const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 50, withTiming(1, { duration: 300 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value }));
@@ -113,11 +116,12 @@ const ConcernTabChip = React.memo(({ item, active, onPress, index }) => {
 });
 
 const ConcernGridCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.8); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.cgCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.cgInner}>
+    <Animated.View style={[styles.cgCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/ConcernDetail')} style={styles.cgInner}>
       <View style={[styles.cgIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={28} color={item.bgColor} /></View>
       <Text style={styles.cgName}>{item.name}</Text>
       <Text style={styles.cgDesc} numberOfLines={1}>{item.desc}</Text>
@@ -127,11 +131,12 @@ const ConcernGridCard = React.memo(({ item, index }) => {
 });
 
 const LifestyleConcernCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.lcCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.lcInner}>
+    <Animated.View style={[styles.lcCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/BrandDetail')} style={styles.lcInner}>
       <LinearGradient colors={item.gradColors} style={styles.lcIconWrap}><Ionicons name={item.icon} size={24} color={COLORS.white} /></LinearGradient>
       <View style={styles.lcText}><Text style={styles.lcName}>{item.name}</Text><Text style={styles.lcDesc}>{item.desc}</Text></View>
       <View style={styles.lcRight}><Text style={styles.lcProd}>{item.products}</Text><Text style={styles.lcProdLabel}>items</Text></View>
@@ -140,6 +145,7 @@ const LifestyleConcernCard = React.memo(({ item, index }) => {
 });
 
 const FeaturedSolutionCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -152,17 +158,18 @@ const FeaturedSolutionCard = React.memo(({ item, index }) => {
       <Text style={styles.fsItems}>{item.items} items included</Text>
       <View style={styles.fsPriceRow}><Text style={styles.fsPrice}>&#8377;{item.price}</Text><Text style={styles.fsMrp}>&#8377;{item.mrp}</Text></View>
       <View style={styles.fsDiscBadge}><LinearGradient colors={['#FF6B35', '#FF8F5E']} style={styles.fsDiscGrad}><Text style={styles.fsDiscText}>{disc}% OFF</Text></LinearGradient></View>
-      <TouchableOpacity style={styles.fsAddBtn}><LinearGradient colors={[COLORS.primary, COLORS.primaryDark]} style={styles.fsAddGrad}><Text style={styles.fsAddText}>ADD BUNDLE</Text></LinearGradient></TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/pharmacy/details/ServiceDetail')} style={styles.fsAddBtn}><LinearGradient colors={[COLORS.primary, COLORS.primaryDark]} style={styles.fsAddGrad}><Text style={styles.fsAddText}>ADD BUNDLE</Text></LinearGradient></TouchableOpacity>
     </View></Animated.View>
   );
 });
 
 const ExpertTipCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.etCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.etInner}>
+    <Animated.View style={[styles.etCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.etInner}>
       <View style={[styles.etIconWrap, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={COLORS.primary} /></View>
       <View style={styles.etContent}><Text style={styles.etCat}>{item.category}</Text><Text style={styles.etTitle} numberOfLines={2}>{item.title}</Text><Text style={styles.etRead}>{item.readTime}</Text></View>
       <Ionicons name="chevron-forward" size={18} color={COLORS.textTertiary} />
@@ -171,15 +178,16 @@ const ExpertTipCard = React.memo(({ item, index }) => {
 });
 
 const QuickConsultCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.qcCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.qcInner}>
+    <Animated.View style={[styles.qcCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/CategoryDetail')} style={styles.qcInner}>
       <View style={[styles.qcIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={COLORS.primary} /></View>
       <Text style={styles.qcName}>{item.name}</Text>
       <Text style={styles.qcPrice}>&#8377;{item.price}</Text>
-      <TouchableOpacity style={styles.qcBtn}><Text style={styles.qcBtnText}>CONSULT</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/pharmacy/details/CategoryDetail')} style={styles.qcBtn}><Text style={styles.qcBtnText}>CONSULT</Text></TouchableOpacity>
     </TouchableOpacity></Animated.View>
   );
 });

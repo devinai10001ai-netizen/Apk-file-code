@@ -162,7 +162,7 @@ const AnimatedWalletBadge = React.memo(() => {
 
   return (
     <Animated.View style={walletAnimatedStyle}>
-      <TouchableOpacity
+      <TouchableOpacity onPress={() => router.push('/doctors/specialty/cardiology')}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -217,7 +217,7 @@ const AnimatedProfileAvatar = React.memo(({ onPress }) => {
 
   return (
     <Animated.View style={avatarAnimatedStyle}>
-      <TouchableOpacity
+      <TouchableOpacity onPress={() => router.push('/doctors/specialty/dermatology')}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -271,7 +271,7 @@ const StickyHeader = React.memo(({ scrollY, onProfilePress }) => {
             <Text style={styles.greetingText}>Namaste </Text>
             <Text style={styles.greetingName}>Guest</Text>
           </View>
-          <TouchableOpacity activeOpacity={0.7} style={styles.locationRow}>
+          <TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/doctors/specialty/generalpractitioner')} style={styles.locationRow}>
             <Ionicons name="location-sharp" size={12} color={COLORS.premiumOrange} />
             <Text style={styles.locationText}>Delhi 110001</Text>
             <Ionicons name="chevron-down" size={12} color={COLORS.textTertiary} />
@@ -354,7 +354,7 @@ const SearchBarRow = React.memo(({ cartCount, scrollY, onCartPress }) => {
     <Animated.View style={[styles.searchBarContainer, searchAnimatedStyle]}>
       {/* Search Field */}
       <Animated.View style={[styles.searchBarOuter, searchBarScaleStyle]}>
-        <TouchableOpacity
+        <TouchableOpacity onPress={() => router.push('/doctors/specialty/womenshealth')}
           activeOpacity={0.9}
           onPressIn={handleSearchPressIn}
           onPressOut={handleSearchPressOut}
@@ -429,7 +429,7 @@ const AnimatedCategoryChip = React.memo(({ category, isActive, onPress, index })
 
   return (
     <Animated.View style={chipAnimatedStyle}>
-      <TouchableOpacity
+      <TouchableOpacity onPress={() => router.push('/doctors/specialty/psychiatry')}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}

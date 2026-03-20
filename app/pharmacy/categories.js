@@ -6,6 +6,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensi
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, withSpring, withDelay, withSequence, withRepeat, interpolate, Easing } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const COLORS = {
@@ -88,6 +89,7 @@ const SEASONAL_PICKS = [
 // COMPONENTS
 // ============================================================================
 const CategoryHeader = React.memo(() => {
+  const router = useRouter();
   const op = useSharedValue(0); const sc = useSharedValue(0.95);
   useEffect(() => { op.value = withTiming(1, { duration: 600 }); sc.value = withSpring(1, { damping: 15 }); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -96,7 +98,7 @@ const CategoryHeader = React.memo(() => {
       <LinearGradient colors={['#0F847E', '#0A6B66']} style={styles.headerGrad}>
         <View style={styles.headerTop}>
           <View><Text style={styles.headerTitle}>Categories</Text><Text style={styles.headerSub}>Browse health & wellness categories</Text></View>
-          <TouchableOpacity style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.headerBtn}><Ionicons name="search" size={22} color={COLORS.white} /></TouchableOpacity>
         </View>
         <View style={styles.catStats}>
           <View style={styles.catStat}><Text style={styles.catStatNum}>2,500+</Text><Text style={styles.catStatLabel}>Products</Text></View>
@@ -111,6 +113,7 @@ const CategoryHeader = React.memo(() => {
 });
 
 const MainCategoryCard = React.memo(({ item, index, onPress }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.8); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -124,11 +127,12 @@ const MainCategoryCard = React.memo(({ item, index, onPress }) => {
 });
 
 const SubCategoryCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.scCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.scInner}>
+    <Animated.View style={[styles.scCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/ConcernDetail')} style={styles.scInner}>
       <View style={[styles.scIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={COLORS.primary} /></View>
       <View style={styles.scText}><Text style={styles.scName}>{item.name}</Text><Text style={styles.scProd}>{item.products} products</Text></View>
       <Ionicons name="chevron-forward" size={18} color={COLORS.textTertiary} />
@@ -137,6 +141,7 @@ const SubCategoryCard = React.memo(({ item, index }) => {
 });
 
 const TrendingCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -146,17 +151,18 @@ const TrendingCard = React.memo(({ item, index }) => {
       <View style={styles.trIconWrap}><Ionicons name={item.icon} size={28} color={COLORS.primary} /></View>
       <Text style={styles.trName}>{item.name}</Text>
       <View style={styles.trDiscBadge}><LinearGradient colors={['#FF6B35', '#FF8F5E']} style={styles.trDiscGrad}><Text style={styles.trDiscText}>{item.discount}</Text></LinearGradient></View>
-      <TouchableOpacity style={styles.trShopBtn}><Text style={styles.trShopText}>SHOP NOW</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/pharmacy/details/BrandDetail')} style={styles.trShopBtn}><Text style={styles.trShopText}>SHOP NOW</Text></TouchableOpacity>
     </View></Animated.View>
   );
 });
 
 const LifestyleCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.lsCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.lsInner}>
+    <Animated.View style={[styles.lsCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/ServiceDetail')} style={styles.lsInner}>
       <View style={[styles.lsIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={item.bgColor} /></View>
       <View style={styles.lsText}><Text style={styles.lsName}>{item.name}</Text><Text style={styles.lsDesc}>{item.desc}</Text></View>
       <View style={[styles.lsArrow, { backgroundColor: `${item.bgColor}20` }]}><Ionicons name="arrow-forward" size={16} color={item.bgColor} /></View>
@@ -165,11 +171,12 @@ const LifestyleCard = React.memo(({ item, index }) => {
 });
 
 const BrandChip = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 60, withTiming(1, { duration: 300 })); sc.value = withDelay(index * 60, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.brCard, a]}><TouchableOpacity activeOpacity={0.7} style={styles.brInner}>
+    <Animated.View style={[styles.brCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/MedicineDetail')} style={styles.brInner}>
       <View style={[styles.brIcon, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={20} color={COLORS.primary} /></View>
       <Text style={styles.brName}>{item.name}</Text>
       <Text style={styles.brProd}>{item.products} items</Text>
@@ -178,11 +185,12 @@ const BrandChip = React.memo(({ item, index }) => {
 });
 
 const SeasonalCard = React.memo(({ item, index }) => {
+  const router = useRouter();
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 100, withTiming(1, { duration: 500 })); sc.value = withDelay(index * 100, withSpring(1, { damping: 12 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (
-    <Animated.View style={[styles.snCard, a]}><TouchableOpacity activeOpacity={0.7}>
+    <Animated.View style={[styles.snCard, a]}><TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/pharmacy/details/CategoryDetail')}>
       <LinearGradient colors={item.gradColors} style={styles.snGrad}>
         <Ionicons name={item.icon} size={32} color={COLORS.white} />
         <View style={styles.snText}><Text style={styles.snName}>{item.name}</Text><Text style={styles.snSub}>{item.subtitle}</Text></View>

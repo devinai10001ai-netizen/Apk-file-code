@@ -466,17 +466,20 @@ const MEDICINE_CATEGORIES = [
   { id: '12', name: 'Mental Health', icon: '🧠', products: 110, desc: 'Anxiety, depression medicines' },
 ];
 
-const MedicineCategoriesSection = React.memo(() => (
+const MedicineCategoriesSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={medCatStyles.container}>
     <View style={medCatStyles.headerRow}>
       <Text style={medCatStyles.sectionTitle}>Medicines by Category</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/pharmacy/details/CategoryDetail')}>
         <Text style={medCatStyles.viewAll}>View All →</Text>
       </TouchableOpacity>
     </View>
     <View style={medCatStyles.grid}>
-      {MEDICINE_CATEGORIES.map((item) => (
-        <TouchableOpacity key={item.id} style={medCatStyles.card} accessibilityRole="button">
+      {MEDICINE_CATEGORIES.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={medCatStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={medCatStyles.iconWrap}>
             <Text style={medCatStyles.icon}>{item.icon}</Text>
           </View>
@@ -487,7 +490,8 @@ const MedicineCategoriesSection = React.memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 MedicineCategoriesSection.displayName = 'MedicineCategoriesSection';
 
 const medCatStyles = StyleSheet.create({
@@ -516,12 +520,15 @@ const POPULAR_MEDICINES = [
   { id: '8', name: 'Cetirizine 10mg', manufacturer: 'UCB', price: 35.00, mrp: 45.00, rating: 4.5, reviews: 35000, icon: 'medical', category: 'Allergy' },
 ];
 
-const PopularMedicinesSection = React.memo(() => (
+const PopularMedicinesSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={popMedsStyles.container}>
     <Text style={popMedsStyles.sectionTitle}>Popular Medicines</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {POPULAR_MEDICINES.map((item) => (
-        <TouchableOpacity key={item.id} style={popMedsStyles.card} accessibilityRole="button">
+      {POPULAR_MEDICINES.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={popMedsStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={popMedsStyles.badge}>
             <Text style={popMedsStyles.badgeText}>BESTSELLER</Text>
           </View>
@@ -540,14 +547,15 @@ const PopularMedicinesSection = React.memo(() => (
             <Text style={popMedsStyles.price}>₹{item.price.toFixed(2)}</Text>
             <Text style={popMedsStyles.mrp}>₹{item.mrp.toFixed(2)}</Text>
           </View>
-          <TouchableOpacity style={popMedsStyles.addBtn}>
+          <TouchableOpacity style={popMedsStyles.addBtn} onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
             <Text style={popMedsStyles.addBtnText}>Add to Cart</Text>
           </TouchableOpacity>
         </TouchableOpacity>
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 PopularMedicinesSection.displayName = 'PopularMedicinesSection';
 
 const popMedsStyles = StyleSheet.create({
@@ -580,15 +588,18 @@ const AYURVEDIC_PRODUCTS = [
   { id: '6', name: 'Baba Ramdev Yoga', category: 'Fitness', price: 199, mrp: 250, rating: 4.7, icon: 'fitness' },
 ];
 
-const AyurvedicSection = React.memo(() => (
+const AyurvedicSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={ayurStyles.container}>
     <View style={ayurStyles.header}>
       <Text style={ayurStyles.title}>Ayurvedic & Natural</Text>
       <Text style={ayurStyles.subtitle}>Traditional healing for modern life</Text>
     </View>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {AYURVEDIC_PRODUCTS.map((item) => (
-        <TouchableOpacity key={item.id} style={ayurStyles.card} accessibilityRole="button">
+      {AYURVEDIC_PRODUCTS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={ayurStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={ayurStyles.iconWrap}>
             <Ionicons name={item.icon} size={32} color="#2E7D32" />
           </View>
@@ -606,7 +617,8 @@ const AyurvedicSection = React.memo(() => (
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 AyurvedicSection.displayName = 'AyurvedicSection';
 
 const ayurStyles = StyleSheet.create({
@@ -635,12 +647,15 @@ const SUPPLEMENTS = [
   { id: '6', name: 'B-Complex Vitamins', category: 'Energy', price: 249, mrp: 320, rating: 4.4, icon: 'flash', discount: '22% OFF' },
 ];
 
-const SupplementsSection = React.memo(() => (
+const SupplementsSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={suppStyles.container}>
     <Text style={suppStyles.sectionTitle}>Health Supplements & Fitness</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {SUPPLEMENTS.map((item) => (
-        <TouchableOpacity key={item.id} style={suppStyles.card} accessibilityRole="button">
+      {SUPPLEMENTS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={suppStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={suppStyles.discountBadge}>
             <Text style={suppStyles.discountText}>{item.discount}</Text>
           </View>
@@ -657,14 +672,15 @@ const SupplementsSection = React.memo(() => (
             <Text style={suppStyles.price}>₹{item.price}</Text>
             <Text style={suppStyles.mrp}>₹{item.mrp}</Text>
           </View>
-          <TouchableOpacity style={suppStyles.addBtn}>
+          <TouchableOpacity style={suppStyles.addBtn} onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
             <Text style={suppStyles.addBtnText}>Add</Text>
           </TouchableOpacity>
         </TouchableOpacity>
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 SupplementsSection.displayName = 'SupplementsSection';
 
 const suppStyles = StyleSheet.create({
@@ -694,12 +710,15 @@ const BABY_CARE = [
   { id: '5', name: 'Mamypoko Diapers', category: 'Diapers', price: 649, mrp: 799, rating: 4.6, icon: 'happy', discount: '19% OFF' },
 ];
 
-const BabyCareSection = React.memo(() => (
+const BabyCareSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={babyStyles.container}>
     <Text style={babyStyles.sectionTitle}>Baby Care Essentials</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {BABY_CARE.map((item) => (
-        <TouchableOpacity key={item.id} style={babyStyles.card} accessibilityRole="button">
+      {BABY_CARE.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={babyStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={babyStyles.discountBadge}>
             <Text style={babyStyles.discountText}>{item.discount}</Text>
           </View>
@@ -720,7 +739,8 @@ const BabyCareSection = React.memo(() => (
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 BabyCareSection.displayName = 'BabyCareSection';
 
 const babyStyles = StyleSheet.create({
@@ -748,12 +768,15 @@ const PERSONAL_CARE = [
   { id: '5', name: 'Fair & Lovely', category: 'Skincare', price: 245, mrp: 299, rating: 4.3, icon: 'sunny' },
 ];
 
-const PersonalCareSection = React.memo(() => (
+const PersonalCareSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={pcStyles.container}>
     <Text style={pcStyles.sectionTitle}>Personal Care</Text>
     <View style={pcStyles.grid}>
-      {PERSONAL_CARE.map((item) => (
-        <TouchableOpacity key={item.id} style={pcStyles.card} accessibilityRole="button">
+      {PERSONAL_CARE.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={pcStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={pcStyles.iconWrap}>
             <Ionicons name={item.icon} size={28} color={COLORS.primary} />
           </View>
@@ -767,7 +790,8 @@ const PersonalCareSection = React.memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 PersonalCareSection.displayName = 'PersonalCareSection';
 
 const pcStyles = StyleSheet.create({
@@ -792,12 +816,15 @@ const MEDICAL_DEVICES = [
   { id: '5', name: 'Nebulizer Machine', type: 'Respiratory', price: 1299, mrp: 1699, rating: 4.4, icon: 'air', discount: '24% OFF' },
 ];
 
-const MedicalDevicesSection = React.memo(() => (
+const MedicalDevicesSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={medDevStyles.container}>
     <Text style={medDevStyles.sectionTitle}>Medical Devices & Equipment</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
-      {MEDICAL_DEVICES.map((item) => (
-        <TouchableOpacity key={item.id} style={medDevStyles.card} accessibilityRole="button">
+      {MEDICAL_DEVICES.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={medDevStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={medDevStyles.discountBadge}>
             <Text style={medDevStyles.discountText}>{item.discount}</Text>
           </View>
@@ -818,7 +845,8 @@ const MedicalDevicesSection = React.memo(() => (
       ))}
     </ScrollView>
   </View>
-));
+  );
+});
 MedicalDevicesSection.displayName = 'MedicalDevicesSection';
 
 const medDevStyles = StyleSheet.create({
@@ -845,12 +873,15 @@ const SEXUAL_WELLNESS = [
   { id: '4', name: 'Ayurvedic Power', category: 'Energy', price: 299, mrp: 399, rating: 4.4, icon: 'flash', discount: '25% OFF' },
 ];
 
-const SexualWellnessSection = React.memo(() => (
+const SexualWellnessSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={swStyles.container}>
     <Text style={swStyles.sectionTitle}>Sexual Wellness</Text>
     <View style={swStyles.grid}>
-      {SEXUAL_WELLNESS.map((item) => (
-        <TouchableOpacity key={item.id} style={swStyles.card} accessibilityRole="button">
+      {SEXUAL_WELLNESS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={swStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={swStyles.discountBadge}>
             <Text style={swStyles.discountText}>{item.discount}</Text>
           </View>
@@ -867,7 +898,8 @@ const SexualWellnessSection = React.memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 SexualWellnessSection.displayName = 'SexualWellnessSection';
 
 const swStyles = StyleSheet.create({
@@ -901,12 +933,15 @@ const TOP_BRANDS = [
   { id: '8', name: 'Lupin', products: 260, logo: '💉', color: '#5E35B1' },
 ];
 
-const TopBrandsSection = React.memo(() => (
+const TopBrandsSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={brandStyles.container}>
     <Text style={brandStyles.sectionTitle}>Top Pharmaceutical Brands</Text>
     <View style={brandStyles.grid}>
-      {TOP_BRANDS.map((item) => (
-        <TouchableOpacity key={item.id} style={brandStyles.card} accessibilityRole="button">
+      {TOP_BRANDS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={brandStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <View style={[brandStyles.logoWrap, { backgroundColor: item.color + '20' }]}>
             <Text style={brandStyles.logo}>{item.logo}</Text>
           </View>
@@ -916,7 +951,8 @@ const TopBrandsSection = React.memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 TopBrandsSection.displayName = 'TopBrandsSection';
 
 const brandStyles = StyleSheet.create({
@@ -938,12 +974,15 @@ const SPECIAL_DEALS = [
   { id: '4', title: '₹200 Off', subtitle: 'First order discount', icon: '🎁', color: '#7B1FA2', valid: 'Use code NEW20' },
 ];
 
-const SpecialDealsSection = React.memo(() => (
+const SpecialDealsSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={dealStyles.container}>
     <Text style={dealStyles.sectionTitle}>Special Offers & Deals</Text>
     <View style={dealStyles.grid}>
-      {SPECIAL_DEALS.map((item) => (
-        <TouchableOpacity key={item.id} style={[dealStyles.card, { backgroundColor: item.color }]} accessibilityRole="button">
+      {SPECIAL_DEALS.map((item, idx) => (
+        <TouchableOpacity key={item.id} style={[dealStyles.card, { backgroundColor: item.color }]} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
           <Text style={dealStyles.icon}>{item.icon}</Text>
           <Text style={dealStyles.title}>{item.title}</Text>
           <Text style={dealStyles.subtitle}>{item.subtitle}</Text>
@@ -952,7 +991,8 @@ const SpecialDealsSection = React.memo(() => (
       ))}
     </View>
   </View>
-));
+  );
+});
 SpecialDealsSection.displayName = 'SpecialDealsSection';
 
 const dealStyles = StyleSheet.create({
@@ -976,11 +1016,14 @@ const HEALTH_CONCERNS_EXTENDED = [
   { id: '6', name: 'Bone & Joint', icon: '🦴', color: '#FCE4EC', medicines: ['Painkiller Gel', 'Calcium', 'Joint Care'] },
 ];
 
-const HealthConcernsExtendedSection = React.memo(() => (
+const HealthConcernsExtendedSection = React.memo(() => {
+  const router = useRouter();
+  const detailRoutes = ['/pharmacy/details/MedicineDetail', '/pharmacy/details/CategoryDetail', '/pharmacy/details/ConcernDetail', '/pharmacy/details/BrandDetail', '/pharmacy/details/ServiceDetail'];
+  return (
   <View style={hcStyles.container}>
     <Text style={hcStyles.sectionTitle}>Medicines by Health Concern</Text>
-    {HEALTH_CONCERNS_EXTENDED.map((item) => (
-      <TouchableOpacity key={item.id} style={hcStyles.card} accessibilityRole="button">
+    {HEALTH_CONCERNS_EXTENDED.map((item, idx) => (
+      <TouchableOpacity key={item.id} style={hcStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
         <View style={[hcStyles.iconWrap, { backgroundColor: item.color }]}>
           <Text style={hcStyles.icon}>{item.icon}</Text>
         </View>
@@ -992,7 +1035,8 @@ const HealthConcernsExtendedSection = React.memo(() => (
       </TouchableOpacity>
     ))}
   </View>
-));
+  );
+});
 HealthConcernsExtendedSection.displayName = 'HealthConcernsExtendedSection';
 
 const hcStyles = StyleSheet.create({

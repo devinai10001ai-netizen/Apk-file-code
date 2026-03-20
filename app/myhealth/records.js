@@ -23,6 +23,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -51,17 +52,18 @@ const COLORS = {
 
 /* ==================== HEADER ==================== */
 const RecordsHeader = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.header}>
       <SafeAreaView>
         <View style={styles.headerContent}>
-          <TouchableOpacity style={styles.headerBackButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.headerBackButton}>
             <Ionicons name="arrow-back" size={24} color={COLORS.textPrimary} />
           </TouchableOpacity>
           <View style={styles.headerTitleContainer}>
             <Text style={styles.headerTitle}>All Health Documents</Text>
           </View>
-          <TouchableOpacity style={styles.headerHelpButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.headerHelpButton}>
             <Ionicons name="help-circle-outline" size={26} color={COLORS.textPrimary} />
           </TouchableOpacity>
         </View>
@@ -72,6 +74,7 @@ const RecordsHeader = React.memo(() => {
 
 /* ==================== SEARCH & FILTER BAR ==================== */
 const SearchFilterBar = React.memo(() => {
+  const router = useRouter();
   const [searchText, setSearchText] = useState('');
   return (
     <View style={styles.searchFilterContainer}>
@@ -91,10 +94,10 @@ const SearchFilterBar = React.memo(() => {
             </TouchableOpacity>
           )}
         </View>
-        <TouchableOpacity style={styles.filterButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/prescriptions')} style={styles.filterButton}>
           <Ionicons name="options" size={22} color={COLORS.textPrimary} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sortButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')} style={styles.sortButton}>
           <Ionicons name="swap-vertical" size={22} color={COLORS.textPrimary} />
         </TouchableOpacity>
       </View>
@@ -104,6 +107,7 @@ const SearchFilterBar = React.memo(() => {
 
 /* ==================== DOCUMENT CATEGORIES ==================== */
 const DocumentCategories = React.memo(() => {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState('all');
   const categories = useMemo(() => [
     { id: 'all', label: 'All', icon: 'grid', count: 24 },
@@ -139,6 +143,7 @@ const DocumentCategories = React.memo(() => {
 
 /* ==================== UPLOAD BANNER ==================== */
 const UploadBanner = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.uploadBannerContainer}>
       <View style={styles.uploadBanner}>
@@ -152,7 +157,7 @@ const UploadBanner = React.memo(() => {
         </View>
         <Text style={styles.uploadBannerText}>No Records To Show</Text>
         <Text style={styles.uploadBannerSubtext}>Upload your health documents to keep them organized and accessible anytime, anywhere.</Text>
-        <TouchableOpacity style={styles.uploadButton}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/family-profiles')} style={styles.uploadButton}>
           <LinearGradient colors={['#00838F', '#4FB3BF']} style={styles.uploadButtonGradient}>
             <Ionicons name="cloud-upload" size={20} color={COLORS.white} />
             <Text style={styles.uploadButtonText}>Upload Document</Text>
@@ -165,6 +170,7 @@ const UploadBanner = React.memo(() => {
 
 /* ==================== SMART FOLDERS ==================== */
 const SmartFolders = React.memo(() => {
+  const router = useRouter();
   const folders = useMemo(() => [
     { id: '1', name: 'Recent Uploads', icon: 'time', color: '#1565C0', bgColor: '#E3F2FD', count: 5, size: '12.4 MB' },
     { id: '2', name: 'Prescriptions', icon: 'document-text', color: '#2E7D32', bgColor: '#E8F5E9', count: 8, size: '5.2 MB' },
@@ -180,7 +186,7 @@ const SmartFolders = React.memo(() => {
     <View style={styles.smartFoldersSection}>
       <View style={styles.smartFoldersSectionHeader}>
         <Text style={styles.sectionTitle}>Smart Folders</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>Manage</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/my-appointments')}><Text style={styles.sectionViewAll}>Manage</Text></TouchableOpacity>
       </View>
       <View style={styles.foldersGrid}>
         {folders.map((folder) => (
@@ -199,6 +205,7 @@ const SmartFolders = React.memo(() => {
 
 /* ==================== RECENT DOCUMENTS ==================== */
 const RecentDocuments = React.memo(() => {
+  const router = useRouter();
   const documents = useMemo(() => [
     { id: '1', name: 'Blood Test Report', type: 'Lab Report', date: 'Mar 5, 2026', size: '2.4 MB', icon: 'flask', color: '#6A1B9A', format: 'PDF', doctor: 'Dr. Priya Sharma' },
     { id: '2', name: 'Prescription - Cardiologist', type: 'Prescription', date: 'Mar 2, 2026', size: '1.1 MB', icon: 'document-text', color: '#2E7D32', format: 'PDF', doctor: 'Dr. Rahul Verma' },
@@ -212,7 +219,7 @@ const RecentDocuments = React.memo(() => {
     <View style={styles.recentDocsSection}>
       <View style={styles.recentDocsSectionHeader}>
         <Text style={styles.sectionTitle}>Recent Documents</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/nearby-pharmacies')}><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
       </View>
       {documents.map((doc) => (
         <TouchableOpacity key={doc.id} style={styles.docCard} activeOpacity={0.7}>
@@ -231,10 +238,10 @@ const RecentDocuments = React.memo(() => {
             </View>
           </View>
           <View style={styles.docActions}>
-            <TouchableOpacity style={styles.docActionButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')} style={styles.docActionButton}>
               <Ionicons name="share-outline" size={18} color={COLORS.primary} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.docActionButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-score-detail')} style={styles.docActionButton}>
               <Ionicons name="download-outline" size={18} color={COLORS.primary} />
             </TouchableOpacity>
           </View>
@@ -246,6 +253,7 @@ const RecentDocuments = React.memo(() => {
 
 /* ==================== STORAGE INFO ==================== */
 const StorageInfo = React.memo(() => {
+  const router = useRouter();
   const usedStorage = 94.1;
   const totalStorage = 500;
   const percentage = (usedStorage / totalStorage) * 100;
@@ -283,7 +291,7 @@ const StorageInfo = React.memo(() => {
               </View>
             ))}
           </View>
-          <TouchableOpacity style={styles.upgradeStorageButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/symptom-checker')} style={styles.upgradeStorageButton}>
             <Ionicons name="rocket" size={16} color={COLORS.white} />
             <Text style={styles.upgradeStorageText}>Upgrade to Premium Storage</Text>
           </TouchableOpacity>
@@ -295,6 +303,7 @@ const StorageInfo = React.memo(() => {
 
 /* ==================== OCR SCAN FEATURE ==================== */
 const OCRScanFeature = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.ocrSection}>
       <View style={styles.ocrCard}>
@@ -313,7 +322,7 @@ const OCRScanFeature = React.memo(() => {
                 </View>
               ))}
             </View>
-            <TouchableOpacity style={styles.ocrButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/health-encyclopedia')} style={styles.ocrButton}>
               <Ionicons name="scan" size={20} color="#4A148C" />
               <Text style={styles.ocrButtonText}>Scan Document</Text>
             </TouchableOpacity>
@@ -326,6 +335,7 @@ const OCRScanFeature = React.memo(() => {
 
 /* ==================== DOCUMENT TIMELINE ==================== */
 const DocumentTimeline = React.memo(() => {
+  const router = useRouter();
   const timelineItems = useMemo(() => [
     { id: '1', month: 'March 2026', items: [
       { name: 'Blood Test Report', date: 'Mar 5', type: 'Lab Report', icon: 'flask', color: '#6A1B9A' },
@@ -376,32 +386,33 @@ const DocumentTimeline = React.memo(() => {
 
 /* ==================== SHARING & BACKUP ==================== */
 const SharingBackup = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.sharingSection}>
       <Text style={styles.sectionTitle}>Share & Backup</Text>
       <View style={styles.sharingGrid}>
-        <TouchableOpacity style={styles.sharingCard}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/sleep-insights')} style={styles.sharingCard}>
           <LinearGradient colors={['#E8F5E9', '#C8E6C9']} style={styles.sharingCardGradient}>
             <Ionicons name="share-social" size={32} color="#2E7D32" />
             <Text style={styles.sharingCardTitle}>Share with Doctor</Text>
             <Text style={styles.sharingCardDesc}>Securely share selected records with your healthcare provider via encrypted link.</Text>
-            <TouchableOpacity style={[styles.sharingActionBtn, { backgroundColor: '#2E7D32' }]}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/records')} style={[styles.sharingActionBtn, { backgroundColor: '#2E7D32' }]}>
               <Text style={styles.sharingActionText}>Share Now</Text>
             </TouchableOpacity>
           </LinearGradient>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sharingCard}>
+        <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.sharingCard}>
           <LinearGradient colors={['#E3F2FD', '#BBDEFB']} style={styles.sharingCardGradient}>
             <Ionicons name="cloud-done" size={32} color="#1565C0" />
             <Text style={styles.sharingCardTitle}>Cloud Backup</Text>
             <Text style={styles.sharingCardDesc}>Auto-backup all your documents to secure cloud storage with end-to-end encryption.</Text>
-            <TouchableOpacity style={[styles.sharingActionBtn, { backgroundColor: '#1565C0' }]}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={[styles.sharingActionBtn, { backgroundColor: '#1565C0' }]}>
               <Text style={styles.sharingActionText}>Enable Backup</Text>
             </TouchableOpacity>
           </LinearGradient>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.exportAllButton}>
+      <TouchableOpacity onPress={() => router.push('/myhealth/assistant')} style={styles.exportAllButton}>
         <Ionicons name="download" size={20} color={COLORS.primary} />
         <Text style={styles.exportAllText}>Export All Records as ZIP</Text>
       </TouchableOpacity>
@@ -411,6 +422,7 @@ const SharingBackup = React.memo(() => {
 
 /* ==================== QUICK UPLOAD OPTIONS ==================== */
 const QuickUploadOptions = React.memo(() => {
+  const router = useRouter();
   const uploadOptions = useMemo(() => [
     { id: '1', title: 'Camera Scan', description: 'Take a photo of your document', icon: 'camera', color: '#E91E63', bgColor: '#FCE4EC' },
     { id: '2', title: 'Gallery Upload', description: 'Choose from photo gallery', icon: 'images', color: '#4CAF50', bgColor: '#E8F5E9' },
@@ -440,13 +452,14 @@ const QuickUploadOptions = React.memo(() => {
 
 /* ==================== HELP BAR ==================== */
 const HelpBar = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.helpBarContainer}>
       <View style={styles.helpBar}>
         <LinearGradient colors={['#37474F', '#263238']} style={styles.helpBarGradient}>
           <View style={styles.helpBarContent}>
             <Text style={styles.helpBarText}>Could not find a record, or{'\n'}facing an issue?</Text>
-            <TouchableOpacity style={styles.helpBarButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')} style={styles.helpBarButton}>
               <Ionicons name="help-circle" size={18} color={COLORS.white} />
               <Text style={styles.helpBarButtonText}>Let us know</Text>
             </TouchableOpacity>

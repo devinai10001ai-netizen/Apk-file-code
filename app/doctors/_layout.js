@@ -130,6 +130,12 @@ export default function DoctorsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="specialty"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

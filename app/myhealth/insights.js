@@ -24,6 +24,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -51,6 +52,7 @@ const COLORS = {
 
 /* ==================== HEADER ==================== */
 const InsightsHeader = React.memo(() => {
+  const router = useRouter();
   return (
     <LinearGradient colors={['#6B4C9A', '#8B6CBF']} style={styles.header}>
       <SafeAreaView>
@@ -60,10 +62,10 @@ const InsightsHeader = React.memo(() => {
             <Text style={styles.headerSubtitle}>Your Health Data Simplified</Text>
           </View>
           <View style={styles.headerRight}>
-            <TouchableOpacity style={styles.headerIcon}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.headerIcon}>
               <Ionicons name="notifications-outline" size={24} color={COLORS.white} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.headerIcon}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.headerIcon}>
               <Ionicons name="settings-outline" size={24} color={COLORS.white} />
             </TouchableOpacity>
           </View>
@@ -93,6 +95,7 @@ const DemoToggle = React.memo(({ isDemoMode, setIsDemoMode }) => {
 
 /* ==================== OVERALL HEALTH SCORE ==================== */
 const OverallHealthScore = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.healthScoreSection}>
       <View style={styles.healthScoreCard}>
@@ -133,6 +136,7 @@ const OverallHealthScore = React.memo(() => {
 
 /* ==================== UPLOAD RECORDS PROMPT ==================== */
 const UploadRecordsPrompt = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.uploadPromptSection}>
       <View style={styles.uploadPromptCard}>
@@ -147,7 +151,7 @@ const UploadRecordsPrompt = React.memo(() => {
         <View style={styles.uploadPromptContent}>
           <Text style={styles.uploadPromptTitle}>Upload your health records</Text>
           <Text style={styles.uploadPromptDesc}>Upload your medical records to unlock personalized health insights, risk analysis, and recommendations.</Text>
-          <TouchableOpacity style={styles.uploadPromptButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')} style={styles.uploadPromptButton}>
             <Ionicons name="cloud-upload" size={18} color={COLORS.white} />
             <Text style={styles.uploadPromptButtonText}>Upload Records</Text>
           </TouchableOpacity>
@@ -159,6 +163,7 @@ const UploadRecordsPrompt = React.memo(() => {
 
 /* ==================== VITALS TRENDS ==================== */
 const VitalsTrends = React.memo(() => {
+  const router = useRouter();
   const vitals = useMemo(() => [
     { id: 'bp', label: 'Blood Pressure', current: '120/80', unit: 'mmHg', trend: 'stable', trendValue: '0%', history: [118, 122, 120, 119, 121, 120], icon: 'heart', color: '#E74C3C', status: 'Normal', range: '90/60 - 120/80' },
     { id: 'sugar', label: 'Blood Sugar', current: '95', unit: 'mg/dL', trend: 'down', trendValue: '-5%', history: [105, 100, 98, 96, 95, 95], icon: 'water', color: '#2196F3', status: 'Normal', range: '70 - 100' },
@@ -173,7 +178,7 @@ const VitalsTrends = React.memo(() => {
     <View style={styles.vitalsTrendsSection}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Vitals Trends</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>View Details</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')}><Text style={styles.sectionViewAll}>View Details</Text></TouchableOpacity>
       </View>
       {vitals.map((vital) => (
         <TouchableOpacity key={vital.id} style={styles.vitalTrendCard} activeOpacity={0.7}>
@@ -216,6 +221,7 @@ const VitalsTrends = React.memo(() => {
 
 /* ==================== RISK ASSESSMENT ==================== */
 const RiskAssessment = React.memo(() => {
+  const router = useRouter();
   const risks = useMemo(() => [
     { id: '1', condition: 'Type 2 Diabetes', riskLevel: 'Low', riskScore: 15, icon: 'water', color: '#4CAF50', description: 'Your blood sugar levels and HbA1c are within normal range. Continue maintaining a healthy diet and exercise routine.' },
     { id: '2', condition: 'Cardiovascular Disease', riskLevel: 'Low-Moderate', riskScore: 25, icon: 'heart', color: '#FF9800', description: 'Slightly elevated cholesterol levels. Consider reducing saturated fat intake and increasing physical activity.' },
@@ -235,7 +241,7 @@ const RiskAssessment = React.memo(() => {
     <View style={styles.riskSection}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Risk Assessment</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>Full Report</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/insurance-documents')}><Text style={styles.sectionViewAll}>Full Report</Text></TouchableOpacity>
       </View>
       {risks.map((risk) => (
         <View key={risk.id} style={styles.riskCard}>
@@ -265,6 +271,7 @@ const RiskAssessment = React.memo(() => {
 
 /* ==================== ORGAN HEALTH DASHBOARD ==================== */
 const OrganHealthDashboard = React.memo(() => {
+  const router = useRouter();
   const organs = useMemo(() => [
     { id: '1', name: 'Heart', score: 88, icon: 'heart', color: '#E74C3C', status: 'Excellent', lastCheck: 'Feb 2026' },
     { id: '2', name: 'Liver', score: 82, icon: 'leaf', color: '#4CAF50', status: 'Good', lastCheck: 'Jan 2026' },
@@ -354,6 +361,7 @@ const LifestyleScore = React.memo(() => {
 
 /* ==================== NUTRITION INSIGHTS ==================== */
 const NutritionInsights = React.memo(() => {
+  const router = useRouter();
   const nutrients = useMemo(() => [
     { name: 'Vitamin D', level: 28, unit: 'ng/mL', status: 'Low', optimal: '30-100', icon: 'sunny', color: '#FF9800' },
     { name: 'Vitamin B12', level: 450, unit: 'pg/mL', status: 'Normal', optimal: '200-900', icon: 'flash', color: '#4CAF50' },
@@ -366,7 +374,7 @@ const NutritionInsights = React.memo(() => {
     <View style={styles.nutritionSection}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Nutrition Insights</Text>
-        <TouchableOpacity><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/myhealth/nearby-pharmacies')}><Text style={styles.sectionViewAll}>See All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.nutritionScrollContent}>
         {nutrients.map((nutrient) => (
@@ -441,6 +449,7 @@ const SleepAnalysis = React.memo(() => {
 
 /* ==================== PERSONALIZED RECOMMENDATIONS ==================== */
 const Recommendations = React.memo(() => {
+  const router = useRouter();
   const recommendations = useMemo(() => [
     { id: '1', title: 'Increase Vitamin D Intake', category: 'Nutrition', priority: 'High', icon: 'sunny', color: '#FF9800', description: 'Your Vitamin D levels are below optimal. Consider 15-20 min morning sun exposure and supplements (60,000 IU weekly).', action: 'Order Vitamin D Supplement' },
     { id: '2', title: 'Add Cardio Exercise', category: 'Fitness', priority: 'Medium', icon: 'fitness', color: '#2196F3', description: 'Include 150 minutes of moderate aerobic activity per week. Start with brisk walking or cycling.', action: 'View Exercise Plans' },
@@ -480,7 +489,7 @@ const Recommendations = React.memo(() => {
             </View>
           </View>
           <Text style={styles.recDescription}>{rec.description}</Text>
-          <TouchableOpacity style={[styles.recActionButton, { backgroundColor: rec.color }]}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')} style={[styles.recActionButton, { backgroundColor: rec.color }]}>
             <Text style={styles.recActionText}>{rec.action}</Text>
             <Ionicons name="arrow-forward" size={14} color={COLORS.white} />
           </TouchableOpacity>
@@ -492,6 +501,7 @@ const Recommendations = React.memo(() => {
 
 /* ==================== HEALTH PREDICTIONS ==================== */
 const HealthPredictions = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.predictionsSection}>
       <Text style={styles.sectionTitle}>AI Health Predictions</Text>
@@ -520,7 +530,7 @@ const HealthPredictions = React.memo(() => {
               </View>
             ))}
           </View>
-          <TouchableOpacity style={styles.predictionsButton}>
+          <TouchableOpacity onPress={() => router.push('/myhealth/organ-health')} style={styles.predictionsButton}>
             <Ionicons name="analytics" size={18} color="#4A148C" />
             <Text style={styles.predictionsButtonText}>View Detailed Report</Text>
           </TouchableOpacity>
@@ -532,6 +542,7 @@ const HealthPredictions = React.memo(() => {
 
 /* ==================== MEDICINE MANAGEMENT INSIGHTS ==================== */
 const MedicineInsights = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.medInsightsSection}>
       <Text style={styles.sectionTitle}>Medicine Management</Text>
@@ -556,13 +567,14 @@ const MedicineInsights = React.memo(() => {
 
 /* ==================== HELP BAR ==================== */
 const HelpBar = React.memo(() => {
+  const router = useRouter();
   return (
     <View style={styles.helpBarContainer}>
       <View style={styles.helpBar}>
         <LinearGradient colors={['#37474F', '#263238']} style={styles.helpBarGradient}>
           <View style={styles.helpBarContent}>
             <Text style={styles.helpBarText}>Need help understanding{'\n'}your insights?</Text>
-            <TouchableOpacity style={styles.helpBarButton}>
+            <TouchableOpacity onPress={() => router.push('/myhealth/diabetes-insights')} style={styles.helpBarButton}>
               <Ionicons name="chatbubble-ellipses" size={18} color={COLORS.white} />
               <Text style={styles.helpBarButtonText}>Ask AI Assistant</Text>
             </TouchableOpacity>
