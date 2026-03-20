@@ -124,12 +124,12 @@ const ConditionsSection = memo(() => (
 ConditionsSection.displayName = 'ConditionsSection';
 
 const condStyles = StyleSheet.create({
-  container: { paddingHorizontal: 16, paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white', marginTop: 8 },
-  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary', marginBottom: 16 },
+  container: { paddingHorizontal: 16, paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white, marginTop: 8 },
+  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, marginBottom: 16 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
-  item: { width: '31%', backgroundColor: DoctorsTheme.colors.cardBg', borderRadius: 12, padding: 12, marginBottom: 8, alignItems: 'center', borderWidth: 1, borderColor: DoctorsTheme.colors.border },
+  item: { width: '31%', backgroundColor: DoctorsTheme.colors.cardBg, borderRadius: 12, padding: 12, marginBottom: 8, alignItems: 'center', borderWidth: 1, borderColor: DoctorsTheme.colors.border },
   icon: { fontSize: 28, marginBottom: 6 },
-  name: { fontSize: 12, fontWeight: '600', color: DoctorsTheme.colors.textPrimary', textAlign: 'center', marginBottom: 4 },
+  name: { fontSize: 12, fontWeight: '600', color: DoctorsTheme.colors.textPrimary, textAlign: 'center', marginBottom: 4 },
   count: { fontSize: 10, color: DoctorsTheme.colors.textTertiary },
 });
 
@@ -161,13 +161,13 @@ const TreatmentsSection = memo(() => (
 TreatmentsSection.displayName = 'TreatmentsSection';
 
 const treatStyles = StyleSheet.create({
-  container: { paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white', marginTop: 8 },
+  container: { paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white, marginTop: 8 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, marginBottom: 12 },
-  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary' },
+  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary },
   viewAll: { fontSize: 14, fontWeight: '600', color: '#5D4037' },
   card: { width: 160, backgroundColor: '#EFEBE9', borderRadius: 12, padding: 16, marginRight: 12, alignItems: 'center' },
   icon: { fontSize: 36, marginBottom: 8 },
-  name: { fontSize: 14, fontWeight: '700', color: DoctorsTheme.colors.textPrimary', textAlign: 'center', marginBottom: 6 },
+  name: { fontSize: 14, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, textAlign: 'center', marginBottom: 6 },
   price: { fontSize: 14, fontWeight: '600', color: '#5D4037' },
 });
 
@@ -209,13 +209,13 @@ const DoctorsSection = memo(() => (
 DoctorsSection.displayName = 'DoctorsSection';
 
 const docStyles = StyleSheet.create({
-  container: { paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white', marginTop: 8 },
-  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary', paddingHorizontal: 16, marginBottom: 12 },
-  card: { marginHorizontal: 16, backgroundColor: DoctorsTheme.colors.white', borderRadius: 16, padding: 16, marginBottom: 12, borderWidth: 1, borderColor: DoctorsTheme.colors.border, ...DoctorsTheme.shadow.level1 },
+  container: { paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white, marginTop: 8 },
+  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, paddingHorizontal: 16, marginBottom: 12 },
+  card: { marginHorizontal: 16, backgroundColor: DoctorsTheme.colors.white, borderRadius: 16, padding: 16, marginBottom: 12, borderWidth: 1, borderColor: DoctorsTheme.colors.border, ...DoctorsTheme.shadow.level1 },
   cardHeader: { flexDirection: 'row', marginBottom: 12 },
   avatar: { fontSize: 56 },
   info: { flex: 1, marginLeft: 12, justifyContent: 'center' },
-  name: { fontSize: 17, fontWeight: '700', color: DoctorsTheme.colors.textPrimary', marginBottom: 2 },
+  name: { fontSize: 17, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, marginBottom: 2 },
   degree: { fontSize: 13, color: '#5D4037', fontWeight: '600', marginBottom: 2 },
   hospital: { fontSize: 12, color: DoctorsTheme.colors.textSecondary },
   cardBody: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderTopWidth: 1, borderTopColor: DoctorsTheme.colors.border, paddingTop: 12 },
@@ -253,12 +253,12 @@ const PhysioSection = memo(() => (
 PhysioSection.displayName = 'PhysioSection';
 
 const physioStyles = StyleSheet.create({
-  container: { paddingHorizontal: 16, paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white', marginTop: 8 },
-  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary', marginBottom: 16 },
+  container: { paddingHorizontal: 16, paddingVertical: 16, backgroundColor: DoctorsTheme.colors.white, marginTop: 8 },
+  title: { fontSize: 18, fontWeight: '700', color: DoctorsTheme.colors.textPrimary, marginBottom: 16 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
   item: { width: '48%', backgroundColor: '#EFEBE9', borderRadius: 12, padding: 14, marginBottom: 10, alignItems: 'center' },
   icon: { fontSize: 32, marginBottom: 8 },
-  name: { fontSize: 14, fontWeight: '600', color: DoctorsTheme.colors.textPrimary', textAlign: 'center' },
+  name: { fontSize: 14, fontWeight: '600', color: DoctorsTheme.colors.textPrimary, textAlign: 'center' },
 });
 
 // CTA
@@ -277,7 +277,7 @@ const ctaStyles = StyleSheet.create({
   emoji: { fontSize: 48, marginBottom: 12 },
   title: { fontSize: 20, fontWeight: '700', color: DoctorsTheme.colors.white, marginBottom: 6 },
   subtitle: { fontSize: 14, color: 'rgba(255,255,255,0.8)', marginBottom: 16 },
-  button: { backgroundColor: DoctorsTheme.colors.white', borderRadius: 12, paddingHorizontal: 32, paddingVertical: 14 },
+  button: { backgroundColor: DoctorsTheme.colors.white, borderRadius: 12, paddingHorizontal: 32, paddingVertical: 14 },
   buttonText: { color: '#5D4037', fontSize: 16, fontWeight: '700' },
 });
 
@@ -324,7 +324,7 @@ const goToTopStyles = StyleSheet.create({
 });
 
 const floatingStyles = StyleSheet.create({
-  container: { position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: DoctorsTheme.colors.white', paddingHorizontal: 16, paddingVertical: 12, borderTopWidth: 1, borderTopColor: DoctorsTheme.colors.border },
+  container: { position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: DoctorsTheme.colors.white, paddingHorizontal: 16, paddingVertical: 12, borderTopWidth: 1, borderTopColor: DoctorsTheme.colors.border },
   ctaButton: { backgroundColor: '#5D4037', borderRadius: 12, paddingVertical: 16, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 },
   ctaText: { fontSize: 16, fontWeight: '700', color: DoctorsTheme.colors.white },
 });

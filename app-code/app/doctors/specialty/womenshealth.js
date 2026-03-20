@@ -267,7 +267,7 @@ const condStyles = StyleSheet.create({
 const PACKAGES_DATA = [
   {
     id: '1',
-    name: 'Women's Wellness Package',
+    name: "Women's Wellness Package",
     tests: '28 Tests',
     price: '₹1999',
     originalPrice: '₹3999',
