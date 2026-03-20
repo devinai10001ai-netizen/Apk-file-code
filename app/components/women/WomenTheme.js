@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - WOMEN SECTION THEME & DATA
+ * S-Pharma 24/7 - WOMEN SECTION THEME & DATA
  * ============================================================================
  */
 
@@ -159,7 +159,7 @@ export const WOMEN_DATA = {
   ],
 
   testimonials: [
-    { id: 1, name: 'Priya S.', age: 28, text: 'Apollo 24/7 has been a lifesaver for my PCOS management. Easy to order supplements monthly.', rating: 5, avatar: 'woman' },
+    { id: 1, name: 'Priya S.', age: 28, text: 'S-Pharma 24/7 has been a lifesaver for my PCOS management. Easy to order supplements monthly.', rating: 5, avatar: 'woman' },
     { id: 2, name: 'Ananya R.', age: 32, text: 'The motherhood care section helped me find everything I needed during pregnancy. Fast delivery!', rating: 5, avatar: 'woman' },
     { id: 3, name: 'Meera K.', age: 25, text: 'Love the napkin size guide! Finally found the right fit. The auto-repeat order is so convenient.', rating: 4, avatar: 'woman' },
     { id: 4, name: 'Divya T.', age: 35, text: 'The iron and calcium combo they recommended really improved my energy levels.', rating: 5, avatar: 'woman' },

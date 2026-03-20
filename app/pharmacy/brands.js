@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 BRANDS TAB - Where Trusted Meets Wellness
+ * S-Pharma 24|7 BRANDS TAB - Where Trusted Meets Wellness
  * Premium brand store with featured brands, A-Z directory, and exclusive offers.
  */
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
@@ -35,7 +35,7 @@ const BRAND_CATEGORIES = [
 ];
 
 const FEATURED_BRANDS = [
-  { id: '1', name: 'Apollo Life', tagline: 'Quality You Can Trust', icon: 'medical-outline', color: '#E8F5E9', gradColors: ['#0F847E', '#0A6B66'], products: 250, rating: 4.8, category: 'pharma', featured: true, exclusive: true },
+  { id: '1', name: 'S-Pharma Life', tagline: 'Quality You Can Trust', icon: 'medical-outline', color: '#E8F5E9', gradColors: ['#0F847E', '#0A6B66'], products: 250, rating: 4.8, category: 'pharma', featured: true, exclusive: true },
   { id: '2', name: 'Himalaya', tagline: 'Pure Herbs, Pure Care', icon: 'leaf-outline', color: '#E8F5E9', gradColors: ['#22C55E', '#16A34A'], products: 180, rating: 4.7, category: 'ayurveda', featured: true, exclusive: false },
   { id: '3', name: 'Cipla', tagline: 'Caring for Life', icon: 'medical-outline', color: '#E3F2FD', gradColors: ['#3B82F6', '#2563EB'], products: 320, rating: 4.9, category: 'pharma', featured: true, exclusive: false },
   { id: '4', name: 'Sun Pharma', tagline: 'Reaching People, Touching Lives', icon: 'sunny-outline', color: '#FFF3E0', gradColors: ['#F97316', '#EA580C'], products: 290, rating: 4.7, category: 'pharma', featured: true, exclusive: false },
@@ -46,7 +46,7 @@ const FEATURED_BRANDS = [
 const ALL_BRANDS = [
   { id: 'b1', name: 'Abbott', icon: 'medical-outline', color: '#E3F2FD', products: 180, rating: 4.8, category: 'pharma', letter: 'A' },
   { id: 'b2', name: 'Alkem Labs', icon: 'flask-outline', color: '#E8F5E9', products: 150, rating: 4.6, category: 'pharma', letter: 'A' },
-  { id: 'b3', name: 'Apollo Life', icon: 'medical-outline', color: '#E0F2F1', products: 250, rating: 4.8, category: 'pharma', letter: 'A' },
+  { id: 'b3', name: 'S-Pharma Life', icon: 'medical-outline', color: '#E0F2F1', products: 250, rating: 4.8, category: 'pharma', letter: 'A' },
   { id: 'b4', name: 'Bioderma', icon: 'flower-outline', color: '#FCE4EC', products: 45, rating: 4.7, category: 'personal', letter: 'B' },
   { id: 'b5', name: 'Baidyanath', icon: 'leaf-outline', color: '#F1F8E9', products: 90, rating: 4.5, category: 'ayurveda', letter: 'B' },
   { id: 'b6', name: 'Cipla', icon: 'medical-outline', color: '#E3F2FD', products: 320, rating: 4.9, category: 'pharma', letter: 'C' },
@@ -77,17 +77,17 @@ const ALL_BRANDS = [
 ];
 
 const BRAND_DEALS = [
-  { id: '1', brand: 'Apollo Life', title: 'Flat 25% OFF', subtitle: 'On all Apollo Life products', icon: 'medical-outline', gradColors: ['#0F847E', '#0A6B66'] },
+  { id: '1', brand: 'S-Pharma Life', title: 'Flat 25% OFF', subtitle: 'On all S-Pharma Life products', icon: 'medical-outline', gradColors: ['#0F847E', '#0A6B66'] },
   { id: '2', brand: 'Himalaya', title: 'Buy 2 Get 1 Free', subtitle: 'On selected herbal products', icon: 'leaf-outline', gradColors: ['#22C55E', '#16A34A'] },
   { id: '3', brand: 'Cipla', title: 'Up to 30% OFF', subtitle: 'On prescription medicines', icon: 'medical-outline', gradColors: ['#3B82F6', '#2563EB'] },
 ];
 
 const EXCLUSIVE_BRANDS = [
-  { id: '1', name: 'Apollo Life Omega 3', price: 499, mrp: 799, brand: 'Apollo Life', icon: 'fish-outline', color: '#E0F2F1', badge: 'EXCLUSIVE' },
-  { id: '2', name: 'Apollo Life Multivitamin', price: 399, mrp: 599, brand: 'Apollo Life', icon: 'sunny-outline', color: '#FFF8E1', badge: 'BESTSELLER' },
-  { id: '3', name: 'Apollo Life Calcium + D3', price: 299, mrp: 450, brand: 'Apollo Life', icon: 'fitness-outline', color: '#E8F5E9', badge: 'NEW' },
-  { id: '4', name: 'Apollo Life Protein Powder', price: 899, mrp: 1299, brand: 'Apollo Life', icon: 'barbell-outline', color: '#F3E5F5', badge: 'PREMIUM' },
-  { id: '5', name: 'Apollo Life Immunity Kit', price: 599, mrp: 899, brand: 'Apollo Life', icon: 'shield-outline', color: '#E3F2FD', badge: 'TOP RATED' },
+  { id: '1', name: 'S-Pharma Life Omega 3', price: 499, mrp: 799, brand: 'S-Pharma Life', icon: 'fish-outline', color: '#E0F2F1', badge: 'EXCLUSIVE' },
+  { id: '2', name: 'S-Pharma Life Multivitamin', price: 399, mrp: 599, brand: 'S-Pharma Life', icon: 'sunny-outline', color: '#FFF8E1', badge: 'BESTSELLER' },
+  { id: '3', name: 'S-Pharma Life Calcium + D3', price: 299, mrp: 450, brand: 'S-Pharma Life', icon: 'fitness-outline', color: '#E8F5E9', badge: 'NEW' },
+  { id: '4', name: 'S-Pharma Life Protein Powder', price: 899, mrp: 1299, brand: 'S-Pharma Life', icon: 'barbell-outline', color: '#F3E5F5', badge: 'PREMIUM' },
+  { id: '5', name: 'S-Pharma Life Immunity Kit', price: 599, mrp: 899, brand: 'S-Pharma Life', icon: 'shield-outline', color: '#E3F2FD', badge: 'TOP RATED' },
 ];
 
 const TRENDING_BRANDS = [
@@ -307,7 +307,7 @@ export default function Brands() {
 
         {/* Exclusive Products */}
         <View style={styles.section}>
-          <View style={styles.sectionRow}><View><Text style={styles.sectionTitle}>Exclusive on Apollo</Text><Text style={styles.sectionSub}>Only available on Apollo 24|7</Text></View><TouchableOpacity style={styles.viewAll}><Text style={styles.viewAllText}>View All</Text><Ionicons name="chevron-forward" size={16} color={COLORS.primary} /></TouchableOpacity></View>
+          <View style={styles.sectionRow}><View><Text style={styles.sectionTitle}>Exclusive on S-Pharma</Text><Text style={styles.sectionSub}>Only available on S-Pharma 24|7</Text></View><TouchableOpacity style={styles.viewAll}><Text style={styles.viewAllText}>View All</Text><Ionicons name="chevron-forward" size={16} color={COLORS.primary} /></TouchableOpacity></View>
           <FlatList data={EXCLUSIVE_BRANDS} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <ExclusiveProductCard item={item} index={index} />} contentContainerStyle={styles.epList} ItemSeparatorComponent={() => <View style={{ width: 12 }} />} />
         </View>
 
@@ -341,7 +341,7 @@ export default function Brands() {
         {/* Brand Partner Banner */}
         <View style={styles.partnerBanner}><LinearGradient colors={[COLORS.gold, '#C4952E']} style={styles.partnerGrad}>
           <Ionicons name="diamond" size={32} color={COLORS.white} />
-          <View style={styles.partnerText}><Text style={styles.partnerTitle}>Become a Brand Partner</Text><Text style={styles.partnerSub}>Join 500+ brands on Apollo 24|7</Text></View>
+          <View style={styles.partnerText}><Text style={styles.partnerTitle}>Become a Brand Partner</Text><Text style={styles.partnerSub}>Join 500+ brands on S-Pharma 24|7</Text></View>
           <TouchableOpacity style={styles.partnerBtn}><Text style={styles.partnerBtnText}>LEARN MORE</Text></TouchableOpacity>
         </LinearGradient></View>
 
@@ -352,7 +352,7 @@ export default function Brands() {
             <Text style={styles.footerTitle}>Where Trusted Meets Wellness</Text>
             <Text style={styles.footerSub}>500+ authentic brands, 40,000+ products</Text>
             <View style={styles.footerDiv} />
-            <Text style={styles.footerCopy}>Apollo 24|7 Brand Store</Text>
+            <Text style={styles.footerCopy}>S-Pharma 24|7 Brand Store</Text>
           </LinearGradient>
         </View>
 

@@ -67,7 +67,7 @@ const AssistantHeader = React.memo(() => {
               <View style={styles.headerOnlineDot} />
             </View>
             <View style={styles.headerInfo}>
-              <Text style={styles.headerTitle}>Apollo AI Assistant</Text>
+              <Text style={styles.headerTitle}>S-Pharma AI Assistant</Text>
               <View style={styles.headerStatusRow}>
                 <View style={styles.headerStatusDot} />
                 <Text style={styles.headerSubtitle}>Online - Ready to help</Text>
@@ -99,7 +99,7 @@ const WelcomeBanner = React.memo(() => {
             <Ionicons name="medical" size={36} color={COLORS.primary} />
           </View>
           <Text style={styles.welcomeTitle}>Hello, Ganpati! 👋</Text>
-          <Text style={styles.welcomeDesc}>I'm your AI Health Assistant powered by Apollo 24|7. I can help you with health queries, symptom analysis, medication info, and wellness tips.</Text>
+          <Text style={styles.welcomeDesc}>I'm your AI Health Assistant powered by S-Pharma 24|7. I can help you with health queries, symptom analysis, medication info, and wellness tips.</Text>
           <View style={styles.welcomeCapabilities}>
             {['Symptom Analysis', 'Medicine Info', 'Diet Plans', 'Lab Reports'].map((cap) => (
               <View key={cap} style={styles.welcomeCapBadge}>
@@ -465,7 +465,7 @@ const AssistantFooter = React.memo(() => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerDivider} />
-      <Text style={styles.footerBrand}>Apollo 24|7 AI Assistant</Text>
+      <Text style={styles.footerBrand}>S-Pharma 24|7 AI Assistant</Text>
       <Text style={styles.footerDesc}>Your AI-powered health companion</Text>
       <View style={styles.footerBadges}>
         <View style={styles.footerBadge}><Ionicons name="sparkles" size={14} color={COLORS.primary} /><Text style={styles.footerBadgeText}>AI Powered</Text></View>

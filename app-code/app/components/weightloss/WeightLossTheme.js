@@ -82,13 +82,13 @@ export const WL_DATA = {
     { id: 6, title: 'Dance Fitness', desc: '35 min fun dance workout for full body', calories: '300-400 cal', level: 'Beginner', icon: 'musical-notes', color: '#FFB800' },
   ],
   successStories: [
-    { id: 1, name: 'Priya Sharma', lost: '18 kg', duration: '6 months', quote: 'Apollo\'s weight loss program completely transformed my life. The doctors were incredibly supportive throughout my journey.', rating: 5 },
+    { id: 1, name: 'Priya Sharma', lost: '18 kg', duration: '6 months', quote: 'S-Pharma\'s weight loss program completely transformed my life. The doctors were incredibly supportive throughout my journey.', rating: 5 },
     { id: 2, name: 'Rahul Verma', lost: '25 kg', duration: '8 months', quote: 'The combination of diet planning and regular consultations made all the difference. I feel like a new person!', rating: 5 },
-    { id: 3, name: 'Anita Desai', lost: '12 kg', duration: '4 months', quote: 'Intermittent fasting guidance from Apollo doctors helped me achieve my target weight safely and effectively.', rating: 4 },
-    { id: 4, name: 'Vikram Singh', lost: '30 kg', duration: '10 months', quote: 'From being pre-diabetic to running marathons — Apollo\'s holistic approach to weight management changed everything.', rating: 5 },
+    { id: 3, name: 'Anita Desai', lost: '12 kg', duration: '4 months', quote: 'Intermittent fasting guidance from S-Pharma doctors helped me achieve my target weight safely and effectively.', rating: 4 },
+    { id: 4, name: 'Vikram Singh', lost: '30 kg', duration: '10 months', quote: 'From being pre-diabetic to running marathons — S-Pharma\'s holistic approach to weight management changed everything.', rating: 5 },
   ],
   supplements: [
-    { id: 1, name: 'Apollo Life Garcinia', price: 499, oldPrice: 699, discount: 29, rating: 4.3 },
+    { id: 1, name: 'S-Pharma Life Garcinia', price: 499, oldPrice: 699, discount: 29, rating: 4.3 },
     { id: 2, name: 'Green Tea Extract 500mg', price: 349, oldPrice: 499, discount: 30, rating: 4.5 },
     { id: 3, name: 'Apple Cider Vinegar Caps', price: 599, oldPrice: 799, discount: 25, rating: 4.2 },
     { id: 4, name: 'CLA 1000mg Softgels', price: 799, oldPrice: 1099, discount: 27, rating: 4.4 },

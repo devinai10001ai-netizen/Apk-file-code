@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 ROYAL PREMIUM HOME SCREEN
+ * S-Pharma 24/7 ROYAL PREMIUM HOME SCREEN
  * ============================================================================
  * 
  * A luxury healthcare super-app home screen built with the precision and
@@ -27,8 +27,8 @@
  * 8. BankOffersCarousel - Auto-scrolling bank offer cards
  * 9. CuratedOfferings - 3 vertical premium offering cards
  * 10. PromotionBanners - Auto-scrolling promotional banners
- * 11. ContentCards - Apollo 24|7 + PRO Health cards
- * 12. AskApolloCarousel - 14 health topic poster cards
+ * 11. ContentCards - S-Pharma 24|7 + PRO Health cards
+ * 12. AskSPharmaCarousel - 14 health topic poster cards
  * 13. TrustBadges - Gold seal trust indicators
  * 14. Footer - Version, branding, powered-by
  * 
@@ -71,7 +71,7 @@ import { useRouter } from 'expo-router';
 // Section Components
 import { HeroSection, ServicesGrid, PrescriptionBar } from '../components/home/HeroAndServices';
 import { BuyAgainHeader, MedicineCarousel, BankOffersCarousel } from '../components/home/ShoppingSection';
-import { CuratedOfferings, PromotionBanners, ContentCards, AskApolloCarousel, TrustBadges, Footer } from '../components/home/DiscoverSection';
+import { CuratedOfferings, PromotionBanners, ContentCards, AskSPharmaCarousel, TrustBadges, Footer } from '../components/home/DiscoverSection';
 import { COLORS, TYPOGRAPHY, SPACING, RADIUS, SHADOWS, ANIMATION, LAYOUT, MIXINS, DATA } from '../components/home/theme';
 
 // Skin Screen (Rose Gold Edition)
@@ -95,9 +95,9 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const AnimatedScrollView = Animated.createAnimatedComponent(ScrollView);
 
 // ============================================================================
-// ANIMATED APOLLO LOGO
+// ANIMATED S-Pharma LOGO
 // ============================================================================
-const AnimatedApolloLogo = React.memo(() => {
+const AnimatedS-PharmaLogo = React.memo(() => {
   const rotation = useSharedValue(0);
   const glowOpacity = useSharedValue(0.3);
   const scale = useSharedValue(1);
@@ -130,10 +130,10 @@ const AnimatedApolloLogo = React.memo(() => {
   }));
 
   return (
-    <View style={styles.apolloLogoContainer}>
-      <Animated.View style={[styles.apolloLogoGlow, glowStyle]} />
-      <Animated.View style={[styles.apolloLogoInner, logoAnimatedStyle]}>
-        <Ionicons name="medical" size={18} color={COLORS.apolloGreen} />
+    <View style={styles.S-pharmaLogoContainer}>
+      <Animated.View style={[styles.S-pharmaLogoGlow, glowStyle]} />
+      <Animated.View style={[styles.S-pharmaLogoInner, logoAnimatedStyle]}>
+        <Ionicons name="medical" size={18} color={COLORS.spharmaGreen} />
       </Animated.View>
     </View>
   );
@@ -280,7 +280,7 @@ const StickyHeader = React.memo(({ scrollY, onProfilePress }) => {
 
         {/* Right side: Logo + Wallet + Profile */}
         <View style={styles.headerRight}>
-          <AnimatedApolloLogo />
+          <AnimatedS-PharmaLogo />
           <AnimatedWalletBadge />
           <AnimatedProfileAvatar onPress={onProfilePress} />
         </View>
@@ -366,7 +366,7 @@ const SearchBarRow = React.memo(({ cartCount, scrollY, onCartPress }) => {
           <Text style={styles.searchPlaceholder}>Search medicines, doctors, labs...</Text>
           <Animated.View style={[styles.aiAssistantBadge, aiPulseStyle]}>
             <LinearGradient
-              colors={[COLORS.apolloGreen, COLORS.apolloGreenLight]}
+              colors={[COLORS.spharmaGreen, COLORS.spharmaGreenLight]}
               style={styles.aiGradient}
             >
               <Text style={styles.aiText}>AI</Text>
@@ -378,7 +378,7 @@ const SearchBarRow = React.memo(({ cartCount, scrollY, onCartPress }) => {
       {/* Cart Button */}
       <TouchableOpacity activeOpacity={0.7} style={styles.cartButton} onPress={onCartPress}>
         <View style={styles.cartIconContainer}>
-          <Ionicons name="cart-outline" size={22} color={COLORS.apolloGreen} />
+          <Ionicons name="cart-outline" size={22} color={COLORS.spharmaGreen} />
         </View>
         {cartCount > 0 && (
           <Animated.View style={[styles.cartBadge, cartBadgeAnimatedStyle]}>
@@ -443,7 +443,7 @@ const AnimatedCategoryChip = React.memo(({ category, isActive, onPress, index })
           <Ionicons
             name={category.icon}
             size={16}
-            color={isActive ? COLORS.apolloGreen : COLORS.textTertiary}
+            color={isActive ? COLORS.spharmaGreen : COLORS.textTertiary}
           />
         </Animated.View>
         <Text style={[
@@ -701,8 +701,8 @@ export default function HomeScreen() {
               {/* Content Cards */}
               <ContentCards />
 
-              {/* Ask Apollo Poster Carousel */}
-              <AskApolloCarousel />
+              {/* Ask S-Pharma Poster Carousel */}
+              <AskSPharmaCarousel />
 
               {/* Trust Badges */}
               <TrustBadges />
@@ -802,23 +802,23 @@ const styles = StyleSheet.create({
   },
 
   // ========================================================================
-  // APOLLO LOGO STYLES
+  // S-Pharma LOGO STYLES
   // ========================================================================
-  apolloLogoContainer: {
+  S-pharmaLogoContainer: {
     width: 36,
     height: 36,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
   },
-  apolloLogoGlow: {
+  S-pharmaLogoGlow: {
     position: 'absolute',
     width: 40,
     height: 40,
     borderRadius: 20,
     backgroundColor: COLORS.royalGoldGlow,
   },
-  apolloLogoInner: {
+  S-pharmaLogoInner: {
     width: 34,
     height: 34,
     borderRadius: 17,
@@ -826,7 +826,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1.5,
-    borderColor: COLORS.apolloGreenSubtle,
+    borderColor: COLORS.spharmaGreenSubtle,
     ...SHADOWS.subtle,
   },
 
@@ -844,7 +844,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   walletHcBadge: {
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.xs,
     paddingHorizontal: 5,
     paddingVertical: 1,
@@ -1014,7 +1014,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   categoryTextActive: {
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '700',
   },
   newBadge: {

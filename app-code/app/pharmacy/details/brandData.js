@@ -5,8 +5,8 @@
 
 export const BRANDS_DATA = [
   {
-    id: 'apollo-life',
-    name: 'Apollo Life',
+    id: 'S-pharma-life',
+    name: 'S-Pharma Life',
     tagline: 'Quality You Can Trust',
     icon: 'medical-outline',
     color: '#E8F5E9',
@@ -16,21 +16,21 @@ export const BRANDS_DATA = [
     category: 'pharma',
     featured: true,
     exclusive: true,
-    description: 'Apollo Life brings you premium health and wellness products crafted with the highest quality standards. Trusted by millions across India.',
-    bannerImage: 'apollo_life_banner',
+    description: 'S-Pharma Life brings you premium health and wellness products crafted with the highest quality standards. Trusted by millions across India.',
+    bannerImage: 'S-pharma_life_banner',
     features: ['Quality Assured', 'Doctor Recommended', 'Wide Range'],
     highlights: ['No. 1 Pharmacy Brand', 'Trusted by 50L+ Customers', '100% Authentic'],
     products: [
-      { id: 'al1', name: 'Apollo Life Multivitamin', price: 599, mrp: 799, rating: 4.7, discount: '25% OFF', category: 'Supplements' },
-      { id: 'al2', name: 'Apollo Life Vitamin D3', price: 120, mrp: 150, rating: 4.8, discount: '20% OFF', category: 'Supplements' },
-      { id: 'al3', name: 'Apollo Life Fish Oil', price: 349, mrp: 450, rating: 4.6, discount: '22% OFF', category: 'Supplements' },
-      { id: 'al4', name: 'Apollo Life Calcium', price: 180, mrp: 220, rating: 4.7, discount: '18% OFF', category: 'Supplements' },
-      { id: 'al5', name: 'Apollo Life Immunity', price: 299, mrp: 399, rating: 4.8, discount: '25% OFF', category: 'Supplements' },
+      { id: 'al1', name: 'S-Pharma Life Multivitamin', price: 599, mrp: 799, rating: 4.7, discount: '25% OFF', category: 'Supplements' },
+      { id: 'al2', name: 'S-Pharma Life Vitamin D3', price: 120, mrp: 150, rating: 4.8, discount: '20% OFF', category: 'Supplements' },
+      { id: 'al3', name: 'S-Pharma Life Fish Oil', price: 349, mrp: 450, rating: 4.6, discount: '22% OFF', category: 'Supplements' },
+      { id: 'al4', name: 'S-Pharma Life Calcium', price: 180, mrp: 220, rating: 4.7, discount: '18% OFF', category: 'Supplements' },
+      { id: 'al5', name: 'S-Pharma Life Immunity', price: 299, mrp: 399, rating: 4.8, discount: '25% OFF', category: 'Supplements' },
     ],
-    about: 'Apollo Life is a trusted brand from the house of Apollo Hospitals, committed to delivering quality healthcare products. With decades of expertise in healthcare, Apollo Life offers a wide range of supplements, wellness products, and health devices.',
+    about: 'S-Pharma Life is a trusted brand from the house of S-Pharma Hospitals, committed to delivering quality healthcare products. With decades of expertise in healthcare, S-Pharma Life offers a wide range of supplements, wellness products, and health devices.',
     faqs: [
-      { q: 'Are Apollo Life products authentic?', a: 'Yes, 100% authentic with quality assurance.' },
-      { q: 'Do Apollo Life products have side effects?', a: 'No, when taken as recommended.' },
+      { q: 'Are S-Pharma Life products authentic?', a: 'Yes, 100% authentic with quality assurance.' },
+      { q: 'Do S-Pharma Life products have side effects?', a: 'No, when taken as recommended.' },
     ],
   },
   {

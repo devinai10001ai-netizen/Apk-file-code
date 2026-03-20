@@ -1,16 +1,16 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - INSURANCE SCREEN (PREMIUM EDITION)
+ * S-Pharma 24/7 - INSURANCE SCREEN (PREMIUM EDITION)
  * ============================================================================
  *
  * Premium Insurance vertical screen composing all sections:
  *
- * 1. Hero Banner (Save up to 50% + Apollo Assured seal)
+ * 1. Hero Banner (Save up to 50% + S-Pharma Assured seal)
  * 2. Insurance Type Cards (Have/Don't Have Insurance)
  * 3. Expert Help Banner (Advisor + CTA)
  * 4. Trust Stats Bar (25L+ Families, 14K+ Hospitals, etc.)
  * 5. Health Cover Plans Carousel (4 premium plans)
- * 6. Benefits Grid (Why Apollo Insurance - 6 cards)
+ * 6. Benefits Grid (Why S-Pharma Insurance - 6 cards)
  * 7. Claim Process (4 steps with connecting lines)
  * 8. Coverage Comparison (Expandable categories)
  * 9. Partners Section (12 insurance partners)
@@ -112,7 +112,7 @@ const InsuranceScreenHero = React.memo(() => {
               <Ionicons name="shield-checkmark" size={16} color={INSURANCE_COLORS.insuranceTeal} />
             </View>
             <Animated.View style={[heroStyles.editionTag, badgeStyle]}>
-              <Text style={heroStyles.editionTagText}>APOLLO ASSURED</Text>
+              <Text style={heroStyles.editionTagText}>S-Pharma ASSURED</Text>
             </Animated.View>
           </View>
 

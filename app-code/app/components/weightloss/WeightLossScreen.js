@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - WEIGHT LOSS SCREEN (EMERALD FITNESS EDITION)
+ * S-Pharma 24/7 - WEIGHT LOSS SCREEN (EMERALD FITNESS EDITION)
  * ============================================================================
  *
  * Premium Weight Loss vertical screen — 14-15 scrolls deep
@@ -971,37 +971,37 @@ const DoctorConsultationCTA = React.memo(() => {
 });
 
 // ============================================================================
-// SECTION 15: ASK APOLLO WEIGHT LOSS
+// SECTION 15: ASK S-Pharma WEIGHT LOSS
 // ============================================================================
-const AskApolloWeightLoss = React.memo(() => {
+const AskSPharmaWeightLoss = React.memo(() => {
   return (
     <View style={styles.sectionContainer}>
-      <Animated.View entering={FadeInDown.duration(600)} style={styles.askApolloContainer}>
-        <View style={styles.askApolloHeader}>
-          <View style={styles.askApolloIcon}>
+      <Animated.View entering={FadeInDown.duration(600)} style={styles.askSPharmaContainer}>
+        <View style={styles.askSPharmaHeader}>
+          <View style={styles.askSPharmaIcon}>
             <Ionicons name="chatbubbles" size={20} color={WL_COLORS.emerald} />
           </View>
           <View>
-            <Text style={styles.askApolloTitle}>Private advice for weight{'\n'}management concerns</Text>
-            <Text style={styles.askApolloSubtitle}>ASK APOLLO ABOUT...</Text>
+            <Text style={styles.askSPharmaTitle}>Private advice for weight{'\n'}management concerns</Text>
+            <Text style={styles.askSPharmaSubtitle}>ASK S-Pharma ABOUT...</Text>
           </View>
         </View>
-        <View style={styles.askApolloQuestions}>
+        <View style={styles.askSPharmaQuestions}>
           {[
             'What is the best diet for quick weight loss?',
             'How many calories should I eat daily?',
             'Is intermittent fasting safe for me?',
             'Which supplements help with weight loss?',
           ].map((q, i) => (
-            <TouchableOpacity key={i} style={styles.askApolloQuestion}>
-              <Text style={styles.askApolloQuestionText}>{q}</Text>
+            <TouchableOpacity key={i} style={styles.askSPharmaQuestion}>
+              <Text style={styles.askSPharmaQuestionText}>{q}</Text>
               <Ionicons name="chevron-forward" size={14} color={COLORS.textTertiary} />
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.askApolloButton}>
+        <TouchableOpacity style={styles.askSPharmaButton}>
           <Ionicons name="medical" size={16} color={COLORS.textWhite} />
-          <Text style={styles.askApolloButtonText}>Dr Just Ask Apollo</Text>
+          <Text style={styles.askSPharmaButtonText}>Dr Just Ask S-Pharma</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
@@ -1048,7 +1048,7 @@ const WeightLossScreen = React.memo(({ scrollY }) => {
       <SectionDivider variant="emerald" />
       <SuccessStoriesSection />
       <SectionDivider variant="orange" />
-      <AskApolloWeightLoss />
+      <AskSPharmaWeightLoss />
       <SectionDivider variant="emerald" />
       <DoctorConsultationCTA />
       <SectionDivider variant="emerald" />
@@ -1947,20 +1947,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 
-  // ASK APOLLO
-  askApolloContainer: {
+  // ASK S-Pharma
+  askSPharmaContainer: {
     backgroundColor: COLORS.cardWhite,
     borderRadius: RADIUS.card,
     padding: SPACING.lg,
     ...SHADOWS.cardSoft,
   },
-  askApolloHeader: {
+  askSPharmaHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
     marginBottom: SPACING.lg,
   },
-  askApolloIcon: {
+  askSPharmaIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -1968,22 +1968,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  askApolloTitle: {
+  askSPharmaTitle: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textPrimary,
     lineHeight: 18,
   },
-  askApolloSubtitle: {
+  askSPharmaSubtitle: {
     ...TYPOGRAPHY.badge,
     color: COLORS.textTertiary,
     letterSpacing: 1.5,
     marginTop: 2,
   },
-  askApolloQuestions: {
+  askSPharmaQuestions: {
     gap: SPACING.sm,
     marginBottom: SPACING.lg,
   },
-  askApolloQuestion: {
+  askSPharmaQuestion: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -1994,12 +1994,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borderLight,
   },
-  askApolloQuestionText: {
+  askSPharmaQuestionText: {
     ...TYPOGRAPHY.bodySmall,
     color: COLORS.textSecondary,
     flex: 1,
   },
-  askApolloButton: {
+  askSPharmaButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -2008,7 +2008,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.button,
     gap: SPACING.sm,
   },
-  askApolloButtonText: {
+  askSPharmaButtonText: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textWhite,
     fontWeight: '700',

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SEXUAL HEALTH SCREEN (INTIMATE ROSE EDITION)
+ * S-Pharma 24/7 - SEXUAL HEALTH SCREEN (INTIMATE ROSE EDITION)
  * ============================================================================
  *
  * Premium Sexual Health vertical screen — 14-15 scrolls deep
@@ -18,7 +18,7 @@
  * 9. Wellness Tips (6 cards)
  * 10. Discreet Delivery Features
  * 11. Doctor Specialists
- * 12. Ask Apollo Section
+ * 12. Ask S-Pharma Section
  * 13. Doctor Consultation CTA
  * 14. Footer
  *
@@ -464,7 +464,7 @@ const PrivateAdviceBanner = React.memo(() => {
             <Text style={styles.adviceBannerTitle}>Private advice for sexual{'\n'}health concerns</Text>
             <Text style={styles.adviceBannerDesc}>Confidential consultations with{'\n'}certified specialists</Text>
             <View style={styles.adviceAskContainer}>
-              <Text style={styles.adviceAskLabel}>ASK APOLLO ABOUT...</Text>
+              <Text style={styles.adviceAskLabel}>ASK S-Pharma ABOUT...</Text>
               {[
                 'What is the treatment for premature ejaculation?',
                 'How to improve stamina naturally?',
@@ -478,7 +478,7 @@ const PrivateAdviceBanner = React.memo(() => {
             </View>
             <TouchableOpacity style={styles.adviceBannerButton}>
               <Ionicons name="medical" size={16} color={SH_COLORS.rose} />
-              <Text style={styles.adviceBannerButtonText}>Dr Just Ask Apollo</Text>
+              <Text style={styles.adviceBannerButtonText}>Dr Just Ask S-Pharma</Text>
             </TouchableOpacity>
           </View>
         </LinearGradient>
@@ -709,22 +709,22 @@ const DoctorSpecialistsSection = React.memo(() => {
 });
 
 // ============================================================================
-// SECTION 12: ASK APOLLO
+// SECTION 12: ASK S-Pharma
 // ============================================================================
-const AskApolloSexualHealth = React.memo(() => {
+const AskSPharmaSexualHealth = React.memo(() => {
   return (
     <View style={styles.sectionContainer}>
-      <Animated.View entering={FadeInDown.duration(600)} style={styles.askApolloContainer}>
-        <View style={styles.askApolloHeader}>
-          <View style={styles.askApolloIcon}>
+      <Animated.View entering={FadeInDown.duration(600)} style={styles.askSPharmaContainer}>
+        <View style={styles.askSPharmaHeader}>
+          <View style={styles.askSPharmaIcon}>
             <Ionicons name="chatbubbles" size={20} color={SH_COLORS.rose} />
           </View>
           <View>
-            <Text style={styles.askApolloTitle}>Private advice for sexual{'\n'}health concerns</Text>
-            <Text style={styles.askApolloSubtitle}>ASK APOLLO ABOUT...</Text>
+            <Text style={styles.askSPharmaTitle}>Private advice for sexual{'\n'}health concerns</Text>
+            <Text style={styles.askSPharmaSubtitle}>ASK S-Pharma ABOUT...</Text>
           </View>
         </View>
-        <View style={styles.askApolloQuestions}>
+        <View style={styles.askSPharmaQuestions}>
           {[
             'How to use condoms correctly for maximum protection?',
             'What are the symptoms of common STIs?',
@@ -732,15 +732,15 @@ const AskApolloSexualHealth = React.memo(() => {
             'How can I improve my intimate health naturally?',
             'When should I see a sexologist?',
           ].map((q, i) => (
-            <TouchableOpacity key={i} style={styles.askApolloQuestion}>
-              <Text style={styles.askApolloQuestionText}>{q}</Text>
+            <TouchableOpacity key={i} style={styles.askSPharmaQuestion}>
+              <Text style={styles.askSPharmaQuestionText}>{q}</Text>
               <Ionicons name="chevron-forward" size={14} color={COLORS.textTertiary} />
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.askApolloButton}>
+        <TouchableOpacity style={styles.askSPharmaButton}>
           <Ionicons name="medical" size={16} color={COLORS.textWhite} />
-          <Text style={styles.askApolloButtonText}>Dr Just Ask Apollo</Text>
+          <Text style={styles.askSPharmaButtonText}>Dr Just Ask S-Pharma</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
@@ -835,7 +835,7 @@ const SexualHealthScreen = React.memo(({ scrollY }) => {
       <DoctorSpecialistsSection />
       <SectionDivider variant="purple" />
 
-      <AskApolloSexualHealth />
+      <AskSPharmaSexualHealth />
       <SectionDivider variant="rose" />
 
       <DoctorConsultationCTA />
@@ -1515,20 +1515,20 @@ const styles = StyleSheet.create({
     color: COLORS.textTertiary,
   },
 
-  // ASK APOLLO
-  askApolloContainer: {
+  // ASK S-Pharma
+  askSPharmaContainer: {
     backgroundColor: COLORS.cardWhite,
     borderRadius: RADIUS.card,
     padding: SPACING.lg,
     ...SHADOWS.cardSoft,
   },
-  askApolloHeader: {
+  askSPharmaHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
     marginBottom: SPACING.lg,
   },
-  askApolloIcon: {
+  askSPharmaIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -1536,22 +1536,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  askApolloTitle: {
+  askSPharmaTitle: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textPrimary,
     lineHeight: 18,
   },
-  askApolloSubtitle: {
+  askSPharmaSubtitle: {
     ...TYPOGRAPHY.badge,
     color: COLORS.textTertiary,
     letterSpacing: 1.5,
     marginTop: 2,
   },
-  askApolloQuestions: {
+  askSPharmaQuestions: {
     gap: SPACING.sm,
     marginBottom: SPACING.lg,
   },
-  askApolloQuestion: {
+  askSPharmaQuestion: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -1562,12 +1562,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borderLight,
   },
-  askApolloQuestionText: {
+  askSPharmaQuestionText: {
     ...TYPOGRAPHY.bodySmall,
     color: COLORS.textSecondary,
     flex: 1,
   },
-  askApolloButton: {
+  askSPharmaButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -1576,7 +1576,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.button,
     gap: SPACING.sm,
   },
-  askApolloButtonText: {
+  askSPharmaButtonText: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textWhite,
     fontWeight: '700',

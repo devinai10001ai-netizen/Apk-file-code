@@ -54,7 +54,7 @@ const ProHealthHeader = memo(() => (
         <Text style={styles.proLogoText}>PRO</Text>
         <Text style={styles.proLogoSub}>HEALTH</Text>
       </View>
-      <Text style={styles.proByApollo}>BY Apollo</Text>
+      <Text style={styles.proByS-Pharma}>BY S-Pharma</Text>
     </View>
     <TouchableOpacity style={styles.callToBookBtn} accessibilityLabel="Call to book">
       <Ionicons name="call" size={16} color="#FFF" />
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   proLogo: { alignItems: 'center' },
   proLogoText: { fontSize: 16, fontWeight: '800', color: C.primaryTeal, letterSpacing: 2 },
   proLogoSub: { fontSize: 8, color: C.primaryTeal, letterSpacing: 1, marginTop: -2 },
-  proByApollo: { fontSize: 12, color: C.textSecondary },
+  proByS-Pharma: { fontSize: 12, color: C.textSecondary },
   callToBookBtn: { flexDirection: 'row', alignItems: 'center', backgroundColor: C.amber, borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, gap: 6 },
   callToBookText: { fontSize: 13, fontWeight: '600', color: '#FFF' },
 

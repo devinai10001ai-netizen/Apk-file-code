@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - INSURANCE SECTION THEME & DATA
+ * S-Pharma 24/7 - INSURANCE SECTION THEME & DATA
  * ============================================================================
  * 
  * Premium Insurance section design tokens, data constants, and shared
@@ -117,8 +117,8 @@ export const INSURANCE_DATA = {
   heroBanner: {
     title: 'Save up to 50%*',
     subtitle: 'on your health cover',
-    description: 'Apollo recommends what fits you best\n-- not what costs more.',
-    badgeText: 'APOLLO ASSURED',
+    description: 'S-Pharma recommends what fits you best\n-- not what costs more.',
+    badgeText: 'S-Pharma ASSURED',
     starRating: 4.8,
     reviewCount: '2.5L+',
     trustText: 'Trusted by 25 Lakh+ families',
@@ -185,7 +185,7 @@ export const INSURANCE_DATA = {
   plans: [
     {
       id: 1,
-      name: 'Apollo Health Shield',
+      name: 'S-Pharma Health Shield',
       badge: 'MOST POPULAR',
       coverAmount: '5 Lakh',
       premium: '499/month',
@@ -206,14 +206,14 @@ export const INSURANCE_DATA = {
     },
     {
       id: 2,
-      name: 'Apollo Family Floater',
+      name: 'S-Pharma Family Floater',
       badge: 'BEST VALUE',
       coverAmount: '10 Lakh',
       premium: '899/month',
       dailyCost: '30/day',
       features: [
         'Cover entire family under one plan',
-        'Cashless at Apollo & partner hospitals',
+        'Cashless at S-Pharma & partner hospitals',
         'Unlimited restoration benefit',
         'Newborn baby coverage from day 1',
         'Annual health checkup for all members',
@@ -227,7 +227,7 @@ export const INSURANCE_DATA = {
     },
     {
       id: 3,
-      name: 'Apollo Super Top-Up',
+      name: 'S-Pharma Super Top-Up',
       badge: 'SMART CHOICE',
       coverAmount: '1 Crore',
       premium: '299/month',
@@ -238,7 +238,7 @@ export const INSURANCE_DATA = {
         'No sub-limits on room rent',
         'Critical illness cover included',
         'Air ambulance cover up to 5 Lakh',
-        'Second opinion from Apollo doctors',
+        'Second opinion from S-Pharma doctors',
         'Worldwide emergency coverage',
         'Cumulative bonus up to 100%',
       ],
@@ -248,7 +248,7 @@ export const INSURANCE_DATA = {
     },
     {
       id: 4,
-      name: 'Apollo Senior Citizen',
+      name: 'S-Pharma Senior Citizen',
       badge: 'FOR PARENTS',
       coverAmount: '15 Lakh',
       premium: '1,299/month',
@@ -269,9 +269,9 @@ export const INSURANCE_DATA = {
     },
   ],
 
-  // Benefits / Why Apollo Insurance
+  // Benefits / Why S-Pharma Insurance
   benefits: [
-    { id: 1, icon: 'shield-checkmark', title: 'Apollo Assured', description: 'Every plan vetted by Apollo health experts for quality and value', color: '#2B8A6F' },
+    { id: 1, icon: 'shield-checkmark', title: 'S-Pharma Assured', description: 'Every plan vetted by S-Pharma health experts for quality and value', color: '#2B8A6F' },
     { id: 2, icon: 'cash', title: 'Cashless Claims', description: 'Instant cashless treatment at 14,000+ network hospitals across India', color: '#1565C0' },
     { id: 3, icon: 'time', title: 'Quick Settlement', description: 'Claims settled in as fast as 30 minutes with zero paperwork hassle', color: '#FF6B35' },
     { id: 4, icon: 'people', title: 'Expert Advisors', description: '500+ certified insurance advisors to help you choose the right plan', color: '#7B2CBF' },
@@ -346,9 +346,9 @@ export const INSURANCE_DATA = {
       age: 42,
       location: 'Mumbai',
       rating: 5,
-      text: 'Apollo Insurance made my claim process incredibly smooth. Within 30 minutes of submitting my documents, the claim was approved. Cashless treatment at Apollo Hospital was hassle-free.',
+      text: 'S-Pharma Insurance made my claim process incredibly smooth. Within 30 minutes of submitting my documents, the claim was approved. Cashless treatment at S-Pharma Hospital was hassle-free.',
       claimAmount: '2,50,000',
-      planName: 'Apollo Health Shield',
+      planName: 'S-Pharma Health Shield',
       avatar: 'person',
     },
     {
@@ -359,7 +359,7 @@ export const INSURANCE_DATA = {
       rating: 5,
       text: 'Best decision to get family floater plan. When my daughter needed hospitalization, everything was covered. The advisor helped us choose the perfect plan for our family of 4.',
       claimAmount: '1,80,000',
-      planName: 'Apollo Family Floater',
+      planName: 'S-Pharma Family Floater',
       avatar: 'woman',
     },
     {
@@ -370,7 +370,7 @@ export const INSURANCE_DATA = {
       rating: 5,
       text: 'Got the Super Top-Up plan on my advisor\'s recommendation. Best value for money. When I needed knee replacement surgery, the entire cost of 8 lakhs was covered seamlessly.',
       claimAmount: '8,00,000',
-      planName: 'Apollo Super Top-Up',
+      planName: 'S-Pharma Super Top-Up',
       avatar: 'person',
     },
     {
@@ -379,9 +379,9 @@ export const INSURANCE_DATA = {
       age: 30,
       location: 'Ahmedabad',
       rating: 4,
-      text: 'The maternity benefit was a lifesaver. All pregnancy-related expenses including delivery were covered. Apollo Health Records integration made document management easy.',
+      text: 'The maternity benefit was a lifesaver. All pregnancy-related expenses including delivery were covered. S-Pharma Health Records integration made document management easy.',
       claimAmount: '1,20,000',
-      planName: 'Apollo Health Shield',
+      planName: 'S-Pharma Health Shield',
       avatar: 'woman',
     },
   ],
@@ -398,14 +398,14 @@ export const INSURANCE_DATA = {
 
   // FAQs
   faqs: [
-    { id: 1, question: 'What is the waiting period for pre-existing diseases?', answer: 'Most Apollo Insurance plans have a waiting period of 2-4 years for pre-existing diseases. Some plans offer reduced waiting periods with additional premium.' },
-    { id: 2, question: 'Can I port my existing health insurance to Apollo?', answer: 'Yes, you can port your existing health insurance to any Apollo-recommended plan. Your accumulated no-claim bonus and waiting period credits will be carried forward.' },
+    { id: 1, question: 'What is the waiting period for pre-existing diseases?', answer: 'Most S-Pharma Insurance plans have a waiting period of 2-4 years for pre-existing diseases. Some plans offer reduced waiting periods with additional premium.' },
+    { id: 2, question: 'Can I port my existing health insurance to S-Pharma?', answer: 'Yes, you can port your existing health insurance to any S-Pharma-recommended plan. Your accumulated no-claim bonus and waiting period credits will be carried forward.' },
     { id: 3, question: 'How does cashless claim work?', answer: 'Simply show your health card at any of our 14,000+ network hospitals. The insurer directly settles the bill with the hospital. No upfront payment needed from your side.' },
     { id: 4, question: 'Is there a tax benefit on health insurance?', answer: 'Yes, premiums paid for health insurance are eligible for tax deduction under Section 80D of the Income Tax Act up to 25,000 for self and 50,000 for senior citizen parents.' },
-    { id: 5, question: 'What documents are needed for a claim?', answer: 'Hospital discharge summary, original bills, prescription copies, diagnostic reports, and a filled claim form. All can be submitted digitally through the Apollo app.' },
+    { id: 5, question: 'What documents are needed for a claim?', answer: 'Hospital discharge summary, original bills, prescription copies, diagnostic reports, and a filled claim form. All can be submitted digitally through the S-Pharma app.' },
     { id: 6, question: 'Can I add family members later?', answer: 'Yes, you can add new family members during policy renewal. Newborn babies can be added from day 1 under family floater plans at no additional cost for the first 90 days.' },
     { id: 7, question: 'What is a Super Top-Up plan?', answer: 'A Super Top-Up plan provides additional coverage above your existing insurance deductible. It\'s a cost-effective way to increase your health cover to 1 Crore or more.' },
-    { id: 8, question: 'Are COVID-19 treatments covered?', answer: 'Yes, all Apollo Insurance plans cover COVID-19 related hospitalisation, including home treatment as per IRDAI guidelines. Vaccination costs may also be covered under some plans.' },
+    { id: 8, question: 'Are COVID-19 treatments covered?', answer: 'Yes, all S-Pharma Insurance plans cover COVID-19 related hospitalisation, including home treatment as per IRDAI guidelines. Vaccination costs may also be covered under some plans.' },
   ],
 
   // Tax Benefits Info
@@ -426,7 +426,7 @@ export const INSURANCE_DATA = {
   networkHospitals: {
     total: '14,000+',
     cities: '1,000+',
-    apolloHospitals: '71',
+    S-pharmaHospitals: '71',
     multiSpecialty: '2,500+',
     topCities: [
       { name: 'Mumbai', count: 1200 },

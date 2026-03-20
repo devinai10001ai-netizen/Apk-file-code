@@ -40,7 +40,7 @@ export default function MyAppointments() {
 
   const appointments = {
     upcoming: [
-      { id: 1, doctor: 'Dr. Sarah Johnson', specialty: 'Cardiologist', hospital: 'Apollo Hospital', date: 'Mar 22, 2026', time: '10:00 AM', status: 'confirmed', image: '👩‍⚕️' },
+      { id: 1, doctor: 'Dr. Sarah Johnson', specialty: 'Cardiologist', hospital: 'S-Pharma Hospital', date: 'Mar 22, 2026', time: '10:00 AM', status: 'confirmed', image: '👩‍⚕️' },
       { id: 2, doctor: 'Dr. Michael Chen', specialty: 'General Physician', hospital: 'City Medical Center', date: 'Mar 25, 2026', time: '2:30 PM', status: 'confirmed', image: '👨‍⚕️' },
       { id: 3, doctor: 'Dr. Emily Davis', specialty: 'Dermatologist', hospital: 'Skin Care Clinic', date: 'Mar 28, 2026', time: '11:00 AM', status: 'pending', image: '👩‍⚕️' },
     ],

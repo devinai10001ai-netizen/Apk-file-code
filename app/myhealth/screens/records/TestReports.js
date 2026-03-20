@@ -39,10 +39,10 @@ export default function TestReports() {
   const [filter, setFilter] = useState('all');
 
   const reports = [
-    { id: 1, testName: 'Complete Blood Count (CBC)', lab: 'Apollo Diagnostics', date: 'Mar 18, 2026', status: 'normal', category: 'Blood', doctor: 'Dr. Sarah Johnson' },
+    { id: 1, testName: 'Complete Blood Count (CBC)', lab: 'S-Pharma Diagnostics', date: 'Mar 18, 2026', status: 'normal', category: 'Blood', doctor: 'Dr. Sarah Johnson' },
     { id: 2, testName: 'Lipid Profile', lab: 'Metropolis Labs', date: 'Mar 15, 2026', status: 'abnormal', category: 'Blood', doctor: 'Dr. Michael Chen' },
     { id: 3, testName: 'Thyroid Profile (T3, T4, TSH)', lab: 'SRL Diagnostics', date: 'Mar 10, 2026', status: 'normal', category: 'Hormone', doctor: 'Dr. Emily Davis' },
-    { id: 4, testName: 'HbA1c (Diabetes)', lab: 'Apollo Diagnostics', date: 'Mar 5, 2026', status: 'prediabetic', category: 'Blood Sugar', doctor: 'Dr. James Wilson' },
+    { id: 4, testName: 'HbA1c (Diabetes)', lab: 'S-Pharma Diagnostics', date: 'Mar 5, 2026', status: 'prediabetic', category: 'Blood Sugar', doctor: 'Dr. James Wilson' },
     { id: 5, testName: 'Liver Function Test', lab: 'Dr. Lal PathLabs', date: 'Feb 28, 2026', status: 'normal', category: 'Liver', doctor: 'Dr. Michael Chen' },
     { id: 6, testName: 'Kidney Function Test', lab: 'Metropolis Labs', date: 'Feb 25, 2026', status: 'normal', category: 'Kidney', doctor: 'Dr. Sarah Johnson' },
   ];

@@ -39,7 +39,7 @@ export default function MyPrescriptions() {
   const [filter, setFilter] = useState('all');
 
   const prescriptions = [
-    { id: 1, doctor: 'Dr. Sarah Johnson', specialty: 'Cardiologist', date: 'Mar 15, 2026', medicines: ['Aspirin 75mg', 'Metoprolol 25mg', 'Rosuvastatin 10mg'], validUntil: 'Mar 15, 2027', status: 'active', hospital: 'Apollo Hospital' },
+    { id: 1, doctor: 'Dr. Sarah Johnson', specialty: 'Cardiologist', date: 'Mar 15, 2026', medicines: ['Aspirin 75mg', 'Metoprolol 25mg', 'Rosuvastatin 10mg'], validUntil: 'Mar 15, 2027', status: 'active', hospital: 'S-Pharma Hospital' },
     { id: 2, doctor: 'Dr. Michael Chen', specialty: 'General Physician', date: 'Mar 10, 2026', medicines: ['Amoxicillin 500mg', 'Cetirizine 10mg', 'Paracetamol 500mg'], validUntil: 'Mar 10, 2026', status: 'expired', hospital: 'City Medical Center' },
     { id: 3, doctor: 'Dr. Emily Davis', specialty: 'Dermatologist', date: 'Feb 28, 2026', medicines: ['Mometasone Cream', 'Hydroxyzine 25mg'], validUntil: 'Feb 28, 2027', status: 'active', hospital: 'Skin Care Clinic' },
     { id: 4, doctor: 'Dr. James Wilson', specialty: 'Orthopedic', date: 'Feb 20, 2026', medicines: ['Diclofenac Gel', 'Calcium D3', 'Vitamin D3'], validUntil: 'Feb 20, 2027', status: 'active', hospital: 'Joint Care Center' },

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - MEN SCREEN (PREMIUM EDITION)
+ * S-Pharma 24/7 - MEN SCREEN (PREMIUM EDITION)
  * ============================================================================
  *
  * Premium Men vertical screen composing all sections:

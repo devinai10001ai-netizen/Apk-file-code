@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - PHARMACY DETAILS LAYOUT
+ * S-Pharma 24|7 - PHARMACY DETAILS LAYOUT
  * Stack Navigation for all pharmacy detail pages
  */
 import { Stack } from 'expo-router';

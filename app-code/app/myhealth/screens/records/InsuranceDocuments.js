@@ -45,7 +45,7 @@ export default function InsuranceDocuments() {
   ];
 
   const claims = [
-    { id: 1, claimNo: 'CLM/2026/001', hospital: 'Apollo Hospital', amount: '₹45,000', status: 'approved', date: 'Feb 2026' },
+    { id: 1, claimNo: 'CLM/2026/001', hospital: 'S-Pharma Hospital', amount: '₹45,000', status: 'approved', date: 'Feb 2026' },
     { id: 2, claimNo: 'CLM/2026/002', hospital: 'City Medical', amount: '₹12,000', status: 'pending', date: 'Mar 2026' },
   ];
 

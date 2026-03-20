@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - CONCERN DETAIL PAGE
+ * S-Pharma 24|7 - CONCERN DETAIL PAGE
  * Ultra Premium Concern Detail with Super PRO MAX UI
  * Completely unique design for health concern details
  */

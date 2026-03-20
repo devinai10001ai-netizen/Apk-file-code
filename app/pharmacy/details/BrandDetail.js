@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - BRAND DETAIL PAGE
+ * S-Pharma 24|7 - BRAND DETAIL PAGE
  * Ultra Premium Brand Detail with Super PRO MAX UI
  * Completely unique design for brand details
  */

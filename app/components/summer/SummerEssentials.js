@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SUMMER ESSENTIALS, BRANDS, DEAL OF DAY & HYDRATION
+ * S-Pharma 24/7 - SUMMER ESSENTIALS, BRANDS, DEAL OF DAY & HYDRATION
  * ============================================================================
  *
  * Premium Summer section components including essentials grid,

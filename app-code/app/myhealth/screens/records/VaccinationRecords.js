@@ -36,7 +36,7 @@ export default function VaccinationRecords() {
   const router = useRouter();
 
   const vaccinations = [
-    { id: 1, name: 'COVID-19 Vaccine', dose: 'Booster', date: 'Jan 15, 2026', provider: 'Apollo Hospital', status: 'completed', nextDue: null, icon: 'medkit' },
+    { id: 1, name: 'COVID-19 Vaccine', dose: 'Booster', date: 'Jan 15, 2026', provider: 'S-Pharma Hospital', status: 'completed', nextDue: null, icon: 'medkit' },
     { id: 2, name: 'Influenza (Flu)', dose: 'Annual', date: 'Nov 20, 2025', provider: 'City Clinic', status: 'completed', nextDue: 'Nov 2026', icon: 'water' },
     { id: 3, name: 'Tetanus (TT)', dose: 'Booster', date: 'Mar 10, 2024', provider: 'Government Hospital', status: 'completed', nextDue: 'Mar 2034', icon: 'shield-checkmark' },
     { id: 4, name: 'Hepatitis B', dose: '3rd Dose', date: 'Jun 15, 2023', provider: 'Metropolis Labs', status: 'completed', nextDue: null, icon: 'medkit' },

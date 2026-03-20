@@ -10,7 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { DoctorsTheme, ASSISTANT_CHIPS } from '../components/doctors/DoctorsTheme';
 
-// Ask Apollo Header
+// Ask S-Pharma Header
 const AssistantHeader = memo(() => {
   const router = useRouter();
   return (
@@ -23,7 +23,7 @@ const AssistantHeader = memo(() => {
       >
         <Ionicons name="arrow-back" size={22} color={DoctorsTheme.colors.textPrimary} />
       </TouchableOpacity>
-      <Text style={headerStyles.title}>Ask Apollo</Text>
+      <Text style={headerStyles.title}>Ask S-Pharma</Text>
     </View>
   );
 });
@@ -56,10 +56,10 @@ const DiscoveryBanner = memo(() => {
   const router = useRouter();
   return (
   <View style={discoveryStyles.container}>
-    <Text style={discoveryStyles.text}>Discover Ask Apollo</Text>
+    <Text style={discoveryStyles.text}>Discover Ask S-Pharma</Text>
     <TouchableOpacity style={discoveryStyles.tourButton} accessibilityRole="button" onPress={() => router.push('/doctors/specialty/generalpractitioner')}>
       <Text style={discoveryStyles.tourText}>Take a tour</Text>
-      <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.apolloOrange} />
+      <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.spharmaOrange} />
     </TouchableOpacity>
   </View>
   );
@@ -89,7 +89,7 @@ const discoveryStyles = StyleSheet.create({
   tourText: {
     fontSize: 14,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
 });
 
@@ -225,9 +225,9 @@ const ChatInputBar = memo(() => (
     </TouchableOpacity>
     <TextInput
       style={inputStyles.input}
-      placeholder="Or Just Ask Apollo..."
+      placeholder="Or Just Ask S-Pharma..."
       placeholderTextColor={DoctorsTheme.colors.textTertiary}
-      accessibilityLabel="Ask Apollo chat input"
+      accessibilityLabel="Ask S-Pharma chat input"
     />
     <TouchableOpacity style={inputStyles.micButton} accessibilityRole="button" accessibilityLabel="Voice input">
       <Ionicons name="mic" size={22} color={DoctorsTheme.colors.white} />
@@ -267,7 +267,7 @@ const inputStyles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     justifyContent: 'center',
     alignItems: 'center',
   },

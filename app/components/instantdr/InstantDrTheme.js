@@ -157,7 +157,7 @@ export const DR_DATA = {
 
   emergencyServices: [
     { id: 1, title: 'Ambulance', desc: 'Emergency ambulance service', icon: 'car', color: '#FF4444', phone: '108' },
-    { id: 2, title: 'Emergency Room', desc: 'Nearest Apollo ER', icon: 'medical', color: '#FF6B35', phone: '1066' },
+    { id: 2, title: 'Emergency Room', desc: 'Nearest S-Pharma ER', icon: 'medical', color: '#FF6B35', phone: '1066' },
     { id: 3, title: 'Poison Control', desc: '24/7 poison helpline', icon: 'warning', color: '#9B59B6', phone: '1800-116-117' },
   ],
 
@@ -181,8 +181,8 @@ export const DR_DATA = {
 
   faqData: [
     { id: 1, question: 'How does online consultation work?', answer: 'You can consult with a doctor via video call, audio call, or chat. Simply choose your specialty, select a doctor, and start your consultation within minutes.' },
-    { id: 2, question: 'Are prescriptions valid from online consultations?', answer: 'Yes, prescriptions from our registered doctors are legally valid. You can use them to order medicines from Apollo Pharmacy.' },
-    { id: 3, question: 'What if I need emergency care?', answer: 'For emergencies, please call 108 for ambulance services or visit the nearest Apollo Emergency Room. Our app can help you locate the nearest facility.' },
+    { id: 2, question: 'Are prescriptions valid from online consultations?', answer: 'Yes, prescriptions from our registered doctors are legally valid. You can use them to order medicines from S-Pharma Pharmacy.' },
+    { id: 3, question: 'What if I need emergency care?', answer: 'For emergencies, please call 108 for ambulance services or visit the nearest S-Pharma Emergency Room. Our app can help you locate the nearest facility.' },
     { id: 4, question: 'Can I get a refund for my consultation?', answer: 'Yes, if the doctor is unable to attend your consultation or if you cancel before the scheduled time, a full refund will be processed within 5-7 business days.' },
     { id: 5, question: 'How do I share my reports with the doctor?', answer: 'During the consultation, you can upload lab reports, images, and other medical documents directly through the chat interface.' },
     { id: 6, question: 'Is my medical data secure?', answer: 'Absolutely. All your medical data is encrypted and stored securely following HIPAA-compliant protocols. Only you and your treating doctor have access.' },
@@ -195,9 +195,9 @@ export const DR_DATA = {
   ],
 
   healthPackages: [
-    { id: 1, title: 'Apollo Basic Health Check', tests: 45, price: 999, oldPrice: 2499, discount: 60, icon: 'shield-checkmark', color: '#0088FF' },
-    { id: 2, title: 'Apollo Comprehensive', tests: 82, price: 1999, oldPrice: 4999, discount: 60, icon: 'star', color: '#FFB800' },
-    { id: 3, title: 'Apollo Executive', tests: 110, price: 3999, oldPrice: 7999, discount: 50, icon: 'diamond', color: '#7B2CBF' },
-    { id: 4, title: 'Apollo Senior Citizen', tests: 95, price: 2499, oldPrice: 5999, discount: 58, icon: 'heart', color: '#E91E63' },
+    { id: 1, title: 'S-Pharma Basic Health Check', tests: 45, price: 999, oldPrice: 2499, discount: 60, icon: 'shield-checkmark', color: '#0088FF' },
+    { id: 2, title: 'S-Pharma Comprehensive', tests: 82, price: 1999, oldPrice: 4999, discount: 60, icon: 'star', color: '#FFB800' },
+    { id: 3, title: 'S-Pharma Executive', tests: 110, price: 3999, oldPrice: 7999, discount: 50, icon: 'diamond', color: '#7B2CBF' },
+    { id: 4, title: 'S-Pharma Senior Citizen', tests: 95, price: 2499, oldPrice: 5999, discount: 58, icon: 'heart', color: '#E91E63' },
   ],
 };

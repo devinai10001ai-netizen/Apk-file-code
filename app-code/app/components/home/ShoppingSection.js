@@ -143,7 +143,7 @@ export const BuyAgainHeader = React.memo(({ onViewAll, activeTab, onTabChange })
             style={styles.viewAllButton}
           >
             <Text style={styles.viewAllText}>View All</Text>
-            <Ionicons name="chevron-forward" size={14} color={COLORS.apolloGreen} />
+            <Ionicons name="chevron-forward" size={14} color={COLORS.spharmaGreen} />
           </TouchableOpacity>
         </Animated.View>
       </View>
@@ -323,7 +323,7 @@ const AnimatedMedicineCard = React.memo(({ item, index, onAddToCart, quantities 
 
         {/* Delivery Estimate */}
         <View style={styles.medicineDeliveryRow}>
-          <Ionicons name="time-outline" size={10} color={COLORS.apolloGreen} />
+          <Ionicons name="time-outline" size={10} color={COLORS.spharmaGreen} />
           <Text style={styles.medicineDeliveryText}>By {item.delivery}</Text>
         </View>
       </TouchableOpacity>
@@ -564,20 +564,20 @@ const styles = StyleSheet.create({
     width: 40,
     height: 3,
     borderRadius: 1.5,
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
   },
   viewAllButton: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: SPACING.xs,
     paddingHorizontal: SPACING.sm,
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     borderRadius: RADIUS.pill,
     gap: 2,
   },
   viewAllText: {
     ...TYPOGRAPHY.labelMedium,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
   },
   tabsContainer: {
     position: 'relative',
@@ -598,7 +598,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   tabTextActive: {
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '700',
   },
   tabIndicator: {
@@ -652,7 +652,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   medicineAddButton: {
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.sm,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.xs,
@@ -666,7 +666,7 @@ const styles = StyleSheet.create({
   medicineQtyContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.sm,
     overflow: 'hidden',
     ...SHADOWS.button,
@@ -748,7 +748,7 @@ const styles = StyleSheet.create({
   },
   medicineDeliveryText: {
     ...TYPOGRAPHY.caption,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '500',
   },
 
@@ -889,7 +889,7 @@ const styles = StyleSheet.create({
   },
   bankDotActive: {
     width: 18,
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: 3,
   },
   bankDotsMore: {

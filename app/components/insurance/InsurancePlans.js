@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - INSURANCE PLANS & BENEFITS SECTION
+ * S-Pharma 24/7 - INSURANCE PLANS & BENEFITS SECTION
  * ============================================================================
  *
  * Premium health cover plans carousel, benefits grid, claim process,
@@ -213,7 +213,7 @@ export const PlansCarouselSection = React.memo(() => {
       <View style={planStyles.sectionHeader}>
         <View>
           <Text style={planStyles.sectionTitle}>Health Cover Plans</Text>
-          <Text style={planStyles.sectionSubtitle}>Apollo-recommended plans for you</Text>
+          <Text style={planStyles.sectionSubtitle}>S-Pharma-recommended plans for you</Text>
         </View>
         <TouchableOpacity style={planStyles.compareButton} activeOpacity={0.7}>
           <Text style={planStyles.compareText}>Compare</Text>
@@ -298,7 +298,7 @@ export const BenefitsSection = React.memo(() => {
     <View style={benefitStyles.section}>
       <View style={benefitStyles.sectionHeader}>
         <Ionicons name="star" size={18} color={INSURANCE_COLORS.assuredGold} />
-        <Text style={benefitStyles.sectionTitle}>Why Apollo Insurance?</Text>
+        <Text style={benefitStyles.sectionTitle}>Why S-Pharma Insurance?</Text>
       </View>
       <Text style={benefitStyles.sectionSubtitle}>Trusted by 25 lakh+ families across India</Text>
 
@@ -768,8 +768,8 @@ export const NetworkHospitalsSection = React.memo(() => {
           <Text style={networkStyles.statLabel}>Cities</Text>
         </View>
         <View style={networkStyles.statCard}>
-          <Text style={networkStyles.statValue}>{data.apolloHospitals}</Text>
-          <Text style={networkStyles.statLabel}>Apollo Hospitals</Text>
+          <Text style={networkStyles.statValue}>{data.S-pharmaHospitals}</Text>
+          <Text style={networkStyles.statLabel}>S-Pharma Hospitals</Text>
         </View>
       </View>
 

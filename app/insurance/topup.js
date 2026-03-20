@@ -70,7 +70,7 @@ export default function Topup() {
           <View>
             <Text style={s.headerLabel}>INTRODUCING</Text>
             <Text style={s.headerTitle}>Care Health Super Top-Up</Text>
-            <Text style={s.headerSubtitle}>Exclusive Group Health Plan{'\n'}for Apollo Users</Text>
+            <Text style={s.headerSubtitle}>Exclusive Group Health Plan{'\n'}for S-Pharma Users</Text>
           </View>
           <View style={s.headerBadge}>
             <Ionicons name="shield-checkmark" size={32} color="#fff" />
@@ -282,10 +282,10 @@ export default function Topup() {
   // ============== SECTION 9: ECOSYSTEM ==============
   const renderEcosystem = () => (
     <View style={s.ecosystemSection}>
-      <Text style={s.ecosystemLabel}>ACCESS APOLLO'S ECOSYSTEM</Text>
+      <Text style={s.ecosystemLabel}>ACCESS S-Pharma'S ECOSYSTEM</Text>
       <View style={s.ecosystemGrid}>
         {[
-          { count: '71+', label: 'Apollo\nHospitals' },
+          { count: '71+', label: 'S-Pharma\nHospitals' },
           { count: '6000+', label: 'Pharmacies\nPan India' },
           { count: '7500+', label: 'Healthcare\nProviders' },
           { count: '1 Lakh+', label: 'Diagnostic\nCentres' },
@@ -718,9 +718,9 @@ export default function Topup() {
     <View style={s.footerSection}>
       <LinearGradient colors={['#4CAF50', '#1B5E20']} style={s.footerGradient}>
         <Text style={s.footerTitle}>Always Enough</Text>
-        <Text style={s.footerSubtitle}>Powered by Apollo & Care Health</Text>
+        <Text style={s.footerSubtitle}>Powered by S-Pharma & Care Health</Text>
         <View style={s.footerLogos}>
-          {['Apollo', 'Care', 'Niva', 'Star'].map((name, i) => (
+          {['S-Pharma', 'Care', 'Niva', 'Star'].map((name, i) => (
             <View key={i} style={s.footerLogo}>
               <Ionicons name="shield-checkmark" size={20} color="#fff" />
               <Text style={s.footerLogoText}>{name}</Text>

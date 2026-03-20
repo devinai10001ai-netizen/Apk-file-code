@@ -398,7 +398,7 @@ export const KeyIngredientsSection = React.memo(() => {
       <View style={styles.ingredientsSectionHeader}>
         <View style={styles.ingredientsHeaderLeft}>
           <View style={styles.ingredientsHeaderIconContainer}>
-            <Ionicons name="flask" size={20} color={COLORS.apolloGreen} />
+            <Ionicons name="flask" size={20} color={COLORS.spharmaGreen} />
           </View>
           <View>
             <Text style={styles.ingredientsSectionTitle}>Find Your Key Ingredient</Text>
@@ -574,11 +574,11 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: COLORS.apolloGreenSubtle,
+    borderColor: COLORS.spharmaGreenSubtle,
   },
   ingredientsSectionTitle: {
     ...TYPOGRAPHY.h4,

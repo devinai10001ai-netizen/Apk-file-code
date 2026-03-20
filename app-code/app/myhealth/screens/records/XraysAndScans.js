@@ -36,10 +36,10 @@ export default function XraysAndScans() {
   const router = useRouter();
 
   const scans = [
-    { id: 1, name: 'Chest X-Ray', date: 'Feb 28, 2026', hospital: 'Apollo Hospital', doctor: 'Dr. Sarah', status: 'normal', findings: 'No abnormalities detected', icon: 'scan' },
+    { id: 1, name: 'Chest X-Ray', date: 'Feb 28, 2026', hospital: 'S-Pharma Hospital', doctor: 'Dr. Sarah', status: 'normal', findings: 'No abnormalities detected', icon: 'scan' },
     { id: 2, name: 'MRI Brain', date: 'Jan 15, 2026', hospital: 'Metropolis Labs', doctor: 'Dr. Michael', status: 'normal', findings: 'Normal scan results', icon: 'pulse' },
     { id: 3, name: 'CT Scan Abdomen', date: 'Dec 10, 2025', hospital: 'City Medical', doctor: 'Dr. Emily', status: 'findings', findings: 'Minor gallstones detected', icon: 'scan' },
-    { id: 4, name: 'Ultrasound', date: 'Nov 20, 2025', hospital: 'Apollo Hospital', doctor: 'Dr. James', status: 'normal', findings: 'Normal ultrasound', icon: 'water' },
+    { id: 4, name: 'Ultrasound', date: 'Nov 20, 2025', hospital: 'S-Pharma Hospital', doctor: 'Dr. James', status: 'normal', findings: 'Normal ultrasound', icon: 'water' },
   ];
 
   return (

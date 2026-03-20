@@ -129,8 +129,8 @@ const BestValueGrid = memo(() => (
 
 // ─── SECTION 5: TESTIMONIAL ───
 const testimonials = [
-  { text: 'Thank you for the seamless checkup experience. The process was well organized, and the staff was very supportive. I\'m fully satisfied with Apollo 24|7 Diagnostics', name: 'Bishal A' },
-  { text: 'Great experience with Apollo. Reports were delivered on time and the collection process was smooth.', name: 'Rahul M' },
+  { text: 'Thank you for the seamless checkup experience. The process was well organized, and the staff was very supportive. I\'m fully satisfied with S-Pharma 24|7 Diagnostics', name: 'Bishal A' },
+  { text: 'Great experience with S-Pharma. Reports were delivered on time and the collection process was smooth.', name: 'Rahul M' },
   { text: 'Very professional service. The home sample collection was convenient and reports came quickly.', name: 'Priya S' },
 ];
 
@@ -163,10 +163,10 @@ const TestimonialCard = memo(() => {
 
 // ─── SECTION 6: BUY 1 GET 1 FREE GRID ───
 const b1g1Packages = [
-  { name: 'Apollo Ultimate\nWellness Checkup', tests: '98 Tests', oldPrice: '₹12,000', newPrice: '₹7,790' },
-  { name: 'Apollo Exclusive\nHealth Checkup', tests: '71 Tests', oldPrice: '₹7,000', newPrice: '₹4,015' },
-  { name: 'Apollo Total\nWellness Checkup', tests: '58 Tests', oldPrice: '₹4,500', newPrice: '₹2,159' },
-  { name: 'Apollo India\nFull Health Screen', tests: '54 Tests', oldPrice: '₹3,500', newPrice: '₹2,089' },
+  { name: 'S-Pharma Ultimate\nWellness Checkup', tests: '98 Tests', oldPrice: '₹12,000', newPrice: '₹7,790' },
+  { name: 'S-Pharma Exclusive\nHealth Checkup', tests: '71 Tests', oldPrice: '₹7,000', newPrice: '₹4,015' },
+  { name: 'S-Pharma Total\nWellness Checkup', tests: '58 Tests', oldPrice: '₹4,500', newPrice: '₹2,159' },
+  { name: 'S-Pharma India\nFull Health Screen', tests: '54 Tests', oldPrice: '₹3,500', newPrice: '₹2,089' },
 ];
 
 const Buy1Get1Grid = memo(() => (
@@ -252,7 +252,7 @@ const Buy1Get1StripBanner = memo(() => (
         <Text style={styles.b1g1StripBadgeText}>BUY 1 GET 1{'\n'}FREE</Text>
       </View>
       <View style={styles.b1g1StripContent}>
-        <Text style={styles.b1g1StripTitle}>Add 2 Apollo Full Body Checkup &</Text>
+        <Text style={styles.b1g1StripTitle}>Add 2 S-Pharma Full Body Checkup &</Text>
         <Text style={styles.b1g1StripSub}>Pay Only for 1 <Text style={{ fontWeight: '700' }}>Code: BUY1GET1</Text></Text>
       </View>
       <Ionicons name="chevron-forward" size={20} color={C.textPrimary} />
@@ -269,7 +269,7 @@ const videos = [
 
 const VideoThumbnails = memo(() => (
   <View style={styles.sectionPadding}>
-    <Text style={styles.sectionTitle}>Lab Tests with Apollo247</Text>
+    <Text style={styles.sectionTitle}>Lab Tests with S-Pharma247</Text>
     <FlatList
       horizontal
       data={videos}
@@ -295,7 +295,7 @@ const VideoThumbnails = memo(() => (
 const offerTerms = [
   { title: 'Offer Eligibility', content: '' },
   { title: 'Refund Criteria', content: '' },
-  { title: 'Refund Process', content: '1. If your full body checkup report comes back 100% normal, you are eligible for a complete refund.\n\n2. The refund will be processed within 7-10 business days after verification.\n\n3. You need to submit your refund request through the Apollo 24|7 app within 30 days of receiving your report.\n\n4. The refund will be credited to your original payment method.' },
+  { title: 'Refund Process', content: '1. If your full body checkup report comes back 100% normal, you are eligible for a complete refund.\n\n2. The refund will be processed within 7-10 business days after verification.\n\n3. You need to submit your refund request through the S-Pharma 24|7 app within 30 days of receiving your report.\n\n4. The refund will be credited to your original payment method.' },
   { title: 'Offer Limitations', content: '' },
   { title: 'Dispute Resolution', content: '' },
 ];
@@ -350,7 +350,7 @@ const WhyBookWithUs = memo(() => (
           <Text style={styles.legacyBadgeText}>38{'\n'}Yrs</Text>
         </View>
         <Text style={styles.whyBookNumber}>38 Years</Text>
-        <Text style={styles.whyBookLabel}>of Apollo's{'\n'}healthcare legacy</Text>
+        <Text style={styles.whyBookLabel}>of S-Pharma's{'\n'}healthcare legacy</Text>
       </View>
       <View style={styles.whyBookItem}>
         <Ionicons name="location" size={24} color={C.primaryTeal} />
@@ -366,7 +366,7 @@ const CertificationStrip = memo(() => (
   <View style={styles.certStrip}>
     <View style={styles.certRow}>
       <Ionicons name="shield-checkmark" size={20} color={C.primaryTeal} />
-      <Text style={styles.certText}>Certified safety and quality fulfilled by{'\n'}Apollo Diagnostics.</Text>
+      <Text style={styles.certText}>Certified safety and quality fulfilled by{'\n'}S-Pharma Diagnostics.</Text>
     </View>
     <View style={styles.certLogos}>
       <View style={styles.certLogo}><Text style={styles.certLogoText}>NABL</Text></View>

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - HEALTH CHECK HERO, PROMOS & SEGMENTS
+ * S-Pharma 24/7 - HEALTH CHECK HERO, PROMOS & SEGMENTS
  * ============================================================================
  *
  * Premium Health Check section with promo banners carousel,
@@ -98,7 +98,7 @@ export const HealthCheckScreenHero = React.memo(() => {
               <Ionicons name="fitness" size={16} color={HC_COLORS.healthBlue} />
             </View>
             <Animated.View style={[heroStyles.editionTag, badgeStyle]}>
-              <Text style={heroStyles.editionTagText}>APOLLO DIAGNOSTICS</Text>
+              <Text style={heroStyles.editionTagText}>S-Pharma DIAGNOSTICS</Text>
             </Animated.View>
           </View>
           <Text style={heroStyles.title}>Health Check</Text>

@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import SearchBarAnimated from '../components/doctors/SearchBarAnimated';
 import SpecialityGrid from '../components/doctors/SpecialityGrid';
-import FloatingAskApollo from '../components/doctors/FloatingAskApollo';
+import FloatingAskSPharma from '../components/doctors/FloatingAskSPharma';
 import GoToTopButton from '../components/doctors/GoToTopButton';
 import { DoctorsTheme, ONLINE_SPECIALITIES, ONLINE_SYMPTOMS } from '../components/doctors/DoctorsTheme';
 
@@ -172,16 +172,16 @@ const symptomsStyles = StyleSheet.create({
   },
 });
 
-// Ask Apollo Promo Card (large orange)
-const AskApolloPromoCard = memo(() => (
+// Ask S-Pharma Promo Card (large orange)
+const AskSPharmaPromoCard = memo(() => (
   <View style={promoStyles.container}>
-    <Text style={promoStyles.sectionTitle}>Ask Apollo</Text>
+    <Text style={promoStyles.sectionTitle}>Ask S-Pharma</Text>
     <View style={promoStyles.card}>
       <View style={promoStyles.cardContent}>
         <Text style={promoStyles.cardTitle}>Ask anything about your{'\n'}health.</Text>
-        <Text style={promoStyles.cardSubtitle}>Get trusted answers{'\n'}directly from Apollo</Text>
+        <Text style={promoStyles.cardSubtitle}>Get trusted answers{'\n'}directly from S-Pharma</Text>
         <TouchableOpacity style={promoStyles.askButton} accessibilityRole="button">
-          <Text style={promoStyles.askButtonText}>✦ Ask Apollo</Text>
+          <Text style={promoStyles.askButtonText}>✦ Ask S-Pharma</Text>
           <View style={promoStyles.betaBadge}>
             <Text style={promoStyles.betaText}>beta</Text>
           </View>
@@ -196,7 +196,7 @@ const AskApolloPromoCard = memo(() => (
     </View>
   </View>
 ));
-AskApolloPromoCard.displayName = 'AskApolloPromoCard';
+AskSPharmaPromoCard.displayName = 'AskSPharmaPromoCard';
 
 const promoStyles = StyleSheet.create({
   container: {
@@ -210,7 +210,7 @@ const promoStyles = StyleSheet.create({
     marginBottom: 12,
   },
   card: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 16,
     padding: 20,
     flexDirection: 'row',
@@ -349,12 +349,12 @@ export default function OnlineConsultation() {
 
         <OnlineSymptomsGrid />
 
-        <AskApolloPromoCard />
+        <AskSPharmaPromoCard />
 
         <View style={{ height: 40 }} />
       </ScrollView>
 
-      <FloatingAskApollo />
+      <FloatingAskSPharma />
       <GoToTopButton visible={showGoToTop} onPress={scrollToTop} />
     </View>
   );

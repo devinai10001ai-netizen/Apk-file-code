@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - WOMEN ESSENTIALS, BRANDS, TESTIMONIALS & TIPS
+ * S-Pharma 24/7 - WOMEN ESSENTIALS, BRANDS, TESTIMONIALS & TIPS
  * ============================================================================
  *
  * Premium Women section components including health essentials grid,

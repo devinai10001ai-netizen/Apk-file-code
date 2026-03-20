@@ -1,7 +1,7 @@
-// Apollo 24|7 Doctors Design System
+// S-Pharma Doctors Design System
 export const DoctorsTheme = {
   colors: {
-    apolloOrange: '#E05A2B',
+    spharmaOrange: '#E05A2B',
     teal: '#006B6B',
     headerLavender: '#C8D4F0',
     headerPeach: '#F5E6D8',
@@ -226,7 +226,7 @@ export const LIFESTYLE_CONDITIONS = [
 export const TESTS_DATA = [
   {
     id: 'vitamin',
-    name: 'Apollo Vitamin Check - Basic',
+    name: 'S-Pharma Vitamin Check - Basic',
     subtitle: 'with Smart Reports',
     includes: 'Includes: VITAMIN B12, CALCIUM, SERUM +1 more',
     description: 'Fatigue, low mood, weak immunity, or muscle pain often trace back to vitamin and mineral gaps.',
@@ -245,12 +245,12 @@ export const TESTS_DATA = [
 ];
 
 export const EXPLORE_OFFERINGS = [
-  { id: 'ayurveda', name: 'Apollo\nAyurveda', icon: '🌿', color: '#E8F5E9' },
-  { id: 'askApollo', name: 'Ask\nApollo', icon: '🤖', color: '#E1F5FE' },
+  { id: 'ayurveda', name: 'S-Pharma\nAyurveda', icon: '🌿', color: '#E8F5E9' },
+  { id: 'askSPharma', name: 'Ask\nS-Pharma', icon: '🤖', color: '#E1F5FE' },
 ];
 
 export const WHY_CHOOSE_STATS = [
-  { id: 'hospitals', number: '73+', label: 'Apollo\nHospitals' },
+  { id: 'hospitals', number: '73+', label: 'S-Pharma\nHospitals' },
   { id: 'experts', number: '11000+', label: 'Top Experts\nin India' },
   { id: 'admissions', number: '569000+', label: 'Admissions\nEvery Year' },
   { id: 'years', number: '40 Years', label: 'Healthcare\nExcellence' },

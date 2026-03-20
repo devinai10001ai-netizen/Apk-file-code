@@ -14,7 +14,7 @@ import { DoctorsTheme, SPECIALITIES, SYMPTOMS, TESTS_DATA, LIFESTYLE_CONDITIONS,
 import StickyHeader from '../components/doctors/StickyHeader';
 import SearchBarAnimated from '../components/doctors/SearchBarAnimated';
 import SpecialityGrid from '../components/doctors/SpecialityGrid';
-import FloatingAskApollo from '../components/doctors/FloatingAskApollo';
+import FloatingAskSPharma from '../components/doctors/FloatingAskSPharma';
 import GoToTopButton from '../components/doctors/GoToTopButton';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -23,7 +23,7 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const HeroBanner = memo(() => (
   <View style={heroBannerStyles.container}>
     <View style={heroBannerStyles.badge}>
-      <Text style={heroBannerStyles.badgeText}>4.9+ TOP-RATED APOLLO DOCTORS</Text>
+      <Text style={heroBannerStyles.badgeText}>4.9+ TOP-RATED S-Pharma DOCTORS</Text>
     </View>
     <Text style={heroBannerStyles.title}>Find the Right Doctor{'\n'}For Your Symptoms</Text>
     <TouchableOpacity
@@ -69,7 +69,7 @@ const heroBannerStyles = StyleSheet.create({
     marginBottom: 14,
   },
   ctaButton: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 8,
     paddingHorizontal: 18,
     paddingVertical: 10,
@@ -89,32 +89,32 @@ const heroBannerStyles = StyleSheet.create({
   },
 });
 
-// Ask Apollo Widget
-const AskApolloWidget = memo(() => (
-  <View style={askApolloStyles.container}>
-    <View style={askApolloStyles.header}>
-      <Text style={askApolloStyles.headerTitle}>Need expert guidance on{'\n'}Doctors & Specialities?</Text>
-      <View style={askApolloStyles.aiBadge}>
-        <Text style={askApolloStyles.aiBadgeText}>ASK APOLLO ABOUT...</Text>
+// Ask S-Pharma Widget
+const AskSPharmaWidget = memo(() => (
+  <View style={askSPharmaStyles.container}>
+    <View style={askSPharmaStyles.header}>
+      <Text style={askSPharmaStyles.headerTitle}>Need expert guidance on{'\n'}Doctors & Specialities?</Text>
+      <View style={askSPharmaStyles.aiBadge}>
+        <Text style={askSPharmaStyles.aiBadgeText}>ASK S-Pharma ABOUT...</Text>
       </View>
     </View>
-    <TouchableOpacity style={askApolloStyles.chip} accessibilityRole="button">
-      <Text style={askApolloStyles.chipText}>✦ What conditions are treated by a Urologist?</Text>
+    <TouchableOpacity style={askSPharmaStyles.chip} accessibilityRole="button">
+      <Text style={askSPharmaStyles.chipText}>✦ What conditions are treated by a Urologist?</Text>
       <Ionicons name="chevron-forward" size={14} color={DoctorsTheme.colors.textSecondary} />
     </TouchableOpacity>
-    <View style={askApolloStyles.inputRow}>
+    <View style={askSPharmaStyles.inputRow}>
       <TextInput
-        style={askApolloStyles.input}
-        placeholder="Or Just Ask Apollo..."
+        style={askSPharmaStyles.input}
+        placeholder="Or Just Ask S-Pharma..."
         placeholderTextColor={DoctorsTheme.colors.textTertiary}
-        accessibilityLabel="Ask Apollo input"
+        accessibilityLabel="Ask S-Pharma input"
       />
     </View>
   </View>
 ));
-AskApolloWidget.displayName = 'AskApolloWidget';
+AskSPharmaWidget.displayName = 'AskSPharmaWidget';
 
-const askApolloStyles = StyleSheet.create({
+const askSPharmaStyles = StyleSheet.create({
   container: {
     marginHorizontal: 16,
     marginVertical: 8,
@@ -176,11 +176,11 @@ const askApolloStyles = StyleSheet.create({
 
 // Physio Banner
 const PhysioBanner = memo(() => (
-  <TouchableOpacity style={physioStyles.container} accessibilityRole="button" accessibilityLabel="Apollo Physio at Home">
+  <TouchableOpacity style={physioStyles.container} accessibilityRole="button" accessibilityLabel="S-Pharma Physio at Home">
     <View style={physioStyles.content}>
       <Text style={physioStyles.icon}>🏋️</Text>
       <View style={{ flex: 1 }}>
-        <Text style={physioStyles.title}>Apollo Physio at Home</Text>
+        <Text style={physioStyles.title}>S-Pharma Physio at Home</Text>
         <Text style={physioStyles.subtitle}>Book Free Consult</Text>
       </View>
       <Ionicons name="chevron-forward" size={20} color={DoctorsTheme.colors.textSecondary} />
@@ -289,7 +289,7 @@ const searchByStyles = StyleSheet.create({
   },
   activeTab: {
     borderBottomWidth: 2,
-    borderBottomColor: DoctorsTheme.colors.apolloOrange,
+    borderBottomColor: DoctorsTheme.colors.spharmaOrange,
   },
   tabText: {
     fontSize: 13,
@@ -297,7 +297,7 @@ const searchByStyles = StyleSheet.create({
     fontWeight: '500',
   },
   activeTabText: {
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     fontWeight: '600',
   },
   row: {
@@ -414,7 +414,7 @@ const testsStyles = StyleSheet.create({
     marginBottom: 12,
   },
   bottomTag: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 4,
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -431,12 +431,12 @@ const testsStyles = StyleSheet.create({
     backgroundColor: DoctorsTheme.colors.white,
     borderRadius: 20,
     borderWidth: 1.5,
-    borderColor: DoctorsTheme.colors.apolloOrange,
+    borderColor: DoctorsTheme.colors.spharmaOrange,
     paddingHorizontal: 20,
     paddingVertical: 8,
   },
   viewButtonText: {
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     fontSize: 13,
     fontWeight: '700',
   },
@@ -664,7 +664,7 @@ const ontimeBannerStyles = StyleSheet.create({
     fontSize: 40,
   },
   refundBadge: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 3,
@@ -1096,7 +1096,7 @@ const citiesStyles = StyleSheet.create({
 
 // Hospital Networks
 const HOSPITAL_NETWORKS = [
-  { id: 'apollo', name: 'Apollo Hospitals', icon: '🏥', color: '#0F847E', hospitals: 70, cities: 20 },
+  { id: 'S-pharma', name: 'S-Pharma Hospitals', icon: '🏥', color: '#0F847E', hospitals: 70, cities: 20 },
   { id: 'fortis', name: 'Fortis Healthcare', icon: '🏩', color: '#1565C0', hospitals: 55, cities: 18 },
   { id: 'max', name: 'Max Healthcare', icon: '🏨', color: '#E91E63', hospitals: 40, cities: 15 },
   { id: 'medanta', name: 'Medanta', icon: '🩺', color: '#FF5722', hospitals: 25, cities: 12 },
@@ -1553,7 +1553,7 @@ const packagesStyles = StyleSheet.create({
     fontSize: 32,
   },
   discountBadge: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 4,
     paddingHorizontal: 6,
     paddingVertical: 2,
@@ -1693,7 +1693,7 @@ const additionalStyles = StyleSheet.create({
 
 // Doctor Reviews Section
 const DOCTOR_REVIEWS = [
-  { id: '1', doctorName: 'Dr. Rahul Sharma', specialty: 'Cardiologist', hospital: 'Apollo Hospital', rating: 4.9, reviews: 2500, experience: '15 years', patient: 'Mr. Amit Patel', comment: 'Excellent consultation. Dr. Sharma explained everything clearly and the treatment was very effective.' },
+  { id: '1', doctorName: 'Dr. Rahul Sharma', specialty: 'Cardiologist', hospital: 'S-Pharma Hospital', rating: 4.9, reviews: 2500, experience: '15 years', patient: 'Mr. Amit Patel', comment: 'Excellent consultation. Dr. Sharma explained everything clearly and the treatment was very effective.' },
   { id: '2', doctorName: 'Dr. Priya Singh', specialty: 'Dermatologist', hospital: 'Fortis', rating: 4.8, reviews: 1800, experience: '12 years', patient: 'Ms. Sneha Gupta', comment: 'Very patient and understanding. My skin condition improved significantly after the treatment.' },
   { id: '3', doctorName: 'Dr. Vikram Mehta', specialty: 'Orthopedist', hospital: 'Max Healthcare', rating: 4.9, reviews: 3200, experience: '20 years', patient: 'Mr. Rajesh Kumar', comment: 'Best doctor for joint problems. The surgery was successful and recovery was smooth.' },
 ];
@@ -2079,7 +2079,7 @@ export default function DoctorsIndex() {
         />
         <HeroBanner />
         <SpotlightBanner />
-        <AskApolloWidget />
+        <AskSPharmaWidget />
         <PhysioBanner />
         <SearchDoctorsBy />
         <TestsCarousel />
@@ -2127,7 +2127,7 @@ export default function DoctorsIndex() {
         <View style={{ height: 40 }} />
       </ScrollView>
 
-      <FloatingAskApollo />
+      <FloatingAskSPharma />
       <GoToTopButton visible={showGoToTop} onPress={scrollToTop} />
     </View>
   );

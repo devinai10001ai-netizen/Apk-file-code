@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 CONCERNS TAB - Health Concerns & Lifestyle Categories
+ * S-Pharma 24|7 CONCERNS TAB - Health Concerns & Lifestyle Categories
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensions, Platform, StatusBar, SafeAreaView } from 'react-native';
@@ -56,7 +56,7 @@ const LIFESTYLE_CONCERNS = [
 ];
 
 const FEATURED_SOLUTIONS = [
-  { id: '1', concern: 'Diabetes', name: 'Apollo Sugar Smart Kit', price: 1299, mrp: 1999, items: 5, icon: 'water-outline', color: '#E3F2FD' },
+  { id: '1', concern: 'Diabetes', name: 'S-Pharma Sugar Smart Kit', price: 1299, mrp: 1999, items: 5, icon: 'water-outline', color: '#E3F2FD' },
   { id: '2', concern: 'Heart Health', name: 'CardioWell Bundle', price: 999, mrp: 1499, items: 4, icon: 'heart-outline', color: '#FCE4EC' },
   { id: '3', concern: 'Immunity', name: 'Immunity Power Pack', price: 799, mrp: 1199, items: 6, icon: 'shield-outline', color: '#E8F5E9' },
   { id: '4', concern: 'Joint Care', name: 'Joint Flex Bundle', price: 1099, mrp: 1599, items: 3, icon: 'body-outline', color: '#F3E5F5' },

@@ -1,11 +1,11 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - HEALTH CHECK SCREEN (PREMIUM EDITION)
+ * S-Pharma 24/7 - HEALTH CHECK SCREEN (PREMIUM EDITION)
  * ============================================================================
  *
  * Premium Health Check vertical screen composing all sections:
  *
- * 1. Screen Hero (Apollo Diagnostics branding)
+ * 1. Screen Hero (S-Pharma Diagnostics branding)
  * 2. Promo Banners Carousel (Women's Wellness, Vitamins, etc.)
  * 3. Ultimate Health Challenge (4 segments)
  * 4. Best Value Checkups Carousel

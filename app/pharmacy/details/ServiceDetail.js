@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - PHARMACY SERVICES DETAIL PAGE
+ * S-Pharma 24|7 - PHARMACY SERVICES DETAIL PAGE
  * Ultra Premium Service Detail with Super PRO MAX UI
  */
 import React, { useState, useRef, useEffect } from 'react';
@@ -267,7 +267,7 @@ export default function ServiceDetailPage() {
         id: id,
         name: id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         icon: 'medical',
-        description: 'Premium pharmacy service from Apollo 24|7',
+        description: 'Premium pharmacy service from S-Pharma 24|7',
         color: '#E8F5E9',
         bgColor: '#2E7D32',
         features: ['Fast Delivery', 'Genuine Products', '24/7 Support', 'Easy Returns'],

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SUMMER SCREEN (PREMIUM EDITION)
+ * S-Pharma 24/7 - SUMMER SCREEN (PREMIUM EDITION)
  * ============================================================================
  *
  * Premium Summer vertical screen composing all sections:

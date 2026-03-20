@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 CATEGORIES TAB - Wellness & Health Categories
+ * S-Pharma 24|7 CATEGORIES TAB - Wellness & Health Categories
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensions, Platform, StatusBar, SafeAreaView, TextInput } from 'react-native';
@@ -71,7 +71,7 @@ const LIFESTYLE_CATEGORIES = [
 
 const TOP_BRANDS_CAT = [
   { id: '1', name: 'Himalaya', icon: 'leaf-outline', color: '#E8F5E9', products: 120 },
-  { id: '2', name: 'Apollo Life', icon: 'medical-outline', color: '#E3F2FD', products: 95 },
+  { id: '2', name: 'S-Pharma Life', icon: 'medical-outline', color: '#E3F2FD', products: 95 },
   { id: '3', name: 'Dabur', icon: 'flask-outline', color: '#FFF3E0', products: 110 },
   { id: '4', name: 'Patanjali', icon: 'leaf-outline', color: '#F1F8E9', products: 80 },
   { id: '5', name: 'Mamaearth', icon: 'globe-outline', color: '#FCE4EC', products: 70 },

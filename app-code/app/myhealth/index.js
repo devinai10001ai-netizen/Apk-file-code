@@ -638,7 +638,7 @@ const WellnessPrograms = React.memo(() => {
 const EmergencyContacts = React.memo(() => {
   const contacts = useMemo(() => [
     { id: '1', name: 'Emergency Ambulance', number: '108', icon: 'car', color: '#E74C3C', type: 'Emergency' },
-    { id: '2', name: 'Apollo 24|7 Helpline', number: '1860-500-1066', icon: 'call', color: '#6B4C9A', type: 'Helpline' },
+    { id: '2', name: 'S-Pharma 24|7 Helpline', number: '1860-500-1066', icon: 'call', color: '#6B4C9A', type: 'Helpline' },
     { id: '3', name: 'Poison Control', number: '1800-11-6117', icon: 'warning', color: '#FF9800', type: 'Emergency' },
     { id: '4', name: 'Mental Health Helpline', number: '08046110007', icon: 'heart', color: '#2196F3', type: 'Support' },
   ], []);
@@ -694,7 +694,7 @@ const HealthFooter = React.memo(() => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerDivider} />
-      <Text style={styles.footerBrand}>Apollo 24|7</Text>
+      <Text style={styles.footerBrand}>S-Pharma 24|7</Text>
       <Text style={styles.footerVersion}>Version 8.2.1</Text>
       <Text style={styles.footerCopyright}>Trusted by 50M+ users across India</Text>
       <Text style={styles.footerTagline}>Your Health, Our Priority</Text>

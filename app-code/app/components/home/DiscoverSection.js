@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * DISCOVER SECTION - CURATED + PROMOTIONS + CONTENT + ASK APOLLO + TRUST + FOOTER
+ * DISCOVER SECTION - CURATED + PROMOTIONS + CONTENT + ASK S-Pharma + TRUST + FOOTER
  * ============================================================================
  * 
  * Premium Royal Healthcare Home Screen - Discovery & Trust Sections
@@ -11,9 +11,9 @@
  * 2. PromotionBanners - Auto-scrolling promotional banners with badge tags
  *    (LIMITED, EXCLUSIVE, NEW, PREMIUM) and navigation arrows
  * 3. ContentCards - Two large side-by-side cards:
- *    - Apollo 24|7 "Think About It" -> Watch on JioHotstar
+ *    - S-Pharma 24|7 "Think About It" -> Watch on JioHotstar
  *    - PRO Health -> Explore More
- * 4. AskApolloCarousel - 14 poster cards with red gradient backgrounds,
+ * 4. AskSPharmaCarousel - 14 poster cards with red gradient backgrounds,
  *    doctor illustration, "Find Answer" button, auto-scroll
  * 5. TrustBadges - Three circular gold seal badges:
  *    Safe & Secure, Fully Reliable, Genuine Products
@@ -245,7 +245,7 @@ const AnimatedPromotionBanner = React.memo(({ banner, index }) => {
           {/* Arrow */}
           <Animated.View style={[styles.promotionArrow, arrowAnimatedStyle]}>
             <View style={styles.promotionArrowCircle}>
-              <Ionicons name="chevron-forward" size={16} color={COLORS.apolloGreen} />
+              <Ionicons name="chevron-forward" size={16} color={COLORS.spharmaGreen} />
             </View>
           </Animated.View>
         </LinearGradient>
@@ -452,18 +452,18 @@ export const ContentCards = React.memo(() => {
   return (
     <View style={styles.contentCardsSection}>
       <AnimatedContentCard
-        title="Apollo 24|7"
+        title="S-Pharma 24|7"
         subtitle="Think About It"
         description="Health Explained by Experts"
         buttonText="Watch on JioHotstar"
-        gradientColors={[COLORS.apolloGreen, COLORS.apolloGreenLight]}
+        gradientColors={[COLORS.spharmaGreen, COLORS.spharmaGreenLight]}
         iconName="play-circle"
         index={0}
       />
       <AnimatedContentCard
         title="PRO Health"
         subtitle={null}
-        description="Apollo's Personalised Health Program"
+        description="S-Pharma's Personalised Health Program"
         buttonText="Explore More"
         gradientColors={[COLORS.premiumOrange, '#FF8A5C']}
         iconName="heart-circle"
@@ -474,7 +474,7 @@ export const ContentCards = React.memo(() => {
 });
 
 // ============================================================================
-// ANIMATED ASK APOLLO POSTER
+// ANIMATED ASK S-Pharma POSTER
 // ============================================================================
 const AnimatedPosterCard = React.memo(({ poster, index }) => {
   const cardScale = useSharedValue(1);
@@ -530,7 +530,7 @@ const AnimatedPosterCard = React.memo(({ poster, index }) => {
           <View style={styles.posterContent}>
             <View style={styles.posterAskBadge}>
               <Ionicons name="chatbubble-ellipses" size={12} color={COLORS.textWhite} />
-              <Text style={styles.posterAskBadgeText}>Ask Apollo</Text>
+              <Text style={styles.posterAskBadgeText}>Ask S-Pharma</Text>
             </View>
 
             <Text style={styles.posterTitle}>{poster.title}</Text>
@@ -567,9 +567,9 @@ const AnimatedPosterCard = React.memo(({ poster, index }) => {
 });
 
 // ============================================================================
-// ASK APOLLO POSTER CAROUSEL
+// ASK S-Pharma POSTER CAROUSEL
 // ============================================================================
-export const AskApolloCarousel = React.memo(() => {
+export const AskSPharmaCarousel = React.memo(() => {
   const flatListRef = useRef(null);
   const currentIndex = useRef(0);
   const sectionOpacity = useSharedValue(0);
@@ -623,17 +623,17 @@ export const AskApolloCarousel = React.memo(() => {
   }), []);
 
   return (
-    <Animated.View style={[styles.askApolloSection, sectionAnimatedStyle]}>
+    <Animated.View style={[styles.askSPharmaSection, sectionAnimatedStyle]}>
       {/* Section Header */}
-      <View style={styles.askApolloHeader}>
-        <View style={styles.askApolloHeaderLeft}>
-          <View style={styles.askApolloIconContainer}>
+      <View style={styles.askSPharmaHeader}>
+        <View style={styles.askSPharmaHeaderLeft}>
+          <View style={styles.askSPharmaIconContainer}>
             <Ionicons name="chatbubbles" size={18} color={COLORS.textWhite} />
           </View>
-          <Text style={styles.askApolloSectionTitle}>Ask Apollo</Text>
+          <Text style={styles.askSPharmaSectionTitle}>Ask S-Pharma</Text>
         </View>
-        <View style={styles.askApolloPosterCount}>
-          <Text style={styles.askApolloPosterCountText}>{DATA.posters.length} Topics</Text>
+        <View style={styles.askSPharmaPosterCount}>
+          <Text style={styles.askSPharmaPosterCountText}>{DATA.posters.length} Topics</Text>
         </View>
       </View>
 
@@ -803,7 +803,7 @@ export const Footer = React.memo(() => {
         <View style={styles.poweredByContainer}>
           <Text style={styles.poweredByLabel}>Powered by:</Text>
           <View style={styles.poweredByBrandsRow}>
-            {['Apollo Pharmacy', 'Apollo 24/7', 'Apollo Hospitals'].map((brand, index) => (
+            {['S-Pharma Pharmacy', 'S-Pharma 24/7', 'S-Pharma Hospitals'].map((brand, index) => (
               <View key={brand} style={styles.poweredByBrandItem}>
                 {index > 0 && <View style={styles.poweredByDot} />}
                 <Text style={styles.poweredByBrandText}>{brand}</Text>
@@ -934,7 +934,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: 4,
     height: '100%',
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
   },
   promotionBadge: {
     alignSelf: 'flex-start',
@@ -967,11 +967,11 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: COLORS.apolloGreenSubtle,
+    borderColor: COLORS.spharmaGreenSubtle,
   },
 
   // ========================================================================
@@ -1058,24 +1058,24 @@ const styles = StyleSheet.create({
   },
 
   // ========================================================================
-  // ASK APOLLO POSTER STYLES
+  // ASK S-Pharma POSTER STYLES
   // ========================================================================
-  askApolloSection: {
+  askSPharmaSection: {
     marginTop: SPACING.section + 4,
   },
-  askApolloHeader: {
+  askSPharmaHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: SPACING.screenPadding,
     marginBottom: SPACING.lg,
   },
-  askApolloHeaderLeft: {
+  askSPharmaHeaderLeft: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.sm,
   },
-  askApolloIconContainer: {
+  askSPharmaIconContainer: {
     width: 30,
     height: 30,
     borderRadius: 10,
@@ -1083,17 +1083,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  askApolloSectionTitle: {
+  askSPharmaSectionTitle: {
     ...TYPOGRAPHY.h4,
     color: COLORS.textPrimary,
   },
-  askApolloPosterCount: {
+  askSPharmaPosterCount: {
     backgroundColor: '#FFE0E0',
     borderRadius: RADIUS.pill,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.xs,
   },
-  askApolloPosterCountText: {
+  askSPharmaPosterCountText: {
     ...TYPOGRAPHY.captionBold,
     color: '#E84040',
   },
@@ -1308,7 +1308,7 @@ const styles = StyleSheet.create({
   liveHealthyText: {
     fontSize: 36,
     fontWeight: '200',
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     letterSpacing: 2,
     marginBottom: SPACING.md,
     opacity: 0.25,
@@ -1370,7 +1370,7 @@ export default {
   CuratedOfferings,
   PromotionBanners,
   ContentCards,
-  AskApolloCarousel,
+  AskSPharmaCarousel,
   TrustBadges,
   Footer,
 };

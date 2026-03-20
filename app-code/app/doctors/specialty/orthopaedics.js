@@ -173,8 +173,8 @@ const treatStyles = StyleSheet.create({
 
 // Doctors
 const DOCTORS_DATA = [
-  { id: '1', name: 'Dr. Rajesh Malhotra', degree: 'MS, MCh Ortho', hospital: 'Apollo Delhi', experience: '25 years', rating: 4.9, reviews: 3256, fee: 1500, image: '👨‍⚕️', available: 'Today' },
-  { id: '2', name: 'Dr. Priya Singh', degree: 'MS, DNB Ortho', hospital: 'Apollo Chennai', experience: '18 years', rating: 4.8, reviews: 2156, fee: 1200, image: '👩‍⚕️', available: 'Tomorrow' },
+  { id: '1', name: 'Dr. Rajesh Malhotra', degree: 'MS, MCh Ortho', hospital: 'S-Pharma Delhi', experience: '25 years', rating: 4.9, reviews: 3256, fee: 1500, image: '👨‍⚕️', available: 'Today' },
+  { id: '2', name: 'Dr. Priya Singh', degree: 'MS, DNB Ortho', hospital: 'S-Pharma Chennai', experience: '18 years', rating: 4.8, reviews: 2156, fee: 1200, image: '👩‍⚕️', available: 'Tomorrow' },
 ];
 
 const DoctorsSection = memo(() => (

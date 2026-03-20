@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SKIN SCREEN (ROSE GOLD EDITION)
+ * S-Pharma 24/7 - SKIN SCREEN (ROSE GOLD EDITION)
  * ============================================================================
  *
  * Premium Skin vertical screen composing all 12 sections:

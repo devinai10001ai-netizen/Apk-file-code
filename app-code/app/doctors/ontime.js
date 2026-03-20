@@ -12,7 +12,7 @@ import { DoctorsTheme, ONTIME_SPECIALITIES } from '../components/doctors/Doctors
 import StickyHeader from '../components/doctors/StickyHeader';
 import SearchBarAnimated from '../components/doctors/SearchBarAnimated';
 import SpecialityGrid from '../components/doctors/SpecialityGrid';
-import FloatingAskApollo from '../components/doctors/FloatingAskApollo';
+import FloatingAskSPharma from '../components/doctors/FloatingAskSPharma';
 import GoToTopButton from '../components/doctors/GoToTopButton';
 
 // On-Time Hero Banner
@@ -57,7 +57,7 @@ const heroStyles = StyleSheet.create({
     fontSize: 50,
   },
   refundBadge: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -199,7 +199,7 @@ export default function Ontime() {
         <View style={{ height: 40 }} />
       </ScrollView>
 
-      <FloatingAskApollo />
+      <FloatingAskSPharma />
       <GoToTopButton visible={showGoToTop} onPress={scrollToTop} />
     </View>
   );

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - BABY & MOTHER CARE SCREEN (SOFT SKY BLUE EDITION)
+ * S-Pharma 24/7 - BABY & MOTHER CARE SCREEN (SOFT SKY BLUE EDITION)
  * ============================================================================
  *
  * Premium Baby & Mother Care vertical screen — 3+ scrolls deep
@@ -24,7 +24,7 @@
  * 15. Vaccination Schedule (8 schedule items)
  * 16. Nursery Essentials (6 nursery items)
  * 17. FAQ Section (6 FAQs)
- * 18. Ask Apollo Baby
+ * 18. Ask S-Pharma Baby
  * 19. Doctor Consultation CTA
  * 20. Footer
  *
@@ -1021,22 +1021,22 @@ const FAQSection = React.memo(() => {
 });
 
 // ============================================================================
-// SECTION 18: ASK APOLLO BABY
+// SECTION 18: ASK S-Pharma BABY
 // ============================================================================
-const AskApolloBaby = React.memo(() => {
+const AskSPharmaBaby = React.memo(() => {
   return (
     <View style={styles.sectionContainer}>
-      <Animated.View entering={FadeInDown.duration(600)} style={styles.askApolloContainer}>
-        <View style={styles.askApolloHeader}>
-          <View style={styles.askApolloIcon}>
+      <Animated.View entering={FadeInDown.duration(600)} style={styles.askSPharmaContainer}>
+        <View style={styles.askSPharmaHeader}>
+          <View style={styles.askSPharmaIcon}>
             <Ionicons name="chatbubbles" size={20} color={BB_COLORS.skyBlue} />
           </View>
           <View>
-            <Text style={styles.askApolloTitle}>Expert baby care advice{'\n'}at your fingertips</Text>
-            <Text style={styles.askApolloSubtitle}>ASK APOLLO ABOUT...</Text>
+            <Text style={styles.askSPharmaTitle}>Expert baby care advice{'\n'}at your fingertips</Text>
+            <Text style={styles.askSPharmaSubtitle}>ASK S-Pharma ABOUT...</Text>
           </View>
         </View>
-        <View style={styles.askApolloQuestions}>
+        <View style={styles.askSPharmaQuestions}>
           {[
             'When should I start solid foods for my baby?',
             'What diaper size is right for my newborn?',
@@ -1045,15 +1045,15 @@ const AskApolloBaby = React.memo(() => {
             'What are the must-have items for a newborn?',
             'How to soothe a teething baby naturally?',
           ].map((q, i) => (
-            <TouchableOpacity key={i} style={styles.askApolloQuestion}>
-              <Text style={styles.askApolloQuestionText}>{q}</Text>
+            <TouchableOpacity key={i} style={styles.askSPharmaQuestion}>
+              <Text style={styles.askSPharmaQuestionText}>{q}</Text>
               <Ionicons name="chevron-forward" size={14} color={COLORS.textTertiary} />
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.askApolloButton}>
+        <TouchableOpacity style={styles.askSPharmaButton}>
           <Ionicons name="medical" size={16} color={COLORS.textWhite} />
-          <Text style={styles.askApolloButtonText}>Dr Just Ask Apollo</Text>
+          <Text style={styles.askSPharmaButtonText}>Dr Just Ask S-Pharma</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
@@ -1185,7 +1185,7 @@ const BabyScreen = React.memo(({ scrollY }) => {
       <FAQSection />
       <SectionDivider variant="pink" />
 
-      <AskApolloBaby />
+      <AskSPharmaBaby />
       <SectionDivider variant="blue" />
 
       <DoctorConsultationCTA />
@@ -2065,20 +2065,20 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
 
-  // ASK APOLLO
-  askApolloContainer: {
+  // ASK S-Pharma
+  askSPharmaContainer: {
     backgroundColor: COLORS.cardWhite,
     borderRadius: RADIUS.card,
     padding: SPACING.lg,
     ...SHADOWS.cardSoft,
   },
-  askApolloHeader: {
+  askSPharmaHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.md,
     marginBottom: SPACING.lg,
   },
-  askApolloIcon: {
+  askSPharmaIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -2086,22 +2086,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  askApolloTitle: {
+  askSPharmaTitle: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textPrimary,
     lineHeight: 18,
   },
-  askApolloSubtitle: {
+  askSPharmaSubtitle: {
     ...TYPOGRAPHY.badge,
     color: COLORS.textTertiary,
     letterSpacing: 1.5,
     marginTop: 2,
   },
-  askApolloQuestions: {
+  askSPharmaQuestions: {
     gap: SPACING.sm,
     marginBottom: SPACING.lg,
   },
-  askApolloQuestion: {
+  askSPharmaQuestion: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -2112,12 +2112,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borderLight,
   },
-  askApolloQuestionText: {
+  askSPharmaQuestionText: {
     ...TYPOGRAPHY.bodySmall,
     color: COLORS.textSecondary,
     flex: 1,
   },
-  askApolloButton: {
+  askSPharmaButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -2126,7 +2126,7 @@ const styles = StyleSheet.create({
     borderRadius: RADIUS.button,
     gap: SPACING.sm,
   },
-  askApolloButtonText: {
+  askSPharmaButtonText: {
     ...TYPOGRAPHY.labelLarge,
     color: COLORS.textWhite,
     fontWeight: '700',

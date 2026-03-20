@@ -58,7 +58,7 @@ DermatologyHeader.displayName = 'DermatologyHeader';
 
 const headerStyles = StyleSheet.create({
   container: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
   },
   gradient: {
     paddingTop: 50,
@@ -106,7 +106,7 @@ const headerStyles = StyleSheet.create({
   statNumber: {
     fontSize: 20,
     fontWeight: '800',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   statLabel: {
     fontSize: 11,
@@ -182,8 +182,8 @@ const searchStyles = StyleSheet.create({
     borderColor: DoctorsTheme.colors.border,
   },
   filterChipActive: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
-    borderColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
+    borderColor: DoctorsTheme.colors.spharmaOrange,
   },
   filterText: {
     fontSize: 13,
@@ -248,7 +248,7 @@ const treatStyles = StyleSheet.create({
   viewAll: {
     fontSize: 14,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   grid: {
     flexDirection: 'row',
@@ -285,7 +285,7 @@ const treatStyles = StyleSheet.create({
   price: {
     fontSize: 13,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
 });
 
@@ -295,7 +295,7 @@ const DERMATOLOGISTS_DATA = [
     id: '1',
     name: 'Dr. Anjali Reddy',
     degree: 'MD, DDVL Dermatology',
-    hospital: 'Apollo Hospitals, Hyderabad',
+    hospital: 'S-Pharma Hospitals, Hyderabad',
     experience: '15 years',
     rating: 4.9,
     reviews: 3245,
@@ -308,7 +308,7 @@ const DERMATOLOGISTS_DATA = [
     id: '2',
     name: 'Dr. Vikas Malhotra',
     degree: 'DNB, MD Dermatology',
-    hospital: 'Apollo Mumbai',
+    hospital: 'S-Pharma Mumbai',
     experience: '12 years',
     rating: 4.8,
     reviews: 2156,
@@ -392,7 +392,7 @@ const docStyles = StyleSheet.create({
   viewAll: {
     fontSize: 14,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   card: {
     marginHorizontal: 16,
@@ -432,7 +432,7 @@ const docStyles = StyleSheet.create({
   },
   doctorDegree: {
     fontSize: 13,
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     fontWeight: '600',
     marginBottom: 2,
   },
@@ -509,7 +509,7 @@ const docStyles = StyleSheet.create({
     marginLeft: 6,
   },
   bookBtn: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -537,7 +537,7 @@ const BeforeAfterSection = memo(() => (
               <Text style={baStyles.imageEmoji}>📷</Text>
               <Text style={baStyles.imageLabel}>Before</Text>
             </View>
-            <Ionicons name="arrow-forward" size={20} color={DoctorsTheme.colors.apolloOrange} />
+            <Ionicons name="arrow-forward" size={20} color={DoctorsTheme.colors.spharmaOrange} />
             <View style={baStyles.imageBox}>
               <Text style={baStyles.imageEmoji}>📷</Text>
               <Text style={baStyles.imageLabel}>After</Text>
@@ -658,7 +658,7 @@ const prodStyles = StyleSheet.create({
   viewAll: {
     fontSize: 14,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   card: {
     width: 140,
@@ -699,7 +699,7 @@ const prodStyles = StyleSheet.create({
   price: {
     fontSize: 14,
     fontWeight: '700',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   ratingBadge: {
     flexDirection: 'row',
@@ -789,7 +789,7 @@ const revStyles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
@@ -858,7 +858,7 @@ const ctaStyles = StyleSheet.create({
     marginBottom: 16,
   },
   button: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 12,
     paddingHorizontal: 32,
     paddingVertical: 14,
@@ -938,7 +938,7 @@ const goToTopStyles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     justifyContent: 'center',
     alignItems: 'center',
     ...DoctorsTheme.shadow.level2,
@@ -958,7 +958,7 @@ const floatingStyles = StyleSheet.create({
     borderTopColor: DoctorsTheme.colors.border,
   },
   ctaButton: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 12,
     paddingVertical: 16,
     flexDirection: 'row',

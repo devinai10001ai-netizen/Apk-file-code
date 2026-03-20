@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SUMMER HERO, CONCERNS & SUNSCREEN SECTIONS
+ * S-Pharma 24/7 - SUMMER HERO, CONCERNS & SUNSCREEN SECTIONS
  * ============================================================================
  *
  * Premium Summer section with animated hero, concern pills,

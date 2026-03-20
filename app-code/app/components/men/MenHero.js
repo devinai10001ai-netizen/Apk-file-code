@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - MEN HERO, CONCERNS, WELLBEING & FITNESS
+ * S-Pharma 24/7 - MEN HERO, CONCERNS, WELLBEING & FITNESS
  * ============================================================================
  *
  * Premium Men section with animated hero banner, concern cards,

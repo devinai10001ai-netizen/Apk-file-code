@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - MEN GROOMING, INTIMATE, BRANDS, TESTIMONIALS & TIPS
+ * S-Pharma 24/7 - MEN GROOMING, INTIMATE, BRANDS, TESTIMONIALS & TIPS
  * ============================================================================
  *
  * Premium Men section components including grooming tabs with products,

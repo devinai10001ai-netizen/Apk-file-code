@@ -1,13 +1,13 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - INSURANCE HERO & CARDS SECTION
+ * S-Pharma 24/7 - INSURANCE HERO & CARDS SECTION
  * ============================================================================
  *
- * Premium Insurance hero banner with Apollo Assured badge,
+ * Premium Insurance hero banner with S-Pharma Assured badge,
  * insurance type cards (Have/Don't Have), and expert help banner.
  *
  * Features:
- * - Animated Apollo Assured seal with rotation & glow
+ * - Animated S-Pharma Assured seal with rotation & glow
  * - Spring-physics card interactions
  * - Gradient hero background with particle effects
  * - Premium expert help banner with advisor illustration
@@ -124,7 +124,7 @@ const AssuredSeal = React.memo(() => {
           colors={INSURANCE_COLORS.gradientAssuredBadge}
           style={sealStyles.innerGradient}
         >
-          <Text style={sealStyles.assuredText}>APOLLO</Text>
+          <Text style={sealStyles.assuredText}>S-Pharma</Text>
           <Ionicons name="shield-checkmark" size={16} color="#FFFFFF" />
           <Text style={sealStyles.assuredSubtext}>ASSURED</Text>
         </LinearGradient>
@@ -260,7 +260,7 @@ export const InsuranceHeroBanner = React.memo(() => {
 
             <Animated.View style={descriptionStyle}>
               <Text style={heroStyles.description}>
-                Apollo recommends what fits you{' '}
+                S-Pharma recommends what fits you{' '}
                 <Text style={heroStyles.descriptionBold}>best</Text>
               </Text>
               <Text style={heroStyles.descriptionSub}>

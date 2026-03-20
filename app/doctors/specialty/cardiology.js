@@ -107,7 +107,7 @@ const headerStyles = StyleSheet.create({
   statNumber: {
     fontSize: 20,
     fontWeight: '800',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   statLabel: {
     fontSize: 11,
@@ -131,7 +131,7 @@ const SearchFilterSection = memo(() => (
         placeholderTextColor={DoctorsTheme.colors.textTertiary}
       />
       <TouchableOpacity style={searchStyles.filterBtn}>
-        <Ionicons name="options" size={20} color={DoctorsTheme.colors.apolloOrange} />
+        <Ionicons name="options" size={20} color={DoctorsTheme.colors.spharmaOrange} />
       </TouchableOpacity>
     </View>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={searchStyles.filterScroll}>
@@ -189,8 +189,8 @@ const searchStyles = StyleSheet.create({
     borderColor: DoctorsTheme.colors.border,
   },
   filterChipActive: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
-    borderColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
+    borderColor: DoctorsTheme.colors.spharmaOrange,
   },
   filterText: {
     fontSize: 13,
@@ -208,7 +208,7 @@ const CARDIOLOGISTS_DATA = [
     id: '1',
     name: 'Dr. Rajesh Khanna',
     degree: 'MD, DM Cardiology',
-    hospital: 'Apollo Hospitals, Delhi',
+    hospital: 'S-Pharma Hospitals, Delhi',
     experience: '25 years',
     rating: 4.9,
     reviews: 2847,
@@ -222,7 +222,7 @@ const CARDIOLOGISTS_DATA = [
     id: '2',
     name: 'Dr. Priya Sharma',
     degree: 'DM Cardiology, FACC',
-    hospital: 'Apollo Chennai',
+    hospital: 'S-Pharma Chennai',
     experience: '18 years',
     rating: 4.8,
     reviews: 1923,
@@ -236,7 +236,7 @@ const CARDIOLOGISTS_DATA = [
     id: '3',
     name: 'Dr. Amit Patel',
     degree: 'MD, DNB Cardiology',
-    hospital: 'Apollo Mumbai',
+    hospital: 'S-Pharma Mumbai',
     experience: '15 years',
     rating: 4.7,
     reviews: 1456,
@@ -442,7 +442,7 @@ const doctorStyles = StyleSheet.create({
     color: DoctorsTheme.colors.greenBadge,
   },
   unavailableText: {
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   fee: {
     fontSize: 18,
@@ -467,7 +467,7 @@ const doctorStyles = StyleSheet.create({
   },
   consultBtn: {
     flex: 1,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 10,
     paddingVertical: 12,
     alignItems: 'center',
@@ -483,10 +483,10 @@ const doctorStyles = StyleSheet.create({
     paddingVertical: 12,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: DoctorsTheme.colors.apolloOrange,
+    borderColor: DoctorsTheme.colors.spharmaOrange,
   },
   profileBtnText: {
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     fontSize: 14,
     fontWeight: '700',
   },
@@ -688,7 +688,7 @@ const servicesStyles = StyleSheet.create({
   price: {
     fontSize: 15,
     fontWeight: '700',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   bookBtn: {
     backgroundColor: DoctorsTheme.colors.teal,
@@ -1111,7 +1111,7 @@ const goToTopStyles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     justifyContent: 'center',
     alignItems: 'center',
     ...DoctorsTheme.shadow.level2,
@@ -1131,7 +1131,7 @@ const floatingStyles = StyleSheet.create({
     borderTopColor: DoctorsTheme.colors.border,
   },
   ctaButton: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 12,
     paddingVertical: 16,
     flexDirection: 'row',

@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - CATEGORY DETAIL PAGE
+ * S-Pharma 24|7 - CATEGORY DETAIL PAGE
  * Ultra Premium Category Detail with Super PRO MAX UI
  * Completely unique design for category details
  */

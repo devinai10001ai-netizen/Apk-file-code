@@ -24,7 +24,7 @@ import {
 } from '../components/doctors/DoctorsTheme';
 import StickyHeader from '../components/doctors/StickyHeader';
 import SearchBarAnimated from '../components/doctors/SearchBarAnimated';
-import FloatingAskApollo from '../components/doctors/FloatingAskApollo';
+import FloatingAskSPharma from '../components/doctors/FloatingAskSPharma';
 import GoToTopButton from '../components/doctors/GoToTopButton';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -91,7 +91,7 @@ const heroStyles = StyleSheet.create({
   animatedWord: {
     fontSize: 17,
     fontWeight: '800',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
   },
   illustration: {
     fontSize: 50,
@@ -499,12 +499,12 @@ const tipsStyles = StyleSheet.create({
   },
 });
 
-// Why Choose Apollo
-const WhyChooseApollo = memo(() => (
+// Why Choose S-Pharma
+const WhyChooseS-Pharma = memo(() => (
   <View style={whyStyles.container}>
     <View style={whyStyles.divider}>
       <View style={whyStyles.line} />
-      <Text style={whyStyles.dividerText}>WHY CHOOSE APOLLO</Text>
+      <Text style={whyStyles.dividerText}>WHY CHOOSE S-Pharma</Text>
       <View style={whyStyles.line} />
     </View>
     <View style={whyStyles.statsRow}>
@@ -517,7 +517,7 @@ const WhyChooseApollo = memo(() => (
     </View>
   </View>
 ));
-WhyChooseApollo.displayName = 'WhyChooseApollo';
+WhyChooseS-Pharma.displayName = 'WhyChooseS-Pharma';
 
 const whyStyles = StyleSheet.create({
   container: {
@@ -664,14 +664,14 @@ export default function Surgery() {
 
         <TipsBeforeSurgery />
 
-        <WhyChooseApollo />
+        <WhyChooseS-Pharma />
 
         <UnsureCTA />
 
         <View style={{ height: 40 }} />
       </ScrollView>
 
-      <FloatingAskApollo />
+      <FloatingAskSPharma />
       <GoToTopButton visible={showGoToTop} onPress={scrollToTop} />
     </View>
   );

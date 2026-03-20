@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - WOMEN SCREEN (PREMIUM EDITION)
+ * S-Pharma 24/7 - WOMEN SCREEN (PREMIUM EDITION)
  * ============================================================================
  *
  * Premium Women vertical screen composing all sections:

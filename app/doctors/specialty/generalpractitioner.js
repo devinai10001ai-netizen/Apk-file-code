@@ -371,7 +371,7 @@ const pkgStyles = StyleSheet.create({
     position: 'absolute',
     top: 12,
     right: 12,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 4,
@@ -406,7 +406,7 @@ const pkgStyles = StyleSheet.create({
   price: {
     fontSize: 18,
     fontWeight: '800',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     marginRight: 8,
   },
   originalPrice: {
@@ -433,7 +433,7 @@ const DOCTORS_DATA = [
     id: '1',
     name: 'Dr. Suresh Kumar',
     degree: 'MBBS, MD',
-    hospital: 'Apollo Clinic, Delhi',
+    hospital: 'S-Pharma Clinic, Delhi',
     experience: '20 years',
     rating: 4.9,
     reviews: 4521,
@@ -446,7 +446,7 @@ const DOCTORS_DATA = [
     id: '2',
     name: 'Dr. Meera Singh',
     degree: 'MBBS, DNB',
-    hospital: 'Apollo Chennai',
+    hospital: 'S-Pharma Chennai',
     experience: '15 years',
     rating: 4.8,
     reviews: 3156,
@@ -635,7 +635,7 @@ const docStyles = StyleSheet.create({
     marginTop: 2,
   },
   bookBtn: {
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     borderRadius: 10,
     paddingHorizontal: 24,
     paddingVertical: 10,
@@ -726,7 +726,7 @@ const WHY_DATA = [
 
 const WhyChooseSection = memo(() => (
   <View style={whyStyles.container}>
-    <Text style={whyStyles.title}>Why Choose Apollo GP?</Text>
+    <Text style={whyStyles.title}>Why Choose S-Pharma GP?</Text>
     <View style={whyStyles.grid}>
       {WHY_DATA.map((item) => (
         <View key={item.id} style={whyStyles.card}>
@@ -1080,7 +1080,7 @@ const goToTopStyles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: DoctorsTheme.colors.apolloOrange,
+    backgroundColor: DoctorsTheme.colors.spharmaOrange,
     justifyContent: 'center',
     alignItems: 'center',
     ...DoctorsTheme.shadow.level2,

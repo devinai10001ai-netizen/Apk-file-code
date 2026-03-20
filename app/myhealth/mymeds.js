@@ -296,10 +296,10 @@ const DrugInteractions = React.memo(() => {
 const RefillTracker = React.memo(() => {
   const router = useRouter();
   const refills = useMemo(() => [
-    { id: '1', name: 'Metformin 500mg', daysLeft: 4, urgency: 'urgent', pharmacy: 'Apollo Pharmacy, Sector 18', price: 125 },
-    { id: '2', name: 'Amlodipine 5mg', daysLeft: 11, urgency: 'soon', pharmacy: 'Apollo Pharmacy, Sector 18', price: 85 },
+    { id: '1', name: 'Metformin 500mg', daysLeft: 4, urgency: 'urgent', pharmacy: 'S-Pharma Pharmacy, Sector 18', price: 125 },
+    { id: '2', name: 'Amlodipine 5mg', daysLeft: 11, urgency: 'soon', pharmacy: 'S-Pharma Pharmacy, Sector 18', price: 85 },
     { id: '3', name: 'Vitamin D3', daysLeft: 21, urgency: 'ok', pharmacy: 'MedPlus, Noida', price: 210 },
-    { id: '4', name: 'Atorvastatin 10mg', daysLeft: 19, urgency: 'ok', pharmacy: 'Apollo Pharmacy, Sector 18', price: 165 },
+    { id: '4', name: 'Atorvastatin 10mg', daysLeft: 19, urgency: 'ok', pharmacy: 'S-Pharma Pharmacy, Sector 18', price: 165 },
   ], []);
 
   const getUrgencyColor = (urgency) => {
@@ -424,7 +424,7 @@ const MedicationAdherence = React.memo(() => {
 const PharmacyFinder = React.memo(() => {
   const router = useRouter();
   const pharmacies = useMemo(() => [
-    { id: '1', name: 'Apollo Pharmacy', address: 'Sector 18, Noida', distance: '0.8 km', rating: 4.5, timing: '24/7', delivery: true, color: '#E74C3C' },
+    { id: '1', name: 'S-Pharma Pharmacy', address: 'Sector 18, Noida', distance: '0.8 km', rating: 4.5, timing: '24/7', delivery: true, color: '#E74C3C' },
     { id: '2', name: 'MedPlus', address: 'Sector 22, Noida', distance: '1.2 km', rating: 4.3, timing: '8 AM - 11 PM', delivery: true, color: '#2196F3' },
     { id: '3', name: 'Netmeds Store', address: 'Sector 15, Noida', distance: '2.1 km', rating: 4.1, timing: '9 AM - 10 PM', delivery: false, color: '#4CAF50' },
   ], []);
@@ -518,7 +518,7 @@ const CostSavings = React.memo(() => {
           <View style={styles.savingsBreakdown}>
             {[
               { label: 'Generic alternatives', saved: 680 },
-              { label: 'Apollo discount', saved: 320 },
+              { label: 'S-Pharma discount', saved: 320 },
               { label: 'Subscription savings', saved: 245 },
             ].map((item) => (
               <View key={item.label} style={styles.savingsItem}>
@@ -543,7 +543,7 @@ const MedsFooter = React.memo(() => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerDivider} />
-      <Text style={styles.footerBrand}>Apollo 24|7 Medications</Text>
+      <Text style={styles.footerBrand}>S-Pharma 24|7 Medications</Text>
       <Text style={styles.footerDesc}>Manage your medicines safely & smartly</Text>
       <View style={styles.footerBadges}>
         <View style={styles.footerBadge}><Ionicons name="shield-checkmark" size={14} color={COLORS.green} /><Text style={styles.footerBadgeText}>Verified Medicines</Text></View>

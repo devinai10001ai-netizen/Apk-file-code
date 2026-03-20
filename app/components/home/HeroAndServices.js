@@ -85,7 +85,7 @@ const AnimatedLogoItem = React.memo(({ brand, index }) => {
   return (
     <Animated.View style={[styles.logoItem, animatedStyle]}>
       <View style={styles.logoIconContainer}>
-        <Ionicons name="medical" size={14} color={COLORS.apolloGreen} />
+        <Ionicons name="medical" size={14} color={COLORS.spharmaGreen} />
       </View>
       <Text style={styles.logoText}>{brand}</Text>
     </Animated.View>
@@ -160,7 +160,7 @@ export const HeroSection = React.memo(({ isVisible = true }) => {
     opacity: interpolate(shimmerValue.value, [0, 0.5, 1], [0.3, 0.8, 0.3]),
   }));
 
-  const brands = useMemo(() => DATA.apolloLegacyBrands, []);
+  const brands = useMemo(() => DATA.S-pharmaLegacyBrands, []);
 
   return (
     <View style={styles.heroSectionContainer}>
@@ -439,7 +439,7 @@ export const PrescriptionBar = React.memo(({ onOrderPress }) => {
         {/* Left Rx Icon with subtle animation */}
         <Animated.View style={[styles.prescriptionIconContainer, iconAnimatedStyle]}>
           <LinearGradient
-            colors={[COLORS.apolloGreen, COLORS.apolloGreenLight]}
+            colors={[COLORS.spharmaGreen, COLORS.spharmaGreenLight]}
             style={styles.prescriptionIconGradient}
           >
             <Ionicons name="document-text" size={22} color={COLORS.textWhite} />
@@ -544,13 +544,13 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderRadius: 10,
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     justifyContent: 'center',
     alignItems: 'center',
   },
   logoText: {
     ...TYPOGRAPHY.captionBold,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     letterSpacing: 0.3,
   },
   heroBottomFade: {
@@ -691,7 +691,7 @@ const styles = StyleSheet.create({
   orderButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.button,
     paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.sm + 2,

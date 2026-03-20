@@ -35,7 +35,7 @@ export default function DentalRecords() {
 
   const records = [
     { id: 1, treatment: 'Dental Cleaning', date: 'Mar 5, 2026', dentist: 'Dr. Priya Sharma', clinic: 'Smile Care', notes: 'Routine cleaning, no issues', status: 'completed' },
-    { id: 2, treatment: 'Root Canal', date: 'Jan 20, 2026', dentist: 'Dr. Raj Malhotra', clinic: 'Apollo Dental', notes: 'Tooth #36, crown placed', status: 'completed' },
+    { id: 2, treatment: 'Root Canal', date: 'Jan 20, 2026', dentist: 'Dr. Raj Malhotra', clinic: 'S-Pharma Dental', notes: 'Tooth #36, crown placed', status: 'completed' },
     { id: 3, treatment: 'Tooth Filling', date: 'Nov 15, 2025', dentist: 'Dr. Priya Sharma', clinic: 'Smile Care', notes: 'Composite filling on tooth #24', status: 'completed' },
   ];
 

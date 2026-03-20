@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 SKIN PAGE - ROSE GOLD EDITION THEME & DATA
+ * S-Pharma 24/7 SKIN PAGE - ROSE GOLD EDITION THEME & DATA
  * ============================================================================
  *
  * Extended design system for the Skin vertical. Builds on top of the core

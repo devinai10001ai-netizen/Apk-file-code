@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - HEALTH CHECK SECTION THEME & DATA
+ * S-Pharma 24/7 - HEALTH CHECK SECTION THEME & DATA
  * ============================================================================
  */
 
@@ -75,7 +75,7 @@ export const HC_DATA = {
   bestValueCheckups: [
     { id: 1, name: 'Full Body Health Checkup Gold', tests: 71, includes: 'INCLUDES VIT B12', price: 2080, oldPrice: 5200, badge: '' },
     { id: 2, name: 'Full Body Checkup Platinum', tests: 99, includes: 'INCLUDES VIT D, B12', price: 3599, oldPrice: 8999, badge: 'BESTSELLER' },
-    { id: 3, name: 'Apollo Comprehensive Health Check', tests: 120, includes: 'INCLUDES VIT D, B12, IRON', price: 4999, oldPrice: 11999, badge: 'PREMIUM' },
+    { id: 3, name: 'S-Pharma Comprehensive Health Check', tests: 120, includes: 'INCLUDES VIT D, B12, IRON', price: 4999, oldPrice: 11999, badge: 'PREMIUM' },
     { id: 4, name: 'Basic Health Checkup', tests: 45, includes: 'INCLUDES CBC, LIPID', price: 999, oldPrice: 2499, badge: 'BUDGET PICK' },
   ],
 
@@ -130,7 +130,7 @@ export const HC_DATA = {
     { id: 2, title: 'Refund Criteria', content: '100% refund if all test results come normal within reference ranges.' },
     { id: 3, title: 'Refund Process', content: 'Refund initiated within 7 working days to original payment method.' },
     { id: 4, title: 'Offer Limitations', content: 'Cannot be combined with other offers. Valid once per user.' },
-    { id: 5, title: 'Dispute Resolution', content: 'Contact Apollo support for any queries regarding offers.' },
+    { id: 5, title: 'Dispute Resolution', content: 'Contact S-Pharma support for any queries regarding offers.' },
   ],
 
   specialOffers: [

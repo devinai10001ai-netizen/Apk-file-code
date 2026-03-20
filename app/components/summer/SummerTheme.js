@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - SUMMER SECTION THEME & DATA
+ * S-Pharma 24/7 - SUMMER SECTION THEME & DATA
  * ============================================================================
  */
 
@@ -70,7 +70,7 @@ export const SUMMER_DATA = {
     { id: 1, name: 'Nivea', discount: 'Upto 50% OFF', color: '#003DA5', bgColor: '#E3F2FD' },
     { id: 2, name: 'Ponds', discount: 'Upto 30% OFF', color: '#00695C', bgColor: '#E0F2F1' },
     { id: 3, name: 'Cetaphil', discount: 'Upto 25% OFF', color: '#1565C0', bgColor: '#E8EAF6' },
-    { id: 4, name: 'Apollo Pharmacy', discount: 'Upto 35% OFF', color: '#00A651', bgColor: '#E8F5E9' },
+    { id: 4, name: 'S-Pharma Pharmacy', discount: 'Upto 35% OFF', color: '#00A651', bgColor: '#E8F5E9' },
     { id: 5, name: 'Fast&Up', discount: 'Upto 35% OFF', color: '#FF6D00', bgColor: '#FFF3E0' },
     { id: 6, name: 'Neutrogena', discount: 'Upto 30% OFF', color: '#E65100', bgColor: '#FBE9E7' },
     { id: 7, name: 'Old Spice', discount: 'Upto 40% OFF', color: '#B71C1C', bgColor: '#FFEBEE' },

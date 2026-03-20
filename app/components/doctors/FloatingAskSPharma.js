@@ -2,7 +2,7 @@ import React, { memo, useEffect, useRef } from 'react';
 import { TouchableOpacity, Text, StyleSheet, Animated } from 'react-native';
 import { DoctorsTheme } from './DoctorsTheme';
 
-const FloatingAskApollo = memo(() => {
+const FloatingAskSPharma = memo(() => {
   const bounceAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -29,16 +29,16 @@ const FloatingAskApollo = memo(() => {
       <TouchableOpacity
         style={styles.button}
         accessibilityRole="button"
-        accessibilityLabel="Ask Apollo AI assistant"
+        accessibilityLabel="Ask S-Pharma AI assistant"
       >
         <Text style={styles.icon}>🤖</Text>
-        <Text style={styles.label}>Ask{'\n'}Apollo</Text>
+        <Text style={styles.label}>Ask{'\n'}S-Pharma</Text>
       </TouchableOpacity>
     </Animated.View>
   );
 });
 
-FloatingAskApollo.displayName = 'FloatingAskApollo';
+FloatingAskSPharma.displayName = 'FloatingAskSPharma';
 
 const styles = StyleSheet.create({
   container: {
@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 7,
     fontWeight: '600',
-    color: DoctorsTheme.colors.apolloOrange,
+    color: DoctorsTheme.colors.spharmaOrange,
     textAlign: 'center',
     lineHeight: 9,
   },
 });
 
-export default FloatingAskApollo;
+export default FloatingAskSPharma;

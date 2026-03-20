@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - HEALTH CHECK PACKAGES, TRUST & COUPONS
+ * S-Pharma 24/7 - HEALTH CHECK PACKAGES, TRUST & COUPONS
  * ============================================================================
  *
  * Premium Health Check section components including tax saver packages,
@@ -226,7 +226,7 @@ export const LabTrustSection = React.memo(() => {
       {/* Section Header */}
       <View style={trustStyles.sectionHeader}>
         <Ionicons name="shield-checkmark" size={18} color={HC_COLORS.healthBlue} />
-        <Text style={trustStyles.sectionTitle}>Why Trust Apollo Labs</Text>
+        <Text style={trustStyles.sectionTitle}>Why Trust S-Pharma Labs</Text>
       </View>
 
       {/* Trust Stats */}

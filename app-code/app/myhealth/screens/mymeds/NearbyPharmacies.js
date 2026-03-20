@@ -34,7 +34,7 @@ export default function NearbyPharmacies() {
   const router = useRouter();
 
   const pharmacies = [
-    { id: 1, name: 'Apollo Pharmacy', distance: '0.5 km', rating: 4.5, address: '123 Main Street', open: true, delivery: true },
+    { id: 1, name: 'S-Pharma Pharmacy', distance: '0.5 km', rating: 4.5, address: '123 Main Street', open: true, delivery: true },
     { id: 2, name: 'MedPlus', distance: '1.2 km', rating: 4.2, address: '456 Oak Avenue', open: true, delivery: true },
     { id: 3, name: 'Wellness Pharma', distance: '2.0 km', rating: 4.8, address: '789 Park Road', open: false, delivery: true },
     { id: 4, name: 'Local Medical', distance: '2.5 km', rating: 4.0, address: '321 Lake View', open: true, delivery: false },

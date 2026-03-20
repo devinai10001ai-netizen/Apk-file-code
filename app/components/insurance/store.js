@@ -108,7 +108,7 @@ export const useInsuranceStore = create((set, get) => ({
       id: 'CLM001',
       policyId: 'POL002',
       type: 'Cashless',
-      hospital: 'Apollo Hospital, Delhi',
+      hospital: 'S-Pharma Hospital, Delhi',
       date: '2024-08-15',
       amount: 85000,
       status: 'approved',
@@ -370,7 +370,7 @@ export const TOPUP_PLANS = [
 
 // Hospital network data
 export const HOSPITALS = [
-  { id: 1, name: 'Apollo Hospital', city: 'Delhi', distance: '2.5 km', rating: 4.8, specialties: ['Cardiology', 'Neurology', 'Orthopedics'], cashless: true, beds: 710, premium: true },
+  { id: 1, name: 'S-Pharma Hospital', city: 'Delhi', distance: '2.5 km', rating: 4.8, specialties: ['Cardiology', 'Neurology', 'Orthopedics'], cashless: true, beds: 710, premium: true },
   { id: 2, name: 'Max Super Specialty', city: 'Gurgaon', distance: '5.2 km', rating: 4.7, specialties: ['Oncology', 'Cardiology', 'Urology'], cashless: true, beds: 500, premium: true },
   { id: 3, name: 'Fortis Hospital', city: 'Delhi', distance: '3.8 km', rating: 4.6, specialties: ['Orthopedics', 'Neurosurgery', 'Gastro'], cashless: true, beds: 450, premium: false },
   { id: 4, name: 'Medanta Medicity', city: 'Gurgaon', distance: '12.1 km', rating: 4.9, specialties: ['Heart', 'Liver', 'Kidney', 'Cancer'], cashless: true, beds: 1250, premium: true },
@@ -426,7 +426,7 @@ export const SPECIAL_OFFERS = [
 
 // Reviews
 export const REVIEWS = [
-  { id: 1, user: 'Amit K.', rating: 5, date: '2026-02-15', plan: 'Reassure 3.0', comment: 'Excellent claim settlement experience. Got cashless approval within 2 hours at Apollo Hospital.', verified: true, helpful: 45 },
+  { id: 1, user: 'Amit K.', rating: 5, date: '2026-02-15', plan: 'Reassure 3.0', comment: 'Excellent claim settlement experience. Got cashless approval within 2 hours at S-Pharma Hospital.', verified: true, helpful: 45 },
   { id: 2, user: 'Sneha R.', rating: 4, date: '2026-02-10', plan: 'Care Supreme', comment: 'Good coverage and affordable premium. The renewal process was seamless. Would recommend to everyone.', verified: true, helpful: 32 },
   { id: 3, user: 'Rahul M.', rating: 5, date: '2026-01-28', plan: 'Aspire Platinum+', comment: 'The maternity benefit is outstanding. Both delivery and newborn cover were excellent. Very satisfied!', verified: true, helpful: 67 },
   { id: 4, user: 'Priya S.', rating: 4, date: '2026-01-15', plan: 'Elevate', comment: 'Wide network of hospitals. The wellness program with gym discounts is a great addition. Premium is reasonable.', verified: false, helpful: 23 },

@@ -262,14 +262,14 @@ const OfferFilterTiles = memo(() => (
   </View>
 ));
 
-// ─── SECTION 10: APOLLO LEGACY STRIP ───
-const ApolloLegacyStrip = memo(() => (
+// ─── SECTION 10: S-Pharma LEGACY STRIP ───
+const SPharmaLegacyStrip = memo(() => (
   <View style={styles.legacyStrip}>
     <View style={styles.legacyBadge}>
       <Text style={styles.legacyBadgeText}>40{'\n'}Years</Text>
     </View>
     <Text style={styles.legacyText}>
-      Apollo's Healthcare Legacy with{' '}
+      S-Pharma's Healthcare Legacy with{' '}
       <Text style={{ fontWeight: '700' }}>10 Mn+</Text> Diagnostic Tests
     </Text>
   </View>
@@ -284,7 +284,7 @@ const videos = [
 
 const VideoThumbnails = memo(() => (
   <View style={styles.sectionPadding}>
-    <Text style={styles.sectionTitle}>Lab Tests with Apollo247</Text>
+    <Text style={styles.sectionTitle}>Lab Tests with S-Pharma247</Text>
     <FlatList
       horizontal
       data={videos}
@@ -309,9 +309,9 @@ const VideoThumbnails = memo(() => (
 // ─── SECTION 12: PROHEALTH DARK BANNER ───
 const ProHealthBanner = memo(() => (
   <View style={styles.sectionPadding}>
-    <TouchableOpacity style={styles.proHealthBanner} accessibilityLabel="Apollo ProHealth">
+    <TouchableOpacity style={styles.proHealthBanner} accessibilityLabel="S-Pharma ProHealth">
       <View style={styles.proHealthLeft}>
-        <Text style={styles.proHealthTitle}>Apollo ProHealth</Text>
+        <Text style={styles.proHealthTitle}>S-Pharma ProHealth</Text>
         <Text style={styles.proHealthSub}>Your Health Check{'\n'}Reimagined</Text>
         <TouchableOpacity style={styles.proHealthBookBtn}>
           <Text style={styles.proHealthBookText}>Book Now</Text>
@@ -326,10 +326,10 @@ const ProHealthBanner = memo(() => (
 
 // ─── SECTION 13: FULL BODY PACKAGE GRID ───
 const packages = [
-  { badge: 'INCLUDES VIT B12', name: 'Apollo Prime Full Body\nCheckup', tests: '89 Tests', oldPrice: '₹2,798', newPrice: '₹1,799' },
+  { badge: 'INCLUDES VIT B12', name: 'S-Pharma Prime Full Body\nCheckup', tests: '89 Tests', oldPrice: '₹2,798', newPrice: '₹1,799' },
   { badge: 'INCLUDES VIT D, B12', name: 'Full Body Checkup\nPlatinum', tests: '102 Tests', oldPrice: '₹5,998', newPrice: '₹3,894' },
   { badge: 'INCLUDES VIT B12', name: 'Full Body Health\nCheckup Gold', tests: '75 Tests', oldPrice: '₹3,200', newPrice: '₹2,080' },
-  { badge: 'SMART REPORT', name: 'Apollo Vitamin Check -\nBasic', tests: '45 Tests', oldPrice: '₹1,998', newPrice: '₹1,299' },
+  { badge: 'SMART REPORT', name: 'S-Pharma Vitamin Check -\nBasic', tests: '45 Tests', oldPrice: '₹1,998', newPrice: '₹1,299' },
 ];
 
 const PackageGrid = memo(() => (
@@ -354,26 +354,26 @@ const PackageGrid = memo(() => (
   </View>
 ));
 
-// ─── SECTION 14: AI ASK APOLLO CARD ───
-const AskApolloCard = memo(() => (
+// ─── SECTION 14: AI ASK S-Pharma CARD ───
+const AskSPharmaCard = memo(() => (
   <View style={styles.sectionPadding}>
-    <View style={styles.askApolloCard}>
-      <View style={styles.askApolloHeader}>
+    <View style={styles.askSPharmaCard}>
+      <View style={styles.askSPharmaHeader}>
         <View style={styles.aiBadge}>
           <Text style={styles.aiBadgeText}>AI</Text>
         </View>
-        <View style={styles.askApolloSquare}>
-          <Text style={styles.askApolloSquareText}>Ask{'\n'}Apollo</Text>
+        <View style={styles.askSPharmaSquare}>
+          <Text style={styles.askSPharmaSquareText}>Ask{'\n'}S-Pharma</Text>
         </View>
       </View>
-      <Text style={styles.askApolloTitle}>Need expert guidance on{'\n'}lab tests and reports?</Text>
-      <Text style={styles.askApolloSubLabel}>ASK APOLLO ABOUT...</Text>
-      <TouchableOpacity style={styles.askApolloChip}>
-        <Text style={styles.askApolloChipText}>Lab tests required for Urinary Tract Infection</Text>
+      <Text style={styles.askSPharmaTitle}>Need expert guidance on{'\n'}lab tests and reports?</Text>
+      <Text style={styles.askSPharmaSubLabel}>ASK S-Pharma ABOUT...</Text>
+      <TouchableOpacity style={styles.askSPharmaChip}>
+        <Text style={styles.askSPharmaChipText}>Lab tests required for Urinary Tract Infection</Text>
         <Ionicons name="chevron-forward" size={16} color={C.primaryOrange} />
       </TouchableOpacity>
-      <View style={styles.askApolloInput}>
-        <Text style={styles.askApolloInputText}>Or Just Ask Apollo...</Text>
+      <View style={styles.askSPharmaInput}>
+        <Text style={styles.askSPharmaInputText}>Or Just Ask S-Pharma...</Text>
         <Ionicons name="send" size={20} color={C.primaryOrange} />
       </View>
     </View>
@@ -383,7 +383,7 @@ const AskApolloCard = memo(() => (
 // ─── SECTION 15: TRUST STATS ───
 const TrustStats = memo(() => (
   <View style={styles.trustSection}>
-    <Text style={styles.trustApollo}>Apollo</Text>
+    <Text style={styles.trustS-Pharma}>S-Pharma</Text>
     <Text style={styles.trustSubtitle}>Your Trusted Lab-Test Partner</Text>
     <View style={styles.trustGrid}>
       <View style={styles.trustItem}>
@@ -401,7 +401,7 @@ const TrustStats = memo(() => (
           <Text style={[styles.legacyBadgeText, { fontSize: 6 }]}>40{'\n'}Yrs</Text>
         </View>
         <Text style={styles.trustNumber}>40 Years</Text>
-        <Text style={styles.trustLabel}>of Apollo's{'\n'}healthcare legacy</Text>
+        <Text style={styles.trustLabel}>of S-Pharma's{'\n'}healthcare legacy</Text>
       </View>
       <View style={styles.trustItem}>
         <Ionicons name="location" size={24} color={C.primaryTeal} />
@@ -417,7 +417,7 @@ const CertificationStrip = memo(() => (
   <View style={styles.certStrip}>
     <View style={styles.certRow}>
       <Ionicons name="shield-checkmark" size={20} color={C.primaryTeal} />
-      <Text style={styles.certText}>Certified safety and quality fulfilled by{'\n'}Apollo Diagnostics.</Text>
+      <Text style={styles.certText}>Certified safety and quality fulfilled by{'\n'}S-Pharma Diagnostics.</Text>
     </View>
     <View style={styles.certLogos}>
       <View style={styles.certLogo}><Text style={styles.certLogoText}>NABL</Text></View>
@@ -822,11 +822,11 @@ export default function LabTestsIndex() {
         <MostBookedBanner />
         <TaxSaverGrid />
         <OfferFilterTiles />
-        <ApolloLegacyStrip />
+        <SPharmaLegacyStrip />
         <VideoThumbnails />
         <ProHealthBanner />
         <PackageGrid />
-        <AskApolloCard />
+        <AskSPharmaCard />
         <TrustStats />
         <CertificationStrip />
         <TestCategoriesSection />
@@ -960,23 +960,23 @@ const styles = StyleSheet.create({
   packageOldPrice: { fontSize: 11, color: C.textSecondary, textDecorationLine: 'line-through' },
   packageNewPrice: { fontSize: 14, fontWeight: '700', color: C.primaryTeal },
 
-  // Ask Apollo
-  askApolloCard: { backgroundColor: C.bgBeige, borderRadius: 16, padding: 16 },
-  askApolloHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 12, gap: 10 },
+  // Ask S-Pharma
+  askSPharmaCard: { backgroundColor: C.bgBeige, borderRadius: 16, padding: 16 },
+  askSPharmaHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 12, gap: 10 },
   aiBadge: { backgroundColor: '#E0E0E0', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3 },
   aiBadgeText: { fontSize: 11, fontWeight: '700', color: C.textPrimary },
-  askApolloSquare: { backgroundColor: C.primaryOrange, borderRadius: 8, padding: 8, width: 48, height: 48, justifyContent: 'center', alignItems: 'center' },
-  askApolloSquareText: { fontSize: 11, fontWeight: '700', color: '#FFF', textAlign: 'center', lineHeight: 14 },
-  askApolloTitle: { fontSize: 16, fontWeight: '700', color: C.textPrimary, lineHeight: 22, marginBottom: 8 },
-  askApolloSubLabel: { fontSize: 10, fontWeight: '600', color: C.textSecondary, marginBottom: 8, letterSpacing: 0.5 },
-  askApolloChip: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 12 },
-  askApolloChipText: { flex: 1, fontSize: 13, color: C.primaryOrange },
-  askApolloInput: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 24, paddingHorizontal: 14, paddingVertical: 10 },
-  askApolloInputText: { flex: 1, fontSize: 14, color: C.textSecondary },
+  askSPharmaSquare: { backgroundColor: C.primaryOrange, borderRadius: 8, padding: 8, width: 48, height: 48, justifyContent: 'center', alignItems: 'center' },
+  askSPharmaSquareText: { fontSize: 11, fontWeight: '700', color: '#FFF', textAlign: 'center', lineHeight: 14 },
+  askSPharmaTitle: { fontSize: 16, fontWeight: '700', color: C.textPrimary, lineHeight: 22, marginBottom: 8 },
+  askSPharmaSubLabel: { fontSize: 10, fontWeight: '600', color: C.textSecondary, marginBottom: 8, letterSpacing: 0.5 },
+  askSPharmaChip: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 12 },
+  askSPharmaChipText: { flex: 1, fontSize: 13, color: C.primaryOrange },
+  askSPharmaInput: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 24, paddingHorizontal: 14, paddingVertical: 10 },
+  askSPharmaInputText: { flex: 1, fontSize: 14, color: C.textSecondary },
 
   // Trust Stats
   trustSection: { backgroundColor: '#E6F3FF', paddingHorizontal: 16, paddingVertical: 24, marginTop: 20, alignItems: 'center' },
-  trustApollo: { fontSize: 24, fontWeight: '700', color: C.primaryTeal },
+  trustS-Pharma: { fontSize: 24, fontWeight: '700', color: C.primaryTeal },
   trustSubtitle: { fontSize: 14, color: C.textSecondary, marginTop: 4, marginBottom: 20 },
   trustGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 16, justifyContent: 'center' },
   trustItem: { width: (SCREEN_WIDTH - 64) / 2, alignItems: 'center', marginBottom: 8 },

@@ -170,8 +170,8 @@ const therapyStyles = StyleSheet.create({
 
 // Doctors
 const DOCTORS_DATA = [
-  { id: '1', name: 'Dr. Rahul Verma', degree: 'MD, DPM Psychiatry', hospital: 'Apollo Delhi', experience: '18 years', rating: 4.9, reviews: 2156, fee: 1200, image: '👨‍⚕️', available: 'Today' },
-  { id: '2', name: 'Dr. Anjali Patel', degree: 'MD, DPM, MPhil', hospital: 'Apollo Mumbai', experience: '15 years', rating: 4.8, reviews: 1845, fee: 1000, image: '👩‍⚕️', available: 'Tomorrow' },
+  { id: '1', name: 'Dr. Rahul Verma', degree: 'MD, DPM Psychiatry', hospital: 'S-Pharma Delhi', experience: '18 years', rating: 4.9, reviews: 2156, fee: 1200, image: '👨‍⚕️', available: 'Today' },
+  { id: '2', name: 'Dr. Anjali Patel', degree: 'MD, DPM, MPhil', hospital: 'S-Pharma Mumbai', experience: '15 years', rating: 4.8, reviews: 1845, fee: 1000, image: '👩‍⚕️', available: 'Tomorrow' },
 ];
 
 const DoctorsSection = memo(() => (

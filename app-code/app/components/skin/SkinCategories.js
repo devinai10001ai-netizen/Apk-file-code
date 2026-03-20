@@ -727,7 +727,7 @@ const styles = StyleSheet.create({
   },
   categoryMiniOfferText: {
     ...TYPOGRAPHY.badge,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontSize: 7,
   },
 

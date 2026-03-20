@@ -256,7 +256,7 @@ const calcStyles = StyleSheet.create({
 
 // ============== INSURERS SECTION ==============
 const InsurersSection = ({ insurers }) => {
-  const items = insurers || ['Niva Bupa', 'Care Health', 'Star Health', 'Apollo Munich', 'ManipalCigna'];
+  const items = insurers || ['Niva Bupa', 'Care Health', 'Star Health', 'S-Pharma Munich', 'ManipalCigna'];
   
   return (
     <View style={sectionStyles.container}>

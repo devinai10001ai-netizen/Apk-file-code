@@ -171,29 +171,29 @@ const SpecialisedTests = memo(() => (
   </View>
 ));
 
-// ─── SECTION 7: ASK APOLLO AI CARD ───
-const AskApolloAICard = memo(() => (
+// ─── SECTION 7: ASK S-Pharma AI CARD ───
+const AskSPharmaAICard = memo(() => (
   <View style={styles.sectionPadding}>
-    <View style={styles.askApolloCard}>
-      <View style={styles.askApolloHeader}>
+    <View style={styles.askSPharmaCard}>
+      <View style={styles.askSPharmaHeader}>
         <View style={{ flex: 1 }}>
           <View style={styles.aiLabel}>
             <Text style={styles.aiLabelText}>AI</Text>
           </View>
-          <Text style={styles.askApolloTitle}>Need help in choosing{'\n'}the right test?</Text>
-          <Text style={styles.askApolloSubLabel}>ASK APOLLO ABOUT...</Text>
+          <Text style={styles.askSPharmaTitle}>Need help in choosing{'\n'}the right test?</Text>
+          <Text style={styles.askSPharmaSubLabel}>ASK S-Pharma ABOUT...</Text>
         </View>
-        <View style={styles.askApolloSquare}>
-          <Text style={styles.askApolloSquareText}>Ask{'\n'}Apollo</Text>
+        <View style={styles.askSPharmaSquare}>
+          <Text style={styles.askSPharmaSquareText}>Ask{'\n'}S-Pharma</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.askApolloChip}>
-        <Text style={styles.askApolloChipIcon}>*</Text>
-        <Text style={styles.askApolloChipText}>Which tests are useful for thyroid problems?</Text>
+      <TouchableOpacity style={styles.askSPharmaChip}>
+        <Text style={styles.askSPharmaChipIcon}>*</Text>
+        <Text style={styles.askSPharmaChipText}>Which tests are useful for thyroid problems?</Text>
         <Ionicons name="chevron-forward" size={16} color={C.primaryOrange} />
       </TouchableOpacity>
-      <View style={styles.askApolloInput}>
-        <Text style={styles.askApolloInputText}>Or Just Ask Apollo...</Text>
+      <View style={styles.askSPharmaInput}>
+        <Text style={styles.askSPharmaInputText}>Or Just Ask S-Pharma...</Text>
         <Ionicons name="send" size={20} color={C.primaryOrange} />
       </View>
     </View>
@@ -231,7 +231,7 @@ export default function LabCategories() {
         <LifestyleChecks />
         <IllnessSymptoms />
         <SpecialisedTests />
-        <AskApolloAICard />
+        <AskSPharmaAICard />
         <View style={{ height: 80 }} />
       </ScrollView>
       {showGoTop && (
@@ -265,20 +265,20 @@ const styles = StyleSheet.create({
   categoryCircle: { width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginBottom: 6 },
   categoryLabel: { fontSize: 11, color: C.textSecondary, textAlign: 'center', lineHeight: 14 },
 
-  // Ask Apollo
-  askApolloCard: { backgroundColor: C.bgBeige, borderRadius: 16, padding: 16 },
-  askApolloHeader: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 12 },
+  // Ask S-Pharma
+  askSPharmaCard: { backgroundColor: C.bgBeige, borderRadius: 16, padding: 16 },
+  askSPharmaHeader: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 12 },
   aiLabel: { backgroundColor: '#E0E0E0', borderRadius: 4, paddingHorizontal: 6, paddingVertical: 2, alignSelf: 'flex-start', marginBottom: 6 },
   aiLabelText: { fontSize: 10, fontWeight: '700', color: C.textPrimary },
-  askApolloTitle: { fontSize: 16, fontWeight: '700', color: C.textPrimary, lineHeight: 22, marginBottom: 6 },
-  askApolloSubLabel: { fontSize: 10, fontWeight: '600', color: C.textSecondary, letterSpacing: 0.5 },
-  askApolloSquare: { backgroundColor: C.primaryOrange, borderRadius: 8, width: 48, height: 48, justifyContent: 'center', alignItems: 'center' },
-  askApolloSquareText: { fontSize: 11, fontWeight: '700', color: '#FFF', textAlign: 'center', lineHeight: 14 },
-  askApolloChip: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10 },
-  askApolloChipIcon: { fontSize: 14, color: C.primaryOrange, marginRight: 6 },
-  askApolloChipText: { flex: 1, fontSize: 13, color: C.primaryOrange },
-  askApolloInput: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 24, paddingHorizontal: 14, paddingVertical: 10 },
-  askApolloInputText: { flex: 1, fontSize: 14, color: C.textSecondary },
+  askSPharmaTitle: { fontSize: 16, fontWeight: '700', color: C.textPrimary, lineHeight: 22, marginBottom: 6 },
+  askSPharmaSubLabel: { fontSize: 10, fontWeight: '600', color: C.textSecondary, letterSpacing: 0.5 },
+  askSPharmaSquare: { backgroundColor: C.primaryOrange, borderRadius: 8, width: 48, height: 48, justifyContent: 'center', alignItems: 'center' },
+  askSPharmaSquareText: { fontSize: 11, fontWeight: '700', color: '#FFF', textAlign: 'center', lineHeight: 14 },
+  askSPharmaChip: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10 },
+  askSPharmaChipIcon: { fontSize: 14, color: C.primaryOrange, marginRight: 6 },
+  askSPharmaChipText: { flex: 1, fontSize: 13, color: C.primaryOrange },
+  askSPharmaInput: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 24, paddingHorizontal: 14, paddingVertical: 10 },
+  askSPharmaInputText: { flex: 1, fontSize: 14, color: C.textSecondary },
 
   // Go To Top
   goTopButton: { position: 'absolute', bottom: 80, alignSelf: 'center', left: SCREEN_WIDTH / 2 - 50, flexDirection: 'row', alignItems: 'center', backgroundColor: C.primaryTeal, borderRadius: 20, paddingHorizontal: 16, paddingVertical: 8, elevation: 6, gap: 4 },

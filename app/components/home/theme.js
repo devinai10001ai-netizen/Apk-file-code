@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 ROYAL PREMIUM DESIGN SYSTEM
+ * S-PHARMA ROYAL PREMIUM DESIGN SYSTEM
  * ============================================================================
  * 
  * A comprehensive design system built for a luxury healthcare super-app.
@@ -29,11 +29,11 @@ const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 // ============================================================================
 export const COLORS = {
   // Primary Brand Colors
-  apolloGreen: '#00A651',
-  apolloGreenLight: '#00C853',
-  apolloGreenDark: '#008040',
-  apolloGreenFaded: 'rgba(0, 166, 81, 0.08)',
-  apolloGreenSubtle: 'rgba(0, 166, 81, 0.15)',
+  spharmaGreen: '#00A651',
+  spharmaGreenLight: '#00C853',
+  spharmaGreenDark: '#008040',
+  spharmaGreenFaded: 'rgba(0, 166, 81, 0.08)',
+  spharmaGreenSubtle: 'rgba(0, 166, 81, 0.15)',
 
   // Royal Gold Palette
   royalGold: '#FFD700',
@@ -376,7 +376,7 @@ export const SHADOWS = {
 
   // Button Shadow
   button: {
-    shadowColor: COLORS.apolloGreen,
+    shadowColor: COLORS.spharmaGreen,
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.25,
     shadowRadius: 6,
@@ -623,7 +623,7 @@ export const MIXINS = {
 
   // Premium button
   premiumButton: {
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.button,
     paddingHorizontal: SPACING.xl,
     paddingVertical: SPACING.md,
@@ -684,10 +684,10 @@ export const DATA = {
   services: [
     {
       id: 1,
-      title: 'Apollo\nPharmacy',
+      title: 'S-Pharma\nPharmacy',
       icon: 'medkit',
       offer: 'Up to 25% OFF',
-      color: COLORS.apolloGreen,
+      color: COLORS.spharmaGreen,
       bgColor: 'rgba(0, 166, 81, 0.08)',
       accentColor: '#E8F5E9',
     },
@@ -711,10 +711,10 @@ export const DATA = {
     },
     {
       id: 4,
-      title: 'Apollo\nInsurance',
+      title: 'S-Pharma\nInsurance',
       icon: 'shield-checkmark',
       offer: 'Save up to 40%',
-      color: COLORS.apolloGreen,
+      color: COLORS.spharmaGreen,
       bgColor: 'rgba(0, 166, 81, 0.08)',
       accentColor: '#E8F5E9',
     },
@@ -767,21 +767,21 @@ export const DATA = {
     { id: 1, title: 'Family Insurance Offer', subtitle: 'Get 20% OFF on family health insurance plans. Protect your loved ones today.', badge: 'LIMITED' },
     { id: 2, title: 'ICICI PF NPS Plan', subtitle: 'Unlock upto 18% discounts under ICICI PF NPS SWASTHYA EQUITY Plus Plan', badge: 'EXCLUSIVE' },
     { id: 3, title: 'Summer Health Camp', subtitle: 'Special health checkup packages at discounted rates. Book your slot now!', badge: 'NEW' },
-    { id: 4, title: 'Apollo Circle Benefits', subtitle: 'Join Apollo Circle for exclusive member discounts and free consultations.', badge: 'PREMIUM' },
+    { id: 4, title: 'S-Pharma Circle Benefits', subtitle: 'Join S-Pharma Circle for exclusive member discounts and free consultations.', badge: 'PREMIUM' },
   ],
 
   curatedOfferings: [
-    { id: 1, title: 'Apollo SBI Card SELECT', subtitle: 'Exclusive healthcare credit card benefits', icon: 'card', color: '#0047A3', bgColor: '#E8EEF5' },
+    { id: 1, title: 'S-Pharma SBI Card SELECT', subtitle: 'Exclusive healthcare credit card benefits', icon: 'card', color: '#0047A3', bgColor: '#E8EEF5' },
     { id: 2, title: 'Join Circle Membership', subtitle: 'Unlock premium health benefits & savings', icon: 'people-circle', color: '#00A651', bgColor: '#E8F5E9' },
     { id: 3, title: 'My Health Records & Insights', subtitle: 'Track and manage your health journey', icon: 'folder-open', color: '#FF6B35', bgColor: '#FFF3E0' },
   ],
 
-  apolloLegacyBrands: [
-    'Apollo Pharmacy',
-    'Apollo Diagnostics',
-    'Apollo 24/7',
-    'Apollo Hospitals',
-    'Apollo Insurance',
+  S-pharmaLegacyBrands: [
+    'S-Pharma Pharmacy',
+    'S-Pharma Diagnostics',
+    'S-Pharma 24/7',
+    'S-Pharma Hospitals',
+    'S-Pharma Insurance',
   ],
 
   trustBadges: [

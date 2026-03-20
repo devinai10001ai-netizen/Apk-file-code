@@ -15,7 +15,7 @@ export const CATEGORIES_DATA = [
     bannerImage: 'wellness_banner',
     features: ['100% Authentic Products', 'Free Health Consultation', 'Express Delivery'],
     products: [
-      { id: 'w1', name: 'Multivitamin Gold', brand: 'Apollo Life', price: 599, mrp: 799, rating: 4.7, discount: '25% OFF' },
+      { id: 'w1', name: 'Multivitamin Gold', brand: 'S-Pharma Life', price: 599, mrp: 799, rating: 4.7, discount: '25% OFF' },
       { id: 'w2', name: 'Omega 3 Fish Oil', brand: 'Himalaya', price: 349, mrp: 499, rating: 4.5, discount: '30% OFF' },
       { id: 'w3', name: 'Vitamin D3 60K', brand: 'USV', price: 120, mrp: 150, rating: 4.9, discount: '20% OFF' },
       { id: 'w4', name: 'Immunity Booster', brand: 'Dabur', price: 250, mrp: 350, rating: 4.6, discount: '28% OFF' },

@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 PHARMACY TAB - ULTRA PREMIUM
+ * S-Pharma 24|7 PHARMACY TAB - ULTRA PREMIUM
  * India's Most Trusted Pharmacy with smooth animations and premium UI.
  */
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
@@ -73,18 +73,18 @@ const HEALTH_CONCERNS = [
 ];
 const STORE_CATEGORIES = [
   { id: '1', name: 'Tata One Sourena', subtitle: 'Premium Healthcare', icon: 'storefront-outline', color: '#E8F5E9', tagColor: '#2E7D32' },
-  { id: '2', name: 'Apollo Life', subtitle: 'Trusted by Millions', icon: 'medical-outline', color: '#E3F2FD', tagColor: '#1565C0' },
+  { id: '2', name: 'S-Pharma Life', subtitle: 'Trusted by Millions', icon: 'medical-outline', color: '#E3F2FD', tagColor: '#1565C0' },
   { id: '3', name: 'Wellness Forever', subtitle: 'Your Health Partner', icon: 'heart-outline', color: '#FFF3E0', tagColor: '#EF6C00' },
   { id: '4', name: 'Pharmeasy Select', subtitle: 'Curated for You', icon: 'star-outline', color: '#F3E5F5', tagColor: '#7B1FA2' },
 ];
-const APOLLO_BEST = [
+const S-Pharma_BEST = [
   { id: '1', name: 'My Medicines', subtitle: 'KNOW MORE', icon: 'medical-outline', color: '#0F847E' },
   { id: '2', name: 'My Membership', subtitle: 'BENEFITS', icon: 'diamond-outline', color: '#D4A843' },
-  { id: '3', name: 'Ask Apollo', subtitle: 'ASSISTANT', icon: 'chatbubble-outline', color: '#3B82F6' },
+  { id: '3', name: 'Ask S-Pharma', subtitle: 'ASSISTANT', icon: 'chatbubble-outline', color: '#3B82F6' },
   { id: '4', name: 'Health Records', subtitle: 'CHECK NOW', icon: 'document-text-outline', color: '#8B5CF6' },
 ];
 const LAB_TESTS = [
-  { id: '1', name: 'Apollo Total Vitaminogram', subtitle: '120+ tests', price: 2499, mrp: 5999, discount: '58% OFF', icon: 'flask-outline' },
+  { id: '1', name: 'S-Pharma Total Vitaminogram', subtitle: '120+ tests', price: 2499, mrp: 5999, discount: '58% OFF', icon: 'flask-outline' },
   { id: '2', name: 'Complete Blood Count', subtitle: '24+ parameters', price: 399, mrp: 800, discount: '50% OFF', icon: 'water-outline' },
   { id: '3', name: 'Thyroid Profile', subtitle: 'T3, T4, TSH', price: 599, mrp: 1200, discount: '50% OFF', icon: 'fitness-outline' },
 ];
@@ -104,23 +104,23 @@ const SKINCARE_50 = [
 const VALUE_DEALS = [
   { id: '1', name: 'Livfit Superfood', subtitle: 'Ayurvedic Health Mix', price: 199, mrp: 350, icon: 'leaf-outline', color: '#E8F5E9' },
   { id: '2', name: 'Nourisher Protein Bar', subtitle: 'Chocolate Flavor', price: 199, mrp: 299, icon: 'barbell-outline', color: '#FFF3E0' },
-  { id: '3', name: 'Apollo Life Calcium', subtitle: '30 Tablets', price: 199, mrp: 380, icon: 'fitness-outline', color: '#E3F2FD' },
+  { id: '3', name: 'S-Pharma Life Calcium', subtitle: '30 Tablets', price: 199, mrp: 380, icon: 'fitness-outline', color: '#E3F2FD' },
   { id: '4', name: 'Herbal Tea Pack', subtitle: 'Assorted Flavors', price: 199, mrp: 350, icon: 'cafe-outline', color: '#F3E5F5' },
 ];
 const PHARMACIES = [
-  { id: '1', name: 'Apollo Pharmacy Connaught Place', distance: '0.5 km', rating: 4.8, timing: '24/7', icon: 'storefront' },
-  { id: '2', name: 'Apollo Pharmacy Rajouri Garden', distance: '1.2 km', rating: 4.6, timing: '8AM-11PM', icon: 'storefront' },
-  { id: '3', name: 'Apollo Pharmacy Lajpat Nagar', distance: '2.1 km', rating: 4.7, timing: '24/7', icon: 'storefront' },
-  { id: '4', name: 'Apollo Pharmacy Nehru Place', distance: '3.0 km', rating: 4.5, timing: '9AM-10PM', icon: 'storefront' },
+  { id: '1', name: 'S-Pharma Pharmacy Connaught Place', distance: '0.5 km', rating: 4.8, timing: '24/7', icon: 'storefront' },
+  { id: '2', name: 'S-Pharma Pharmacy Rajouri Garden', distance: '1.2 km', rating: 4.6, timing: '8AM-11PM', icon: 'storefront' },
+  { id: '3', name: 'S-Pharma Pharmacy Lajpat Nagar', distance: '2.1 km', rating: 4.7, timing: '24/7', icon: 'storefront' },
+  { id: '4', name: 'S-Pharma Pharmacy Nehru Place', distance: '3.0 km', rating: 4.5, timing: '9AM-10PM', icon: 'storefront' },
 ];
 const MEMBERSHIP_ITEMS = [
   { id: '1', name: 'Nitrogen Fill', subtitle: 'All 4 Tyres', price: '249', icon: 'car-outline', color: '#E8F5E9' },
   { id: '2', name: 'Wiper Fluid', subtitle: 'Premium Quality', price: '199', icon: 'water-outline', color: '#E3F2FD' },
   { id: '3', name: 'AC Service', subtitle: 'Full Check', price: '1,499', icon: 'thermometer-outline', color: '#FFF3E0' },
 ];
-const APOLLO_SERVICES = [
+const S-Pharma_SERVICES = [
   { id: '1', name: 'Premium Friday Doorstep Savings', subtitle: 'Starting at ₹15/week', icon: 'calendar-outline', color: '#0F847E' },
-  { id: '2', name: 'Join Now - Exclusive Benefits', subtitle: 'Apollo Circle Membership', icon: 'diamond-outline', color: '#D4A843' },
+  { id: '2', name: 'Join Now - Exclusive Benefits', subtitle: 'S-Pharma Circle Membership', icon: 'diamond-outline', color: '#D4A843' },
 ];
 
 // ============================================================================
@@ -336,15 +336,15 @@ const ExploreStoresSection = React.memo(() => (
 ));
 
 // ============================================================================
-// APOLLO SECTION
+// S-Pharma SECTION
 // ============================================================================
-const ApolloServiceCard = React.memo(({ item, index }) => {
+const S-PharmaServiceCard = React.memo(({ item, index }) => {
   const sc = useSharedValue(0.9); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 100, withTiming(1, { duration: 500 })); sc.value = withDelay(index * 100, withSpring(1, { damping: 12, stiffness: 100 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (<Animated.View style={[styles.asCard, a]}><TouchableOpacity activeOpacity={0.7}><LinearGradient colors={[item.color, item.color === '#0F847E' ? '#0A6B66' : '#C4952E']} style={styles.asGrad}><Ionicons name={item.icon} size={28} color={COLORS.white} /><View style={styles.asTextWrap}><Text style={styles.asName}>{item.name}</Text><Text style={styles.asSub}>{item.subtitle}</Text></View><View style={styles.asArrow}><Ionicons name="chevron-forward" size={18} color={COLORS.white} /></View></LinearGradient></TouchableOpacity></Animated.View>);
 });
-const ApolloBestCard = React.memo(({ item, index }) => {
+const S-PharmaBestCard = React.memo(({ item, index }) => {
   const sc = useSharedValue(0.85); const op = useSharedValue(0);
   useEffect(() => { op.value = withDelay(index * 80, withTiming(1, { duration: 400 })); sc.value = withDelay(index * 80, withSpring(1, { damping: 12, stiffness: 100 })); }, []);
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
@@ -356,11 +356,11 @@ const MembershipCard = React.memo(({ item, index }) => {
   const a = useAnimatedStyle(() => ({ opacity: op.value, transform: [{ scale: sc.value }] }));
   return (<Animated.View style={[styles.memCard, a]}><View style={[styles.memInner, { backgroundColor: item.color }]}><Ionicons name={item.icon} size={24} color={COLORS.primary} /><Text style={styles.memName}>{item.name}</Text><Text style={styles.memSub}>{item.subtitle}</Text><Text style={styles.memPrice}>&#8377;{item.price}</Text></View></Animated.View>);
 });
-const ApolloSection = React.memo(() => (
-  <View style={styles.apolloWrap}>
-    <View style={styles.section}><FlatList data={APOLLO_SERVICES} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <ApolloServiceCard item={item} index={index} />} contentContainerStyle={styles.asListC} ItemSeparatorComponent={() => <View style={{ width: 12 }} />} /></View>
+const S-PharmaSection = React.memo(() => (
+  <View style={styles.S-pharmaWrap}>
+    <View style={styles.section}><FlatList data={S-Pharma_SERVICES} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <S-PharmaServiceCard item={item} index={index} />} contentContainerStyle={styles.asListC} ItemSeparatorComponent={() => <View style={{ width: 12 }} />} /></View>
     <View style={styles.section}><FlatList data={MEMBERSHIP_ITEMS} horizontal showsHorizontalScrollIndicator={false} keyExtractor={i => i.id} renderItem={({ item, index }) => <MembershipCard item={item} index={index} />} contentContainerStyle={styles.memListC} ItemSeparatorComponent={() => <View style={{ width: 10 }} />} /></View>
-    <View style={styles.section}><Text style={styles.sectionTitle}>Get the Best of Apollo</Text><View style={styles.abGrid}>{APOLLO_BEST.map((item, i) => <ApolloBestCard key={item.id} item={item} index={i} />)}</View></View>
+    <View style={styles.section}><Text style={styles.sectionTitle}>Get the Best of S-Pharma</Text><View style={styles.abGrid}>{S-Pharma_BEST.map((item, i) => <S-PharmaBestCard key={item.id} item={item} index={i} />)}</View></View>
   </View>
 ));
 
@@ -444,7 +444,7 @@ const LiveHealthyFooter = React.memo(() => {
   const heartScale = useSharedValue(1);
   useEffect(() => { heartScale.value = withRepeat(withSequence(withTiming(1.15, { duration: 800, easing: Easing.inOut(Easing.ease) }), withTiming(1, { duration: 800, easing: Easing.inOut(Easing.ease) })), -1, false); }, []);
   const hs = useAnimatedStyle(() => ({ transform: [{ scale: heartScale.value }] }));
-  return (<View style={styles.lhFooter}><LinearGradient colors={[COLORS.primaryLight, '#D4F1EF', COLORS.white]} style={styles.lhGrad}><Animated.View style={hs}><Ionicons name="heart" size={40} color={COLORS.primary} /></Animated.View><Text style={styles.lhTitle}>Live Healthy</Text><Text style={styles.lhSub}>with Apollo 24|7</Text><View style={styles.lhDiv} /><Text style={styles.lhCopy}>Your trusted health partner</Text><View style={styles.lhSocial}>{['logo-facebook', 'logo-twitter', 'logo-instagram', 'logo-youtube'].map((icon, i) => <TouchableOpacity key={i} style={styles.socialBtn}><Ionicons name={icon} size={20} color={COLORS.primary} /></TouchableOpacity>)}</View></LinearGradient></View>);
+  return (<View style={styles.lhFooter}><LinearGradient colors={[COLORS.primaryLight, '#D4F1EF', COLORS.white]} style={styles.lhGrad}><Animated.View style={hs}><Ionicons name="heart" size={40} color={COLORS.primary} /></Animated.View><Text style={styles.lhTitle}>Live Healthy</Text><Text style={styles.lhSub}>with S-Pharma 24|7</Text><View style={styles.lhDiv} /><Text style={styles.lhCopy}>Your trusted health partner</Text><View style={styles.lhSocial}>{['logo-facebook', 'logo-twitter', 'logo-instagram', 'logo-youtube'].map((icon, i) => <TouchableOpacity key={i} style={styles.socialBtn}><Ionicons name={icon} size={20} color={COLORS.primary} /></TouchableOpacity>)}</View></LinearGradient></View>);
 });
 
 // ============================================================================
@@ -1114,7 +1114,7 @@ export default function PharmacyIndex() {
         <FlashDealsSection />
         <ConcernsSection />
         <ExploreStoresSection />
-        <ApolloSection />
+        <S-PharmaSection />
         <LabTestsSection />
         <HolidayBanner />
         <BestSkincareSection />
@@ -1257,7 +1257,7 @@ const styles = StyleSheet.create({
   stSub: { fontSize: 10, color: COLORS.textTertiary, textAlign: 'center', marginBottom: SPACING.sm },
   stTag: { paddingHorizontal: SPACING.md, paddingVertical: SPACING.xs, borderRadius: RADIUS.full },
   stTagText: { color: COLORS.white, fontSize: 10, fontWeight: '700', letterSpacing: 0.5 },
-  apolloWrap: { marginBottom: SPACING.md },
+  S-pharmaWrap: { marginBottom: SPACING.md },
   asListC: { paddingVertical: SPACING.sm },
   asCard: { width: SCREEN_WIDTH - 80 },
   asGrad: { borderRadius: RADIUS.lg, padding: SPACING.xl, flexDirection: 'row', alignItems: 'center', minHeight: 80 },

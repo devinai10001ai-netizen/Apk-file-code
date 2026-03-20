@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - WOMEN HERO, CATEGORIES, NAPKINS & MOTHERHOOD
+ * S-Pharma 24/7 - WOMEN HERO, CATEGORIES, NAPKINS & MOTHERHOOD
  * ============================================================================
  *
  * Premium Women section with animated hero banner, category pills,

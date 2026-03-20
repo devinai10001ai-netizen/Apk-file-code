@@ -590,7 +590,7 @@ const InsightsFooter = React.memo(() => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerDivider} />
-      <Text style={styles.footerBrand}>Apollo 24|7 Health Insights</Text>
+      <Text style={styles.footerBrand}>S-Pharma 24|7 Health Insights</Text>
       <Text style={styles.footerDesc}>AI-powered analytics for a healthier you</Text>
       <View style={styles.footerBadges}>
         <View style={styles.footerBadge}><Ionicons name="sparkles" size={14} color={COLORS.primary} /><Text style={styles.footerBadgeText}>AI Powered</Text></View>

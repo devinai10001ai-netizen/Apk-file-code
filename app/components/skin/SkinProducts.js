@@ -181,7 +181,7 @@ const AnimatedProductCard = React.memo(({ product, index, onAddToCart, quantitie
 
         {/* Delivery */}
         <View style={styles.productDeliveryRow}>
-          <Ionicons name="time-outline" size={10} color={COLORS.apolloGreen} />
+          <Ionicons name="time-outline" size={10} color={COLORS.spharmaGreen} />
           <Text style={styles.productDeliveryText}>{product.delivery}</Text>
         </View>
 
@@ -521,7 +521,7 @@ const AnimatedFreshProductCard = React.memo(({ product, index, onAddToCart, quan
 
         {/* Delivery */}
         <View style={styles.freshDeliveryRow}>
-          <Ionicons name="time-outline" size={9} color={COLORS.apolloGreen} />
+          <Ionicons name="time-outline" size={9} color={COLORS.spharmaGreen} />
           <Text style={styles.freshDeliveryText}>{product.delivery}</Text>
         </View>
 
@@ -598,7 +598,7 @@ export const FreshSkinSection = React.memo(({ onAddToCart, quantities }) => {
             style={styles.freshSkinHeaderBg}
           >
             <View style={styles.freshSkinHeaderIconContainer}>
-              <Ionicons name="leaf" size={22} color={COLORS.apolloGreen} />
+              <Ionicons name="leaf" size={22} color={COLORS.spharmaGreen} />
             </View>
             <View>
               <Text style={styles.freshSkinTitle}>Fresh Skin Care</Text>
@@ -1095,7 +1095,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: SPACING.sm,
     left: SPACING.sm,
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 3,
     borderRadius: RADIUS.sm,
@@ -1156,7 +1156,7 @@ const styles = StyleSheet.create({
   },
   productDeliveryText: {
     ...TYPOGRAPHY.caption,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '600',
     fontSize: 9,
   },
@@ -1183,7 +1183,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.md,
     paddingVertical: SPACING.sm,
     gap: 4,
@@ -1198,10 +1198,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     borderRadius: RADIUS.md,
     borderWidth: 1.5,
-    borderColor: COLORS.apolloGreen,
+    borderColor: COLORS.spharmaGreen,
   },
   productQtyButton: {
     paddingHorizontal: SPACING.md,
@@ -1209,12 +1209,12 @@ const styles = StyleSheet.create({
   },
   productQtyButtonText: {
     ...TYPOGRAPHY.labelLarge,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '800',
   },
   productQtyText: {
     ...TYPOGRAPHY.labelLarge,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '800',
     paddingHorizontal: SPACING.sm,
   },
@@ -1272,15 +1272,15 @@ const styles = StyleSheet.create({
     borderColor: COLORS.borderLight,
   },
   freshPillActive: {
-    backgroundColor: COLORS.apolloGreenFaded,
-    borderColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreenFaded,
+    borderColor: COLORS.spharmaGreen,
   },
   freshPillText: {
     ...TYPOGRAPHY.labelMedium,
     color: COLORS.textTertiary,
   },
   freshPillTextActive: {
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '700',
   },
   freshProductsListContent: {
@@ -1313,7 +1313,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: SPACING.sm,
     left: SPACING.sm,
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     paddingHorizontal: SPACING.sm,
     paddingVertical: 3,
     borderRadius: RADIUS.sm,
@@ -1370,7 +1370,7 @@ const styles = StyleSheet.create({
   },
   freshDeliveryText: {
     ...TYPOGRAPHY.caption,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '600',
     fontSize: 9,
   },
@@ -1399,7 +1399,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.apolloGreen,
+    backgroundColor: COLORS.spharmaGreen,
     borderRadius: RADIUS.md,
     paddingVertical: SPACING.sm - 2,
     gap: 3,
@@ -1415,10 +1415,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.apolloGreenFaded,
+    backgroundColor: COLORS.spharmaGreenFaded,
     borderRadius: RADIUS.md,
     borderWidth: 1.5,
-    borderColor: COLORS.apolloGreen,
+    borderColor: COLORS.spharmaGreen,
   },
   freshQtyBtn: {
     paddingHorizontal: SPACING.md,
@@ -1426,13 +1426,13 @@ const styles = StyleSheet.create({
   },
   freshQtyBtnText: {
     ...TYPOGRAPHY.labelLarge,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '800',
     fontSize: 13,
   },
   freshQtyText: {
     ...TYPOGRAPHY.labelLarge,
-    color: COLORS.apolloGreen,
+    color: COLORS.spharmaGreen,
     fontWeight: '800',
     paddingHorizontal: SPACING.xs,
     fontSize: 13,

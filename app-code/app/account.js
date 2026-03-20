@@ -161,7 +161,7 @@ const ProfileHeader = React.memo(({ onEditPress }) => {
         <View style={styles.profileInfoContainer}>
           <Text style={styles.profileName}>Guest User</Text>
           <Text style={styles.profilePhone}>+91 98765 43210</Text>
-          <Text style={styles.profileEmail}>guest@apollo247.com</Text>
+          <Text style={styles.profileEmail}>guest@S-pharma247.com</Text>
         </View>
 
         <TouchableOpacity
@@ -302,7 +302,7 @@ const OrdersSection = React.memo(({ orders, visible }) => {
 const ProfileSettingsSection = React.memo(({ visible }) => {
   const [name, setName] = useState('Guest User');
   const [phone, setPhone] = useState('+91 98765 43210');
-  const [email, setEmail] = useState('guest@apollo247.com');
+  const [email, setEmail] = useState('guest@S-pharma247.com');
   const [address, setAddress] = useState('123, Green Valley, Sector 14, Delhi 110001');
 
   if (!visible) return null;

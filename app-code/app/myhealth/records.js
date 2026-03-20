@@ -203,7 +203,7 @@ const RecentDocuments = React.memo(() => {
     { id: '1', name: 'Blood Test Report', type: 'Lab Report', date: 'Mar 5, 2026', size: '2.4 MB', icon: 'flask', color: '#6A1B9A', format: 'PDF', doctor: 'Dr. Priya Sharma' },
     { id: '2', name: 'Prescription - Cardiologist', type: 'Prescription', date: 'Mar 2, 2026', size: '1.1 MB', icon: 'document-text', color: '#2E7D32', format: 'PDF', doctor: 'Dr. Rahul Verma' },
     { id: '3', name: 'Chest X-Ray', type: 'X-Ray', date: 'Feb 28, 2026', size: '8.7 MB', icon: 'scan', color: '#C62828', format: 'DICOM', doctor: 'Dr. Anita Singh' },
-    { id: '4', name: 'Hospital Bill - Apollo', type: 'Bill', date: 'Feb 25, 2026', size: '0.8 MB', icon: 'receipt', color: '#EF6C00', format: 'PDF', doctor: 'Apollo Hospital' },
+    { id: '4', name: 'Hospital Bill - S-Pharma', type: 'Bill', date: 'Feb 25, 2026', size: '0.8 MB', icon: 'receipt', color: '#EF6C00', format: 'PDF', doctor: 'S-Pharma Hospital' },
     { id: '5', name: 'ECG Report', type: 'Lab Report', date: 'Feb 20, 2026', size: '3.2 MB', icon: 'pulse', color: '#E91E63', format: 'PDF', doctor: 'Dr. Rahul Verma' },
     { id: '6', name: 'Thyroid Panel Results', type: 'Lab Report', date: 'Feb 15, 2026', size: '1.5 MB', icon: 'flask', color: '#1565C0', format: 'PDF', doctor: 'PathLab Diagnostics' },
   ], []);
@@ -462,7 +462,7 @@ const RecordsFooter = React.memo(() => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerDivider} />
-      <Text style={styles.footerBrand}>Apollo 24|7 Records</Text>
+      <Text style={styles.footerBrand}>S-Pharma 24|7 Records</Text>
       <Text style={styles.footerDesc}>Your health documents, always secure & accessible</Text>
       <View style={styles.footerBadges}>
         <View style={styles.footerBadge}><Ionicons name="shield-checkmark" size={14} color={COLORS.green} /><Text style={styles.footerBadgeText}>End-to-End Encrypted</Text></View>

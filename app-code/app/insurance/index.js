@@ -235,7 +235,7 @@ export default function InsuranceIndex() {
                 <Text style={styles.bannerBold}>Zero GST</Text>
                 <Text style={styles.bannerBold}>Full Cover</Text>
               </View>
-              <Text style={styles.bannerSmall}>With added Apollo benefits</Text>
+              <Text style={styles.bannerSmall}>With added S-Pharma benefits</Text>
             </View>
             <View style={styles.bannerBadge}>
               <Text style={styles.bannerBadgeText}>18%</Text>
@@ -404,11 +404,11 @@ export default function InsuranceIndex() {
   const renderEcosystem = () => (
     <View style={styles.ecosystemSection}>
       <View style={styles.dividerLine} />
-      <Text style={styles.ecosystemTitle}>ACCESS APOLLO'S ECOSYSTEM</Text>
+      <Text style={styles.ecosystemTitle}>ACCESS S-Pharma'S ECOSYSTEM</Text>
       <View style={styles.dividerLine} />
       <View style={styles.ecosystemGrid}>
         {[
-          { count: '71+', label: 'Apollo\nHospitals', icon: 'business' },
+          { count: '71+', label: 'S-Pharma\nHospitals', icon: 'business' },
           { count: '6000+', label: 'Pharmacies\nPan India', icon: 'medical' },
           { count: '7500+', label: 'Healthcare\nProviders', icon: 'people' },
           { count: '1 Lakh+', label: 'Diagnostic\nCentres', icon: 'flask' },
@@ -727,7 +727,7 @@ export default function InsuranceIndex() {
         <View style={styles.footerLogos}>
           <View style={styles.footerLogo}>
             <Ionicons name="medical" size={24} color="#fff" />
-            <Text style={styles.footerLogoText}>Apollo</Text>
+            <Text style={styles.footerLogoText}>S-Pharma</Text>
           </View>
           <View style={styles.footerLogo}>
             <Ionicons name="shield-checkmark" size={24} color="#fff" />

@@ -118,7 +118,7 @@ export default function Explore() {
       <SectionHeader title="New Launches" subtitle="Recently launched plans" icon="sparkles" iconColor="#9B59B6" />
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.newScroll}>
         {[
-          { name: 'Apollo ProHealth Plus', insurer: 'Apollo Munich', cover: '25L', premium: 'Rs 899/mo', tag: 'Just Launched', color: '#9B59B6' },
+          { name: 'S-Pharma ProHealth Plus', insurer: 'S-Pharma Munich', cover: '25L', premium: 'Rs 899/mo', tag: 'Just Launched', color: '#9B59B6' },
           { name: 'Care Advantage 2026', insurer: 'Care Health', cover: '50L', premium: 'Rs 1,199/mo', tag: 'New', color: '#FF6B35' },
           { name: 'Star Young India', insurer: 'Star Health', cover: '10L', premium: 'Rs 499/mo', tag: 'Introductory', color: '#2ECC71' },
         ].map((item, i) => (

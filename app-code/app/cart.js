@@ -226,7 +226,7 @@ const DeliveryInfoCard = React.memo(() => (
       </View>
       <View style={styles.deliveryInfoText}>
         <Text style={styles.deliveryInfoTitle}>Express Delivery</Text>
-        <Text style={styles.deliveryInfoSubtitle}>Delivery by Apollo Pharmacy Partner</Text>
+        <Text style={styles.deliveryInfoSubtitle}>Delivery by S-Pharma Pharmacy Partner</Text>
       </View>
     </View>
     <View style={styles.deliveryAddressRow}>

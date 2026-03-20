@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * APOLLO 24/7 - INSURANCE PARTNERS & TESTIMONIALS SECTION
+ * S-Pharma 24/7 - INSURANCE PARTNERS & TESTIMONIALS SECTION
  * ============================================================================
  *
  * Premium insurance partner logos carousel, testimonial cards,
@@ -141,7 +141,7 @@ export const PartnersSection = React.memo(() => {
     <Animated.View style={[partnerStyles.section, sectionStyle]}>
       {/* Section Header */}
       <View style={partnerStyles.sectionHeader}>
-        <Text style={partnerStyles.sectionTitle}>APOLLO TOP HEALTH INSURANCE PLANS</Text>
+        <Text style={partnerStyles.sectionTitle}>S-Pharma TOP HEALTH INSURANCE PLANS</Text>
         <Text style={partnerStyles.sectionSubtitle}>Compare & choose from India's best insurers</Text>
       </View>
 

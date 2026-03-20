@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 - MEDICINE DETAIL PAGE
+ * S-Pharma 24|7 - MEDICINE DETAIL PAGE
  * Ultra Premium Medicine Detail with Super PRO MAX UI
  * Complete unique design for medicine details
  */

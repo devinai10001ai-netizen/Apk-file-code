@@ -1,5 +1,5 @@
 /**
- * APOLLO 24|7 MEDICINES TAB - Premium Medicine Browse & Search
+ * S-Pharma 24|7 MEDICINES TAB - Premium Medicine Browse & Search
  */
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, FlatList, Dimensions, Platform, StatusBar, SafeAreaView, TextInput } from 'react-native';
