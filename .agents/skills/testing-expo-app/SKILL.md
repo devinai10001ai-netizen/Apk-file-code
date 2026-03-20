@@ -1,38 +1,53 @@
-# Testing Pharma27 Expo App
+# Testing the Expo React Native App
 
 ## Overview
-This is a React Native app built with Expo SDK 54 and expo-router. It supports web testing via `expo start --web`.
+This is an Expo-based React Native app (not React Native CLI). It uses expo-router for file-based routing.
 
-## Setup
-1. Run `npm install` in the repo root
-2. Start the dev server: `npx expo start --web --port 8081`
-3. Wait for bundling to complete (~30-60 seconds for first build)
-4. Open `http://localhost:8081` in Chrome
+## Starting the Dev Server
+```bash
+npx expo start --web --clear
+```
+- The `--clear` flag clears Metro cache, which is important after fixing syntax errors
+- Web version serves at `http://localhost:8081`
+- Metro bundles ~1385 modules; expect ~35s for initial bundle
 
-## App Navigation Structure
-- Main tabs are in `app/(mainTabs)/` - home, pharmacy, doctors, lab tests, insurance
-- Each main feature has its own nested tab layout (e.g., `app/myhealth/_layout.js`)
-- Entry files like `myhealth-entry.js` redirect to the feature's nested tabs via `router.push('/myhealth')`
-- Direct URL access works: `http://localhost:8081/myhealth`, `http://localhost:8081/myhealth/records`, etc.
-
-## Testing My Health Tabs
-- Navigate to `http://localhost:8081/myhealth` to land on the My Health tab (index.js)
-- Bottom tab bar has: Home (back), My Health, Records, My Meds, Insights, Assistant
-- Click each tab to verify it renders without crashes
-- Scroll down on each tab to verify all sections load
-- Check browser console (F12) for JavaScript errors
-
-## Key Technical Notes
-- Uses `expo-linear-gradient` for gradient headers
-- Uses `@expo/vector-icons` Ionicons - some icon names may not exist on web (they render blank instead of crashing)
-- React Native 0.81.5 supports the `gap` flexbox property
-- `react-native-web` is included for web support
-- No backend - all data is mocked/static
+## Key Routes to Test
+- `/` - Home screen with navigation tabs (Home, Doctors, Pharmacy, Lab Tests, Insurance, My Health)
+- `/doctors/online` - Online Consult screen
+- `/doctors/surgery` - Surgery screen
+- `/doctors/specialty/orthopaedics` - Orthopaedics specialty
+- `/doctors/specialty/psychiatry` - Psychiatry specialty
+- `/doctors/specialty/womenshealth` - Women's Health specialty
+- `/doctors/specialty/cardiology` - Cardiology specialty
+- `/doctors/specialty/dermatology` - Dermatology specialty
+- `/doctors/specialty/generalpractitioner` - General Practitioner specialty
 
 ## Common Issues
-- First bundle takes 30-60 seconds; subsequent loads are faster with caching
-- Some Ionicons may not render on web - this is expected behavior, not a crash
-- The `back` tab in myhealth layout uses `router.replace('/')` to go back to main tabs
+
+### Stray Quotes in StyleSheet Objects
+Some specialty doctor files may have stray single quotes after `DoctorsTheme.colors.*` references (e.g. `DoctorsTheme.colors.white'` instead of `DoctorsTheme.colors.white`). These cause "Unterminated string constant" syntax errors in Metro.
+
+To check: `grep -r "DoctorsTheme\.colors\.\w\+'" app/`
+
+### Missing Imports
+Some files may use `DoctorsTheme` without importing it. Since expo-router eagerly loads all route modules, a missing import in ANY route file will crash the entire app with `ReferenceError: DoctorsTheme is not defined`.
+
+To check: Look for files that reference `DoctorsTheme` but don't import it.
+
+### Unescaped Apostrophes in Strings
+Strings containing apostrophes inside single-quoted strings (e.g. `'Women's Wellness Package'`) cause syntax errors. Fix by using double quotes.
+
+## Project Structure
+- `app/` - Main app code (expo-router routes)
+- `app-code/` - Duplicate copy of app code (changes should be applied to both)
+- `app/components/doctors/DoctorsTheme.js` - Shared theme constants and data arrays
+- `app/_layout.js` - Root layout with all registered routes
+
+## Important Notes
+- No CI/CD configured on this repo
+- No linter, type checker, or test suite - manual verification only
+- Changes in `app/` should also be mirrored in `app-code/` directory
+- The app has no authentication or credentials needed for testing
 
 ## Devin Secrets Needed
-None - this is a purely frontend app with no backend or authentication.
+None - this app requires no authentication or API keys for local testing.
