@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import { Ionicons, MaterialIcons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
+import { getNextPage } from '../navigationUtils';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -40,20 +42,20 @@ const Header = memo(() => (
   <View style={styles.header}>
     <View style={styles.headerLeft}>
       <Text style={styles.headerSubtext}>Collect Samples from</Text>
-      <TouchableOpacity style={styles.locationRow} accessibilityLabel="Change location">
+      <TouchableOpacity style={styles.locationRow} accessibilityLabel="Change location" onPress={() => router.push('/' + getNextPage())}>
         <Text style={styles.headerLocation}>Delhi 110001</Text>
         <Ionicons name="chevron-down" size={16} color={C.textPrimary} />
       </TouchableOpacity>
     </View>
     <View style={styles.headerRight}>
-      <TouchableOpacity style={styles.headerIcon} accessibilityLabel="Notifications">
+      <TouchableOpacity style={styles.headerIcon} accessibilityLabel="Notifications" onPress={() => router.push("/" + getNextPage())}>
         <Ionicons name="notifications-outline" size={22} color={C.textPrimary} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.hcBadge} accessibilityLabel="HC credits">
+      <TouchableOpacity style={styles.hcBadge} accessibilityLabel="HC credits" onPress={() => router.push("/" + getNextPage())}>
         <Text style={styles.hcBadgeText}>HC</Text>
         <Text style={styles.hcAmount}>₹50</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.profileAvatar} accessibilityLabel="Profile">
+      <TouchableOpacity style={styles.profileAvatar} accessibilityLabel="Profile" onPress={() => router.push("/" + getNextPage())}>
         <Ionicons name="person-circle" size={30} color={C.primaryTeal} />
       </TouchableOpacity>
     </View>
@@ -80,10 +82,10 @@ const SearchBar = memo(() => {
         <Ionicons name="search" size={20} color={C.textSecondary} />
         <Text style={styles.searchPlaceholder}>{placeholder}</Text>
         <View style={styles.searchRight}>
-          <TouchableOpacity style={styles.rxButton} accessibilityLabel="Upload prescription">
+          <TouchableOpacity style={styles.rxButton} accessibilityLabel="Upload prescription" onPress={() => router.push("/" + getNextPage())}>
             <MaterialCommunityIcons name="prescription" size={20} color={C.primaryTeal} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.cartButton} accessibilityLabel="Cart">
+          <TouchableOpacity style={styles.cartButton} accessibilityLabel="Cart" onPress={() => router.push("/" + getNextPage())}>
             <Ionicons name="cart-outline" size={22} color={C.primaryTeal} />
           </TouchableOpacity>
         </View>
@@ -95,7 +97,7 @@ const SearchBar = memo(() => {
 // ─── SECTION 3: PROMO BANNER ───
 const PromoBanner = memo(() => (
   <View style={styles.sectionPadding}>
-    <TouchableOpacity style={styles.promoBanner} accessibilityLabel="Women's health promo">
+    <TouchableOpacity style={styles.promoBanner} accessibilityLabel="Women's health promo" onPress={() => router.push("/" + getNextPage())}>
       <View style={styles.promoLeft}>
         <Text style={styles.promoTitle}>Her Health Matters,{'\n'}Today & Everyday</Text>
         <View style={styles.promoOfferRow}>
@@ -118,13 +120,13 @@ const PromoBanner = memo(() => (
 // ─── SECTION 4: QUICK ACTIONS ───
 const QuickActions = memo(() => (
   <View style={styles.quickActions}>
-    <TouchableOpacity style={styles.quickActionBtn} accessibilityLabel="Book a test via call">
+    <TouchableOpacity style={styles.quickActionBtn} accessibilityLabel="Book a test via call" onPress={() => router.push("/" + getNextPage())}>
       <View style={[styles.quickActionIcon, { backgroundColor: '#FFF3E0' }]}>
         <Ionicons name="call" size={20} color={C.primaryOrange} />
       </View>
       <Text style={styles.quickActionText}>Book a Test{'\n'}via Call</Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.quickActionBtn} accessibilityLabel="Upload prescription">
+    <TouchableOpacity style={styles.quickActionBtn} accessibilityLabel="Upload prescription" onPress={() => router.push("/" + getNextPage())}>
       <View style={[styles.quickActionIcon, { backgroundColor: '#E8F5E9' }]}>
         <Ionicons name="document-text" size={20} color={C.primaryTeal} />
       </View>
@@ -193,7 +195,7 @@ const OffersSection = memo(() => (
 // ─── SECTION 7: MOST BOOKED BANNER ───
 const MostBookedBanner = memo(() => (
   <View style={styles.sectionPadding}>
-    <TouchableOpacity style={styles.mostBookedBanner}>
+    <TouchableOpacity style={styles.mostBookedBanner} onPress={() => router.push("/" + getNextPage())}>
       <View style={styles.mostBookedLeft}>
         <View style={styles.mostBookedPill}>
           <Text style={styles.mostBookedPillText}>MOST BOOKED LAB TESTS</Text>
@@ -202,7 +204,7 @@ const MostBookedBanner = memo(() => (
         <View style={styles.mostBookedCodeRow}>
           <Text style={styles.mostBookedCode}>Code: WELCOME15</Text>
         </View>
-        <TouchableOpacity style={styles.bookNowBtn}>
+        <TouchableOpacity style={styles.bookNowBtn} onPress={() => router.push("/" + getNextPage())}>
           <Text style={styles.bookNowText}>Book Now</Text>
         </TouchableOpacity>
       </View>
@@ -289,7 +291,7 @@ const VideoThumbnails = memo(() => (
       horizontal
       data={videos}
       renderItem={({ item }) => (
-        <TouchableOpacity style={styles.videoCard} accessibilityLabel={item.title}>
+        <TouchableOpacity style={styles.videoCard} accessibilityLabel={item.title} onPress={() => router.push("/" + getNextPage())}>
           <View style={styles.videoThumb}>
             <Ionicons name={item.icon} size={30} color={C.primaryTeal} />
             <View style={styles.playIcon}>
@@ -309,11 +311,11 @@ const VideoThumbnails = memo(() => (
 // ─── SECTION 12: PROHEALTH DARK BANNER ───
 const ProHealthBanner = memo(() => (
   <View style={styles.sectionPadding}>
-    <TouchableOpacity style={styles.proHealthBanner} accessibilityLabel="S-Pharma ProHealth">
+    <TouchableOpacity style={styles.proHealthBanner} accessibilityLabel="S-Pharma ProHealth" onPress={() => router.push("/" + getNextPage())}>
       <View style={styles.proHealthLeft}>
         <Text style={styles.proHealthTitle}>S-Pharma ProHealth</Text>
         <Text style={styles.proHealthSub}>Your Health Check{'\n'}Reimagined</Text>
-        <TouchableOpacity style={styles.proHealthBookBtn}>
+        <TouchableOpacity style={styles.proHealthBookBtn} onPress={() => router.push("/" + getNextPage())}>
           <Text style={styles.proHealthBookText}>Book Now</Text>
         </TouchableOpacity>
       </View>
@@ -368,7 +370,7 @@ const AskSPharmaCard = memo(() => (
       </View>
       <Text style={styles.askSPharmaTitle}>Need expert guidance on{'\n'}lab tests and reports?</Text>
       <Text style={styles.askSPharmaSubLabel}>ASK S-Pharma ABOUT...</Text>
-      <TouchableOpacity style={styles.askSPharmaChip}>
+      <TouchableOpacity style={styles.askSPharmaChip} onPress={() => router.push("/" + getNextPage())}>
         <Text style={styles.askSPharmaChipText}>Lab tests required for Urinary Tract Infection</Text>
         <Ionicons name="chevron-forward" size={16} color={C.primaryOrange} />
       </TouchableOpacity>
@@ -436,7 +438,7 @@ const FloatingElements = memo(({ showGoTop, onGoTop }) => (
         <Text style={styles.goTopText}>Go To Top</Text>
       </TouchableOpacity>
     )}
-    <TouchableOpacity style={styles.fab} accessibilityLabel="Call to book">
+    <TouchableOpacity style={styles.fab} accessibilityLabel="Call to book" onPress={() => router.push("/" + getNextPage())}>
       <Ionicons name="call" size={24} color="#FFF" />
     </TouchableOpacity>
   </>
@@ -530,7 +532,7 @@ const PopularTestsSection = memo(() => (
             <Text style={popTestStyles.price}>₹{item.price}</Text>
             <Text style={popTestStyles.mrp}>₹{item.mrp}</Text>
           </View>
-          <TouchableOpacity style={popTestStyles.bookBtn}>
+          <TouchableOpacity style={popTestStyles.bookBtn} onPress={() => router.push("/" + getNextPage())}>
             <Text style={popTestStyles.bookText}>Book Now</Text>
           </TouchableOpacity>
         </TouchableOpacity>
@@ -591,7 +593,7 @@ const HealthPackagesLabSection = memo(() => (
             <Text style={pkgStyles.price}>₹{item.price}</Text>
             <Text style={pkgStyles.mrp}>₹{item.mrp}</Text>
           </View>
-          <TouchableOpacity style={pkgStyles.bookBtn}>
+          <TouchableOpacity style={pkgStyles.bookBtn} onPress={() => router.push("/" + getNextPage())}>
             <Text style={pkgStyles.bookText}>Book Package</Text>
           </TouchableOpacity>
         </TouchableOpacity>
@@ -789,6 +791,7 @@ const trustLabStyles = StyleSheet.create({
 
 // ─── MAIN SCREEN ───
 export default function LabTestsIndex() {
+  const router = useRouter();
   const scrollRef = useRef(null);
   const [showGoTop, setShowGoTop] = useState(false);
 

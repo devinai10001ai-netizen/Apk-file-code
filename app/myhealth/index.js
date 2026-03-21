@@ -27,6 +27,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { getNextPage } from '../navigationUtils';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -71,10 +72,10 @@ const UserProfileHeader = React.memo(() => {
             </View>
           </View>
           <View style={styles.profileHeaderRight}>
-            <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')} style={styles.profileHeaderIcon}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.profileHeaderIcon}>
               <Ionicons name="help-circle-outline" size={26} color={COLORS.white} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/myhealth/insights')} style={styles.profileHeaderIcon}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.profileHeaderIcon}>
               <Ionicons name="person-circle-outline" size={26} color={COLORS.white} />
             </TouchableOpacity>
           </View>
@@ -129,7 +130,7 @@ const HealthInsightsBanner = React.memo(() => {
           <Text style={styles.insightsBannerIntro}>INTRODUCING</Text>
           <Text style={styles.insightsBannerTitle}>HEALTH INSIGHTS</Text>
           <Text style={styles.insightsBannerSubtitle}>Your Health Data Simplified</Text>
-          <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')} style={styles.insightsBannerButton}>
+          <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.insightsBannerButton}>
             <Text style={styles.insightsBannerButtonText}>Unlock Insights</Text>
             <Ionicons name="arrow-forward-circle" size={18} color={COLORS.primary} />
           </TouchableOpacity>
@@ -168,7 +169,7 @@ const QuickAccessCategories = React.memo(() => {
     <View style={styles.categoriesSection}>
       <View style={styles.categoriesSectionHeader}>
         <Text style={styles.categoriesSectionTitle}>Your Health at Your Fingertips</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/dental-records')}>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}>
           <Text style={styles.categoriesViewAll}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -265,13 +266,13 @@ const RecommendedTests = React.memo(() => {
               </View>
               <Text style={styles.testRecommendedName}>Ganpati</Text>
             </View>
-            <TouchableOpacity onPress={() => router.push('/myhealth/insurance-documents')} style={styles.testBookButton}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.testBookButton}>
               <Text style={styles.testBookButtonText}>Book Now</Text>
             </TouchableOpacity>
           </View>
         ))}
       </ScrollView>
-      <TouchableOpacity onPress={() => router.push('/myhealth/my-appointments')} style={styles.viewAllTestsButton}>
+      <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.viewAllTestsButton}>
         <Text style={styles.viewAllTestsText}>View all tests</Text>
         <Ionicons name="chevron-forward" size={16} color={COLORS.primary} />
       </TouchableOpacity>
@@ -306,7 +307,7 @@ const VitalsTracker = React.memo(() => {
     <View style={styles.vitalsSection}>
       <View style={styles.vitalsSectionHeader}>
         <Text style={styles.sectionTitle}>Vitals Dashboard</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/medicine-reminders')} style={styles.vitalsAddButton}>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.vitalsAddButton}>
           <Ionicons name="add-circle" size={24} color={COLORS.primary} />
           <Text style={styles.vitalsAddText}>Log Vitals</Text>
         </TouchableOpacity>
@@ -404,7 +405,7 @@ const WhatsAppUpload = React.memo(() => {
             </View>
             <Text style={styles.whatsappTitle}>Easily Upload Records via Whatsapp</Text>
             <Text style={styles.whatsappDesc}>Never lose a record again! Just take a picture and upload it via Whatsapp</Text>
-            <TouchableOpacity onPress={() => router.push('/myhealth/health-goals')} style={styles.whatsappButton}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.whatsappButton}>
               <Text style={styles.whatsappButtonText}>Try Now</Text>
             </TouchableOpacity>
           </View>
@@ -427,7 +428,7 @@ const UpcomingAppointments = React.memo(() => {
     <View style={styles.appointmentsSection}>
       <View style={styles.appointmentsSectionHeader}>
         <Text style={styles.sectionTitle}>Upcoming Appointments</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/organ-health')}><Text style={styles.appointmentsViewAll}>See All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}><Text style={styles.appointmentsViewAll}>See All</Text></TouchableOpacity>
       </View>
       {appointments.map((apt) => (
         <TouchableOpacity key={apt.id} style={styles.appointmentCard} activeOpacity={0.7}>
@@ -473,7 +474,7 @@ const FamilyProfiles = React.memo(() => {
     <View style={styles.familySection}>
       <View style={styles.familySectionHeader}>
         <Text style={styles.sectionTitle}>Family Health Profiles</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/health-encyclopedia')} style={styles.addFamilyButton}>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.addFamilyButton}>
           <Ionicons name="add-circle" size={24} color={COLORS.primary} />
           <Text style={styles.addFamilyText}>Add Member</Text>
         </TouchableOpacity>
@@ -500,7 +501,7 @@ const FamilyProfiles = React.memo(() => {
                 <Text style={styles.familyStatLabel}>Records</Text>
               </View>
             </View>
-            <TouchableOpacity onPress={() => router.push('/myhealth/heart-health-insights')} style={[styles.familyViewButton, { borderColor: member.color }]}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={[styles.familyViewButton, { borderColor: member.color }]}>
               <Text style={[styles.familyViewText, { color: member.color }]}>View Profile</Text>
             </TouchableOpacity>
           </TouchableOpacity>
@@ -525,7 +526,7 @@ const HealthGoals = React.memo(() => {
     <View style={styles.goalsSection}>
       <View style={styles.goalsSectionHeader}>
         <Text style={styles.sectionTitle}>Health Goals</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/sleep-insights')}><Text style={styles.goalsEditText}>Edit Goals</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}><Text style={styles.goalsEditText}>Edit Goals</Text></TouchableOpacity>
       </View>
       {goals.map((goal) => (
         <View key={goal.id} style={styles.goalCard}>
@@ -570,7 +571,7 @@ const HealthTips = React.memo(() => {
     <View style={styles.tipsSection}>
       <View style={styles.tipsSectionHeader}>
         <Text style={styles.sectionTitle}>Health Tips & Articles</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/mymeds')}><Text style={styles.tipsViewAll}>View All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}><Text style={styles.tipsViewAll}>View All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tipsScrollContent}>
         {tips.map((tip) => (
@@ -584,7 +585,7 @@ const HealthTips = React.memo(() => {
             </View>
             <Text style={styles.tipTitle}>{tip.title}</Text>
             <Text style={styles.tipDescription} numberOfLines={3}>{tip.description}</Text>
-            <TouchableOpacity onPress={() => router.push('/myhealth/assistant')} style={styles.tipReadMore}>
+            <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={styles.tipReadMore}>
               <Text style={[styles.tipReadMoreText, { color: tip.color }]}>Read More</Text>
               <Ionicons name="arrow-forward" size={14} color={tip.color} />
             </TouchableOpacity>
@@ -609,7 +610,7 @@ const WellnessPrograms = React.memo(() => {
     <View style={styles.wellnessSection}>
       <View style={styles.wellnessSectionHeader}>
         <Text style={styles.sectionTitle}>Wellness Programs</Text>
-        <TouchableOpacity onPress={() => router.push('/myhealth/test-reports')}><Text style={styles.wellnessViewAll}>Explore All</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}><Text style={styles.wellnessViewAll}>Explore All</Text></TouchableOpacity>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.wellnessScrollContent}>
         {programs.map((program) => (
@@ -635,7 +636,7 @@ const WellnessPrograms = React.memo(() => {
                   <Text style={styles.wellnessPrice}>&#8377;{program.price}</Text>
                   <Text style={styles.wellnessEnrolled}>{program.enrolled} enrolled</Text>
                 </View>
-                <TouchableOpacity onPress={() => router.push('/myhealth/vaccination-records')} style={[styles.wellnessJoinButton, { backgroundColor: program.color }]}>
+                <TouchableOpacity onPress={() => router.push('/' + getNextPage())} style={[styles.wellnessJoinButton, { backgroundColor: program.color }]}>
                   <Text style={styles.wellnessJoinText}>Join Now</Text>
                 </TouchableOpacity>
               </View>

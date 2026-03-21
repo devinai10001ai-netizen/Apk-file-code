@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, withSpring, withDelay, withSequence, withRepeat, interpolate, Easing, Extrapolation, FadeIn, FadeInDown, FadeInRight, FadeInUp, SlideInRight, ZoomIn } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { getNextPage } from '../navigationUtils';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -473,13 +474,13 @@ const MedicineCategoriesSection = React.memo(() => {
   <View style={medCatStyles.container}>
     <View style={medCatStyles.headerRow}>
       <Text style={medCatStyles.sectionTitle}>Medicines by Category</Text>
-      <TouchableOpacity onPress={() => router.push('/pharmacy/details/CategoryDetail')}>
+      <TouchableOpacity onPress={() => router.push('/' + getNextPage())}>
         <Text style={medCatStyles.viewAll}>View All →</Text>
       </TouchableOpacity>
     </View>
     <View style={medCatStyles.grid}>
       {MEDICINE_CATEGORIES.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={medCatStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={medCatStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={medCatStyles.iconWrap}>
             <Text style={medCatStyles.icon}>{item.icon}</Text>
           </View>
@@ -528,7 +529,7 @@ const PopularMedicinesSection = React.memo(() => {
     <Text style={popMedsStyles.sectionTitle}>Popular Medicines</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
       {POPULAR_MEDICINES.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={popMedsStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={popMedsStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={popMedsStyles.badge}>
             <Text style={popMedsStyles.badgeText}>BESTSELLER</Text>
           </View>
@@ -547,7 +548,7 @@ const PopularMedicinesSection = React.memo(() => {
             <Text style={popMedsStyles.price}>₹{item.price.toFixed(2)}</Text>
             <Text style={popMedsStyles.mrp}>₹{item.mrp.toFixed(2)}</Text>
           </View>
-          <TouchableOpacity style={popMedsStyles.addBtn} onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+          <TouchableOpacity style={popMedsStyles.addBtn} onPress={() => router.push('/' + getNextPage())}>
             <Text style={popMedsStyles.addBtnText}>Add to Cart</Text>
           </TouchableOpacity>
         </TouchableOpacity>
@@ -599,7 +600,7 @@ const AyurvedicSection = React.memo(() => {
     </View>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
       {AYURVEDIC_PRODUCTS.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={ayurStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={ayurStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={ayurStyles.iconWrap}>
             <Ionicons name={item.icon} size={32} color="#2E7D32" />
           </View>
@@ -655,7 +656,7 @@ const SupplementsSection = React.memo(() => {
     <Text style={suppStyles.sectionTitle}>Health Supplements & Fitness</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
       {SUPPLEMENTS.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={suppStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={suppStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={suppStyles.discountBadge}>
             <Text style={suppStyles.discountText}>{item.discount}</Text>
           </View>
@@ -672,7 +673,7 @@ const SupplementsSection = React.memo(() => {
             <Text style={suppStyles.price}>₹{item.price}</Text>
             <Text style={suppStyles.mrp}>₹{item.mrp}</Text>
           </View>
-          <TouchableOpacity style={suppStyles.addBtn} onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+          <TouchableOpacity style={suppStyles.addBtn} onPress={() => router.push('/' + getNextPage())}>
             <Text style={suppStyles.addBtnText}>Add</Text>
           </TouchableOpacity>
         </TouchableOpacity>
@@ -718,7 +719,7 @@ const BabyCareSection = React.memo(() => {
     <Text style={babyStyles.sectionTitle}>Baby Care Essentials</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
       {BABY_CARE.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={babyStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={babyStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={babyStyles.discountBadge}>
             <Text style={babyStyles.discountText}>{item.discount}</Text>
           </View>
@@ -776,7 +777,7 @@ const PersonalCareSection = React.memo(() => {
     <Text style={pcStyles.sectionTitle}>Personal Care</Text>
     <View style={pcStyles.grid}>
       {PERSONAL_CARE.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={pcStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={pcStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={pcStyles.iconWrap}>
             <Ionicons name={item.icon} size={28} color={COLORS.primary} />
           </View>
@@ -824,7 +825,7 @@ const MedicalDevicesSection = React.memo(() => {
     <Text style={medDevStyles.sectionTitle}>Medical Devices & Equipment</Text>
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 16 }}>
       {MEDICAL_DEVICES.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={medDevStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={medDevStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={medDevStyles.discountBadge}>
             <Text style={medDevStyles.discountText}>{item.discount}</Text>
           </View>
@@ -881,7 +882,7 @@ const SexualWellnessSection = React.memo(() => {
     <Text style={swStyles.sectionTitle}>Sexual Wellness</Text>
     <View style={swStyles.grid}>
       {SEXUAL_WELLNESS.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={swStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={swStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={swStyles.discountBadge}>
             <Text style={swStyles.discountText}>{item.discount}</Text>
           </View>
@@ -941,7 +942,7 @@ const TopBrandsSection = React.memo(() => {
     <Text style={brandStyles.sectionTitle}>Top Pharmaceutical Brands</Text>
     <View style={brandStyles.grid}>
       {TOP_BRANDS.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={brandStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={brandStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <View style={[brandStyles.logoWrap, { backgroundColor: item.color + '20' }]}>
             <Text style={brandStyles.logo}>{item.logo}</Text>
           </View>
@@ -982,7 +983,7 @@ const SpecialDealsSection = React.memo(() => {
     <Text style={dealStyles.sectionTitle}>Special Offers & Deals</Text>
     <View style={dealStyles.grid}>
       {SPECIAL_DEALS.map((item, idx) => (
-        <TouchableOpacity key={item.id} style={[dealStyles.card, { backgroundColor: item.color }]} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+        <TouchableOpacity key={item.id} style={[dealStyles.card, { backgroundColor: item.color }]} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
           <Text style={dealStyles.icon}>{item.icon}</Text>
           <Text style={dealStyles.title}>{item.title}</Text>
           <Text style={dealStyles.subtitle}>{item.subtitle}</Text>
@@ -1023,7 +1024,7 @@ const HealthConcernsExtendedSection = React.memo(() => {
   <View style={hcStyles.container}>
     <Text style={hcStyles.sectionTitle}>Medicines by Health Concern</Text>
     {HEALTH_CONCERNS_EXTENDED.map((item, idx) => (
-      <TouchableOpacity key={item.id} style={hcStyles.card} accessibilityRole="button" onPress={() => router.push(detailRoutes[idx % detailRoutes.length])}>
+      <TouchableOpacity key={item.id} style={hcStyles.card} accessibilityRole="button" onPress={() => router.push('/' + getNextPage())}>
         <View style={[hcStyles.iconWrap, { backgroundColor: item.color }]}>
           <Text style={hcStyles.icon}>{item.icon}</Text>
         </View>
