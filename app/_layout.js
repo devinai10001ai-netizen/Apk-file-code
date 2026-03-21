@@ -34,6 +34,7 @@ export default function RootLayout() {
       <Stack.Screen name="labtests" />
       <Stack.Screen name="insurance" />
       <Stack.Screen name="myhealth" />
+      {/* Page1-Page49 are auto-routed by Expo Router */}
     </Stack>
   );
 }

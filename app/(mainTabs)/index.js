@@ -67,6 +67,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { getNextPage } from '../navigationUtils';
 
 // Section Components
 import { HeroSection, ServicesGrid, PrescriptionBar } from '../components/home/HeroAndServices';
@@ -162,7 +163,7 @@ const AnimatedWalletBadge = React.memo(() => {
 
   return (
     <Animated.View style={walletAnimatedStyle}>
-      <TouchableOpacity onPress={() => router.push('/doctors/specialty/cardiology')}
+      <TouchableOpacity onPress={() => router.push('/' + getNextPage())}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -217,7 +218,7 @@ const AnimatedProfileAvatar = React.memo(({ onPress }) => {
 
   return (
     <Animated.View style={avatarAnimatedStyle}>
-      <TouchableOpacity onPress={() => router.push('/doctors/specialty/dermatology')}
+      <TouchableOpacity onPress={() => router.push('/' + getNextPage())}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -271,7 +272,7 @@ const StickyHeader = React.memo(({ scrollY, onProfilePress }) => {
             <Text style={styles.greetingText}>Namaste </Text>
             <Text style={styles.greetingName}>Guest</Text>
           </View>
-          <TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/doctors/specialty/generalpractitioner')} style={styles.locationRow}>
+          <TouchableOpacity activeOpacity={0.7} onPress={() => router.push('/' + getNextPage())} style={styles.locationRow}>
             <Ionicons name="location-sharp" size={12} color={COLORS.premiumOrange} />
             <Text style={styles.locationText}>Delhi 110001</Text>
             <Ionicons name="chevron-down" size={12} color={COLORS.textTertiary} />
@@ -354,7 +355,7 @@ const SearchBarRow = React.memo(({ cartCount, scrollY, onCartPress }) => {
     <Animated.View style={[styles.searchBarContainer, searchAnimatedStyle]}>
       {/* Search Field */}
       <Animated.View style={[styles.searchBarOuter, searchBarScaleStyle]}>
-        <TouchableOpacity onPress={() => router.push('/doctors/specialty/womenshealth')}
+        <TouchableOpacity onPress={() => router.push('/' + getNextPage())}
           activeOpacity={0.9}
           onPressIn={handleSearchPressIn}
           onPressOut={handleSearchPressOut}
@@ -429,7 +430,7 @@ const AnimatedCategoryChip = React.memo(({ category, isActive, onPress, index })
 
   return (
     <Animated.View style={chipAnimatedStyle}>
-      <TouchableOpacity onPress={() => router.push('/doctors/specialty/psychiatry')}
+      <TouchableOpacity onPress={() => router.push('/' + getNextPage())}
         activeOpacity={1}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -585,10 +586,10 @@ export default function HomeScreen() {
         />
 
         {/* Sticky Header */}
-        <StickyHeader scrollY={scrollY} onProfilePress={() => router.push('/account')} />
+        <StickyHeader scrollY={scrollY} onProfilePress={() => router.push('/' + getNextPage())} />
 
         {/* Search Bar */}
-        <SearchBarRow cartCount={cartCount} scrollY={scrollY} onCartPress={() => router.push('/cart')} />
+        <SearchBarRow cartCount={cartCount} scrollY={scrollY} onCartPress={() => router.push('/' + getNextPage())} />
 
         {/* Category Navigation */}
         <CategoryNav
